@@ -1,0 +1,225 @@
+<html>
+<head>  
+  <!-- Image Links -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="/images/mode-favicon-black.ico" rel="shortcut icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <!-- CDNs for Bootstrap and Fonts -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+  <link href="//cloud.webtype.com/css/c014726f-64f1-4bf0-b9ff-6db715a1147a.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  
+  <!-- Mode Stylsheet-->
+  <link rel="stylesheet" href="/css/mode-sqlschool.css">
+  
+  <title>Aggregation Functions - </title>
+
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      
+      <!-- Show the logo and, if on a phone, the menu toggle -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">MODE HELP</a>
+      </div>    
+      <!-- Everything here gets hidden for phones -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="mailto:info@modeanalytics.com">Contact Support</a></li>
+          <li><a href="http://modeanalytics.com">Return to Mode</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+  
+  <section class="lesson">
+  
+  <div class="container">
+  
+    <div class="search-small col-sm-4 col-sm-push-8">
+      
+      <!-- HIDE SEARCH FOR NOW
+      <form class="main-search" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+        -->
+    </div>
+    
+    <div class="breadcrumbs col-sm-8 col-sm-pull-4">
+      <a class="category" href="/#intermediate-sql">intermediate sql</a> / Aggregation Functions
+    </div>
+    
+  </div>
+</section>
+
+<section class="question">
+  <div class="container">
+    <h2>Aggregation Functions</h2>
+    
+    <h5>Aggregation Functions</h5>
+
+<p>As the <a href="LINK%20TO%20INTRODUCTION">beginner tutorial</a> points out, SQL is excellent at aggregating data the way you might in a pivot table in Excel. You will use aggregation functions all the time, so it&#39;s important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: <code>COUNT</code>, <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>AVG</code></p>
+
+<h5>COUNT</h5>
+
+<p>It&#39;s easiest to start with <code>COUNT</code> because verifying your results is extremely simply. The easiest way to get started is to use <code>*</code> to select all rows.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(*)
+  FROM tutorial.sat_scores
+</code></pre></div>
+<p>You can see that 44 results were returned. Run the following query and note that Mode actually provides a row count, which should be the same as the result of the above query:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.sat_scores
+</code></pre></div>
+<p>Things start to get a little bit tricky when you want to count individual columns. The following code will provide a count of all of rows in which columnb <strong>is not null</strong>.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(student_id)
+  FROM tutorial.sat_scores
+</code></pre></div>
+<p>You&#39;ll notice that this result is lower than what you got with <code>COUNT(*)</code>. That&#39;s because columnb has some nulls.</p>
+
+<p>One nice thing about <code>COUNT</code> is that you can use it on non-numerical columns:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(teacher)
+  FROM tutorial.sat_scores
+</code></pre></div>
+<p>The above query returns the same result as the previous &mdash; 44 &mdash; even when there are only 3 different teacher names in the table. It&#39;s important to keep in mind that <code>COUNT</code> simply counts the total number of non-null rows, not the distinct values, which are discussed in a <a href="LINK">later tutorial</a> </p>
+
+<p>You might have also noticed that the column header in the results just reads &quot;count.&quot; We recommend naming your columns so that they make a little more sense to the reader. As mentioned in the <a href="LINK">previous tutorial</a>, it&#39;s best to use lower case letters and underscores. You can add column names (also called <em>aliases</em>) using <code>AS</code>:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(student_id) AS student_count
+  FROM tutorial.sat_scores
+</code></pre></div>
+<p>If you must use spaces, you will need to use double quotes.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(student_id) AS &quot;Student Count&quot;
+  FROM tutorial.sat_scores
+</code></pre></div>
+<p><em>Note: This is really the only place in which you&#39;ll ever want to use double quotes in SQLl; single quotes for everything else.</em></p>
+
+<h5>SUM</h5>
+
+<p>This works the same way as count, except that it can only be used on numerical columns. As you might expect, <code>SUM</code> totals all the values in a given column:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT SUM(hrs_studied)
+  FROM tutorial.sat_scores
+</code></pre></div>
+<p>An important thing to remember: aggregators only aggregate vertically. In this data, you might want to aggregate across a row to add all 3 of a student&#39;s scores to get a total score. You would do this with <a href="LINK%20TO%20EARLIER%20TUTORIAL">simple arithmetic</a>:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT sat_math,
+       sat_verbal,
+       sat_writing,
+       sat_math + sat_verbal + sat_writing AS sat_total
+  FROM tutorial.sat_scores
+</code></pre></div>
+<p>You don&#39;t need to worry as much about the presence of nulls with <code>SUM</code> as you would with <code>COUNT</code> &mdash; <code>SUM</code> treats nulls as 0.</p>
+
+<h5>MIN/MAX</h5>
+
+<p><code>MIN</code> and <code>MAX</code> are similar to <code>COUNT</code> in that they can be used on non-numerical columns. Depending on the column type, <code>MIN</code> will return the lowest number, earliest date, or non-numerical value as close to &quot;a&quot; as possible. As you might suspect, <code>MAX</code> does the opposite:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT MIN(hrs_studied) AS min_study_time,
+       MAX(hrs_studied) AS max_study_time
+  FROM tutorial.sat_scores
+</code></pre></div>
+<p>Nulls are treated as lower than 0 or &quot;a&quot; so <code>MIN</code> will return a null value if the column contains one. If you want the lowest real number or value, you can filter out nulls using a <code>WHERE</code> clause:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT MIN(hrs_studied) AS min_study_time,
+       MAX(hrs_studied) AS max_study_time
+  FROM tutorial.sat_scores
+ WHERE hrs_studied IS NOT NULL
+</code></pre></div>
+<h5>AVG</h5>
+
+<p><code>AVG</code> does what you&#39;d think &mdash; it calculated the average of selected values. It is very useful, but has some limitations. First, it can only be used on numerical columns. Second, it ignores nulls completely. There are some cases in which you will want to treat null values as 0. For these cases, you&#39;ll want to write a statement that changes the nulls to 0 (covered in the <a href="LINK%20TO%20CASE%20STATEMENT">intermediate tutorial</a>).</p>
+
+<p>You can see this by comparing these two queries:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(hrs_studied)
+  FROM tutorial.sat_scores
+ WHERE hrs_studied IS NOT NULL
+</code></pre></div>
+<p>Produces the same result as:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(hrs_studied)
+  FROM tutorial.sat_scores
+</code></pre></div>
+<h5>GROUP BY</h5>
+
+<p>All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count entries by month, for example. <code>GROUP BY</code> allows you to separate your aggregations into sub-groups. Here&#39;s an example:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT teacher,
+       COUNT(student_id)
+  FROM tutorial.sat_scores
+ GROUP BY teacher
+</code></pre></div>
+<p>You can group by multiple columns, but you have to separate column names with commas &mdash; just as with <code>ORDER BY</code>:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT school,
+       teacher,
+       COUNT(student_id)
+  FROM tutorial.sat_scores
+ GROUP BY school, teacher
+</code></pre></div>
+<p>As in <a href="LINK">ORDER BY</a>, you can substitute numbers for column names in the <code>GROUP BY</code> clause. It&#39;s generally recommended to do this only when you are grouping many columns, or if something else is causing the text in the <code>GROUP BY</code> clause to be excessively long:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT school,
+       teacher,
+       COUNT(student_id)
+  FROM tutorial.sat_scores
+ GROUP BY 1, 2
+</code></pre></div>
+<p><em>Note: this functionality (numbering columns instead of using names) is supported by Mode, but not by every flavor of SQL, so if you&#39;re using another system or connected to certain types of databases, it may not work.</em></p>
+
+<p>The order of column names in your <code>GROUP BY</code> clause doesn&#39;t matter &mdash; the results will be the same regardless. If you want to control how the aggregations are grouped together, use <code>ORDER BY</code>. Try running the query below, then reverse the column names in the <code>ORDER BY</code> statement and see how it looks.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT school,
+       teacher,
+       COUNT(student_id)
+  FROM tutorial.sat_scores
+ GROUP BY 1, 2
+ ORDER BY 1, 2
+</code></pre></div>
+<p>There&#39;s one thing to be aware of as you group by multiple columns: SQL evaluates the aggregations before the <code>LIMIT</code> clause. If you don&#39;t group by any columns, you&#39;ll get a 1-row result &mdash; no problem there. If you group by a column with enough unique values that it exceeds the <code>LIMIT</code> number, what will happen is that aggregates will be calculated, and then some rows will simply be omitted from the results. This is actually a nice way to do things because you know you&#39;re going to get the correct aggregates. If SQL cut the table down to 100 rows, then performed the aggregations, your results would be substantially different.</p>
+
+<h5>Query Clause Order</h5>
+
+<p>As mentioned in prior tutorials, the order in which you write the clauses is important. Here&#39;s the order for everything you&#39;ve learned so far:</p>
+
+<ol>
+<li>SELECT</li>
+<li>FROM</li>
+<li>WHERE</li>
+<li>GROUP BY</li>
+<li>ORDER BY</li>
+</ol>
+
+<h5>Aggregation Practice</h5>
+
+<ul>
+<li>practice problems</li>
+</ul>
+
+<p><a href="LINK" title="Next Lesson">LINK TO NEXT LESSON</a></p>
+
+  
+  </div>
+</section>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <nav class="navbar-footer">
+        <ul class="nav navbar-nav">
+        <li><a href="http://modeanalytics.com/">Home</a></li>
+        <li><a href="http://modeanalytics.com/press.html">Press</a></li>
+        <li><a href="http://blog.modeanalytics.com">Blog</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://modeanalytics.com">&copy; Mode Analytics 2013</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

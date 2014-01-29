@@ -1,0 +1,227 @@
+<html>
+<head>  
+  <!-- Image Links -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="/images/mode-favicon-black.ico" rel="shortcut icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <!-- CDNs for Bootstrap and Fonts -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+  <link href="//cloud.webtype.com/css/c014726f-64f1-4bf0-b9ff-6db715a1147a.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  
+  <!-- Mode Stylsheet-->
+  <link rel="stylesheet" href="/css/mode-sqlschool.css">
+  
+  <title>CASE - </title>
+
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      
+      <!-- Show the logo and, if on a phone, the menu toggle -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">MODE HELP</a>
+      </div>    
+      <!-- Everything here gets hidden for phones -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="mailto:info@modeanalytics.com">Contact Support</a></li>
+          <li><a href="http://modeanalytics.com">Return to Mode</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+  
+  <section class="lesson">
+  
+  <div class="container">
+  
+    <div class="search-small col-sm-4 col-sm-push-8">
+      
+      <!-- HIDE SEARCH FOR NOW
+      <form class="main-search" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+        -->
+    </div>
+    
+    <div class="breadcrumbs col-sm-8 col-sm-pull-4">
+      <a class="category" href="/#intermediate-sql">intermediate sql</a> / CASE
+    </div>
+    
+  </div>
+</section>
+
+<section class="question">
+  <div class="container">
+    <h2>CASE</h2>
+    
+    <h5>CASE</h5>
+
+<p>The <code>CASE</code> statement is SQL&#39;s way of handling if/then logic. It&#39;s easiest to understand in the context of an example:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT columna,
+       CASE WHEN columna &gt; 1 THEN &#39;yes&#39; END AS sample_case_statement
+  FROM mode_sample_table_7
+</code></pre></div>
+<p>In plain english, here&#39;s what&#39;s happening:</p>
+
+<ol>
+<li>The <code>CASE</code> statement checks each row to see if the conditional statement -- <code>WHEN columna &gt; 1</code> is true.</li>
+<li>For any given row, if that conditional statement is true, the word &quot;yes&quot; gets printed in the column that we have named <code>sample_case_statement</code>.</li>
+<li>In any row for which the conditional statement is false, nothing happens in that row, leaving a null value in the <code>sample_case_statement</code> column.</li>
+<li>At the same time all this is happening, SQL is retrieving and displaying all the values in columna.</li>
+</ol>
+
+<p>This particular query makes it pretty easy to see what&#39;s happening because we&#39;ve included the <code>CASE</code> statement along with <code>columna</code> itself. You can check each row to see whether <code>columna</code> meets the condition <code>columna &gt; 1</code> and then see the result in the column generated using the <code>CASE</code> statement.</p>
+
+<p>But what if you don&#39;t want null values in the <code>sample_case_statement</code> column? The following query replaces those nulls with &quot;no&quot;:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT columna,
+       CASE WHEN columna &gt; 1 THEN &#39;yes&#39; 
+            ELSE &#39;no&#39; END AS sample_case_statement
+  FROM mode_sample_table_7
+</code></pre></div>
+<p>You can also define a number of outcomes in a <code>CASE</code> statement by including as many <code>WHEN</code>/<code>THEN</code> statements as you&#39;d like:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT columna,
+       CASE WHEN columna &gt; 10 THEN &#39;yes&#39;
+            WHEN columna &gt; 7 THEN &#39;maybe&#39;
+            WHEN columna &gt; 3 THEN &#39;maybe not&#39;
+            ELSE &#39;no&#39; END AS sample_case_statement
+  FROM mode_sample_table_7
+</code></pre></div>
+<p>In the above example, the <code>WHEN</code>/<code>THEN</code> statements will get evaluated in the order that they&#39;re written. So if the value in columna of a given row is 15, it will produce a result of &quot;yes.&quot; Here&#39;s what happens if the value in columna is 4:</p>
+
+<ol>
+<li>Check to see if columna is greater than 10. 4 is not greater than 10, so move on to the next <code>WHEN</code>/<code>THEN</code></li>
+<li>Check to see if columna is greater than 7. 4 is not greater than 7, so move on to the next <code>WHEN</code>/<code>THEN</code></li>
+<li>Check to see if columna is greater than 3. 4 <strong>is</strong> greater than 3, so record &quot;maybe not&quot; in the <code>sample_case_statement</code> column</li>
+</ol>
+
+<p>While the above works, it&#39;s really best practice to create statements that don&#39;t overlap. <code>WHEN columna &gt; 10</code> and <code>WHEN columna &gt; 7</code> overlap for every value greater than 10, which is a little confusing. A better way to write the above would be:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT columna,
+       CASE WHEN columna &gt; 10 THEN &#39;yes&#39;
+            WHEN columna &gt; 7  AND columna &lt;= 10 THEN &#39;maybe&#39;
+            WHEN columna &gt; 3 AND columna &lt;= 7 THEN &#39;maybe not&#39;
+            ELSE &#39;no&#39; END AS sample_case_statement
+  FROM mode_sample_table_7
+</code></pre></div>
+<p>You can also string together multiple conditional statements with <code>AND</code> and <code>OR</code> the same way you might in a <code>WHERE</code> clause:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT columna,
+       CASE WHEN columna &gt; 10  AND columnb = &#39;awesome&#39; THEN &#39;yes&#39;
+            ELSE &#39;no&#39; END AS sample_case_statement
+  FROM mode_sample_table_7
+</code></pre></div>
+<h5>A quick review:</h5>
+
+<ol>
+<li>The <code>CASE</code> statement always goes in the <code>SELECT</code> clause</li>
+<li><code>CASE</code> must include the following components: <code>WHEN</code>, <code>THEN</code>, and <code>END</code>. <code>ELSE</code> is an optional component.</li>
+<li>You can make any conditional statement using any <a href="LINK%20to%20prev%20tutorial">conditional operator</a> between <code>WHEN</code> and <code>THEN</code></li>
+<li>You can include multiple <code>WHEN</code> statements, as well as an <code>ELSE</code> statement to deal with any unaddressed conditions.</li>
+</ol>
+
+<h5>Using CASE in aggregations</h5>
+
+<p><code>CASE</code>&#39;s slightly more complicated and substnatially more useful functionality comes from pairing it with aggregators. For example, let&#39;s say you want to only count rows that fulfill a certain condition. Since <code>COUNT</code> ignores nulls, you could use a <code>CASE</code> statement to evaluate the condition and produce null or non-null values depending on the outcome:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(CASE WHEN columna = 7 THEN columna
+                  ELSE null END) AS columna_count
+  FROM mode_sample_table_8
+</code></pre></div>
+<p>Now, you might be thinking &quot;why wouldn&#39;t I just use a <code>WHERE</code> clause to filter out the rows I don&#39;t want to count?&quot; You could do that -- it would look like this:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(columna) AS columna_count
+  FROM mode_sample_table_8
+ WHERE columna = 7
+</code></pre></div>
+<p>But what if you also wanted to count a couple other conditions? Limiting using the <code>WHERE</code> clause only allows you to count one condition. Here&#39;s an example of counting multiple conditions in one query:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE WHEN columna &lt; 7 THEN &#39;&lt;7&#39;
+            WHEN columna = 7 THEN &#39;=7&#39;
+            WHEN columna &gt; 7 THEN &#39;&gt;7&#39;
+            END AS columna_condition,
+       COUNT(columna) AS count
+  FROM mode_sample_table_7
+ GROUP BY 1
+</code></pre></div>
+<p>The above query is an excellent place to use numbers instead of columns in the <code>GROUP BY</code> clause because repeating the <code>CASE</code> statement in the <code>GROUP BY</code> clause would make the query obnoxiously long. Note that if you do choose to repeat the entire <code>CASE</code> statement, you shouod remove the &quot;AS columna_condition&quot; column naming:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE WHEN columna &lt; 7 THEN &#39;&lt;7&#39;
+            WHEN columna = 7 THEN &#39;=7&#39;
+            WHEN columna &gt; 7 THEN &#39;&gt;7&#39;
+            END AS columna_condition,
+       COUNT(columna) AS count
+  FROM mode_sample_table_7
+ GROUP BY CASE WHEN columna &lt; 7 THEN &#39;&lt;7&#39;
+            WHEN columna = 7 THEN &#39;=7&#39;
+            WHEN columna &gt; 7 THEN &#39;&gt;7&#39;
+            END
+</code></pre></div>
+<h5>Common uses for CASE</h5>
+
+<p>The previous example is an excellent lead-in to a primary use-<code>CASE</code> for <code>CASE</code> (sorry for that): creating histograms. The only problem with it is that it displays your results vertically.</p>
+
+<p>SOMETHING ABOUT HOW YOU SOMETIMES WANT SHIT IN DIFFERENT COLUMNS</p>
+
+<p>CHECK HOW EXCEL DOES GRAPHING AND VALIDATE ALL THIS SHIT</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(CASE WHEN columna &lt; 7 THEN columna
+                  ELSE null END) AS columna_lt7_count,
+       COUNT(CASE WHEN columna = 7 THEN columna
+                  ELSE null END) AS columna_7_count,
+       COUNT(CASE WHEN columna &gt; 7 THEN columna
+                  ELSE null END) AS columna_gt7_count
+  FROM mode_sample_table_8
+</code></pre></div>
+<p>Looking at the two previous examples &mdash; one vertically oriented; one, horizontally &mdash; you might notice that <code>CASE</code> provides a pretty easy way to transpose existing data from vertical to horizontal orientation. Take this existing vertically-oriented dataset:</p>
+
+<ul>
+<li>EXAMPLE</li>
+</ul>
+
+<p>You can transpose it to a horizontal orientation using a query similar to the histogram query above:</p>
+
+<ul>
+<li>pivoted example</li>
+</ul>
+
+<p>This is called &quot;pivoting,&quot; and is where the name &quot;Pivot Tables&quot; came from in Excel. It&#39;s worth noting that going from horizontal to vertical orientation can be a substantially more difficult problem depending the circumstances, and will be saved for a <a href="LINK%20TO%20COOKBOOK%20PAGE">later tutorial</a>.</p>
+
+<p>pivoting data</p>
+
+<h5>Problem set</h5>
+
+<ul>
+<li>MO FUNCTIONS, MO PROBLEMS</li>
+</ul>
+
+  
+  </div>
+</section>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <nav class="navbar-footer">
+        <ul class="nav navbar-nav">
+        <li><a href="http://modeanalytics.com/">Home</a></li>
+        <li><a href="http://modeanalytics.com/press.html">Press</a></li>
+        <li><a href="http://blog.modeanalytics.com">Blog</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://modeanalytics.com">&copy; Mode Analytics 2013</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

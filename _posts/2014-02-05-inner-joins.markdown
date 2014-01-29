@@ -1,3 +1,10 @@
+---
+layout: sqlschool-lesson
+category: "intermediate-sql"
+title:  "Inner Joins"
+date:   2014-02-01 00:00:55
+---
+
 #####First, an example
 The Twitter example in the [previous tutorial](LINK) presents a problem: If you've got tweets and people in separate tables, what happens when you want to count the number of times each user has tweeted? The answer is that you use a join:
 

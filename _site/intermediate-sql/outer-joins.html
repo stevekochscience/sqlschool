@@ -1,0 +1,160 @@
+<html>
+<head>  
+  <!-- Image Links -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="/images/mode-favicon-black.ico" rel="shortcut icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <!-- CDNs for Bootstrap and Fonts -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+  <link href="//cloud.webtype.com/css/c014726f-64f1-4bf0-b9ff-6db715a1147a.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  
+  <!-- Mode Stylsheet-->
+  <link rel="stylesheet" href="/css/mode-sqlschool.css">
+  
+  <title>Outer Joins - </title>
+
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      
+      <!-- Show the logo and, if on a phone, the menu toggle -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">MODE HELP</a>
+      </div>    
+      <!-- Everything here gets hidden for phones -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="mailto:info@modeanalytics.com">Contact Support</a></li>
+          <li><a href="http://modeanalytics.com">Return to Mode</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+  
+  <section class="lesson">
+  
+  <div class="container">
+  
+    <div class="search-small col-sm-4 col-sm-push-8">
+      
+      <!-- HIDE SEARCH FOR NOW
+      <form class="main-search" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+        -->
+    </div>
+    
+    <div class="breadcrumbs col-sm-8 col-sm-pull-4">
+      <a class="category" href="/#intermediate-sql">intermediate sql</a> / Outer Joins
+    </div>
+    
+  </div>
+</section>
+
+<section class="question">
+  <div class="container">
+    <h2>Outer Joins</h2>
+    
+    <h5>Outer Joins</h5>
+
+<p>When performing an Inner Join, rows from either table that are unmatched in the other table are not returned. In an Outer Join, unmatched rows in one or both tables can be returned. There are a few types of outer joins. <code>LEFT JOIN</code> and <code>RIGHT JOIN</code> only return unmatched rows from one table, while <code>FULL OUTER JOIN</code> returns unmatched rows from both tables.</p>
+
+<h5>LEFT JOIN</h5>
+
+<ul>
+<li>IMAGE: http://www.w3schools.com/sql/img_leftjoin.gif</li>
+</ul>
+
+<p>Let&#39;s start by looking at the previous example of an INNER JOIN:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT users.*,
+       tweets.*
+  FROM tutorial.tweets tweets
+  JOIN tutorial.twitter_users users
+    ON users.user_id = tweets.tweeted_by_id
+</code></pre></div>
+<p>Now try running it as a <code>LEFT JOIN</code> instead</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT users.*,
+       tweets.*
+  FROM tutorial.tweets tweets
+  LEFT JOIN tutorial.twitter_users users
+    ON users.user_id = tweets.tweeted_by_id
+</code></pre></div>
+<p>You can see exactly which rows are not matched because all of the values from the <code>tweets</code> table are null for those rows.</p>
+
+<p>Whenever you perform a Left Join, your results will return all of the rows in the table that you specify in teh <code>FROM</code> clause, and only matching rows from the table in the <code>LEFT JOIN</code> clause.</p>
+
+<h5>RIGHT JOIN</h5>
+
+<p>Right Joins do the opposite &mdash; They return all rows from the table in the <code>RIGHT JOIN</code> clause and only matching rows from the table in the <code>FROM</code> clause.</p>
+
+<ul>
+<li>http://www.w3schools.com/sql/img_rightjoin.gif</li>
+</ul>
+
+<p><code>RIGHT JOIN</code> is rarely used because you can achieve the results of a Right Join by simply switching the two joined table names in a Left Join. For example, this query produces the same results as the previous query:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT users.*,
+       tweets.*
+  FROM tutorial.twitter_users users
+ RIGHT JOIN tutorial.tweets tweets
+    ON users.user_id = tweets.tweeted_by_id
+</code></pre></div>
+<p>The convention of always using <code>LEFT JOIN</code> probably exists to make queries easier to read/audit, but beyond that there isn&#39;t necessarily a strong reason to avoid using Right Join.</p>
+
+<p>Also, <code>LEFT JOIN</code> and <code>RIGHT JOIN</code> can be written as <code>LEFT OUTER JOIN</code> and <code>RIGHT OUTER JOIN</code>, respectively.</p>
+
+<h5>Filtering in the ON clause</h5>
+
+<p>Let&#39;s go back to the <code>LEFT JOIN</code> example:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT users.*,
+       tweets.*
+  FROM tutorial.tweets tweets
+  LEFT JOIN tutorial.twitter_users users
+    ON users.user_id = tweets.tweeted_by_id
+</code></pre></div>
+<p>You can </p>
+
+<h5>Inequality joins</h5>
+
+<p>http://en.wikipedia.org/wiki/Join_(SQL)</p>
+
+<p>http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins</p>
+
+<p>filtering using JOIN vs. WHERE clause</p>
+
+  
+  </div>
+</section>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <nav class="navbar-footer">
+        <ul class="nav navbar-nav">
+        <li><a href="http://modeanalytics.com/">Home</a></li>
+        <li><a href="http://modeanalytics.com/press.html">Press</a></li>
+        <li><a href="http://blog.modeanalytics.com">Blog</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://modeanalytics.com">&copy; Mode Analytics 2013</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

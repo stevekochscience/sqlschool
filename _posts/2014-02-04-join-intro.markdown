@@ -1,3 +1,10 @@
+---
+layout: sqlschool-lesson
+category: "intermediate-sql"
+title:  "Introduction to Joins"
+date:   2014-02-01 00:00:56
+---
+
 #####Intro to joins - relational concepts
 If you remember from the [basic concepts tutorial](LINK), the tables you've been working with up to this point are all part of the same schema in a relational database. The term "relational database" referrs to the fact that the tables within it "relate" to one another &mdash; they contain common identifiers that allow information from multiple tables to be combined easily.
 

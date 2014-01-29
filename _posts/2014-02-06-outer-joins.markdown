@@ -1,3 +1,10 @@
+---
+layout: sqlschool-lesson
+category: "intermediate-sql"
+title:  "Outer Joins"
+date:   2014-02-01 00:00:54
+---
+
 #####Outer Joins
 When performing an Inner Join, rows from either table that are unmatched in the other table are not returned. In an Outer Join, unmatched rows in one or both tables can be returned. There are a few types of outer joins. `LEFT JOIN` and `RIGHT JOIN` only return unmatched rows from one table, while `FULL OUTER JOIN` returns unmatched rows from both tables.
 
@@ -53,7 +60,7 @@ Let's go back to the `LEFT JOIN` example:
 You can 
 
 
-
+#####Inequality joins
 
 
 http://en.wikipedia.org/wiki/Join_(SQL)

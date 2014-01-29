@@ -119,9 +119,21 @@
 
 <h3>Using Comments</h3>
 
-<p><code>--</code>
-<code>/*</code><code>*/</code></p>
+<p>You can &quot;comment out&quot; pieces of code by adding combinations of characters. In other words, you can specify parts of your query that will not actually be treated like SQL code. In can be helpful to include comments that explain your thinking so that you can easily remember what you intended to do if you ever want to revisit your work. Commenting can also be useful if you want to test variations on your query while keeping all of your code intact. </p>
 
+<p>You can use two dashes (<code>--</code>) to comment out everything to the right of them on a given line:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *  --This comment won&#39;t affect the way this code runs
+  FROM tutorial.city_populations
+ ORDER BY 2, 3 DESC
+</code></pre></div>
+<p>You can also leave comments across multiple lines using <code>/*</code> to begin the comment and <code>*/</code> to close it:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">/* Here&#39;s a comment so long and descriptive that
+it could only fit on multiple lines. Fortunately,
+it, too, will not affect how this code runs. */
+SELECT *
+  FROM tutorial.city_populations
+ ORDER BY 2, 3 DESC
+</code></pre></div>
 <h3>Practice problems</h3>
 
 <h3>What&#39;s Next?</h3>
