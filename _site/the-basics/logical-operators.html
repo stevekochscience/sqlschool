@@ -71,11 +71,11 @@
   <div class="container">
     <h2>Logical Operators</h2>
     
-    <h5>Comparison Operators -- the weird ones</h5>
+    <h3>Comparison Operators -- the weird ones</h3>
 
 <p>In the <a href="LINK">previous tutorial</a>, you played with some comparison opertors. There are a couple more that you&#39;re likely to find very useful. They&#39;re all special snowflakes, so we&#39;ll got through them individually:</p>
 
-<h5>IN</h5>
+<h3>IN</h3>
 
 <p>You&#39;ll probably want to use <code>IN</code> pretty frequently &mdash; it allows you to specify a list of values that you&#39;d like to include. For example, the following query will return results for which the age column is equal to one of the values in the list:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
@@ -87,7 +87,7 @@
   FROM tutorial.patient_list
  WHERE physician_last_name IN (&#39;Yamamoto&#39;, &#39;Honeydew&#39;, &#39;Chase&#39;)
 </code></pre></div>
-<h5>BETWEEN</h5>
+<h3>BETWEEN</h3>
 
 <p>This allows you to specify a range and select only rows within a certain range. It has to be paired with the <code>AND</code> operator, which you will learn about in just a few moments. Here&#39;s how <code>BETWEEN</code> looks:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
@@ -101,7 +101,7 @@
 </code></pre></div>
 <p>Some people prefer the latter example because it more explicitly shows what the query is doing (t&#39;s easy to forget whether or not BETWEEN includes the range bounds).</p>
 
-<h5>IS NULL</h5>
+<h3>IS NULL</h3>
 
 <p>Some tables contain null values &mdash; cells with no data in them at all. This can be confusing for heavy Excel users, because the difference between a cell having no data and a cell containing a space isn&#39;t meaningful in Excel. In SQL, the implications can be pretty serious. This is covered in greater detail in the <a href="LINK">intermediate tutorial</a>, but for now, here&#39;s what you need to know:</p>
 
@@ -112,7 +112,7 @@
 </code></pre></div>
 <p><code>WHERE weight = NULL</code> will <strong>not</strong> work &mdash; you can&#39;t perform arithmetic on null values.</p>
 
-<h5>LIKE</h5>
+<h3>LIKE</h3>
 
 <p><code>LIKE</code> allows you to match on similar values rather than exact ones. Using wildcard characters, you can define what must be exactly matched and what can be different. In this example, the results will include rows for which columnb starts with &quot;San&quot; and is followed by any number and selection of characters:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
@@ -131,11 +131,11 @@
 <li><p>Examples using some other wildcards</p></li>
 </ul>
 
-<h5>Logical Operators</h5>
+<h3>Logical Operators</h3>
 
 <p>You&#39;ll likely want to filter using several conditions &mdash; possibly more often than you filter by only one condition. Logical operators allow you to use multiple comparison operators in one query.</p>
 
-<h5>AND</h5>
+<h3>AND</h3>
 
 <p><code>AND</code> will let you select only rows that satisfy two conditions. The following query will return only rows for which columna equals 5 and columnb is null:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
@@ -151,7 +151,7 @@
 </code></pre></div>
 <p>You can see that this example is spaced out onto multiple lines &mdash; a good way to make long <code>WHERE</code> clauses more readable.</p>
 
-<h5>OR</h5>
+<h3>OR</h3>
 
 <p>If you want to select rows that satisfy either of two conditions, you can use <code>OR</code>. It works the same way as <code>AND</code>. Try running this:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
@@ -167,7 +167,7 @@ columnb = &#39;value1&#39; OR columnb = &#39;value2 &mdash; because this line is
  WHERE columna &gt; 10
    AND (columnb = &#39;value1&#39; OR columnb = &#39;value2&#39;)
 </code></pre></div>
-<h5>NOT</h5>
+<h3>NOT</h3>
 
 <p>You can add <code>NOT</code> before any conditional statement if you&#39;d like to select the rows for which that statement is false. It works like this:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
@@ -188,7 +188,7 @@ columnb = &#39;value1&#39; OR columnb = &#39;value2 &mdash; because this line is
 <li>conclusion</li>
 </ul>
 
-<p><a href="LINK">LINK TO NEXT SEGMENT</a></p>
+<p>Move on to the next segment: <a href="/the-basics/order-by.html">ORDER BY</a>.</p>
 
   
   </div>

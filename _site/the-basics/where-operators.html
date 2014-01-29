@@ -71,7 +71,7 @@
   <div class="container">
     <h2>WHERE and Comparison Operators</h2>
     
-    <h5>The WHERE Clause</h5>
+    <h3>The WHERE Clause</h3>
 
 <p>So you know how to view some data using <code>SELECT</code> and <code>FROM</code>. The next step is filtering the data using the <code>WHERE</code> clause. Here&#39;s what it looks like.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
@@ -86,7 +86,7 @@
 
 <p>You can filter your results in a number of ways using comparison and logical operators.</p>
 
-<h5>Comparison Operators</h5>
+<h3>Comparison Operators</h3>
 
 <p>The most basic way to filter data is using comparison operators. The easiest way to understand them is to start by looking at the list of basic numerical operators:</p>
 
@@ -112,7 +112,7 @@
 
 <p>Don&#39;t worry &mdash; we&#39;ll get to some more practical examples shortly. <a href="LINK">Click here for the answer</a>.</p>
 
-<h5>Comparisons on non-numerical data</h5>
+<h3>Comparisons on non-numerical data</h3>
 
 <p>All of the above operators work on non-numerical data as well. <code>=</code> and <code>!=</code> make perfect sense &mdash; they allow you to select rows that match (or don&#39;t match) any value. For example:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT destination, coach_rev
@@ -128,13 +128,13 @@
 </code></pre></div>
 <p>The way SQL treats alphabetical ordering is a little bit tricky. You may have noticed in the above query that selecting <code>destination &gt; &#39;n&#39;</code> will yield only rows in which fieldname starts with &quot;n&quot; or later laters in the alphabet. &quot;Wait a minute,&quot; you might say. &quot;If I wanted to include value that start with n, I would have used <code>fieldname &gt;= &#39;n&#39;</code>.&quot; SQL considers &quot;na&quot; to be greater than &quot;n&quot; because it has an extra letter. It&#39;s worth noting that most dictionaries would list &quot;na&quot; after &quot;n&quot; as well.</p>
 
-<h5>Arithmetic</h5>
+<h3>Arithmetic</h3>
 
 <ul>
 <li>+, -, etc.</li>
 </ul>
 
-<h5>Practice time</h5>
+<h3>Practice time</h3>
 
 <p>If you&#39;d like a little practice, try these questions:</p>
 
@@ -143,7 +143,7 @@
 <li>QUESTION</li>
 </ul>
 
-<p>If you&#39;re ready to mode on <a href="LINK">Click here to move on to the next lesson: Logical Operators</a></p>
+<p>If you&#39;re ready to mode on <a href="/the-basics/logical-operators.html">Click here to move on to the next lesson: Logical Operators</a>.</p>
 
   
   </div>

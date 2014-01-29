@@ -5,7 +5,7 @@ title:  "WHERE and Comparison Operators"
 date:   2014-01-01 00:00:57
 ---
 
-#####The WHERE Clause
+###The WHERE Clause
 So you know how to view some data using `SELECT` and `FROM`. The next step is filtering the data using the `WHERE` clause. Here's what it looks like.
 
     SELECT *
@@ -20,7 +20,7 @@ The `WHERE` clause works in a plain-English way: the above query does the same t
 
 You can filter your results in a number of ways using comparison and logical operators.
 
-#####Comparison Operators
+###Comparison Operators
 The most basic way to filter data is using comparison operators. The easiest way to understand them is to start by looking at the list of basic numerical operators:
 
 * =
@@ -42,7 +42,7 @@ Try running that query with each of the operators in place of `>`. Try some valu
 
 Don't worry &mdash; we'll get to some more practical examples shortly. [Click here for the answer](LINK).
 
-#####Comparisons on non-numerical data
+###Comparisons on non-numerical data
 All of the above operators work on non-numerical data as well. `=` and `!=` make perfect sense &mdash; they allow you to select rows that match (or don't match) any value. For example:
 
     SELECT destination, coach_rev
@@ -59,13 +59,13 @@ You can use `>`, `<`, and the rest of the operators on non-numeric columns as we
 
 The way SQL treats alphabetical ordering is a little bit tricky. You may have noticed in the above query that selecting `destination > 'n'` will yield only rows in which fieldname starts with "n" or later laters in the alphabet. "Wait a minute," you might say. "If I wanted to include value that start with n, I would have used `fieldname >= 'n'`." SQL considers "na" to be greater than "n" because it has an extra letter. It's worth noting that most dictionaries would list "na" after "n" as well.
 
-#####Arithmetic
+###Arithmetic
 * +, -, etc.
 
-#####Practice time
+###Practice time
 If you'd like a little practice, try these questions:
 
 * QUESTION
 * QUESTION
 
-If you're ready to mode on [Click here to move on to the next lesson: Logical Operators](LINK)
+If you're ready to mode on [Click here to move on to the next lesson: Logical Operators](/the-basics/logical-operators.html).
