@@ -1,3 +1,9 @@
+---
+layout: sqlschool-lesson
+category: "the-basics"
+title:  "Basic Concepts"
+date:   2014-01-01 00:00:59
+---
 
 #####Who is this tutorial for?
 This tutorial is designed for data analysis, and ignores all functions that might alter the data permanently. If you're a software developer looking for a more complete SQL tutorial, we recommend [looking here](LINK). In this beginner tutorial, we'll assume that you have used Excel a little bit, but have no SQL experience. If you're already somewhat familiar with SQL, check out the [table of contents](LINK) and start in the place that's right for you.

@@ -1,3 +1,10 @@
+---
+layout: sqlschool-lesson
+category: "the-basics"
+title:  "WHERE and Comparison Operators"
+date:   2014-01-01 00:00:57
+---
+
 #####The WHERE Clause
 So you know how to view some data using `SELECT` and `FROM`. The next step is filtering the data using the `WHERE` clause. Here's what it looks like.
 

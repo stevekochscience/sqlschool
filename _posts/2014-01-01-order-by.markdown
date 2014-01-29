@@ -1,3 +1,10 @@
+---
+layout: sqlschool-lesson
+category: "the-basics"
+title:  "ORDER BY"
+date:   2014-01-01 00:00:55
+---
+
 #####ORDER BY
 Now that you can filter, it's time to learn how to sort. The `ORDER BY` clause allows you to reorder your results based on the data in one or more columns. First, take a look at how the table is ordered by default:
 

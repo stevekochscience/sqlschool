@@ -1,3 +1,10 @@
+---
+layout: sqlschool-lesson
+category: "the-basics"
+title:  "Logical Operators"
+date:   2014-01-01 00:00:56
+---
+
 #####Comparison Operators -- the weird ones
 In the [previous tutorial](LINK), you played with some comparison opertors. There are a couple more that you're likely to find very useful. They're all special snowflakes, so we'll got through them individually:
 

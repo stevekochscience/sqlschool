@@ -1,0 +1,5 @@
+name: "MODE: SQL School"
+markdown: redcarpet
+pygments: true
+permalink: none
+category-list: ["the-basics", "intermediate-sql"]

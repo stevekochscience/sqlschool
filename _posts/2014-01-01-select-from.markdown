@@ -1,3 +1,10 @@
+---
+layout: sqlschool-lesson
+category: "the-basics"
+title:  "SELECT and FROM"
+date:   2014-01-01 00:00:58
+---
+
 #####Basic Syntax
 There are two required ingredients in any SQL query: a `SELECT` statement and a `FROM` statement &mdash; and they have to be in that order. `SELECT` indicates which columns you'd like to view, and `FROM` identifies the table that they live in. Let's look at an example:
 
