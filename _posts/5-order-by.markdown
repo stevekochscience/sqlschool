@@ -1,0 +1,59 @@
+#####ORDER BY
+Now that you can filter, it's time to learn how to sort. The `ORDER BY` clause allows you to reorder your results based on the data in one or more columns. First, take a look at how the table is ordered by default:
+
+    SELECT *
+      FROM tutorial.city_populations
+
+Now let's see what happens when we order by one of the columns:
+
+    SELECT *
+      FROM tutorial.city_populations
+     ORDER BY city
+
+You'll notice that the results are now ordered alphabetically from a to z based on the content in columnb. This is referred to as ascending order, and is the SQL's default. If you order a numerical column in ascending order, it will start with smaller (or most negative) numbers, with each successive row having a higher numerical value than the previous. Here's an example using a numerical column:
+
+    SELECT *
+      FROM tutorial.city_populations
+     ORDER BY population_estimate_2012
+
+If you'd like your results in the opposite order (referred to as descending order), you need to add the `DESC` operator:
+
+    SELECT *
+      FROM tutorial.city_populations
+     ORDER BY population_estimate_2012 DESC
+
+You can also order by mutiple columns. This is particularly useful if your data falls into categories and you'd like to organize rows by date, for example, but keep all of the results within a given category together:
+
+    SELECT *
+      FROM tutorial.city_populations
+     ORDER BY state, city DESC
+
+You can see a couple things from the above query: First, columns in the `ORDER BY` clause must be separated by commas. Second, the `DESC` operator is only applied to the column that precedes it. Finally, the results are sorted by the first column mentioned (columnb), then by columnc afterward. You can see the difference the order makes by running the following query:
+
+    SELECT city,
+           state,
+           population_estimate_2012
+      FROM tutorial.city_populations
+     ORDER BY state, city
+
+Finally, you can make your life a little easier by substituting numbers for column names in the `ORDER BY` clause. The numbers will correspond to the order in which you list columns in the `SELECT` clause. For example, the following query is exactly equivalent to the previous query:
+
+    SELECT city,
+           state,
+           population_estimate_2012
+      FROM tutorial.city_populations
+     ORDER BY 2, 3 DESC
+
+*Note: this functionality (numbering columns instead of using names) is supported by Mode, but not by every flavor of SQL, so if you're using another system or connected to certain types of databases, it may not work.*
+
+When using `ORDER BY` with a row limit (either through the check box on the query editor or by typing in `LIMIT`), the ordering clause is executed first. This means that the results are ordered **before** limiting to only a few rows, so if you were to rank by columnb, for example, you can be sure that you are getting the lowest values of columnb in the entire table, not just in the first 100 rows of the table.
+
+*Note: Data in this example comes from [wikipedia](http://en.wikipedia.org/wiki/List_of_United_States_cities_by_population)
+
+#####Using Comments
+`--`
+`/*``*/`
+
+#####Practice problems
+
+
