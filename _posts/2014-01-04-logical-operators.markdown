@@ -5,8 +5,8 @@ title:  "Logical Operators"
 date:   2014-01-01 00:00:56
 ---
 
-###Comparison Operators -- the weird ones
-In the [previous tutorial](LINK), you played with some comparison opertors. There are a couple more that you're likely to find very useful. They're all special snowflakes, so we'll got through them individually:
+###Comparison Operators &mdash; the Weird Ones
+In the [previous tutorial](LINK), you played with some comparison opertors. There are a couple more that you're likely to find very useful. They're all special snowflakes, so we'll go through them individually:
 
 ###IN
 You'll probably want to use `IN` pretty frequently &mdash; it allows you to specify a list of values that you'd like to include. For example, the following query will return results for which the age column is equal to one of the values in the list:
@@ -32,7 +32,7 @@ This allows you to specify a range and select only rows within a certain range. 
 
     SELECT *
       FROM tutorial.patient_list
-     WHERE age >= 30 AND columna <= 39
+     WHERE age >= 30 AND age <= 39
 
 Some people prefer the latter example because it more explicitly shows what the query is doing (t's easy to forget whether or not BETWEEN includes the range bounds).
 
@@ -60,11 +60,11 @@ The `%` used above represents any character or set of characters. In this case, 
       FROM tutorial.patient_list
      WHERE physician_last_name ILIKE 'sm%'
 
-A few other wildcards allow you some flexibility in using the `LIKE` operator:
+You can also use `_` (a single underscore) to substitute for an individual character:
 
-* SQL wildcards: http://www.w3schools.com/sql/sql_wildcards.asp
-
-* Examples using some other wildcards
+    SELECT *
+      FROM tutorial.patient_list
+     WHERE physician_last_name ILIKE 's_ith'
 
 ###Logical Operators
 You'll likely want to filter using several conditions &mdash; possibly more often than you filter by only one condition. Logical operators allow you to use multiple comparison operators in one query.
@@ -122,6 +122,8 @@ Using `NOT` with `<` and `>` usually doesn't make sense because you can simply u
       FROM mode_sample_table_3
      WHERE columnb IS NOT NULL
 
-* conclusion
+###Practice Problems
+
+<!-- put them here -->
 
 Move on to the next segment: [ORDER BY](/the-basics/order-by.html).

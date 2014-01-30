@@ -31,12 +31,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">MODE HELP</a>
+        <a class="navbar-brand" href="/">MODE SQL SCHOOL</a>
       </div>    
       <!-- Everything here gets hidden for phones -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="mailto:info@modeanalytics.com">Contact Support</a></li>
+          <li><a href="http://help.modeanalytics.com">Help</a></li>
           <li><a href="http://modeanalytics.com">Return to Mode</a></li>
         </ul>
       </div>
@@ -78,18 +78,14 @@
 </code></pre></div>
 <p>In this case, the query is telling the database to return <code>column1</code> and <code>column2</code> from the table <code>mode.sample_table_1</code>. When you run this, you&#39;ll get back a set of results that shows every value in each of these columns.</p>
 
-<ul>
-<li>screenshot results</li>
-</ul>
+<!-- screenshot results  -->
 
 <p>Note that the two column names were separated by a comma in the query. Whenever you select multiple columns, they must be separated by commas, but you should <strong>not</strong> include a comma after the last column name.</p>
 
 <p>If you want to select every column in a table, you can use <code>*</code> instead of the column names:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.sales_performance
 </code></pre></div>
-<ul>
-<li>screenshot results</li>
-</ul>
+<!-- screenshot results  -->
 
 <h3>What does this actually do?</h3>
 
@@ -114,9 +110,7 @@ FROM tutorial.sales_performance
 
 <p>You may have noticed that checkbox next to the &quot;Run&quot; button that says &quot;Limit.&quot;</p>
 
-<ul>
-<li>screenshot of limit.</li>
-</ul>
+<!-- screenshot of limit. -->
 
 <p>The default value is 100; when this box is checked, it&#39;s effectively telling the database to only return 100 rows of this table. This particular table has fewer than 100 rows, so it&#39;s irrelevant. Try setting the limit to 5, though, and see what happens when you run the query.</p>
 
@@ -127,7 +121,7 @@ FROM tutorial.sales_performance
 </code></pre></div>
 <p>Now that you&#39;ve got the basics, let&#39;s move on to some commands that will allow you to filter the data.</p>
 
-<p>Next: <a href="/the-basics/where-operators.html">Where and Comparison Operators</a>.</p>
+<p>Next: <a href="/the-basics/where-operators.html">WHERE and Comparison Operators</a>.</p>
 
   
   </div>

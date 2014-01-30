@@ -1,6 +1,6 @@
 ---
 layout: sqlschool-lesson
-category: "intermediate-sql"
+category: "intermediate"
 title:  "Outer Joins"
 date:   2014-02-01 00:00:54
 ---

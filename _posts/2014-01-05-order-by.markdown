@@ -4,7 +4,8 @@ category: "the-basics"
 title:  "ORDER BY"
 date:   2014-01-01 00:00:55
 ---
-
+<!--*Note: Data in this example comes from [wikipedia](http://en.wikipedia.org/wiki/List_of_United_States_cities_by_population)
+-->
 ###ORDER BY
 Now that you can filter, it's time to learn how to sort. The `ORDER BY` clause allows you to reorder your results based on the data in one or more columns. First, take a look at how the table is ordered by default:
 
@@ -55,12 +56,10 @@ Finally, you can make your life a little easier by substituting numbers for colu
 
 When using `ORDER BY` with a row limit (either through the check box on the query editor or by typing in `LIMIT`), the ordering clause is executed first. This means that the results are ordered **before** limiting to only a few rows, so if you were to rank by columnb, for example, you can be sure that you are getting the lowest values of columnb in the entire table, not just in the first 100 rows of the table.
 
-*Note: Data in this example comes from [wikipedia](http://en.wikipedia.org/wiki/List_of_United_States_cities_by_population)
-
 ###Using Comments
 You can "comment out" pieces of code by adding combinations of characters. In other words, you can specify parts of your query that will not actually be treated like SQL code. In can be helpful to include comments that explain your thinking so that you can easily remember what you intended to do if you ever want to revisit your work. Commenting can also be useful if you want to test variations on your query while keeping all of your code intact. 
 
-You can use two dashes (`--`) to comment out everything to the right of them on a given line:
+You can use`--` (two dashes)  to comment out everything to the right of them on a given line:
 
     SELECT *  --This comment won't affect the way this code runs
       FROM tutorial.city_populations

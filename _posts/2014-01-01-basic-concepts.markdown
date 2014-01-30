@@ -20,7 +20,7 @@ SQL is great for performing the types of aggregations that you might normally do
 ###Wait, so what's a database?
 From [Wikipedia](http://en.wikipedia.org/wiki/Database): A database is an organized collection of data. There are many ways to organize a database and many different types of databases designed for different purposes. Mode's structure is fairly simple:
 
-* diagram showing schema/table/row+column
+<!-- diagram showing schema/table/row+column -->
 
 If you've used Excel, you should already be familiar with tables &mdash; you can think of them as spreadsheets. Tables have rows and columns just like Excel, but are a little more rigid. For example, each column must have a name, where names are not required in Excel. Because of this ridigity, tables tend to look really similar at a glance, even if they contain totally unrelated data.
 

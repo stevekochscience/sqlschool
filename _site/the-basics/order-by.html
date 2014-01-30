@@ -31,12 +31,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">MODE HELP</a>
+        <a class="navbar-brand" href="/">MODE SQL SCHOOL</a>
       </div>    
       <!-- Everything here gets hidden for phones -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="mailto:info@modeanalytics.com">Contact Support</a></li>
+          <li><a href="http://help.modeanalytics.com">Help</a></li>
           <li><a href="http://modeanalytics.com">Return to Mode</a></li>
         </ul>
       </div>
@@ -71,7 +71,10 @@
   <div class="container">
     <h2>ORDER BY</h2>
     
-    <h3>ORDER BY</h3>
+    <!--*Note: Data in this example comes from [wikipedia](http://en.wikipedia.org/wiki/List_of_United_States_cities_by_population)
+-->
+
+<h3>ORDER BY</h3>
 
 <p>Now that you can filter, it&#39;s time to learn how to sort. The <code>ORDER BY</code> clause allows you to reorder your results based on the data in one or more columns. First, take a look at how the table is ordered by default:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
@@ -115,13 +118,11 @@
 
 <p>When using <code>ORDER BY</code> with a row limit (either through the check box on the query editor or by typing in <code>LIMIT</code>), the ordering clause is executed first. This means that the results are ordered <strong>before</strong> limiting to only a few rows, so if you were to rank by columnb, for example, you can be sure that you are getting the lowest values of columnb in the entire table, not just in the first 100 rows of the table.</p>
 
-<p>*Note: Data in this example comes from <a href="http://en.wikipedia.org/wiki/List_of_United_States_cities_by_population">wikipedia</a></p>
-
 <h3>Using Comments</h3>
 
 <p>You can &quot;comment out&quot; pieces of code by adding combinations of characters. In other words, you can specify parts of your query that will not actually be treated like SQL code. In can be helpful to include comments that explain your thinking so that you can easily remember what you intended to do if you ever want to revisit your work. Commenting can also be useful if you want to test variations on your query while keeping all of your code intact. </p>
 
-<p>You can use two dashes (<code>--</code>) to comment out everything to the right of them on a given line:</p>
+<p>You can use<code>--</code> (two dashes)  to comment out everything to the right of them on a given line:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *  --This comment won&#39;t affect the way this code runs
   FROM tutorial.city_populations
  ORDER BY 2, 3 DESC

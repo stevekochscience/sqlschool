@@ -1,0 +1,116 @@
+<html>
+<head>  
+  <!-- Image Links -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="/images/mode-favicon-black.ico" rel="shortcut icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <!-- CDNs for Bootstrap and Fonts -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+  <link href="//cloud.webtype.com/css/c014726f-64f1-4bf0-b9ff-6db715a1147a.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  
+  <!-- Mode Stylsheet-->
+  <link rel="stylesheet" href="/css/mode-sqlschool.css">
+  
+  <title>Introduction to Joins - </title>
+
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      
+      <!-- Show the logo and, if on a phone, the menu toggle -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">MODE SQL SCHOOL</a>
+      </div>    
+      <!-- Everything here gets hidden for phones -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://help.modeanalytics.com">Help</a></li>
+          <li><a href="http://modeanalytics.com">Return to Mode</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+  
+  <section class="lesson">
+  
+  <div class="container">
+  
+    <div class="search-small col-sm-4 col-sm-push-8">
+      
+      <!-- HIDE SEARCH FOR NOW
+      <form class="main-search" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+        -->
+    </div>
+    
+    <div class="breadcrumbs col-sm-8 col-sm-pull-4">
+      <a class="category" href="/#intermediate">intermediate</a> / Introduction to Joins
+    </div>
+    
+  </div>
+</section>
+
+<section class="question">
+  <div class="container">
+    <h2>Introduction to Joins</h2>
+    
+    <h5>Intro to joins - relational concepts</h5>
+
+<p>If you remember from the <a href="LINK">basic concepts tutorial</a>, the tables you&#39;ve been working with up to this point are all part of the same schema in a relational database. The term &quot;relational database&quot; referrs to the fact that the tables within it &quot;relate&quot; to one another &mdash; they contain common identifiers that allow information from multiple tables to be combined easily.</p>
+
+<p>As a practical example, let&#39;s examine how Twitter might use relational databases (<em>note: completely hypothetical</em>). One way to store Twitter&#39;s data would be to have one big table in which each row represents one tweet. The columns would express the content of each tweet, the time they were tweeted, and the people who tweeted them. It turns out, though, that identifying the people who tweeted is a little tricky. There&#39;s a lot to a person&#39;s twitter identity &mdash; a username, a bio, followers, followees, etc. Does all that info go in this table with every tweet? It <em>could</em>, but it probably shouldn&#39;t.</p>
+
+<ul>
+<li>image showing how this table might look</li>
+</ul>
+
+<p>Let&#39;s say, for the sake of argument, that Twitter did structure their table such that every tweet you make has all of your information in the same row. When you update your bio, Twitter&#39;s system would have to change that information in every row of the tweets table. If you&#39;ve tweeted 5,000 times, that means 5,000 changes. Now imagine everyone on Twitter making lots of changes at once &mdash; that&#39;s a lot of computation to support. It would be easier to just stick your profile information in a separate table. That way, Twitter&#39;s system would only have to change one row of data if you update your bio.</p>
+
+<p>Here&#39;s what it looks like to have personal information and tweet data in separate tables. In order to keep track of who made tweets, a user_id is used.</p>
+
+<ul>
+<li>image showing mapping of tweets table to users table</li>
+</ul>
+
+<p>The user_id is a <em>join key</em>, meaning that it exists in both tables to map them to one another.</p>
+
+<p><a href="LINK">LINK TO NEXT SECTION</a></p>
+
+  
+  </div>
+</section>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <nav class="navbar-footer">
+        <ul class="nav navbar-nav">
+        <li><a href="http://modeanalytics.com/">Home</a></li>
+        <li><a href="http://modeanalytics.com/press.html">Press</a></li>
+        <li><a href="http://blog.modeanalytics.com">Blog</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://modeanalytics.com">&copy; Mode Analytics 2013</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

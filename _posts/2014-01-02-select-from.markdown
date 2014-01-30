@@ -12,7 +12,7 @@ There are two required ingredients in any SQL query: a `SELECT` statement and a 
 
 In this case, the query is telling the database to return `column1` and `column2` from the table `mode.sample_table_1`. When you run this, you'll get back a set of results that shows every value in each of these columns.
 
-* screenshot results
+<!-- screenshot results  -->
 
 Note that the two column names were separated by a comma in the query. Whenever you select multiple columns, they must be separated by commas, but you should **not** include a comma after the last column name.
 
@@ -20,7 +20,7 @@ If you want to select every column in a table, you can use `*` instead of the co
 
     SELECT * FROM tutorial.sales_performance
 
-* screenshot results
+<!-- screenshot results  -->
 
 ###What does this actually do?
 So when you run a query, what do you get back? As you can see from running the above queries, you get a table. But that table isn't stored permanently in the database. It also doesn't change any tables in the database &mdash; `mode.sample_table_1` will contain the same data every time you query it. Mode does store all of your results for future access, but the important part for the sake of this tutorial is that `SELECT` statements don't change anything in the underlying tables.
@@ -43,7 +43,7 @@ While we're on the topic of formatting, it's worth noting the format of column n
 ###LIMIT
 You may have noticed that checkbox next to the "Run" button that says "Limit."
 
-* screenshot of limit.
+<!-- screenshot of limit. -->
 
 The default value is 100; when this box is checked, it's effectively telling the database to only return 100 rows of this table. This particular table has fewer than 100 rows, so it's irrelevant. Try setting the limit to 5, though, and see what happens when you run the query.
 
@@ -55,4 +55,4 @@ The limiting functionality is built into Mode, but if you're ever using SQL in a
 
 Now that you've got the basics, let's move on to some commands that will allow you to filter the data.
 
-Next: [Where and Comparison Operators](/the-basics/where-operators.html).
+Next: [WHERE and Comparison Operators](/the-basics/where-operators.html).

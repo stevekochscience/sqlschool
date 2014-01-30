@@ -16,7 +16,7 @@
   <!-- Mode Stylsheet-->
   <link rel="stylesheet" href="/css/mode-sqlschool.css">
   
-  <title>Introduction to Joins - </title>
+  <title>Full Joins and UNION - </title>
 
 </head>
 <body>
@@ -31,12 +31,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">MODE HELP</a>
+        <a class="navbar-brand" href="/">MODE SQL SCHOOL</a>
       </div>    
       <!-- Everything here gets hidden for phones -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="mailto:info@modeanalytics.com">Contact Support</a></li>
+          <li><a href="http://help.modeanalytics.com">Help</a></li>
           <li><a href="http://modeanalytics.com">Return to Mode</a></li>
         </ul>
       </div>
@@ -61,7 +61,7 @@
     </div>
     
     <div class="breadcrumbs col-sm-8 col-sm-pull-4">
-      <a class="category" href="/#intermediate-sql">intermediate sql</a> / Introduction to Joins
+      <a class="category" href="/#intermediate">intermediate</a> / Full Joins and UNION
     </div>
     
   </div>
@@ -69,29 +69,11 @@
 
 <section class="question">
   <div class="container">
-    <h2>Introduction to Joins</h2>
+    <h2>Full Joins and UNION</h2>
     
-    <h5>Intro to joins - relational concepts</h5>
+    <h5>FULL OUTER JOIN</h5>
 
-<p>If you remember from the <a href="LINK">basic concepts tutorial</a>, the tables you&#39;ve been working with up to this point are all part of the same schema in a relational database. The term &quot;relational database&quot; referrs to the fact that the tables within it &quot;relate&quot; to one another &mdash; they contain common identifiers that allow information from multiple tables to be combined easily.</p>
-
-<p>As a practical example, let&#39;s examine how Twitter might use relational databases (<em>note: completely hypothetical</em>). One way to store Twitter&#39;s data would be to have one big table in which each row represents one tweet. The columns would express the content of each tweet, the time they were tweeted, and the people who tweeted them. It turns out, though, that identifying the people who tweeted is a little tricky. There&#39;s a lot to a person&#39;s twitter identity &mdash; a username, a bio, followers, followees, etc. Does all that info go in this table with every tweet? It <em>could</em>, but it probably shouldn&#39;t.</p>
-
-<ul>
-<li>image showing how this table might look</li>
-</ul>
-
-<p>Let&#39;s say, for the sake of argument, that Twitter did structure their table such that every tweet you make has all of your information in the same row. When you update your bio, Twitter&#39;s system would have to change that information in every row of the tweets table. If you&#39;ve tweeted 5,000 times, that means 5,000 changes. Now imagine everyone on Twitter making lots of changes at once &mdash; that&#39;s a lot of computation to support. It would be easier to just stick your profile information in a separate table. That way, Twitter&#39;s system would only have to change one row of data if you update your bio.</p>
-
-<p>Here&#39;s what it looks like to have personal information and tweet data in separate tables. In order to keep track of who made tweets, a user_id is used.</p>
-
-<ul>
-<li>image showing mapping of tweets table to users table</li>
-</ul>
-
-<p>The user_id is a <em>join key</em>, meaning that it exists in both tables to map them to one another.</p>
-
-<p><a href="LINK">LINK TO NEXT SECTION</a></p>
+<h5>UNION</h5>
 
   
   </div>

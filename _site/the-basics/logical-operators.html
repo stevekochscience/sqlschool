@@ -31,12 +31,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">MODE HELP</a>
+        <a class="navbar-brand" href="/">MODE SQL SCHOOL</a>
       </div>    
       <!-- Everything here gets hidden for phones -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="mailto:info@modeanalytics.com">Contact Support</a></li>
+          <li><a href="http://help.modeanalytics.com">Help</a></li>
           <li><a href="http://modeanalytics.com">Return to Mode</a></li>
         </ul>
       </div>
@@ -71,9 +71,9 @@
   <div class="container">
     <h2>Logical Operators</h2>
     
-    <h3>Comparison Operators -- the weird ones</h3>
+    <h3>Comparison Operators &mdash; the Weird Ones</h3>
 
-<p>In the <a href="LINK">previous tutorial</a>, you played with some comparison opertors. There are a couple more that you&#39;re likely to find very useful. They&#39;re all special snowflakes, so we&#39;ll got through them individually:</p>
+<p>In the <a href="LINK">previous tutorial</a>, you played with some comparison opertors. There are a couple more that you&#39;re likely to find very useful. They&#39;re all special snowflakes, so we&#39;ll go through them individually:</p>
 
 <h3>IN</h3>
 
@@ -97,7 +97,7 @@
 <p><code>BETWEEN</code> includes the values that you specify in the query, so the above query will return the exact same results as the following query:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
   FROM tutorial.patient_list
- WHERE age &gt;= 30 AND columna &lt;= 39
+ WHERE age &gt;= 30 AND age &lt;= 39
 </code></pre></div>
 <p>Some people prefer the latter example because it more explicitly shows what the query is doing (t&#39;s easy to forget whether or not BETWEEN includes the range bounds).</p>
 
@@ -124,13 +124,11 @@
   FROM tutorial.patient_list
  WHERE physician_last_name ILIKE &#39;sm%&#39;
 </code></pre></div>
-<p>A few other wildcards allow you some flexibility in using the <code>LIKE</code> operator:</p>
-
-<ul>
-<li><p>SQL wildcards: http://www.w3schools.com/sql/sql_wildcards.asp</p></li>
-<li><p>Examples using some other wildcards</p></li>
-</ul>
-
+<p>You can also use <code>_</code> (a single underscore) to substitute for an individual character:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.patient_list
+ WHERE physician_last_name ILIKE &#39;s_ith&#39;
+</code></pre></div>
 <h3>Logical Operators</h3>
 
 <p>You&#39;ll likely want to filter using several conditions &mdash; possibly more often than you filter by only one condition. Logical operators allow you to use multiple comparison operators in one query.</p>
@@ -184,9 +182,9 @@ columnb = &#39;value1&#39; OR columnb = &#39;value2 &mdash; because this line is
   FROM mode_sample_table_3
  WHERE columnb IS NOT NULL
 </code></pre></div>
-<ul>
-<li>conclusion</li>
-</ul>
+<h3>Practice Problems</h3>
+
+<!-- put them here -->
 
 <p>Move on to the next segment: <a href="/the-basics/order-by.html">ORDER BY</a>.</p>
 
