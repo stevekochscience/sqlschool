@@ -17,15 +17,9 @@ h1 { margin-bottom: 1em; }
 h4 { padding-bottom: .3em; margin-top: 1.5em; }
 p { margin: 1em 0; }
 
-<<<<<<< HEAD
 a         { color: #DD5426; } /* Mode Orange */
 a:hover   { color: #1B3A3E; } /* Mode Dark Green */
-a:visited { color: #DD5426; } /* Mode Dark Green */
-=======
-a         { color: color:#DD5426; } /* Mode Orange */
-a:hover   { color: #1B3A3E; } /* Mode Dark Green */
 a:visited { color: #1B3A3E; } /* Mode Dark Green */
->>>>>>> 80b9099d4170dbea74a2f1f9302c45a51354977d
 
 div.container {
   max-width:650px;
