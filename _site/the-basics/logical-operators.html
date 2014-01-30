@@ -1,0 +1,211 @@
+<html>
+<head>  
+  <!-- Image Links -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="/images/mode-favicon-black.ico" rel="shortcut icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <!-- CDNs for Bootstrap and Fonts -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+  <link href="//cloud.webtype.com/css/c014726f-64f1-4bf0-b9ff-6db715a1147a.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  
+  <!-- Mode Stylsheet-->
+  <link rel="stylesheet" href="/css/mode-sqlschool.css">
+  
+  <title>Logical Operators - </title>
+
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      
+      <!-- Show the logo and, if on a phone, the menu toggle -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">MODE SQL SCHOOL</a>
+      </div>    
+      <!-- Everything here gets hidden for phones -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://help.modeanalytics.com">Help</a></li>
+          <li><a href="http://modeanalytics.com">Return to Mode</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+  
+  <section class="lesson">
+  
+  <div class="container">
+  
+    <div class="search-small col-sm-4 col-sm-push-8">
+      
+      <!-- HIDE SEARCH FOR NOW
+      <form class="main-search" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+        -->
+    </div>
+    
+    <div class="breadcrumbs col-sm-8 col-sm-pull-4">
+      <a class="category" href="/#the-basics">the basics</a> / Logical Operators
+    </div>
+    
+  </div>
+</section>
+
+<section class="question">
+  <div class="container">
+    <h2>Logical Operators</h2>
+    
+    <h3>Comparison Operators &mdash; the Weird Ones</h3>
+
+<p>In the <a href="LINK">previous tutorial</a>, you played with some comparison opertors. There are a couple more that you&#39;re likely to find very useful. They&#39;re all special snowflakes, so we&#39;ll go through them individually:</p>
+
+<h3>IN</h3>
+
+<p>You&#39;ll probably want to use <code>IN</code> pretty frequently &mdash; it allows you to specify a list of values that you&#39;d like to include. For example, the following query will return results for which the age column is equal to one of the values in the list:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.patient_list
+ WHERE age IN (22, 37, 33, 54)
+</code></pre></div>
+<p>As in the previous tutorial, you can use non-numerical values, but they need to go inside single quotes. Regardless of the data type, the values in the list must be separated by commas. Here&#39;s another example:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.patient_list
+ WHERE physician_last_name IN (&#39;Yamamoto&#39;, &#39;Honeydew&#39;, &#39;Chase&#39;)
+</code></pre></div>
+<h3>BETWEEN</h3>
+
+<p>This allows you to specify a range and select only rows within a certain range. It has to be paired with the <code>AND</code> operator, which you will learn about in just a few moments. Here&#39;s how <code>BETWEEN</code> looks:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.patient_list
+ WHERE age BETWEEN 30 AND 39
+</code></pre></div>
+<p><code>BETWEEN</code> includes the values that you specify in the query, so the above query will return the exact same results as the following query:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.patient_list
+ WHERE age &gt;= 30 AND age &lt;= 39
+</code></pre></div>
+<p>Some people prefer the latter example because it more explicitly shows what the query is doing (t&#39;s easy to forget whether or not BETWEEN includes the range bounds).</p>
+
+<h3>IS NULL</h3>
+
+<p>Some tables contain null values &mdash; cells with no data in them at all. This can be confusing for heavy Excel users, because the difference between a cell having no data and a cell containing a space isn&#39;t meaningful in Excel. In SQL, the implications can be pretty serious. This is covered in greater detail in the <a href="LINK">intermediate tutorial</a>, but for now, here&#39;s what you need to know:</p>
+
+<p>You can select rows that contain no data in a given column by using the <code>IS NULL</code> operator:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.patient_list
+ WHERE weight IS NULL
+</code></pre></div>
+<p><code>WHERE weight = NULL</code> will <strong>not</strong> work &mdash; you can&#39;t perform arithmetic on null values.</p>
+
+<h3>LIKE</h3>
+
+<p><code>LIKE</code> allows you to match on similar values rather than exact ones. Using wildcard characters, you can define what must be exactly matched and what can be different. In this example, the results will include rows for which columnb starts with &quot;San&quot; and is followed by any number and selection of characters:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.patient_list
+ WHERE physician_last_name LIKE &#39;Sm%&#39;
+</code></pre></div>
+<p>The <code>%</code> used above represents any character or set of characters. In this case, <code>%</code> is referred to as a &quot;wildcard.&quot; In the SQL that Mode uses, <code>LIKE</code> is case-sensitive, meaning that the above query will only capture matches that start with a capital &quot;S&quot; and lower-case &quot;m.&quot; To match in a way that is not case-sensitive, you can use the <code>ILIKE</code> command:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.patient_list
+ WHERE physician_last_name ILIKE &#39;sm%&#39;
+</code></pre></div>
+<p>You can also use <code>_</code> (a single underscore) to substitute for an individual character:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.patient_list
+ WHERE physician_last_name ILIKE &#39;s_ith&#39;
+</code></pre></div>
+<h3>Logical Operators</h3>
+
+<p>You&#39;ll likely want to filter using several conditions &mdash; possibly more often than you filter by only one condition. Logical operators allow you to use multiple comparison operators in one query.</p>
+
+<h3>AND</h3>
+
+<p><code>AND</code> will let you select only rows that satisfy two conditions. The following query will return only rows for which columna equals 5 and columnb is null:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM mode_sample_table_3
+ WHERE columna = 5 AND columnb IS NULL
+</code></pre></div>
+<p>You can use <code>AND</code> with any comparison operator, and as many times as you want. If you run this query, you&#39;ll notice that all of the requirements are satisfied.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM mode_sample_table_3
+ WHERE columna != 5
+   AND columnb LIKE &#39;San%&#39;
+   AND columna &gt;= 3
+</code></pre></div>
+<p>You can see that this example is spaced out onto multiple lines &mdash; a good way to make long <code>WHERE</code> clauses more readable.</p>
+
+<h3>OR</h3>
+
+<p>If you want to select rows that satisfy either of two conditions, you can use <code>OR</code>. It works the same way as <code>AND</code>. Try running this:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM mode_sample_table_3
+ WHERE columna &lt; 10 OR columna &gt; 20
+</code></pre></div>
+<p>You can combine <code>AND</code> with <code>OR</code> using parenthesis. The following query will return rows that satisfy <strong>both</strong> of the following conditions.</p>
+
+<p>columna &gt; 10
+columnb = &#39;value1&#39; OR columnb = &#39;value2 &mdash; because this line is in parentheses, you can think of it as its own condition.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM mode_sample_table_3
+ WHERE columna &gt; 10
+   AND (columnb = &#39;value1&#39; OR columnb = &#39;value2&#39;)
+</code></pre></div>
+<h3>NOT</h3>
+
+<p>You can add <code>NOT</code> before any conditional statement if you&#39;d like to select the rows for which that statement is false. It works like this:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM mode_sample_table_3
+ WHERE NOT columna &lt; 10
+</code></pre></div>
+<p>Using <code>NOT</code> with <code>&lt;</code> and <code>&gt;</code> usually doesn&#39;t make sense because you can simply use the opposite comparative operator instead. <code>NOT</code> is more commonly used with <code>LIKE</code></p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM mode_sample_table_3
+ WHERE columnb NOT LIKE &#39;San%&#39;
+</code></pre></div>
+<p><code>NOT</code> is mostly commonly used to identify non-null rows. Here&#39;s how that looks:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM mode_sample_table_3
+ WHERE columnb IS NOT NULL
+</code></pre></div>
+<h3>Practice Problems</h3>
+
+<!-- put them here -->
+
+<p>Move on to the next segment: <a href="/the-basics/order-by.html">ORDER BY</a>.</p>
+
+  
+  </div>
+</section>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <nav class="navbar-footer">
+        <ul class="nav navbar-nav">
+        <li><a href="http://modeanalytics.com/">Home</a></li>
+        <li><a href="http://modeanalytics.com/press.html">Press</a></li>
+        <li><a href="http://blog.modeanalytics.com">Blog</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://modeanalytics.com">&copy; Mode Analytics 2013</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

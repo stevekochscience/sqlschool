@@ -1,0 +1,172 @@
+<html>
+<head>  
+  <!-- Image Links -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="/images/mode-favicon-black.ico" rel="shortcut icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <!-- CDNs for Bootstrap and Fonts -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+  <link href="//cloud.webtype.com/css/c014726f-64f1-4bf0-b9ff-6db715a1147a.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  
+  <!-- Mode Stylsheet-->
+  <link rel="stylesheet" href="/css/mode-sqlschool.css">
+  
+  <title>WHERE and Comparison Operators - </title>
+
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      
+      <!-- Show the logo and, if on a phone, the menu toggle -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">MODE SQL SCHOOL</a>
+      </div>    
+      <!-- Everything here gets hidden for phones -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://help.modeanalytics.com">Help</a></li>
+          <li><a href="http://modeanalytics.com">Return to Mode</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+  
+  <section class="lesson">
+  
+  <div class="container">
+  
+    <div class="search-small col-sm-4 col-sm-push-8">
+      
+      <!-- HIDE SEARCH FOR NOW
+      <form class="main-search" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+        -->
+    </div>
+    
+    <div class="breadcrumbs col-sm-8 col-sm-pull-4">
+      <a class="category" href="/#the-basics">the basics</a> / WHERE and Comparison Operators
+    </div>
+    
+  </div>
+</section>
+
+<section class="question">
+  <div class="container">
+    <h2>WHERE and Comparison Operators</h2>
+    
+    <h3>The WHERE Clause</h3>
+
+<p>So you know how to view some data using <code>SELECT</code> and <code>FROM</code>. The next step is filtering the data using the <code>WHERE</code> clause. Here&#39;s what it looks like.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.flight_revenue
+ WHERE destination = &#39;SFO&#39;
+</code></pre></div>
+<p><em>Note: the clauses always need to be in this order: SELECT, FROM, WHERE.</em></p>
+
+<p>The <code>WHERE</code> clause works in a plain-English way: the above query does the same thing as <code>SELECT * FROM mode.sample_table_2</code>, except that the results will only include rows where the <strong>fieldname</strong> column contains the value <strong>&#39;something&#39;</strong>. Try running it both ways and note the differences.</p>
+
+<p><strong>This part is really important: SQL deals with filtering an entire row at a time. In Excel, you can sort or filter one column at a time. In SQL, if you filter something in one column, entire rows will be omitted.</strong> The idea is that each row is one <em>data point</em> or <em>observation</em>, and all the information contained in that row belongs together.</p>
+
+<p>You can filter your results in a number of ways using comparison and logical operators.</p>
+
+<h3>Comparison Operators</h3>
+
+<p>The most basic way to filter data is using comparison operators. The easiest way to understand them is to start by looking at the list of basic numerical operators:</p>
+
+<table>
+  <tr><td>Equal to</td><td><code>=</code></td></tr>
+  <tr><td>Not equal to</td><td><code><></code> or <code>!=</code></td></tr>
+  <tr><td>Greater than</td><td><code>></code></td></tr>
+  <tr><td>Less than</td><td><code><</code></td></tr>
+  <tr><td>Greater than or equal to</td><td><code>>=</code></td></tr>
+  <tr><td>Less than or equal to</td><td><code><=</code></td></tr>
+</table>
+
+<p>These make the most sense when applied to numerical columns. For example:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT destination_airport, coach_rev
+  FROM tutorial.flight_revenue
+ WHERE coach_rev &gt; 15000
+</code></pre></div>
+<p>Try running that query with each of the operators in place of <code>&gt;</code>. Try some values other than 5 to get a sense of how this works. When you&#39;re ready, try to answer this question:</p>
+
+<blockquote>
+<p>Which destination airport(s) had more than $15,000 in coach revenue?</p>
+</blockquote>
+
+<p>Don&#39;t worry &mdash; we&#39;ll get to some more practical examples shortly. <a href="LINK">Click here for the answer</a>.</p>
+
+<h3>Comparisons on non-numerical data</h3>
+
+<p>All of the above operators work on non-numerical data as well. <code>=</code> and <code>!=</code> make perfect sense &mdash; they allow you to select rows that match (or don&#39;t match) any value. For example:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT destination_airport, coach_rev
+  FROM tutorial.flight_revenue
+ WHERE destination != &#39;SFO&#39;
+</code></pre></div>
+<p>There are some important rules when using these operators, though. If you&#39;re using an operator with values that are non-numeric, you need to put the value in single quotes: <code>&#39;value&#39;</code>. <em>Note: SQL uses single quotes (as opposed to double quotes) in every instance except one, which we will get to in a later tutorial.</em></p>
+
+<p>You can use <code>&gt;</code>, <code>&lt;</code>, and the rest of the operators on non-numeric columns as well &mdash; they filter based on alphabetical order. Try running this a couple times with different operators:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT destination_airport, coach_rev
+  FROM tutorial.flight_revenue
+ WHERE destination &gt; &#39;n&#39;
+</code></pre></div>
+<p>The way SQL treats alphabetical ordering is a little bit tricky. You may have noticed in the above query that selecting <code>destination &gt; &#39;n&#39;</code> will yield only rows in which fieldname starts with &quot;n&quot; or later laters in the alphabet. &quot;Wait a minute,&quot; you might say. &quot;If I wanted to include value that start with n, I would have used <code>fieldname &gt;= &#39;n&#39;</code>.&quot; SQL considers &quot;na&quot; to be greater than &quot;n&quot; because it has an extra letter. It&#39;s worth noting that most dictionaries would list &quot;na&quot; after &quot;n&quot; as well.</p>
+
+<h3>Arithmetic</h3>
+
+<p>You can perform arithmetic in SQL using the same operators you would in Excel: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>. SQL is a little tricky in that these only work in a given row. To clarify, you can only add values in multiple columns <strong>from the same row</strong> together using <code>+</code> &mdash; if you want to add values across multiple rows, you&#39;ll need to use <a href="/intermediate-sql/aggregation-functions.html">Aggregation Functions</a>, which are covered in the Intermediate Tutorial.</p>
+
+<p>The example below illustrates the use of <code>+</code>:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT destination_airport,
+       coach_rev,
+       cargo_rev,
+       coach_rev + cargo_rev AS coach_cargo_sum
+  FROM tutorial.flight_revenue
+</code></pre></div>
+<h3>Practice time</h3>
+
+<p>If you&#39;d like a little practice, try these questions:</p>
+
+<blockquote>
+<p>Which destination airport(s) had more than $70,000 in total revenue (the sum of all the revenue columns)?</p>
+</blockquote>
+
+<p>If you&#39;re ready to mode on <a href="/the-basics/logical-operators.html">Click here to move on to the next lesson: Logical Operators</a>.</p>
+
+  
+  </div>
+</section>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <nav class="navbar-footer">
+        <ul class="nav navbar-nav">
+        <li><a href="http://modeanalytics.com/">Home</a></li>
+        <li><a href="http://modeanalytics.com/press.html">Press</a></li>
+        <li><a href="http://blog.modeanalytics.com">Blog</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://modeanalytics.com">&copy; Mode Analytics 2013</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,134 @@
+---
+layout: sqlschool-lesson
+category: "intermediate"
+title:  "CASE"
+date:   2014-02-01 00:00:57
+---
+
+#####CASE
+The `CASE` statement is SQL's way of handling if/then logic. It's easiest to understand in the context of an example:
+
+    SELECT columna,
+           CASE WHEN columna > 1 THEN 'yes' END AS sample_case_statement
+      FROM mode_sample_table_7
+
+In plain english, here's what's happening:
+
+1. The `CASE` statement checks each row to see if the conditional statement -- `WHEN columna > 1` is true.
+2. For any given row, if that conditional statement is true, the word "yes" gets printed in the column that we have named `sample_case_statement`.
+3. In any row for which the conditional statement is false, nothing happens in that row, leaving a null value in the `sample_case_statement` column.
+4. At the same time all this is happening, SQL is retrieving and displaying all the values in columna.
+
+This particular query makes it pretty easy to see what's happening because we've included the `CASE` statement along with `columna` itself. You can check each row to see whether `columna` meets the condition `columna > 1` and then see the result in the column generated using the `CASE` statement.
+
+But what if you don't want null values in the `sample_case_statement` column? The following query replaces those nulls with "no":
+
+    SELECT columna,
+           CASE WHEN columna > 1 THEN 'yes' 
+                ELSE 'no' END AS sample_case_statement
+      FROM mode_sample_table_7
+
+You can also define a number of outcomes in a `CASE` statement by including as many `WHEN`/`THEN` statements as you'd like:
+
+    SELECT columna,
+           CASE WHEN columna > 10 THEN 'yes'
+                WHEN columna > 7 THEN 'maybe'
+                WHEN columna > 3 THEN 'maybe not'
+                ELSE 'no' END AS sample_case_statement
+      FROM mode_sample_table_7
+
+In the above example, the `WHEN`/`THEN` statements will get evaluated in the order that they're written. So if the value in columna of a given row is 15, it will produce a result of "yes." Here's what happens if the value in columna is 4:
+
+1. Check to see if columna is greater than 10. 4 is not greater than 10, so move on to the next `WHEN`/`THEN`
+2. Check to see if columna is greater than 7. 4 is not greater than 7, so move on to the next `WHEN`/`THEN`
+3. Check to see if columna is greater than 3. 4 **is** greater than 3, so record "maybe not" in the `sample_case_statement` column
+
+While the above works, it's really best practice to create statements that don't overlap. `WHEN columna > 10` and `WHEN columna > 7` overlap for every value greater than 10, which is a little confusing. A better way to write the above would be:
+
+    SELECT columna,
+           CASE WHEN columna > 10 THEN 'yes'
+                WHEN columna > 7  AND columna <= 10 THEN 'maybe'
+                WHEN columna > 3 AND columna <= 7 THEN 'maybe not'
+                ELSE 'no' END AS sample_case_statement
+      FROM mode_sample_table_7
+
+You can also string together multiple conditional statements with `AND` and `OR` the same way you might in a `WHERE` clause:
+
+    SELECT columna,
+           CASE WHEN columna > 10  AND columnb = 'awesome' THEN 'yes'
+                ELSE 'no' END AS sample_case_statement
+      FROM mode_sample_table_7
+
+#####A quick review:
+
+1. The `CASE` statement always goes in the `SELECT` clause
+2. `CASE` must include the following components: `WHEN`, `THEN`, and `END`. `ELSE` is an optional component.
+3. You can make any conditional statement using any [conditional operator](LINK to prev tutorial) between `WHEN` and `THEN`
+4. You can include multiple `WHEN` statements, as well as an `ELSE` statement to deal with any unaddressed conditions.
+
+#####Using CASE in aggregations
+`CASE`'s slightly more complicated and substnatially more useful functionality comes from pairing it with aggregators. For example, let's say you want to only count rows that fulfill a certain condition. Since `COUNT` ignores nulls, you could use a `CASE` statement to evaluate the condition and produce null or non-null values depending on the outcome:
+
+    SELECT COUNT(CASE WHEN columna = 7 THEN columna
+                      ELSE null END) AS columna_count
+      FROM mode_sample_table_8
+
+Now, you might be thinking "why wouldn't I just use a `WHERE` clause to filter out the rows I don't want to count?" You could do that -- it would look like this:
+
+    SELECT COUNT(columna) AS columna_count
+      FROM mode_sample_table_8
+     WHERE columna = 7
+
+But what if you also wanted to count a couple other conditions? Limiting using the `WHERE` clause only allows you to count one condition. Here's an example of counting multiple conditions in one query:
+
+    SELECT CASE WHEN columna < 7 THEN '<7'
+                WHEN columna = 7 THEN '=7'
+                WHEN columna > 7 THEN '>7'
+                END AS columna_condition,
+           COUNT(columna) AS count
+      FROM mode_sample_table_7
+     GROUP BY 1
+
+The above query is an excellent place to use numbers instead of columns in the `GROUP BY ` clause because repeating the `CASE` statement in the `GROUP BY` clause would make the query obnoxiously long. Note that if you do choose to repeat the entire `CASE` statement, you shouod remove the "AS columna_condition" column naming:
+
+    SELECT CASE WHEN columna < 7 THEN '<7'
+                WHEN columna = 7 THEN '=7'
+                WHEN columna > 7 THEN '>7'
+                END AS columna_condition,
+           COUNT(columna) AS count
+      FROM mode_sample_table_7
+     GROUP BY CASE WHEN columna < 7 THEN '<7'
+                WHEN columna = 7 THEN '=7'
+                WHEN columna > 7 THEN '>7'
+                END
+
+#####Common uses for CASE
+The previous example is an excellent lead-in to a primary use-`CASE` for `CASE` (sorry for that): creating histograms. The only problem with it is that it displays your results vertically.
+
+SOMETHING ABOUT HOW YOU SOMETIMES WANT SHIT IN DIFFERENT COLUMNS
+
+CHECK HOW EXCEL DOES GRAPHING AND VALIDATE ALL THIS SHIT
+
+    SELECT COUNT(CASE WHEN columna < 7 THEN columna
+                      ELSE null END) AS columna_lt7_count,
+           COUNT(CASE WHEN columna = 7 THEN columna
+                      ELSE null END) AS columna_7_count,
+           COUNT(CASE WHEN columna > 7 THEN columna
+                      ELSE null END) AS columna_gt7_count
+      FROM mode_sample_table_8
+
+Looking at the two previous examples &mdash; one vertically oriented; one, horizontally &mdash; you might notice that `CASE` provides a pretty easy way to transpose existing data from vertical to horizontal orientation. Take this existing vertically-oriented dataset:
+
+* EXAMPLE
+
+You can transpose it to a horizontal orientation using a query similar to the histogram query above:
+
+* pivoted example
+
+This is called "pivoting," and is where the name "Pivot Tables" came from in Excel. It's worth noting that going from horizontal to vertical orientation can be a substantially more difficult problem depending the circumstances, and will be saved for a [later tutorial](LINK TO COOKBOOK PAGE).
+
+pivoting data
+
+#####Problem set
+
+* MO FUNCTIONS, MO PROBLEMS

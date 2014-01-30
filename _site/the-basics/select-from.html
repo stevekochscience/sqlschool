@@ -1,0 +1,146 @@
+<html>
+<head>  
+  <!-- Image Links -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="/images/mode-favicon-black.ico" rel="shortcut icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <!-- CDNs for Bootstrap and Fonts -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+  <link href="//cloud.webtype.com/css/c014726f-64f1-4bf0-b9ff-6db715a1147a.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  
+  <!-- Mode Stylsheet-->
+  <link rel="stylesheet" href="/css/mode-sqlschool.css">
+  
+  <title>SELECT and FROM - </title>
+
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      
+      <!-- Show the logo and, if on a phone, the menu toggle -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">MODE SQL SCHOOL</a>
+      </div>    
+      <!-- Everything here gets hidden for phones -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://help.modeanalytics.com">Help</a></li>
+          <li><a href="http://modeanalytics.com">Return to Mode</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+  
+  <section class="lesson">
+  
+  <div class="container">
+  
+    <div class="search-small col-sm-4 col-sm-push-8">
+      
+      <!-- HIDE SEARCH FOR NOW
+      <form class="main-search" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+        -->
+    </div>
+    
+    <div class="breadcrumbs col-sm-8 col-sm-pull-4">
+      <a class="category" href="/#the-basics">the basics</a> / SELECT and FROM
+    </div>
+    
+  </div>
+</section>
+
+<section class="question">
+  <div class="container">
+    <h2>SELECT and FROM</h2>
+    
+    <h3>Basic Syntax</h3>
+
+<p>There are two required ingredients in any SQL query: a <code>SELECT</code> statement and a <code>FROM</code> statement &mdash; and they have to be in that order. <code>SELECT</code> indicates which columns you&#39;d like to view, and <code>FROM</code> identifies the table that they live in. Let&#39;s look at an example:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT salesperson, widget_sales FROM tutorial.sales_performance
+</code></pre></div>
+<p>In this case, the query is telling the database to return <code>column1</code> and <code>column2</code> from the table <code>mode.sample_table_1</code>. When you run this, you&#39;ll get back a set of results that shows every value in each of these columns.</p>
+
+<!-- screenshot results  -->
+
+<p>Note that the two column names were separated by a comma in the query. Whenever you select multiple columns, they must be separated by commas, but you should <strong>not</strong> include a comma after the last column name.</p>
+
+<p>If you want to select every column in a table, you can use <code>*</code> instead of the column names:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.sales_performance
+</code></pre></div>
+<!-- screenshot results  -->
+
+<h3>What does this actually do?</h3>
+
+<p>So when you run a query, what do you get back? As you can see from running the above queries, you get a table. But that table isn&#39;t stored permanently in the database. It also doesn&#39;t change any tables in the database &mdash; <code>mode.sample_table_1</code> will contain the same data every time you query it. Mode does store all of your results for future access, but the important part for the sake of this tutorial is that <code>SELECT</code> statements don&#39;t change anything in the underlying tables.</p>
+
+<h3>Formatting convention</h3>
+
+<p>You might have noticed that the <code>SELECT</code> and `FROM&#39; commands are capitalized. This isn&#39;t actually necessary &mdash; SQL will understand these commands if you type them in lowercase. Capitalizing commands is simply a convention that makes queries easier to read. Similarly, SQL treats one space, multiple spaces, or a line break as being the same thing. For example, SQL treats this the same way it does the previous query:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *        FROM tutorial.sales_performance
+</code></pre></div>
+<p>It also treats this the same way:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+FROM tutorial.sales_performance
+</code></pre></div>
+<p>There are several conventions for formatting line breaks, some of which you&#39;ll pick up on through this tutorial and by simply checking out other people&#39;s work on Mode. It&#39;s up to you to determine what formatting elements are easiest for you to read and keep track of.</p>
+
+<h3>Column names</h3>
+
+<p>While we&#39;re on the topic of formatting, it&#39;s worth noting the format of column names. You may notice that all of the columns in the <code>mode.sample_table_1</code> table are named in lower case, and use underscores instead of spaces. Even the table name itself uses underscores instead of spaces. This is because it&#39;s annoying to deal with spaces in SQL &mdash; if you want to have spaces in column names, you need to always refer to those columns in double quotes. For example, if a column was named Column 1, I would have to type <code>SELECT &quot;Column 1&quot; FROM mode.sample_table_1</code>. Without the double quotes, that query would read &#39;Column&#39; and &#39;1&#39; as separate objects and would return an error.</p>
+
+<h3>LIMIT</h3>
+
+<p>You may have noticed that checkbox next to the &quot;Run&quot; button that says &quot;Limit.&quot;</p>
+
+<!-- screenshot of limit. -->
+
+<p>The default value is 100; when this box is checked, it&#39;s effectively telling the database to only return 100 rows of this table. This particular table has fewer than 100 rows, so it&#39;s irrelevant. Try setting the limit to 5, though, and see what happens when you run the query.</p>
+
+<p>This exists to keep your queries running quickly. You&#39;ll probably find that the aim of many of your queries will simply be to see what a particular table looks like &mdash; you&#39;ll want to scan the first few rows of data to get an idea of which fields you care about and how you want to manipulate them. If you query a very large table and don&#39;t use a limit, you could end up waiting a long time for your results to return, which doesn&#39;t make sense if you only care about the first few.</p>
+
+<p>The limiting functionality is built into Mode, but if you&#39;re ever using SQL in another context, you can add a limit with a SQL command. The following syntax does the same thing as having the box checked with a value of 100:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.sales_performance LIMIT 100
+</code></pre></div>
+<p>Now that you&#39;ve got the basics, let&#39;s move on to some commands that will allow you to filter the data.</p>
+
+<p>Next: <a href="/the-basics/where-operators.html">WHERE and Comparison Operators</a>.</p>
+
+  
+  </div>
+</section>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <nav class="navbar-footer">
+        <ul class="nav navbar-nav">
+        <li><a href="http://modeanalytics.com/">Home</a></li>
+        <li><a href="http://modeanalytics.com/press.html">Press</a></li>
+        <li><a href="http://blog.modeanalytics.com">Blog</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://modeanalytics.com">&copy; Mode Analytics 2013</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

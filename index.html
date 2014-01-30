@@ -1,0 +1,30 @@
+---
+layout: sqlschool-template
+title: "MODE: Help"
+---
+
+<section class="head">
+  <div class="container">
+    <h1>Welcome to SQL School</h1>
+  </div>
+</section>
+
+<section class="main">
+  <div class="container">
+    <a href="/introduction.html">Introduction</a>
+    {% for category in site.category-list %}
+      <h4 class="category" id="{{ category }}">
+        {{ category | replace:'-', ' ' }}
+      </h4>
+      <ul class="questions">
+        {% for post in site.posts %}
+            {% for cat in post.category %}
+              {% if cat == category %}
+                <li class="list-question"><a href="{{ post.url }}"> {{ post.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+</section>

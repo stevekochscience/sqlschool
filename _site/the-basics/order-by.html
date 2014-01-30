@@ -1,0 +1,164 @@
+<html>
+<head>  
+  <!-- Image Links -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="/images/mode-favicon-black.ico" rel="shortcut icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <!-- CDNs for Bootstrap and Fonts -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+  <link href="//cloud.webtype.com/css/c014726f-64f1-4bf0-b9ff-6db715a1147a.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  
+  <!-- Mode Stylsheet-->
+  <link rel="stylesheet" href="/css/mode-sqlschool.css">
+  
+  <title>ORDER BY - </title>
+
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      
+      <!-- Show the logo and, if on a phone, the menu toggle -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">MODE SQL SCHOOL</a>
+      </div>    
+      <!-- Everything here gets hidden for phones -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://help.modeanalytics.com">Help</a></li>
+          <li><a href="http://modeanalytics.com">Return to Mode</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+  
+  <section class="lesson">
+  
+  <div class="container">
+  
+    <div class="search-small col-sm-4 col-sm-push-8">
+      
+      <!-- HIDE SEARCH FOR NOW
+      <form class="main-search" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+        -->
+    </div>
+    
+    <div class="breadcrumbs col-sm-8 col-sm-pull-4">
+      <a class="category" href="/#the-basics">the basics</a> / ORDER BY
+    </div>
+    
+  </div>
+</section>
+
+<section class="question">
+  <div class="container">
+    <h2>ORDER BY</h2>
+    
+    <!--*Note: Data in this example comes from [wikipedia](http://en.wikipedia.org/wiki/List_of_United_States_cities_by_population)
+-->
+
+<h3>ORDER BY</h3>
+
+<p>Now that you can filter, it&#39;s time to learn how to sort. The <code>ORDER BY</code> clause allows you to reorder your results based on the data in one or more columns. First, take a look at how the table is ordered by default:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.city_populations
+</code></pre></div>
+<p>Now let&#39;s see what happens when we order by one of the columns:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.city_populations
+ ORDER BY city
+</code></pre></div>
+<p>You&#39;ll notice that the results are now ordered alphabetically from a to z based on the content in columnb. This is referred to as ascending order, and is the SQL&#39;s default. If you order a numerical column in ascending order, it will start with smaller (or most negative) numbers, with each successive row having a higher numerical value than the previous. Here&#39;s an example using a numerical column:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.city_populations
+ ORDER BY population_estimate_2012
+</code></pre></div>
+<p>If you&#39;d like your results in the opposite order (referred to as descending order), you need to add the <code>DESC</code> operator:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.city_populations
+ ORDER BY population_estimate_2012 DESC
+</code></pre></div>
+<p>You can also order by mutiple columns. This is particularly useful if your data falls into categories and you&#39;d like to organize rows by date, for example, but keep all of the results within a given category together:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.city_populations
+ ORDER BY state, city DESC
+</code></pre></div>
+<p>You can see a couple things from the above query: First, columns in the <code>ORDER BY</code> clause must be separated by commas. Second, the <code>DESC</code> operator is only applied to the column that precedes it. Finally, the results are sorted by the first column mentioned (columnb), then by columnc afterward. You can see the difference the order makes by running the following query:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT city,
+       state,
+       population_estimate_2012
+  FROM tutorial.city_populations
+ ORDER BY state, city
+</code></pre></div>
+<p>Finally, you can make your life a little easier by substituting numbers for column names in the <code>ORDER BY</code> clause. The numbers will correspond to the order in which you list columns in the <code>SELECT</code> clause. For example, the following query is exactly equivalent to the previous query:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT city,
+       state,
+       population_estimate_2012
+  FROM tutorial.city_populations
+ ORDER BY 2, 3 DESC
+</code></pre></div>
+<p><em>Note: this functionality (numbering columns instead of using names) is supported by Mode, but not by every flavor of SQL, so if you&#39;re using another system or connected to certain types of databases, it may not work.</em></p>
+
+<p>When using <code>ORDER BY</code> with a row limit (either through the check box on the query editor or by typing in <code>LIMIT</code>), the ordering clause is executed first. This means that the results are ordered <strong>before</strong> limiting to only a few rows, so if you were to rank by columnb, for example, you can be sure that you are getting the lowest values of columnb in the entire table, not just in the first 100 rows of the table.</p>
+
+<h3>Using Comments</h3>
+
+<p>You can &quot;comment out&quot; pieces of code by adding combinations of characters. In other words, you can specify parts of your query that will not actually be treated like SQL code. In can be helpful to include comments that explain your thinking so that you can easily remember what you intended to do if you ever want to revisit your work. Commenting can also be useful if you want to test variations on your query while keeping all of your code intact. </p>
+
+<p>You can use<code>--</code> (two dashes)  to comment out everything to the right of them on a given line:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *  --This comment won&#39;t affect the way this code runs
+  FROM tutorial.city_populations
+ ORDER BY 2, 3 DESC
+</code></pre></div>
+<p>You can also leave comments across multiple lines using <code>/*</code> to begin the comment and <code>*/</code> to close it:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">/* Here&#39;s a comment so long and descriptive that
+it could only fit on multiple lines. Fortunately,
+it, too, will not affect how this code runs. */
+SELECT *
+  FROM tutorial.city_populations
+ ORDER BY 2, 3 DESC
+</code></pre></div>
+<h3>Practice problems</h3>
+
+<h3>What&#39;s Next?</h3>
+
+<p>Congrats on completeing the Beginner SQL Tutorial! When you&#39;re done celebrating, check out the first lesson in the Intermediate Tutorial, <a href="/intermediate-sql/aggregation-functions.html">Aggregation Functions</a>.</p>
+
+  
+  </div>
+</section>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <nav class="navbar-footer">
+        <ul class="nav navbar-nav">
+        <li><a href="http://modeanalytics.com/">Home</a></li>
+        <li><a href="http://modeanalytics.com/press.html">Press</a></li>
+        <li><a href="http://blog.modeanalytics.com">Blog</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://modeanalytics.com">&copy; Mode Analytics 2013</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
