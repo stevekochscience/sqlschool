@@ -57,8 +57,16 @@ Let's go back to the `LEFT JOIN` example:
       LEFT JOIN tutorial.twitter_users users
         ON users.user_id = tweets.tweeted_by_id
 
-You can 
+Normally, filtering is processed in the `WHERE` clause once the two tables have already been joined. It's possible, though that you might want to filter one or both of the tables before joining them. For example, you only want to create matches between the tables under certain circumstances. Compare the following query to the previous one and you will see that some rows were filtered pre-join and not matched to the `tutorial.tweets` table.
 
+    SELECT users.*,
+           tweets.*
+      FROM tutorial.tweets tweets
+      LEFT JOIN tutorial.twitter_users users
+        ON users.user_id = tweets.tweeted_by_id
+       AND 
+
+   What's happening above is that the conditional statement `AND...` is evaluated
 
 ###Inequality joins
 

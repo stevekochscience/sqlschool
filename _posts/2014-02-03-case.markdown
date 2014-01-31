@@ -14,7 +14,7 @@ The `CASE` statement is SQL's way of handling if/then logic. It's easiest to und
 
 In plain english, here's what's happening:
 
-1. The `CASE` statement checks each row to see if the conditional statement -- `WHEN columna > 1` is true.
+1. The `CASE` statement checks each row to see if the conditional statement &mdash; `WHEN columna > 1` is true.
 2. For any given row, if that conditional statement is true, the word "yes" gets printed in the column that we have named `sample_case_statement`.
 3. In any row for which the conditional statement is false, nothing happens in that row, leaving a null value in the `sample_case_statement` column.
 4. At the same time all this is happening, SQL is retrieving and displaying all the values in columna.
@@ -119,18 +119,18 @@ CHECK HOW EXCEL DOES GRAPHING AND VALIDATE ALL THIS SHIT
 
 Looking at the two previous examples &mdash; one vertically oriented; one, horizontally &mdash; you might notice that `CASE` provides a pretty easy way to transpose existing data from vertical to horizontal orientation. Take this existing vertically-oriented dataset:
 
-* EXAMPLE
+<!-- EXAMPLE-->
 
 You can transpose it to a horizontal orientation using a query similar to the histogram query above:
 
-* pivoted example
+<!--pivoted example-->
 
-This is called "pivoting," and is where the name "Pivot Tables" came from in Excel. It's worth noting that going from horizontal to vertical orientation can be a substantially more difficult problem depending the circumstances, and will be saved for a [later tutorial](LINK TO COOKBOOK PAGE).
+This is called "pivoting," and is where the name "Pivot Tables" came from in Excel. It's worth noting that going from horizontal to vertical orientation can be a substantially more difficult problem depending the circumstances, and will be saved for a [later tutorial](/solutions-to-common-problems/pivoting-columns-to-rows.html).
 
 pivoting data
 
-###Problem set
+###Practice Time
 
-* MO FUNCTIONS, MO PROBLEMS
+<!--MO FUNCTIONS, MO PROBLEMS-->
 
 Check out the next lesson: [Introduction to Joins](/intermediate/join-intro.html)

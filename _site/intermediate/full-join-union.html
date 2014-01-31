@@ -20,7 +20,7 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="header-nav" role="navigation">
     <div class="container">
       
       <!-- Show the logo and, if on a phone, the menu toggle -->
@@ -31,7 +31,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">MODE SQL SCHOOL</a>
+        <a id="navbar-brand" href="/"><img id = "header-logo" src="/images/logo.png" />SQL SCHOOL</a>
       </div>    
       <!-- Everything here gets hidden for phones -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -73,7 +73,43 @@
     
     <h3>FULL OUTER JOIN</h3>
 
+<p>You&#39;re not likely to use <code>FULL JOIN</code> (can also be written as <code>FULL OUTER JOIN</code>) too often, but it&#39;s worth covering anyway. <code>LEFT JOIN</code> and <code>RIGHT JOIN</code> each return unmatched rows from one of the tables &mdash; <code>FULL JOIN</code> returns unmatched rows from both tables. It is commonly used in conjunction with aggregations to understand the amount of overlap between two tables:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(CASE WHEN __ IS NULL THEN 1 ELSE NULL END) AS table1_count,
+       COUNT(CASE WHEN __ IS NULL THEN 1 ELSE NULL END) AS table2_count,
+       COUNT(CASE WHEN __ IS NOT NULL AND __ IS NOT NULL THEN 1 ELSE NULL END) AS overlap_count
+FROM table
+</code></pre></div>
 <h3>UNION</h3>
+
+<p>Joins allow you to combine two datasets side-by-side, but <code>UNION</code> allows you to stack one dataset on top of the other? Put differently, <code>UNION</code> allows you to append everything in a dataset onto everything in another dataset. In order to specify the datasets you want to sandwich together, you&#39;ll need to actually write two separate <code>SELECT</code> statements:</p>
+
+<!-- UNION EXAMPLE -->
+
+<p>Note that <code>UNION</code> only appends distinct values. If you&#39;d like to append all the values from the second table, use <code>UNION ALL</code>. You&#39;ll likely use <code>UNION ALL</code> far more often than <code>UNION</code>.</p>
+
+<!-- UNION ALL example -->
+
+<p>SQL has strict rules for appending data:</p>
+
+<ol>
+<li>Both tables must have the same number of columns</li>
+<li>The columns must have the same data types in the same order as the first table</li>
+</ol>
+
+<p>While the column names don&#39;t necessarily have to be the same, you will find that they typically are. This is because most of the instances in which you&#39;d want to use <code>UNION</code> involve stitching together different parts of the same dataset. For example, if you&#39;ve got several sets of stock ticker data &mdash; one table for each ticker symbol &mdash; you might want to <code>UNION</code> the tables so that you can aggregate across multiple ticker symbols:</p>
+
+<!-- ticker symbol example -->
+
+<p>Keep in mind that since you are writing two separate <code>SELECT</code> statements, you can filter them differently using different <code>WHERE</code> clauses:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM ____ WHERE x
+ UNION ALL
+SELECT * FROM ____ WHERE y
+</code></pre></div>
+<h3>Practice Time</h3>
+
+<!-- full join -->
+
+<!-- union all example-->
 
 <h3>Next Steps</h3>
 

@@ -55,7 +55,28 @@ table {
 
 /* Top Nav */
 nav {
-  background-color:gray;
+  background-color:#D7DDDB;
+}
+
+div#header-container {
+  padding:0;
+}
+
+div.navbar-header {
+  background-color: #3B6D6C;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+a#navbar-brand {
+  line-height:55px;
+  color: white;
+}
+
+img#header-logo {
+  display:inline;
+  border: none;
+  margin-right: 7px;
 }
 
 /* Main */
@@ -74,7 +95,7 @@ a.category {
 
 li {
   color: black;
-  margin-left: 5px;
+  margin-left: 12px;
   margin-bottom: 5px;
 }
 
@@ -106,7 +127,7 @@ div.tip {
 
 /* Footer */
 footer {
-  background-color:#1B3A3E;   /* Mode Dark Green */
+  background-color: #3B6D6C;
 }
 
 nav.navbar-footer li a {

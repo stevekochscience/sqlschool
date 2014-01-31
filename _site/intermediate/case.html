@@ -20,7 +20,7 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="header-nav" role="navigation">
     <div class="container">
       
       <!-- Show the logo and, if on a phone, the menu toggle -->
@@ -31,7 +31,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">MODE SQL SCHOOL</a>
+        <a id="navbar-brand" href="/"><img id = "header-logo" src="/images/logo.png" />SQL SCHOOL</a>
       </div>    
       <!-- Everything here gets hidden for phones -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -81,7 +81,7 @@
 <p>In plain english, here&#39;s what&#39;s happening:</p>
 
 <ol>
-<li>The <code>CASE</code> statement checks each row to see if the conditional statement -- <code>WHEN columna &gt; 1</code> is true.</li>
+<li>The <code>CASE</code> statement checks each row to see if the conditional statement &mdash; <code>WHEN columna &gt; 1</code> is true.</li>
 <li>For any given row, if that conditional statement is true, the word &quot;yes&quot; gets printed in the column that we have named <code>sample_case_statement</code>.</li>
 <li>In any row for which the conditional statement is false, nothing happens in that row, leaving a null value in the <code>sample_case_statement</code> column.</li>
 <li>At the same time all this is happening, SQL is retrieving and displaying all the values in columna.</li>
@@ -184,25 +184,19 @@
 </code></pre></div>
 <p>Looking at the two previous examples &mdash; one vertically oriented; one, horizontally &mdash; you might notice that <code>CASE</code> provides a pretty easy way to transpose existing data from vertical to horizontal orientation. Take this existing vertically-oriented dataset:</p>
 
-<ul>
-<li>EXAMPLE</li>
-</ul>
+<!-- EXAMPLE-->
 
 <p>You can transpose it to a horizontal orientation using a query similar to the histogram query above:</p>
 
-<ul>
-<li>pivoted example</li>
-</ul>
+<!--pivoted example-->
 
-<p>This is called &quot;pivoting,&quot; and is where the name &quot;Pivot Tables&quot; came from in Excel. It&#39;s worth noting that going from horizontal to vertical orientation can be a substantially more difficult problem depending the circumstances, and will be saved for a <a href="LINK%20TO%20COOKBOOK%20PAGE">later tutorial</a>.</p>
+<p>This is called &quot;pivoting,&quot; and is where the name &quot;Pivot Tables&quot; came from in Excel. It&#39;s worth noting that going from horizontal to vertical orientation can be a substantially more difficult problem depending the circumstances, and will be saved for a <a href="/solutions-to-common-problems/pivoting-columns-to-rows.html">later tutorial</a>.</p>
 
 <p>pivoting data</p>
 
-<h3>Problem set</h3>
+<h3>Practice Time</h3>
 
-<ul>
-<li>MO FUNCTIONS, MO PROBLEMS</li>
-</ul>
+<!--MO FUNCTIONS, MO PROBLEMS-->
 
 <p>Check out the next lesson: <a href="/intermediate/join-intro.html">Introduction to Joins</a></p>
 

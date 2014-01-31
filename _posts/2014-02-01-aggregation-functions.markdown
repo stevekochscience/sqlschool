@@ -10,7 +10,7 @@ date:   2014-02-01 00:00:59
     SELECT * FROM tutorial.sat_scores
 
 ###Aggregation Functions
-As the [beginner tutorial](LINK TO INTRODUCTION) points out, SQL is excellent at aggregating data the way you might in a pivot table in Excel. You will use aggregation functions all the time, so it's important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`
+As the [beginner tutorial](/the-basics/basic-concepts.html) points out, SQL is excellent at aggregating data the way you might in a pivot table in Excel. You will use aggregation functions all the time, so it's important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`
 
 ###COUNT
 It's easiest to start with `COUNT` because verifying your results is extremely simply. The easiest way to get started is to use `*` to select all rows.
@@ -140,7 +140,7 @@ As mentioned in prior tutorials, the order in which you write the clauses is imp
 5. ORDER BY
 
 ###Aggregation Practice
-* practice problems
+<!-- practice problems-->
 
 
 Check out the next lesson: [DISTINCT](/intermediate/distinct.html)

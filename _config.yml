@@ -2,4 +2,4 @@ name: "MODE: SQL School"
 markdown: redcarpet
 pygments: true
 permalink: none
-category-list: ["the-basics", "intermediate", "advanced", "solutions-to-common-problems"]
+category-list: ["the-basics", "intermediate", "advanced", "solutions-to-common-problems", "other-resources"]
