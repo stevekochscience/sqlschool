@@ -71,7 +71,7 @@
   <div class="container">
     <h2>CASE</h2>
     
-    <h5>CASE</h5>
+    <h3>CASE</h3>
 
 <p>The <code>CASE</code> statement is SQL&#39;s way of handling if/then logic. It&#39;s easiest to understand in the context of an example:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT columna,
@@ -125,7 +125,7 @@
             ELSE &#39;no&#39; END AS sample_case_statement
   FROM mode_sample_table_7
 </code></pre></div>
-<h5>A quick review:</h5>
+<h3>A quick review:</h3>
 
 <ol>
 <li>The <code>CASE</code> statement always goes in the <code>SELECT</code> clause</li>
@@ -134,7 +134,7 @@
 <li>You can include multiple <code>WHEN</code> statements, as well as an <code>ELSE</code> statement to deal with any unaddressed conditions.</li>
 </ol>
 
-<h5>Using CASE in aggregations</h5>
+<h3>Using CASE in aggregations</h3>
 
 <p><code>CASE</code>&#39;s slightly more complicated and substnatially more useful functionality comes from pairing it with aggregators. For example, let&#39;s say you want to only count rows that fulfill a certain condition. Since <code>COUNT</code> ignores nulls, you could use a <code>CASE</code> statement to evaluate the condition and produce null or non-null values depending on the outcome:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(CASE WHEN columna = 7 THEN columna
@@ -167,7 +167,7 @@
             WHEN columna &gt; 7 THEN &#39;&gt;7&#39;
             END
 </code></pre></div>
-<h5>Common uses for CASE</h5>
+<h3>Common uses for CASE</h3>
 
 <p>The previous example is an excellent lead-in to a primary use-<code>CASE</code> for <code>CASE</code> (sorry for that): creating histograms. The only problem with it is that it displays your results vertically.</p>
 
@@ -198,11 +198,13 @@
 
 <p>pivoting data</p>
 
-<h5>Problem set</h5>
+<h3>Problem set</h3>
 
 <ul>
 <li>MO FUNCTIONS, MO PROBLEMS</li>
 </ul>
+
+<p>Check out the next lesson: <a href="/intermediate/join-intro.html">Introduction to Joins</a></p>
 
   
   </div>

@@ -71,11 +71,9 @@
   <div class="container">
     <h2>DISTINCT</h2>
     
-    <ul>
-<li>note: this one feels like it could come earlier</li>
-</ul>
+    <!--note: this one feels like it could come earlier-->
 
-<h5>DISTINCT</h5>
+<h3>DISTINCT</h3>
 
 <p>You&#39;ll occasionally want to look at only the unique values in a particular column. You can do this using <code>SELECT DISTINCT</code> syntax:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT DISTINCT columna
@@ -87,7 +85,7 @@
 </code></pre></div>
 <p><em>Note: You only need to include <code>DISTINCT</code> once in your <code>SELECT</code> clause &mdash; you do not need to add it for each column name.</em></p>
 
-<h5>Using  DISTINCT in aggregations</h5>
+<h3>Using  DISTINCT in aggregations</h3>
 
 <p>You can use <code>DISTINCT</code> when performing an aggregation. You will probably use it most commonly with the <code>COUNT</code> function:</p>
 
@@ -102,11 +100,11 @@
 
 <p>Of course, you can <code>SUM</code> or <code>AVG</code> the distinct values in a column, but there are fewer practical applications for them. For <code>MAX</code> and <code>MIN</code>, you probably shouldn&#39;t ever use <code>DISTINCT</code> because the results will be the same as without <code>DISTINCT</code>, and the <code>DISTINCT</code> function will make your query substantially slower to return results.</p>
 
-<h5>DISTINCT Performances</h5>
+<h3>DISTINCT Performances</h3>
 
 <p>It is worth noting that using <code>DISTINCT</code> can slow your queries down quite a bit. We&#39;ll cover this in greater depth in the <a href="LINK%20TO%20PERFORMANCE">advanced tutorial</a></p>
 
-<p><a href="LINK%20TO%20NEXT">LINK TO NEXT TUTORIAL</a></p>
+<p>Check out the next tutorial: <a href="/intermediate/case.html">CASE</a></p>
 
   
   </div>

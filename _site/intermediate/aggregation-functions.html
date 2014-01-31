@@ -74,11 +74,11 @@
     <div class="tip">Tip: Start by running this code to get a sense of what's in the table that will be used in this tutorial.</div>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.sat_scores
 </code></pre></div>
-<h5>Aggregation Functions</h5>
+<h3>Aggregation Functions</h3>
 
 <p>As the <a href="LINK%20TO%20INTRODUCTION">beginner tutorial</a> points out, SQL is excellent at aggregating data the way you might in a pivot table in Excel. You will use aggregation functions all the time, so it&#39;s important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: <code>COUNT</code>, <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>AVG</code></p>
 
-<h5>COUNT</h5>
+<h3>COUNT</h3>
 
 <p>It&#39;s easiest to start with <code>COUNT</code> because verifying your results is extremely simply. The easiest way to get started is to use <code>*</code> to select all rows.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(*)
@@ -110,7 +110,7 @@
 </code></pre></div>
 <p><em>Note: This is really the only place in which you&#39;ll ever want to use double quotes in SQLl; single quotes for everything else.</em></p>
 
-<h5>SUM</h5>
+<h3>SUM</h3>
 
 <p>This works the same way as count, except that it can only be used on numerical columns. As you might expect, <code>SUM</code> totals all the values in a given column:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT SUM(hrs_studied)
@@ -125,7 +125,7 @@
 </code></pre></div>
 <p>You don&#39;t need to worry as much about the presence of nulls with <code>SUM</code> as you would with <code>COUNT</code> &mdash; <code>SUM</code> treats nulls as 0.</p>
 
-<h5>MIN/MAX</h5>
+<h3>MIN/MAX</h3>
 
 <p><code>MIN</code> and <code>MAX</code> are similar to <code>COUNT</code> in that they can be used on non-numerical columns. Depending on the column type, <code>MIN</code> will return the lowest number, earliest date, or non-numerical value as close to &quot;a&quot; as possible. As you might suspect, <code>MAX</code> does the opposite:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT MIN(hrs_studied) AS min_study_time,
@@ -138,7 +138,7 @@
   FROM tutorial.sat_scores
  WHERE hrs_studied IS NOT NULL
 </code></pre></div>
-<h5>AVG</h5>
+<h3>AVG</h3>
 
 <p><code>AVG</code> does what you&#39;d think &mdash; it calculated the average of selected values. It is very useful, but has some limitations. First, it can only be used on numerical columns. Second, it ignores nulls completely. There are some cases in which you will want to treat null values as 0. For these cases, you&#39;ll want to write a statement that changes the nulls to 0 (covered in the <a href="LINK%20TO%20CASE%20STATEMENT">intermediate tutorial</a>).</p>
 
@@ -151,7 +151,7 @@
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(hrs_studied)
   FROM tutorial.sat_scores
 </code></pre></div>
-<h5>GROUP BY</h5>
+<h3>GROUP BY</h3>
 
 <p>All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count entries by month, for example. <code>GROUP BY</code> allows you to separate your aggregations into sub-groups. Here&#39;s an example:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT teacher,
@@ -185,7 +185,7 @@
 </code></pre></div>
 <p>There&#39;s one thing to be aware of as you group by multiple columns: SQL evaluates the aggregations before the <code>LIMIT</code> clause. If you don&#39;t group by any columns, you&#39;ll get a 1-row result &mdash; no problem there. If you group by a column with enough unique values that it exceeds the <code>LIMIT</code> number, what will happen is that aggregates will be calculated, and then some rows will simply be omitted from the results. This is actually a nice way to do things because you know you&#39;re going to get the correct aggregates. If SQL cut the table down to 100 rows, then performed the aggregations, your results would be substantially different.</p>
 
-<h5>Query Clause Order</h5>
+<h3>Query Clause Order</h3>
 
 <p>As mentioned in prior tutorials, the order in which you write the clauses is important. Here&#39;s the order for everything you&#39;ve learned so far:</p>
 
@@ -197,13 +197,13 @@
 <li>ORDER BY</li>
 </ol>
 
-<h5>Aggregation Practice</h5>
+<h3>Aggregation Practice</h3>
 
 <ul>
 <li>practice problems</li>
 </ul>
 
-<p><a href="LINK" title="Next Lesson">LINK TO NEXT LESSON</a></p>
+<p>Check out the next lesson: <a href="/intermediate/distinct.html">DISTINCT</a></p>
 
   
   </div>

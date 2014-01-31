@@ -9,10 +9,10 @@ date:   2014-02-01 00:00:59
 
     SELECT * FROM tutorial.sat_scores
 
-#####Aggregation Functions
+###Aggregation Functions
 As the [beginner tutorial](LINK TO INTRODUCTION) points out, SQL is excellent at aggregating data the way you might in a pivot table in Excel. You will use aggregation functions all the time, so it's important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`
 
-#####COUNT
+###COUNT
 It's easiest to start with `COUNT` because verifying your results is extremely simply. The easiest way to get started is to use `*` to select all rows.
 
     SELECT COUNT(*)
@@ -49,7 +49,7 @@ If you must use spaces, you will need to use double quotes.
 
 *Note: This is really the only place in which you'll ever want to use double quotes in SQLl; single quotes for everything else.*
 
-#####SUM
+###SUM
 This works the same way as count, except that it can only be used on numerical columns. As you might expect, `SUM` totals all the values in a given column:
 
     SELECT SUM(hrs_studied)
@@ -65,7 +65,7 @@ An important thing to remember: aggregators only aggregate vertically. In this d
 
 You don't need to worry as much about the presence of nulls with `SUM` as you would with `COUNT` &mdash; `SUM` treats nulls as 0.
 
-#####MIN/MAX
+###MIN/MAX
 `MIN` and `MAX` are similar to `COUNT` in that they can be used on non-numerical columns. Depending on the column type, `MIN` will return the lowest number, earliest date, or non-numerical value as close to "a" as possible. As you might suspect, `MAX` does the opposite:
 
     SELECT MIN(hrs_studied) AS min_study_time,
@@ -79,7 +79,7 @@ Nulls are treated as lower than 0 or "a" so `MIN` will return a null value if th
       FROM tutorial.sat_scores
      WHERE hrs_studied IS NOT NULL
 
-#####AVG
+###AVG
 `AVG` does what you'd think &mdash; it calculated the average of selected values. It is very useful, but has some limitations. First, it can only be used on numerical columns. Second, it ignores nulls completely. There are some cases in which you will want to treat null values as 0. For these cases, you'll want to write a statement that changes the nulls to 0 (covered in the [intermediate tutorial](LINK TO CASE STATEMENT)).
 
 You can see this by comparing these two queries:
@@ -93,7 +93,7 @@ Produces the same result as:
     SELECT AVG(hrs_studied)
       FROM tutorial.sat_scores
 
-#####GROUP BY
+###GROUP BY
 All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count entries by month, for example. `GROUP BY` allows you to separate your aggregations into sub-groups. Here's an example:
 
     SELECT teacher,
@@ -130,7 +130,7 @@ The order of column names in your `GROUP BY` clause doesn't matter &mdash; the r
 
 There's one thing to be aware of as you group by multiple columns: SQL evaluates the aggregations before the `LIMIT` clause. If you don't group by any columns, you'll get a 1-row result &mdash; no problem there. If you group by a column with enough unique values that it exceeds the `LIMIT` number, what will happen is that aggregates will be calculated, and then some rows will simply be omitted from the results. This is actually a nice way to do things because you know you're going to get the correct aggregates. If SQL cut the table down to 100 rows, then performed the aggregations, your results would be substantially different.
 
-#####Query Clause Order
+###Query Clause Order
 As mentioned in prior tutorials, the order in which you write the clauses is important. Here's the order for everything you've learned so far:
 
 1. SELECT
@@ -139,8 +139,8 @@ As mentioned in prior tutorials, the order in which you write the clauses is imp
 4. GROUP BY
 5. ORDER BY
 
-#####Aggregation Practice
+###Aggregation Practice
 * practice problems
 
 
-[LINK TO NEXT LESSON](LINK "Next Lesson")
+Check out the next lesson: [DISTINCT](/intermediate/distinct.html)

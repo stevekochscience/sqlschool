@@ -71,15 +71,13 @@
   <div class="container">
     <h2>Outer Joins</h2>
     
-    <h5>Outer Joins</h5>
+    <h3>Outer Joins</h3>
 
 <p>When performing an Inner Join, rows from either table that are unmatched in the other table are not returned. In an Outer Join, unmatched rows in one or both tables can be returned. There are a few types of outer joins. <code>LEFT JOIN</code> and <code>RIGHT JOIN</code> only return unmatched rows from one table, while <code>FULL OUTER JOIN</code> returns unmatched rows from both tables.</p>
 
-<h5>LEFT JOIN</h5>
+<h3>LEFT JOIN</h3>
 
-<ul>
-<li>IMAGE: http://www.w3schools.com/sql/img_leftjoin.gif</li>
-</ul>
+<p><img src="http://www.w3schools.com/sql/img_leftjoin.gif" alt="Left Joins"></p>
 
 <p>Let&#39;s start by looking at the previous example of an INNER JOIN:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT users.*,
@@ -99,13 +97,11 @@
 
 <p>Whenever you perform a Left Join, your results will return all of the rows in the table that you specify in teh <code>FROM</code> clause, and only matching rows from the table in the <code>LEFT JOIN</code> clause.</p>
 
-<h5>RIGHT JOIN</h5>
+<h3>RIGHT JOIN</h3>
 
 <p>Right Joins do the opposite &mdash; They return all rows from the table in the <code>RIGHT JOIN</code> clause and only matching rows from the table in the <code>FROM</code> clause.</p>
 
-<ul>
-<li>http://www.w3schools.com/sql/img_rightjoin.gif</li>
-</ul>
+<p>![Right Joins}(http://www.w3schools.com/sql/img_rightjoin.gif)</p>
 
 <p><code>RIGHT JOIN</code> is rarely used because you can achieve the results of a Right Join by simply switching the two joined table names in a Left Join. For example, this query produces the same results as the previous query:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT users.*,
@@ -118,7 +114,7 @@
 
 <p>Also, <code>LEFT JOIN</code> and <code>RIGHT JOIN</code> can be written as <code>LEFT OUTER JOIN</code> and <code>RIGHT OUTER JOIN</code>, respectively.</p>
 
-<h5>Filtering in the ON clause</h5>
+<h3>Filtering in the ON clause</h3>
 
 <p>Let&#39;s go back to the <code>LEFT JOIN</code> example:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT users.*,
@@ -129,13 +125,15 @@
 </code></pre></div>
 <p>You can </p>
 
-<h5>Inequality joins</h5>
+<h3>Inequality joins</h3>
 
 <p>http://en.wikipedia.org/wiki/Join_(SQL)</p>
 
 <p>http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins</p>
 
-<p>filtering using JOIN vs. WHERE clause</p>
+<!--filtering using JOIN vs. WHERE clause -->
+
+<p>Check out the next lesson: <a href="/intermediate/full-join-union.html">Full Join and UNION</a></p>
 
   
   </div>

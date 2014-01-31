@@ -5,7 +5,7 @@ title:  "CASE"
 date:   2014-02-01 00:00:57
 ---
 
-#####CASE
+###CASE
 The `CASE` statement is SQL's way of handling if/then logic. It's easiest to understand in the context of an example:
 
     SELECT columna,
@@ -59,14 +59,14 @@ You can also string together multiple conditional statements with `AND` and `OR`
                 ELSE 'no' END AS sample_case_statement
       FROM mode_sample_table_7
 
-#####A quick review:
+###A quick review:
 
 1. The `CASE` statement always goes in the `SELECT` clause
 2. `CASE` must include the following components: `WHEN`, `THEN`, and `END`. `ELSE` is an optional component.
 3. You can make any conditional statement using any [conditional operator](LINK to prev tutorial) between `WHEN` and `THEN`
 4. You can include multiple `WHEN` statements, as well as an `ELSE` statement to deal with any unaddressed conditions.
 
-#####Using CASE in aggregations
+###Using CASE in aggregations
 `CASE`'s slightly more complicated and substnatially more useful functionality comes from pairing it with aggregators. For example, let's say you want to only count rows that fulfill a certain condition. Since `COUNT` ignores nulls, you could use a `CASE` statement to evaluate the condition and produce null or non-null values depending on the outcome:
 
     SELECT COUNT(CASE WHEN columna = 7 THEN columna
@@ -102,7 +102,7 @@ The above query is an excellent place to use numbers instead of columns in the `
                 WHEN columna > 7 THEN '>7'
                 END
 
-#####Common uses for CASE
+###Common uses for CASE
 The previous example is an excellent lead-in to a primary use-`CASE` for `CASE` (sorry for that): creating histograms. The only problem with it is that it displays your results vertically.
 
 SOMETHING ABOUT HOW YOU SOMETIMES WANT SHIT IN DIFFERENT COLUMNS
@@ -129,6 +129,8 @@ This is called "pivoting," and is where the name "Pivot Tables" came from in Exc
 
 pivoting data
 
-#####Problem set
+###Problem set
 
 * MO FUNCTIONS, MO PROBLEMS
+
+Check out the next lesson: [Introduction to Joins](/intermediate/join-intro.html)
