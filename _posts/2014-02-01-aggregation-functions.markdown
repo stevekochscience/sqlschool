@@ -5,6 +5,10 @@ title:  "Aggregation Functions"
 date:   2014-02-01 00:00:59
 ---
 
+<div class="tip">Tip: Start by running this code to get a sense of what's in the table that will be used in this tutorial.</div>
+
+    SELECT * FROM tutorial.sat_scores
+
 #####Aggregation Functions
 As the [beginner tutorial](LINK TO INTRODUCTION) points out, SQL is excellent at aggregating data the way you might in a pivot table in Excel. You will use aggregation functions all the time, so it's important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`
 

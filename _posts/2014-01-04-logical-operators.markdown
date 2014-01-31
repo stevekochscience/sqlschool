@@ -5,6 +5,10 @@ title:  "Logical Operators"
 date:   2014-01-01 00:00:56
 ---
 
+<div class="tip">Tip: Start by running this code to get a sense of what's in the table that will be used in this tutorial.</div>
+
+    SELECT * FROM tutorial.patient_list
+
 ###Comparison Operators &mdash; the Weird Ones
 In the [previous tutorial](LINK), you played with some comparison opertors. There are a couple more that you're likely to find very useful. They're all special snowflakes, so we'll go through them individually:
 

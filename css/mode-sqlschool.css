@@ -9,17 +9,18 @@ html, body { height: 100%; }
 body {
   background-color: #FFF;
   font: 15px Helvetica, Arial, sans-serif;
-  line-height: 1.3em;
+  line-height: 21px;
   text-align: left;
 }
 
 h1 { margin-bottom: 1em; }
+h3 { margin-top: 1.5em; }
 h4 { padding-bottom: .3em; margin-top: 1.5em; }
 p { margin: 1em 0; }
 
 a         { color: #DD5426; } /* Mode Orange */
 a:hover   { color: #1B3A3E; } /* Mode Dark Green */
-a:visited { color: #1B3A3E; } /* Mode Dark Green */
+a:visited { color: #DD5426; } /* Mode Orange */
 
 div.container {
   max-width:650px;
@@ -81,14 +82,26 @@ li a {
   display: block;
 }
 
-/* Individual Question Pages */
+/* Individual Lesson Pages */
 div.search-small input.form-control {
   width:150px;
 }
 
-section.question h2{
+section.lesson h2{
   border-top:1px solid black;
   padding-top:15px;
+}
+
+div.tip {
+  font-size: 0.8em;
+  background-color: #d8ebf8;
+  border-radius: 3px;
+  border: 1px solid #97c1da;
+  color: 264c72;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+  margin-bottom: 10px;
 }
 
 /* Footer */

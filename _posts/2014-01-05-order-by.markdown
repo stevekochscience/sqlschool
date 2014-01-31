@@ -4,8 +4,12 @@ category: "the-basics"
 title:  "ORDER BY"
 date:   2014-01-01 00:00:55
 ---
-<!--*Note: Data in this example comes from [wikipedia](http://en.wikipedia.org/wiki/List_of_United_States_cities_by_population)
--->
+
+<div class="tip">Tip: Start by running this code to get a sense of what's in the table that will be used in this tutorial.</div>
+
+    SELECT * FROM tutorial.city_populations
+
+*Note: Data in this example comes from [Wikipedia](http://en.wikipedia.org/wiki/List_of_United_States_cities_by_population)*
 ###ORDER BY
 Now that you can filter, it's time to learn how to sort. The `ORDER BY` clause allows you to reorder your results based on the data in one or more columns. First, take a look at how the table is ordered by default:
 
@@ -79,4 +83,4 @@ You can also leave comments across multiple lines using `/*` to begin the commen
 
 
 ###What's Next?
-Congrats on completeing the Beginner SQL Tutorial! When you're done celebrating, check out the first lesson in the Intermediate Tutorial, [Aggregation Functions](/intermediate-sql/aggregation-functions.html).
+Congrats on completeing the Beginner SQL Tutorial! When you're done celebrating, check out the first lesson in the Intermediate Tutorial, [Aggregation Functions](/intermediate/aggregation-functions.html).

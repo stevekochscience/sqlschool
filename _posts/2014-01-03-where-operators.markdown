@@ -5,6 +5,10 @@ title:  "WHERE and Comparison Operators"
 date:   2014-01-01 00:00:57
 ---
 
+<div class="tip">Tip: Start by running this code to get a sense of what's in the table that will be used in this tutorial.</div>
+
+    SELECT * FROM tutorial.flight_revenue
+
 ###The WHERE Clause
 So you know how to view some data using `SELECT` and `FROM`. The next step is filtering the data using the `WHERE` clause. Here's what it looks like.
 
@@ -77,4 +81,4 @@ If you'd like a little practice, try these questions:
 
 > Which destination airport(s) had more than $70,000 in total revenue (the sum of all the revenue columns)?
 
-If you're ready to mode on [Click here to move on to the next lesson: Logical Operators](/the-basics/logical-operators.html).
+Move on to the next lesson: [Logical Operators](/the-basics/logical-operators.html).
