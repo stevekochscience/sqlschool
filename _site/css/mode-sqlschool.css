@@ -54,8 +54,9 @@ table {
 }
 
 /* Top Nav */
-nav {
+nav#header-nav {
   background-color:#D7DDDB;
+  height:50px;
 }
 
 div#header-container {
@@ -69,7 +70,7 @@ div.navbar-header {
 }
 
 a#navbar-brand {
-  line-height:55px;
+  line-height:50px;
   color: white;
 }
 
@@ -77,6 +78,15 @@ img#header-logo {
   display:inline;
   border: none;
   margin-right: 7px;
+}
+
+.navbar-nav>li>a {
+  color:black;
+}
+
+.navbar-nav>li>a:hover {
+  color:#DD5426;  /* Mode Orange */
+  background:transparent;
 }
 
 /* Main */
@@ -133,9 +143,4 @@ footer {
 nav.navbar-footer li a {
   color:white;
   padding-left: 0px;
-}
-
-nav.navbar-footer li a:hover {
-  color:#DD5426;  /* Mode Orange */
-  background:transparent;
 }
