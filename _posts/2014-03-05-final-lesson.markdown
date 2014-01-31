@@ -2,8 +2,9 @@
 layout: sqlschool-lesson
 category: "advanced"
 title:  "Tutorial Conclusion"
-date: 
+date:   2014-03-01 00:00:55
 ---
+
 ###Moving On
 <!-- something generic-->
 
