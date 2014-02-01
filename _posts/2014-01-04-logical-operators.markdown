@@ -1,135 +1,187 @@
 ---
 layout: sqlschool-lesson
 category: "the-basics"
-title:  "Logical Operators"
+title:  "Using Multiple Filters at Once"
 date:   2014-01-01 00:00:56
 ---
 
-<!--billboard-->
+The data in this lesson is from [Billboard Music Charts](http://www.billboard.com/charts). It was collected in January 2014 and contains data from ___ through 2013. The results in this table are the *year-end* results &mdash; the top 100 songs at the end of each year. Check out the dataset for yourself:
 
-<div class="tip">Tip: Start by running this code to get a sense of what's in the table that will be used in this tutorial.</div>
+    SELECT * FROM benn.billboard_top_100_year_end
 
-    SELECT * FROM tutorial.patient_list
+* `year_rank` is the rank of that song at the end of the listed year
+* `group_name` is the name of the entire group that won (could be multiple artists if there was a collaboration)
+* `artist_name` is an individual artist. This is a little complicated, as an artist can be an individual or group.
 
-###Comparison Operators &mdash; the Weird Ones
-In the [previous tutorial](LINK), you played with some comparison opertors. There are a couple more that you're likely to find very useful. They're all special snowflakes, so we'll go through them individually:
-
-###IN
-You'll probably want to use `IN` pretty frequently &mdash; it allows you to specify a list of values that you'd like to include. For example, the following query will return results for which the age column is equal to one of the values in the list:
+You can get a better sense of some of the nuances of this by running the following query. It uses the `ORDER BY` clause, which we will get to in the next lesson. Don't worry about it for now:
 
     SELECT *
-      FROM tutorial.patient_list
-     WHERE age IN (22, 37, 33, 54)
+      FROM benn.billboard_top_100_year_end
+     ORDER BY year DESC, year_rank
+
+You'll notice that Macklemore does a lot of collaborations. Since his songs are listed as featuring other artists like Ryan Lewis, there are multiple lines in the dataset for Ryan Lewis. Daft Punk and Pharrell Williams are also listed as two artists. Daft Punk is actually a duo, but since the album lists them together under the name Daft Punk, that's how Billboard treats them.
+
+Now on to the lesson!
+
+###Comparison Operators &mdash; the Weird Ones
+In the [previous tutorial](/the-basics/where-operators.html), you played with some comparison opertors. There are a couple more that you're likely to find very useful. They're all special snowflakes, so we'll go through them individually:
+
+###IN
+You'll probably want to use `IN` pretty frequently &mdash; it allows you to specify a list of values that you'd like to include. For example, the following query will return results for which the `year_rank` column is equal to one of the values in the list:
+
+    SELECT *
+      FROM benn.billboard_top_100_year_end
+     WHERE year_rank IN (1, 2, 3)
 
 As in the previous tutorial, you can use non-numerical values, but they need to go inside single quotes. Regardless of the data type, the values in the list must be separated by commas. Here's another example:
 
     SELECT *
-      FROM tutorial.patient_list
-     WHERE physician_last_name IN ('Yamamoto', 'Honeydew', 'Chase')
+      FROM benn.billboard_top_100_year_end
+     WHERE artist IN ('Taylor Swift', 'Usher', 'Ludacris')
+
+* Practice Problem
+[Answer](LINK)
 
 ###BETWEEN
 This allows you to specify a range and select only rows within a certain range. It has to be paired with the `AND` operator, which you will learn about in just a few moments. Here's how `BETWEEN` looks:
 
     SELECT *
-      FROM tutorial.patient_list
-     WHERE age BETWEEN 30 AND 39
+      FROM benn.billboard_top_100_year_end
+     WHERE year_rank BETWEEN 5 AND 10
 
 `BETWEEN` includes the values that you specify in the query, so the above query will return the exact same results as the following query:
 
     SELECT *
-      FROM tutorial.patient_list
-     WHERE age >= 30 AND age <= 39
+      FROM benn.billboard_top_100_year_end
+     WHERE year_rank >= 5 AND year_rank <= 10
 
 Some people prefer the latter example because it more explicitly shows what the query is doing (t's easy to forget whether or not BETWEEN includes the range bounds).
 
+* Practice Problem
+[Answer](LINK)
+
 ###IS NULL
-Some tables contain null values &mdash; cells with no data in them at all. This can be confusing for heavy Excel users, because the difference between a cell having no data and a cell containing a space isn't meaningful in Excel. In SQL, the implications can be pretty serious. This is covered in greater detail in the [intermediate tutorial](LINK), but for now, here's what you need to know:
+Some tables contain null values &mdash; cells with no data in them at all. This can be confusing for heavy Excel users, because the difference between a cell having no data and a cell containing a space isn't meaningful in Excel. In SQL, the implications can be pretty serious. This is covered in greater detail in the [intermediate tutorial](/intermediate/aggregation-functions.html), but for now, here's what you need to know:
 
 You can select rows that contain no data in a given column by using the `IS NULL` operator:
 
     SELECT *
-      FROM tutorial.patient_list
-     WHERE weight IS NULL
+      FROM benn.billboard_top_100_year_end
+     WHERE ****** IS NULL
 
-`WHERE weight = NULL` will **not** work &mdash; you can't perform arithmetic on null values.
+`WHERE ****** = NULL` will **not** work &mdash; you can't perform arithmetic on null values.
+
+* Practice Problem
+[Answer](LINK)
 
 ###LIKE
-`LIKE` allows you to match on similar values rather than exact ones. Using wildcard characters, you can define what must be exactly matched and what can be different. In this example, the results will include rows for which columnb starts with "San" and is followed by any number and selection of characters:
+`LIKE` allows you to match on similar values rather than exact ones. Using wildcard characters, you can define what must be exactly matched and what can be different. In this example, the results will include rows for which `group_name` starts with "Snoop" and is followed by any number and selection of characters:
 
     SELECT *
-      FROM tutorial.patient_list
-     WHERE physician_last_name LIKE 'Sm%'
+      FROM benn.billboard_top_100_year_end
+     WHERE group_name LIKE 'Snoop%'
 
-The `%` used above represents any character or set of characters. In this case, `%` is referred to as a "wildcard." In the SQL that Mode uses, `LIKE` is case-sensitive, meaning that the above query will only capture matches that start with a capital "S" and lower-case "m." To match in a way that is not case-sensitive, you can use the `ILIKE` command:
+The `%` used above represents any character or set of characters. In this case, `%` is referred to as a "wildcard." In the SQL that Mode uses, `LIKE` is case-sensitive, meaning that the above query will only capture matches that start with a capital "S" and lower-case "noop." To match in a way that is not case-sensitive, you can use the `ILIKE` command:
 
     SELECT *
-      FROM tutorial.patient_list
-     WHERE physician_last_name ILIKE 'sm%'
+      FROM benn.billboard_top_100_year_end
+     WHERE group_name ILIKE 'snoop%'
 
 You can also use `_` (a single underscore) to substitute for an individual character:
 
     SELECT *
-      FROM tutorial.patient_list
-     WHERE physician_last_name ILIKE 's_ith'
+      FROM benn.billboard_top_100_year_end
+     WHERE artist ILIKE 'dr_ke'
+
+* Practice Problem
+[Answer](LINK)
+
+* Practice Problem
+[Answer](LINK)
 
 ###Logical Operators
 You'll likely want to filter using several conditions &mdash; possibly more often than you filter by only one condition. Logical operators allow you to use multiple comparison operators in one query.
 
 ###AND
-`AND` will let you select only rows that satisfy two conditions. The following query will return only rows for which columna equals 5 and columnb is null:
+`AND` will let you select only rows that satisfy two conditions. The following query will return all rows for top-10 recordings in 2012.
 
     SELECT *
-      FROM mode_sample_table_3
-     WHERE columna = 5 AND columnb IS NULL
+      FROM benn.billboard_top_100_year_end
+     WHERE year = 2012 AND year_rank <= 10
 
 You can use `AND` with any comparison operator, and as many times as you want. If you run this query, you'll notice that all of the requirements are satisfied.
 
     SELECT *
-      FROM mode_sample_table_3
-     WHERE columna != 5
-       AND columnb LIKE 'San%'
-       AND columna >= 3
+      FROM benn.billboard_top_100_year_end
+     WHERE year = 2012
+       AND year_rank <= 10
+       AND group_name ILIKE '%feat%'
 
 You can see that this example is spaced out onto multiple lines &mdash; a good way to make long `WHERE` clauses more readable.
+
+* Practice Problem
+[Answer](LINK)
+
+* Practice Problem
+[Answer](LINK)
 
 ###OR
 If you want to select rows that satisfy either of two conditions, you can use `OR`. It works the same way as `AND`. Try running this:
 
     SELECT *
-      FROM mode_sample_table_3
-     WHERE columna < 10 OR columna > 20
+      FROM benn.billboard_top_100_year_end
+     WHERE year_rank = 5 OR artist = 'Gotye'
 
-You can combine `AND` with `OR` using parenthesis. The following query will return rows that satisfy **both** of the following conditions.
-
-columna > 10
-columnb = 'value1' OR columnb = 'value2 &mdash; because this line is in parentheses, you can think of it as its own condition.
+You'll notice that each row will satisfy one of the two conditions. You can combine `AND` with `OR` using parenthesis. The following query will return rows that satisfy **both** of the following conditions:
 
     SELECT *
-      FROM mode_sample_table_3
-     WHERE columna > 10
-       AND (columnb = 'value1' OR columnb = 'value2')
+      FROM benn.billboard_top_100_year_end
+     WHERE year = 2013
+       AND (group_name ILIKE '%macklemore%' OR group_name ILIKE '%timberlake%')
+   
+You will notice that the conditional statement `year = 2013` will be fulfilled for every row returned. `(or)` is treated like one separate conditional statement because it is in parentheses, so it must be satisfied in addition to the first statement of `year = 2013`. You can think of the rows selected as being either of the following:
+
+* rows where `year = 2013` is true and `group_name ILIKE '%macklemore%'` is true
+* rows where `year = 2013` is true and `group_name ILIKE '%timberlake%'` is true
+* rows where `year = 2013` is true and `group_name ILIKE '%macklemore%'` is true and `group_name ILIKE '%timberlake%'` is true
+
+* Practice Problem
+[Answer](LINK)
+
+* Practice Problem
+[Answer](LINK)
    
 ###NOT
-You can add `NOT` before any conditional statement if you'd like to select the rows for which that statement is false. It works like this:
+You can add `NOT` before any conditional statement if you'd like to select the rows for which that statement is false. Run this query and check out how Macklemore magically disappears!
 
     SELECT *
-      FROM mode_sample_table_3
-     WHERE NOT columna < 10
+      FROM benn.billboard_top_100_year_end
+     WHERE year = 2013 
+       AND year_rank NOT > 5
 
-Using `NOT` with `<` and `>` usually doesn't make sense because you can simply use the opposite comparative operator instead. `NOT` is more commonly used with `LIKE`
-
-    SELECT *
-      FROM mode_sample_table_3
-     WHERE columnb NOT LIKE 'San%'
-
-`NOT` is mostly commonly used to identify non-null rows. Here's how that looks:
+Using `NOT` with `<` and `>` usually doesn't make sense because you can simply use the opposite comparative operator instead. `NOT` is more commonly used with `LIKE`:
 
     SELECT *
-      FROM mode_sample_table_3
-     WHERE columnb IS NOT NULL
+      FROM benn.billboard_top_100_year_end
+     WHERE year = 2013 
+       AND group_name NOT ILIKE '%macklemore%'
+
+`NOT` is mostly commonly used to identify non-null rows, but the syntax is somewhat special &mdash; you need to include `IS` beforehand. Here's how that looks:
+
+    SELECT *
+      FROM benn.billboard_top_100_year_end
+     WHERE year = 2013 
+       AND year_rank NOT > 5 --IS NOT NULL
 
 ###Practice Problems
 
-<!-- put them here -->
+* Practice Problem
+[Answer](LINK)
 
-Move on to the next segment: [ORDER BY](/the-basics/order-by.html).
+* Practice Problem
+[Answer](LINK)
+
+* Practice Problem
+[Answer](LINK)
+
+Move on to the next segment: [Ordering Your Results](/the-basics/order-by.html).
