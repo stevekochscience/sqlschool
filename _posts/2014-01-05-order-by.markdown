@@ -73,9 +73,9 @@ You can "comment out" pieces of code by adding combinations of characters. In ot
 
 You can use`--` (two dashes)  to comment out everything to the right of them on a given line:
 
-    SELECT *  --This comment won't affect the way this code runs
-      FROM tutorial.city_populations
-     ORDER BY 2, 3 DESC
+    SELECT *  --This comment won't affect the way the code runs
+      FROM benn.billboard_top_100_year_end
+     WHERE year = 2013
 
 You can also leave comments across multiple lines using `/*` to begin the comment and `*/` to close it:
 
@@ -83,8 +83,8 @@ You can also leave comments across multiple lines using `/*` to begin the commen
     it could only fit on multiple lines. Fortunately,
     it, too, will not affect how this code runs. */
     SELECT *
-      FROM tutorial.city_populations
-     ORDER BY 2, 3 DESC
+      FROM benn.billboard_top_100_year_end
+     WHERE year = 2013
 
 ###Practice problems
 <!-- add a bunch of problems -->

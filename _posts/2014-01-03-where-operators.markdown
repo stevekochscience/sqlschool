@@ -1,7 +1,7 @@
 ---
 layout: sqlschool-lesson
 category: "the-basics"
-title:  "Filtering data and making simple calculations"
+title:  "Filtering Data and Making Simple Calculations"
 date:   2014-01-01 00:00:57
 ---
 
