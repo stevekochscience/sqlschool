@@ -5,6 +5,8 @@ title:  "ORDER BY"
 date:   2014-01-01 00:00:55
 ---
 
+<!--still billboard-->
+
 <div class="tip">Tip: Start by running this code to get a sense of what's in the table that will be used in this tutorial.</div>
 
     SELECT * FROM tutorial.city_populations

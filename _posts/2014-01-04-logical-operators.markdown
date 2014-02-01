@@ -5,6 +5,8 @@ title:  "Logical Operators"
 date:   2014-01-01 00:00:56
 ---
 
+<!--billboard-->
+
 <div class="tip">Tip: Start by running this code to get a sense of what's in the table that will be used in this tutorial.</div>
 
     SELECT * FROM tutorial.patient_list

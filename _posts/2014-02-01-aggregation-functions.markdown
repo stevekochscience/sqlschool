@@ -5,6 +5,9 @@ title:  "Aggregation Functions"
 date:   2014-02-01 00:00:59
 ---
 
+<!--apple stock data-->
+
+
 <div class="tip">Tip: Start by running this code to get a sense of what's in the table that will be used in this tutorial.</div>
 
     SELECT * FROM tutorial.sat_scores
