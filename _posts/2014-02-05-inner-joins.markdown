@@ -63,4 +63,13 @@ You can see that some rows in the `tutorial.tweets` table have `tweeted_by_id`s 
 
 If you want to keep the rows that aren't matched, you'll need to use an Outer Join.
 
-Check out the next lesson: [Outer Joins](/intermediate/outer-joins.html)
+###A Practical Example
+[Benn Stancil] used this data to put together [a post for the Mode blog](http://blog.modeanalytics.com/where-football-players-call-home/). You can find the reports he used to build this data here:
+
+* report 1
+* report 2
+
+A reader responded with an improved heat map, so make sure to [check out the follow-up post](http://blog.modeanalytics.com/sports-hometown-update/).
+
+
+When you're ready, move on to the next lesson: [Outer Joins](/intermediate/outer-joins.html)
