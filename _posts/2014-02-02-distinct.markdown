@@ -1,11 +1,14 @@
 ---
 layout: sqlschool-lesson
 category: "intermediate"
-title:  "DISTINCT"
+title:  "Counting the Unique Values in a Column"
 date:   2014-02-01 00:00:58
 ---
 
 <!--note: this one feels like it could come earlier-->
+
+###Date formatting in SQL
+
 
 ###DISTINCT
 You'll occasionally want to look at only the unique values in a particular column. You can do this using `SELECT DISTINCT` syntax:

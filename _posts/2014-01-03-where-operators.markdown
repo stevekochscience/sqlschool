@@ -18,7 +18,7 @@ So you know how to view some data using `SELECT` and `FROM`. The next step is fi
       FROM tutorial.us_housing_units_completed
      WHERE month = 1
 
-*Note: the clauses always need to be in this order: SELECT, FROM, WHERE.*
+*Note: the clauses always need to be in this order: `SELECT`, `FROM`, `WHERE`.*
 
 The `WHERE` clause works in a plain-English way: the above query does the same thing as `SELECT * FROM tutorial.us_housing_units_completed`, except that the results will only include rows where the **month** column contains the value **1**.
 

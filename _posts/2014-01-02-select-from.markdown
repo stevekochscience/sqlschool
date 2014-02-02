@@ -36,7 +36,7 @@ If you want to select every column in a table, you can use `*` instead of the co
 <!--talk about report view-->
 <link to report view of answer>
 
-###What does this actually do?
+###What actually happens when you run a query?
 So when you run a query, what do you get back? As you can see from running the above queries, you get a table. But that table isn't stored permanently in the database. It also doesn't change any tables in the database &mdash; `mode.sample_table_1` will contain the same data every time you query it. Mode does store all of your results for future access, but the important part for the sake of this tutorial is that `SELECT` statements don't change anything in the underlying tables.
 
 ###Formatting convention
