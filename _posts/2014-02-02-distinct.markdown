@@ -5,37 +5,50 @@ title:  "Counting the Unique Values in a Column"
 date:   2014-02-01 00:00:58
 ---
 
-<!--note: this one feels like it could come earlier-->
+This lesson will use the same Apple stock price data from the [previous lesson](/intermediate/aggregation-functions.html)
 
-###Date formatting in SQL
+<div class="tip">Start by running this code to remind yourself what's in the table that will be used in this tutorial. Remember to switch over to Mode and run any of the code you see in the grey boxes to get a sense of what the output will look like.</div>
 
+    SELECT * FROM tutorial.aapl_historical_stock_price
 
 ###DISTINCT
 You'll occasionally want to look at only the unique values in a particular column. You can do this using `SELECT DISTINCT` syntax:
 
-    SELECT DISTINCT columna
-      FROM mode_sample_table_6
+    SELECT DISTINCT month
+      FROM tutorial.aapl_historical_stock_price
 
 If you include 2 (or more) columns in a `SELECT DISTINCT` clause, your results will contain all of the unique pairs of those two columns:
 
-    SELECT DISTINCT columna, columnb
-      FROM mode_sample_table_6
+    SELECT DISTINCT year, month
+      FROM tutorial.aapl_historical_stock_price
 
 *Note: You only need to include `DISTINCT` once in your `SELECT` clause &mdash; you do not need to add it for each column name.*
 
+* Practice problem
+[answer](LINK)
+
 ###Using  DISTINCT in aggregations
-You can use `DISTINCT` when performing an aggregation. You will probably use it most commonly with the `COUNT` function:
+You can use `DISTINCT` when performing an aggregation. You will probably use it most commonly with the `COUNT` function. It's pretty practical when exploring data to understand how many distinct values you're working with in a column. In this case, you should run the query below that counts the unique values in the `month` column.
 
-<!-- maybe include a practical example here -->
+    SELECT COUNT(DISTINCT month) AS unqiue_months
+      FROM tutorial.aapl_historical_stock_price
 
-    SELECT COUNT(DISTINCT columna) AS distinct_count_a
-      FROM mode_sample_table_6
+The results show that there are 12 unique value (other examples may be less obvious). That's a small enough number that you might be able to aggregate by month and be able to interpret the results fairly early. For example, you might follow this up by taking average trade volumes by month to get a sense of when Apple stock really moves:
 
-You'll notice that `DISTINCT` goes inside the aggregation function rather than at the beginning of the `SELECT` clause.
+    SELECT month,
+           AVG(volume) AS avg_trade_volume
+      FROM tutorial.aapl_historical_stock_price
+     GROUP BY month
+     ORDER BY 2 DESC
 
-Of course, you can `SUM` or `AVG` the distinct values in a column, but there are fewer practical applications for them. For `MAX` and `MIN`, you probably shouldn't ever use `DISTINCT` because the results will be the same as without `DISTINCT`, and the `DISTINCT` function will make your query substantially slower to return results.
+Okay, back to `DISTINCT`. You'll notice that `DISTINCT` goes inside the aggregation function rather than at the beginning of the `SELECT` clause. Of course, you can `SUM` or `AVG` the distinct values in a column, but there are fewer practical applications for them. For `MAX` and `MIN`, you probably shouldn't ever use `DISTINCT` because the results will be the same as without `DISTINCT`, and the `DISTINCT` function will make your query substantially slower to return results.
+
+* Practice Problem
+[answer](link)
+* practice problem
+[answer](link)
 
 ###DISTINCT Performance
-It is worth noting that using `DISTINCT`, particularly in aggregations, can slow your queries down quite a bit. We'll cover this in greater depth in the [advanced tutorial](/advanced/faster-queries), and provide an excellent workaround in a [pre-built recipe](/solutions-to-common-problems/fast-count-distinct).
+It is worth noting that using `DISTINCT`, particularly in aggregations, can slow your queries down quite a bit. We'll cover this in greater depth in the [advanced tutorial](/advanced/faster-queries.html), and provide an excellent workaround in a [pre-built recipe](/solutions-to-common-problems/fast-count-distinct.html).
 
-Check out the next tutorial: [CASE](/intermediate/case.html)
+Check out the next tutorial: [Using Conditional Logic to Define New Columns](/intermediate/case.html)
