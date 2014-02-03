@@ -16,7 +16,7 @@
   <!-- Mode Stylsheet-->
   <link rel="stylesheet" href="/css/mode-sqlschool.css">
   
-  <title>WHERE and Comparison Operators - </title>
+  <title>Filtering Data and Making Simple Calculations - </title>
 
 </head>
 <body>
@@ -61,7 +61,7 @@
     </div>
     
     <div class="breadcrumbs col-sm-8 col-sm-pull-4">
-      <a class="category" href="/#the-basics">the basics</a> / WHERE and Comparison Operators
+      <a href="/#the-basics">&laquo; Back to Index</a>
     </div>
     
   </div>
@@ -69,21 +69,23 @@
 
 <section class="question">
   <div class="container">
-    <h2>WHERE and Comparison Operators</h2>
+    <h2>Filtering Data and Making Simple Calculations</h2>
     
-    <div class="tip">Tip: Start by running this code to get a sense of what's in the table that will be used in this tutorial.</div>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.flight_revenue
+    <p>This lesson will use the same housing development data from the <a href="/the-basics/select-from.html">previous lesson</a></p>
+
+<p>Start by running this code to remind yourself what&#39;s in the table that will be used in this tutorial. Remember to switch over to Mode and run any of the code you see in the grey boxes to get a sense of what the output will look like.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.us_housing_units_completed
 </code></pre></div>
 <h3>The WHERE Clause</h3>
 
-<p>So you know how to view some data using <code>SELECT</code> and <code>FROM</code>. The next step is filtering the data using the <code>WHERE</code> clause. Here&#39;s what it looks like.</p>
+<p>So you know how to view some data using <code>SELECT</code> and <code>FROM</code>. The next step is filtering the data using the <code>WHERE</code> clause. Here&#39;s what it looks like:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM tutorial.flight_revenue
- WHERE destination = &#39;SFO&#39;
+  FROM tutorial.us_housing_units_completed
+ WHERE month = 1
 </code></pre></div>
-<p><em>Note: the clauses always need to be in this order: SELECT, FROM, WHERE.</em></p>
+<p><em>Note: the clauses always need to be in this order:</em> <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>.</p>
 
-<p>The <code>WHERE</code> clause works in a plain-English way: the above query does the same thing as <code>SELECT * FROM mode.sample_table_2</code>, except that the results will only include rows where the <strong>fieldname</strong> column contains the value <strong>&#39;something&#39;</strong>. Try running it both ways and note the differences.</p>
+<p>The <code>WHERE</code> clause works in a plain-English way: the above query does the same thing as <code>SELECT * FROM tutorial.us_housing_units_completed</code>, except that the results will only include rows where the <code>month</code> column contains the value <strong>1</strong>.</p>
 
 <p><strong>This part is really important: SQL deals with filtering an entire row at a time. In Excel, you can sort or filter one column at a time. In SQL, if you filter something in one column, entire rows will be omitted.</strong> The idea is that each row is one <em>data point</em> or <em>observation</em>, and all the information contained in that row belongs together.</p>
 
@@ -91,7 +93,7 @@
 
 <h3>Comparison Operators</h3>
 
-<p>The most basic way to filter data is using comparison operators. The easiest way to understand them is to start by looking at the list of basic numerical operators:</p>
+<p>The most basic way to filter data is using comparison operators. The easiest way to understand them is to start by looking at the list of them:</p>
 
 <table>
   <tr><td>Equal to</td><td><code>=</code></td></tr>
@@ -103,52 +105,84 @@
 </table>
 
 <p>These make the most sense when applied to numerical columns. For example:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT destination_airport, coach_rev
-  FROM tutorial.flight_revenue
- WHERE coach_rev &gt; 15000
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.us_housing_units_completed
+ WHERE west &gt; 30
 </code></pre></div>
-<p>Try running that query with each of the operators in place of <code>&gt;</code>. Try some values other than 5 to get a sense of how this works. When you&#39;re ready, try to answer this question:</p>
+<p>Try running that query with each of the operators in place of <code>&gt;</code>. Try some values other than <code>30</code> to get a sense of how this works. When you&#39;re ready, try to answer thse questions:</p>
 
-<blockquote>
-<p>Which destination airport(s) had more than $15,000 in coach revenue?</p>
-</blockquote>
+<div class="practice-prob">
+  Did the West Region ever produce *more than 50,000* housing units in one month? Remember, the units in the table are already in thousands.
+</div>
 
-<p>Don&#39;t worry &mdash; we&#39;ll get to some more practical examples shortly. <a href="LINK">Click here for the answer</a>.</p>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  Did the South Region ever produce *20,000 or fewer* housing units in one month?
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <h3>Comparisons on non-numerical data</h3>
 
-<p>All of the above operators work on non-numerical data as well. <code>=</code> and <code>!=</code> make perfect sense &mdash; they allow you to select rows that match (or don&#39;t match) any value. For example:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT destination_airport, coach_rev
-  FROM tutorial.flight_revenue
- WHERE destination != &#39;SFO&#39;
+<p>All of the above operators work on non-numerical data as well. <code>=</code> and <code>!=</code> make perfect sense &mdash; they allow you to select rows that match or don&#39;t match any value, respectively. For example, run the following query and you&#39;ll notice that none of the January rows show up:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.us_housing_units_completed
+ WHERE month_name != &#39;January&#39;
 </code></pre></div>
 <p>There are some important rules when using these operators, though. If you&#39;re using an operator with values that are non-numeric, you need to put the value in single quotes: <code>&#39;value&#39;</code>. <em>Note: SQL uses single quotes (as opposed to double quotes) in every instance except one, which we will get to in a later tutorial.</em></p>
 
 <p>You can use <code>&gt;</code>, <code>&lt;</code>, and the rest of the operators on non-numeric columns as well &mdash; they filter based on alphabetical order. Try running this a couple times with different operators:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT destination_airport, coach_rev
-  FROM tutorial.flight_revenue
- WHERE destination &gt; &#39;n&#39;
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.us_housing_units_completed
+ WHERE month_name &gt; &#39;January&#39;
 </code></pre></div>
-<p>The way SQL treats alphabetical ordering is a little bit tricky. You may have noticed in the above query that selecting <code>destination &gt; &#39;n&#39;</code> will yield only rows in which fieldname starts with &quot;n&quot; or later laters in the alphabet. &quot;Wait a minute,&quot; you might say. &quot;If I wanted to include value that start with n, I would have used <code>fieldname &gt;= &#39;n&#39;</code>.&quot; SQL considers &quot;na&quot; to be greater than &quot;n&quot; because it has an extra letter. It&#39;s worth noting that most dictionaries would list &quot;na&quot; after &quot;n&quot; as well.</p>
+<p>If you&#39;re using <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, or <code>&lt;=</code>, you don&#39;t necessarily need to be too specific about how you filter. Try this:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.us_housing_units_completed
+ WHERE month_name &gt; &#39;J&#39;
+</code></pre></div>
+<p>The way SQL treats alphabetical ordering is a little bit tricky. You may have noticed in the above query that selecting <code>month_name &gt; &#39;J&#39;</code> will yield only rows in which fieldname starts with &quot;n&quot; or later in the alphabet. &quot;Wait a minute,&quot; you might say. &quot;January is included in the results &mdash; shouldn&#39;t I have to use <code>month_name &gt;= &#39;J</code> to make that happen?&quot; SQL considers &#39;Ja&#39; to be greater than &#39;J&#39; because it has an extra letter. It&#39;s worth noting that most dictionaries would list &#39;Ja&#39; after &#39;J&#39; as well.</p>
+
+<ul>
+<li><p>Practice problems: Write a query that only shows rows from Q1 of a given year (Jan-Mar)
+[answer]</p></li>
+<li><p>Write a query that only shows rows from Q4 of a given year (Oct-Dec)
+[answer]</p></li>
+</ul>
 
 <h3>Arithmetic</h3>
 
 <p>You can perform arithmetic in SQL using the same operators you would in Excel: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>. SQL is a little tricky in that these only work in a given row. To clarify, you can only add values in multiple columns <strong>from the same row</strong> together using <code>+</code> &mdash; if you want to add values across multiple rows, you&#39;ll need to use <a href="/intermediate-sql/aggregation-functions.html">Aggregation Functions</a>, which are covered in the Intermediate Tutorial.</p>
 
 <p>The example below illustrates the use of <code>+</code>:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT destination_airport,
-       coach_rev,
-       cargo_rev,
-       coach_rev + cargo_rev AS coach_cargo_sum
-  FROM tutorial.flight_revenue
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year,
+       month,
+       west,
+       south,
+       west + south
+  FROM tutorial.us_housing_units_completed
 </code></pre></div>
+<!--explanation of the above -->
+
+<!-- example using another operator-->
+
+<!-- parenthesis example -->
+
 <h3>Practice time</h3>
 
-<p>If you&#39;d like a little practice, try these questions:</p>
+<p>Sharpen your skills by tackling these questions:</p>
 
-<blockquote>
-<p>Which destination airport(s) had more than $70,000 in total revenue (the sum of all the revenue columns)?</p>
-</blockquote>
+<ul>
+<li>question 1
+<a href="LINK">answer 1</a></li>
+<li>question 2
+<a href="link">answer 2</a></li>
+</ul>
 
 <p>Move on to the next lesson: <a href="/the-basics/logical-operators.html">Logical Operators</a>.</p>
 

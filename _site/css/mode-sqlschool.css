@@ -7,13 +7,24 @@
 html, body { height: 100%; }
 
 body {
-  background-color: #FFF;
-  font: 15px Helvetica, Arial, sans-serif;
-  line-height: 21px;
+  background-color: #F7FAFA;
+  font-family: ProximaNova, Helvetica, Arial, sans-serif;;
+  font-size: 16px;
+  line-height: 24px;
   text-align: left;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: Antenna;
+  font-style: normal;
+  font-weight: normal;
+}
+
 h1 { margin-bottom: 1em; }
+h2 { color: #3b6d6c;
+     font-size:28px; 
+     line-height:36px;
+}
 h3 { margin-top: 1.5em; }
 h4 { padding-bottom: .3em; margin-top: 1.5em; }
 p { margin: 1em 0; }
@@ -53,6 +64,19 @@ table {
   padding-left: 0px;
 }
 
+pre, code {
+  color: #3b6d6c;
+  background-color:#E5ECEC;
+  border: 1px solid #C7CCCB;
+  border-radius: 3px;
+}
+
+pre code {
+  background-color: transparent;
+  border:none;
+  color: #3b6d6c;
+}
+
 /* Top Nav */
 nav#header-nav {
   background-color:#D7DDDB;
@@ -81,18 +105,26 @@ img#header-logo {
 }
 
 .navbar-nav>li>a {
-  color:black;
+  color:#999999;
 }
 
 .navbar-nav>li>a:hover {
   color:#DD5426;  /* Mode Orange */
   background:transparent;
+  text-decoration:underline;
 }
 
 /* Main */
 input.form-control {
   width:600px;
 }
+
+div.breadcrumbs {
+  margin-top:10px;
+}
+
+div.breadcrumbs a{ color:#999999; }
+div.breadcrumbs a:hover { color: #DC5426; }
 
 h4.category {
   border-bottom: 1px solid #dddddd;
@@ -123,12 +155,32 @@ section.lesson h2{
   padding-top:15px;
 }
 
+div.practice-prob, div.practice-prob-answer {
+  background-color: #FFF;
+  border: 1px solid #C7CCCB;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+}
+
+div.practice-prob {
+  border-radius: 3px 3px 0 0;
+  padding: 15px;
+}
+
+div.practice-prob-answer {
+  border-radius: 0 0 3px 3px;
+  border-top: none;
+  padding: 7px 15px 10px 15px;
+  margin-bottom: 20px;
+  text-align:right;
+}
+
 div.tip {
   font-size: 0.8em;
   background-color: #d8ebf8;
   border-radius: 3px;
   border: 1px solid #97c1da;
-  color: 264c72;
+  color: #264c72;
   padding: 15px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   text-shadow: 0 1px 0 rgba(255,255,255,0.8);
@@ -143,4 +195,81 @@ footer {
 nav.navbar-footer li a {
   color:white;
   padding-left: 0px;
+}
+
+/* FONTS */
+@font-face {              /*regular */
+  font-family: ProximaNova;
+  font-weight: 500;
+  src: url('/fonts/29B240_28_0.eot');
+  src: url('/fonts/29B240_28_0.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/29B240_28_0.woff') format('woff'),
+       url('/fonts/29B240_28_0.ttf') format('truetype');
+}
+
+@font-face {              /*italic */
+  font-family: ProximaNova;
+  font-weight: 500;
+  font-style: italic;
+  src: url('/fonts/29B240_22_0.eot');
+  src: url('/fonts/29B240_22_0.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/29B240_22_0.woff') format('woff'),
+       url('/fonts/29B240_22_0.ttf') format('truetype');
+}
+
+@font-face {              /*light */
+  font-family: ProximaNova;
+  font-weight: 300;
+  src: url('/fonts/29B240_21_0.eot');
+  src: url('/fonts/29B240_21_0.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/29B240_21_0.woff') format('woff'),
+       url('/fonts/29B240_21_0.ttf') format('truetype');
+}
+
+@font-face {              /*light italic*/
+  font-family: ProximaNova;
+  font-weight: 300;
+  font-style: italic;
+  src: url('/fonts/29B240_20_0.eot');
+  src: url('/fonts/29B240_20_0.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/29B240_20_0.woff') format('woff'),
+       url('/fonts/29B240_20_0.ttf') format('truetype');
+}
+
+@font-face {              /*semibold */
+  font-family: ProximaNova;
+  font-weight: 600;
+  src: url('/fonts/29B240_25_0.eot');
+  src: url('/fonts/29B240_25_0.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/29B240_25_0.woff') format('woff'),
+       url('/fonts/29B240_25_0.ttf') format('truetype');
+}
+
+@font-face {              /*semibold italic*/
+  font-family: ProximaNova;
+  font-weight: 600;
+  font-style: italic;
+  src: url('/fonts/29B240_23_0.eot');
+  src: url('/fonts/29B240_23_0.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/29B240_23_0.woff') format('woff'),
+       url('/fonts/29B240_23_0.ttf') format('truetype');
+}
+
+@font-face {              /*bold */
+  font-family: ProximaNova;
+  font-weight: 700;
+  src: url('/fonts/29B240_29_0.eot');
+  src: url('/fonts/29B240_29_0.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/29B240_29_0.woff') format('woff'),
+       url('/fonts/29B240_29_0.ttf') format('truetype');
+}
+
+@font-face {              /*bold italic*/
+  font-family: ProximaNova;
+  font-weight: 700;
+  font-style: italic;
+  src: url('/fonts/29B240_27_0.eot');
+  src: url('/fonts/29B240_27_0.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/29B240_27_0.woff') format('woff'),
+       url('/fonts/29B240_27_0.ttf') format('truetype');
 }

@@ -16,7 +16,7 @@
   <!-- Mode Stylsheet-->
   <link rel="stylesheet" href="/css/mode-sqlschool.css">
   
-  <title>Logical Operators - </title>
+  <title>Using Multiple Filters at Once - </title>
 
 </head>
 <body>
@@ -61,7 +61,7 @@
     </div>
     
     <div class="breadcrumbs col-sm-8 col-sm-pull-4">
-      <a class="category" href="/#the-basics">the basics</a> / Logical Operators
+      <a href="/#the-basics">&laquo; Back to Index</a>
     </div>
     
   </div>
@@ -69,127 +69,190 @@
 
 <section class="question">
   <div class="container">
-    <h2>Logical Operators</h2>
+    <h2>Using Multiple Filters at Once</h2>
     
-    <div class="tip">Tip: Start by running this code to get a sense of what's in the table that will be used in this tutorial.</div>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.patient_list
+    <p>The data in this lesson is from <a href="http://www.billboard.com/charts">Billboard Music Charts</a>. It was collected in January 2014 and contains data from ___ through 2013. The results in this table are the <em>year-end</em> results &mdash; the top 100 songs at the end of each year. Check out the dataset for yourself:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM benn.billboard_top_100_year_end
 </code></pre></div>
+<ul>
+<li><code>year_rank</code> is the rank of that song at the end of the listed year</li>
+<li><code>group_name</code> is the name of the entire group that won (could be multiple artists if there was a collaboration)</li>
+<li><code>artist_name</code> is an individual artist. This is a little complicated, as an artist can be an individual or group.</li>
+</ul>
+
+<p>You can get a better sense of some of the nuances of this by running the following query. It uses the <code>ORDER BY</code> clause, which we will get to in the next lesson. Don&#39;t worry about it for now:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM benn.billboard_top_100_year_end
+ ORDER BY year DESC, year_rank
+</code></pre></div>
+<p>You&#39;ll notice that Macklemore does a lot of collaborations. Since his songs are listed as featuring other artists like Ryan Lewis, there are multiple lines in the dataset for Ryan Lewis. Daft Punk and Pharrell Williams are also listed as two artists. Daft Punk is actually a duo, but since the album lists them together under the name Daft Punk, that&#39;s how Billboard treats them.</p>
+
+<p>Now on to the lesson!</p>
+
 <h3>Comparison Operators &mdash; the Weird Ones</h3>
 
-<p>In the <a href="LINK">previous tutorial</a>, you played with some comparison opertors. There are a couple more that you&#39;re likely to find very useful. They&#39;re all special snowflakes, so we&#39;ll go through them individually:</p>
+<p>In the <a href="/the-basics/where-operators.html">previous tutorial</a>, you played with some comparison opertors. There are a couple more that you&#39;re likely to find very useful. They&#39;re all special snowflakes, so we&#39;ll go through them individually:</p>
 
 <h3>IN</h3>
 
-<p>You&#39;ll probably want to use <code>IN</code> pretty frequently &mdash; it allows you to specify a list of values that you&#39;d like to include. For example, the following query will return results for which the age column is equal to one of the values in the list:</p>
+<p>You&#39;ll probably want to use <code>IN</code> pretty frequently &mdash; it allows you to specify a list of values that you&#39;d like to include. For example, the following query will return results for which the <code>year_rank</code> column is equal to one of the values in the list:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM tutorial.patient_list
- WHERE age IN (22, 37, 33, 54)
+  FROM benn.billboard_top_100_year_end
+ WHERE year_rank IN (1, 2, 3)
 </code></pre></div>
 <p>As in the previous tutorial, you can use non-numerical values, but they need to go inside single quotes. Regardless of the data type, the values in the list must be separated by commas. Here&#39;s another example:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM tutorial.patient_list
- WHERE physician_last_name IN (&#39;Yamamoto&#39;, &#39;Honeydew&#39;, &#39;Chase&#39;)
+  FROM benn.billboard_top_100_year_end
+ WHERE artist IN (&#39;Taylor Swift&#39;, &#39;Usher&#39;, &#39;Ludacris&#39;)
 </code></pre></div>
+<ul>
+<li>Practice Problem
+<a href="LINK">Answer</a></li>
+</ul>
+
 <h3>BETWEEN</h3>
 
 <p>This allows you to specify a range and select only rows within a certain range. It has to be paired with the <code>AND</code> operator, which you will learn about in just a few moments. Here&#39;s how <code>BETWEEN</code> looks:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM tutorial.patient_list
- WHERE age BETWEEN 30 AND 39
+  FROM benn.billboard_top_100_year_end
+ WHERE year_rank BETWEEN 5 AND 10
 </code></pre></div>
 <p><code>BETWEEN</code> includes the values that you specify in the query, so the above query will return the exact same results as the following query:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM tutorial.patient_list
- WHERE age &gt;= 30 AND age &lt;= 39
+  FROM benn.billboard_top_100_year_end
+ WHERE year_rank &gt;= 5 AND year_rank &lt;= 10
 </code></pre></div>
 <p>Some people prefer the latter example because it more explicitly shows what the query is doing (t&#39;s easy to forget whether or not BETWEEN includes the range bounds).</p>
 
+<ul>
+<li>Practice Problem
+<a href="LINK">Answer</a></li>
+</ul>
+
 <h3>IS NULL</h3>
 
-<p>Some tables contain null values &mdash; cells with no data in them at all. This can be confusing for heavy Excel users, because the difference between a cell having no data and a cell containing a space isn&#39;t meaningful in Excel. In SQL, the implications can be pretty serious. This is covered in greater detail in the <a href="LINK">intermediate tutorial</a>, but for now, here&#39;s what you need to know:</p>
+<p>Some tables contain null values &mdash; cells with no data in them at all. This can be confusing for heavy Excel users, because the difference between a cell having no data and a cell containing a space isn&#39;t meaningful in Excel. In SQL, the implications can be pretty serious. This is covered in greater detail in the <a href="/intermediate/aggregation-functions.html">intermediate tutorial</a>, but for now, here&#39;s what you need to know:</p>
 
 <p>You can select rows that contain no data in a given column by using the <code>IS NULL</code> operator:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM tutorial.patient_list
- WHERE weight IS NULL
+  FROM benn.billboard_top_100_year_end
+ WHERE ****** IS NULL
 </code></pre></div>
-<p><code>WHERE weight = NULL</code> will <strong>not</strong> work &mdash; you can&#39;t perform arithmetic on null values.</p>
+<p><code>WHERE ****** = NULL</code> will <strong>not</strong> work &mdash; you can&#39;t perform arithmetic on null values.</p>
+
+<ul>
+<li>Practice Problem
+<a href="LINK">Answer</a></li>
+</ul>
 
 <h3>LIKE</h3>
 
-<p><code>LIKE</code> allows you to match on similar values rather than exact ones. Using wildcard characters, you can define what must be exactly matched and what can be different. In this example, the results will include rows for which columnb starts with &quot;San&quot; and is followed by any number and selection of characters:</p>
+<p><code>LIKE</code> allows you to match on similar values rather than exact ones. Using wildcard characters, you can define what must be exactly matched and what can be different. In this example, the results will include rows for which <code>group_name</code> starts with &quot;Snoop&quot; and is followed by any number and selection of characters:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM tutorial.patient_list
- WHERE physician_last_name LIKE &#39;Sm%&#39;
+  FROM benn.billboard_top_100_year_end
+ WHERE group_name LIKE &#39;Snoop%&#39;
 </code></pre></div>
-<p>The <code>%</code> used above represents any character or set of characters. In this case, <code>%</code> is referred to as a &quot;wildcard.&quot; In the SQL that Mode uses, <code>LIKE</code> is case-sensitive, meaning that the above query will only capture matches that start with a capital &quot;S&quot; and lower-case &quot;m.&quot; To match in a way that is not case-sensitive, you can use the <code>ILIKE</code> command:</p>
+<p>The <code>%</code> used above represents any character or set of characters. In this case, <code>%</code> is referred to as a &quot;wildcard.&quot; In the SQL that Mode uses, <code>LIKE</code> is case-sensitive, meaning that the above query will only capture matches that start with a capital &quot;S&quot; and lower-case &quot;noop.&quot; To match in a way that is not case-sensitive, you can use the <code>ILIKE</code> command:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM tutorial.patient_list
- WHERE physician_last_name ILIKE &#39;sm%&#39;
+  FROM benn.billboard_top_100_year_end
+ WHERE group_name ILIKE &#39;snoop%&#39;
 </code></pre></div>
 <p>You can also use <code>_</code> (a single underscore) to substitute for an individual character:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM tutorial.patient_list
- WHERE physician_last_name ILIKE &#39;s_ith&#39;
+  FROM benn.billboard_top_100_year_end
+ WHERE artist ILIKE &#39;dr_ke&#39;
 </code></pre></div>
+<ul>
+<li><p>Practice Problem
+<a href="LINK">Answer</a></p></li>
+<li><p>Practice Problem
+<a href="LINK">Answer</a></p></li>
+</ul>
+
 <h3>Logical Operators</h3>
 
 <p>You&#39;ll likely want to filter using several conditions &mdash; possibly more often than you filter by only one condition. Logical operators allow you to use multiple comparison operators in one query.</p>
 
 <h3>AND</h3>
 
-<p><code>AND</code> will let you select only rows that satisfy two conditions. The following query will return only rows for which columna equals 5 and columnb is null:</p>
+<p><code>AND</code> will let you select only rows that satisfy two conditions. The following query will return all rows for top-10 recordings in 2012.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM mode_sample_table_3
- WHERE columna = 5 AND columnb IS NULL
+  FROM benn.billboard_top_100_year_end
+ WHERE year = 2012 AND year_rank &lt;= 10
 </code></pre></div>
 <p>You can use <code>AND</code> with any comparison operator, and as many times as you want. If you run this query, you&#39;ll notice that all of the requirements are satisfied.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM mode_sample_table_3
- WHERE columna != 5
-   AND columnb LIKE &#39;San%&#39;
-   AND columna &gt;= 3
+  FROM benn.billboard_top_100_year_end
+ WHERE year = 2012
+   AND year_rank &lt;= 10
+   AND group_name ILIKE &#39;%feat%&#39;
 </code></pre></div>
 <p>You can see that this example is spaced out onto multiple lines &mdash; a good way to make long <code>WHERE</code> clauses more readable.</p>
+
+<ul>
+<li><p>Practice Problem
+<a href="LINK">Answer</a></p></li>
+<li><p>Practice Problem
+<a href="LINK">Answer</a></p></li>
+</ul>
 
 <h3>OR</h3>
 
 <p>If you want to select rows that satisfy either of two conditions, you can use <code>OR</code>. It works the same way as <code>AND</code>. Try running this:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM mode_sample_table_3
- WHERE columna &lt; 10 OR columna &gt; 20
+  FROM benn.billboard_top_100_year_end
+ WHERE year_rank = 5 OR artist = &#39;Gotye&#39;
 </code></pre></div>
-<p>You can combine <code>AND</code> with <code>OR</code> using parenthesis. The following query will return rows that satisfy <strong>both</strong> of the following conditions.</p>
-
-<p>columna &gt; 10
-columnb = &#39;value1&#39; OR columnb = &#39;value2 &mdash; because this line is in parentheses, you can think of it as its own condition.</p>
+<p>You&#39;ll notice that each row will satisfy one of the two conditions. You can combine <code>AND</code> with <code>OR</code> using parenthesis. The following query will return rows that satisfy <strong>both</strong> of the following conditions:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM mode_sample_table_3
- WHERE columna &gt; 10
-   AND (columnb = &#39;value1&#39; OR columnb = &#39;value2&#39;)
+  FROM benn.billboard_top_100_year_end
+ WHERE year = 2013
+   AND (group_name ILIKE &#39;%macklemore%&#39; OR group_name ILIKE &#39;%timberlake%&#39;)
 </code></pre></div>
+<p>You will notice that the conditional statement <code>year = 2013</code> will be fulfilled for every row returned. <code>(or)</code> is treated like one separate conditional statement because it is in parentheses, so it must be satisfied in addition to the first statement of <code>year = 2013</code>. You can think of the rows selected as being either of the following:</p>
+
+<ul>
+<li>rows where <code>year = 2013</code> is true and <code>group_name ILIKE &#39;%macklemore%&#39;</code> is true</li>
+<li>rows where <code>year = 2013</code> is true and <code>group_name ILIKE &#39;%timberlake%&#39;</code> is true</li>
+<li><p>rows where <code>year = 2013</code> is true and <code>group_name ILIKE &#39;%macklemore%&#39;</code> is true and <code>group_name ILIKE &#39;%timberlake%&#39;</code> is true</p></li>
+<li><p>Practice Problem
+<a href="LINK">Answer</a></p></li>
+<li><p>Practice Problem
+<a href="LINK">Answer</a></p></li>
+</ul>
+
 <h3>NOT</h3>
 
-<p>You can add <code>NOT</code> before any conditional statement if you&#39;d like to select the rows for which that statement is false. It works like this:</p>
+<p>You can add <code>NOT</code> before any conditional statement if you&#39;d like to select the rows for which that statement is false. Run this query and check out how Macklemore magically disappears!</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM mode_sample_table_3
- WHERE NOT columna &lt; 10
+  FROM benn.billboard_top_100_year_end
+ WHERE year = 2013 
+   AND year_rank NOT &gt; 5
 </code></pre></div>
-<p>Using <code>NOT</code> with <code>&lt;</code> and <code>&gt;</code> usually doesn&#39;t make sense because you can simply use the opposite comparative operator instead. <code>NOT</code> is more commonly used with <code>LIKE</code></p>
+<p>Using <code>NOT</code> with <code>&lt;</code> and <code>&gt;</code> usually doesn&#39;t make sense because you can simply use the opposite comparative operator instead. <code>NOT</code> is more commonly used with <code>LIKE</code>:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM mode_sample_table_3
- WHERE columnb NOT LIKE &#39;San%&#39;
+  FROM benn.billboard_top_100_year_end
+ WHERE year = 2013 
+   AND group_name NOT ILIKE &#39;%macklemore%&#39;
 </code></pre></div>
-<p><code>NOT</code> is mostly commonly used to identify non-null rows. Here&#39;s how that looks:</p>
+<p><code>NOT</code> is mostly commonly used to identify non-null rows, but the syntax is somewhat special &mdash; you need to include <code>IS</code> beforehand. Here&#39;s how that looks:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM mode_sample_table_3
- WHERE columnb IS NOT NULL
+  FROM benn.billboard_top_100_year_end
+ WHERE year = 2013 
+   AND year_rank NOT &gt; 5 --IS NOT NULL
 </code></pre></div>
 <h3>Practice Problems</h3>
 
-<!-- put them here -->
+<ul>
+<li><p>Practice Problem
+<a href="LINK">Answer</a></p></li>
+<li><p>Practice Problem
+<a href="LINK">Answer</a></p></li>
+<li><p>Practice Problem
+<a href="LINK">Answer</a></p></li>
+</ul>
 
-<p>Move on to the next segment: <a href="/the-basics/order-by.html">ORDER BY</a>.</p>
+<p>Move on to the next segment: <a href="/the-basics/order-by.html">Ordering Your Results</a>.</p>
 
   
   </div>

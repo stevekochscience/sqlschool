@@ -16,7 +16,7 @@
   <!-- Mode Stylsheet-->
   <link rel="stylesheet" href="/css/mode-sqlschool.css">
   
-  <title>CASE - </title>
+  <title>Using Conditional Logic to Define New Columns - </title>
 
 </head>
 <body>
@@ -61,7 +61,7 @@
     </div>
     
     <div class="breadcrumbs col-sm-8 col-sm-pull-4">
-      <a class="category" href="/#intermediate">intermediate</a> / CASE
+      <a href="/#intermediate">&laquo; Back to Index</a>
     </div>
     
   </div>
@@ -69,61 +69,86 @@
 
 <section class="question">
   <div class="container">
-    <h2>CASE</h2>
+    <h2>Using Conditional Logic to Define New Columns</h2>
     
-    <h3>CASE</h3>
+    <p>For the next few lessons, you&#39;ll work with data on College Football Players. &lt;!-- Benn fill in info about College football player data, where it is sourced from, etc. --&gt;In this particular lesson, you&#39;ll stick to roster information. This table is pretty self-explanatory &mdash; one row per player, with columns that describe attributes for that player. Run this query to check out the raw data:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM benn.college_football_players
+</code></pre></div>
+<h3>CASE</h3>
 
 <p>The <code>CASE</code> statement is SQL&#39;s way of handling if/then logic. It&#39;s easiest to understand in the context of an example:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT columna,
-       CASE WHEN columna &gt; 1 THEN &#39;yes&#39; END AS sample_case_statement
-  FROM mode_sample_table_7
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT player_name,
+       year,
+       CASE WHEN year = &#39;SR&#39; THEN &#39;yes&#39;
+            ELSE NULL END AS is_a_senior
+  FROM benn.college_football_players
 </code></pre></div>
 <p>In plain english, here&#39;s what&#39;s happening:</p>
 
 <ol>
-<li>The <code>CASE</code> statement checks each row to see if the conditional statement &mdash; <code>WHEN columna &gt; 1</code> is true.</li>
-<li>For any given row, if that conditional statement is true, the word &quot;yes&quot; gets printed in the column that we have named <code>sample_case_statement</code>.</li>
-<li>In any row for which the conditional statement is false, nothing happens in that row, leaving a null value in the <code>sample_case_statement</code> column.</li>
-<li>At the same time all this is happening, SQL is retrieving and displaying all the values in columna.</li>
+<li>The <code>CASE</code> statement checks each row to see if the conditional statement &mdash; <code>year = &#39;SR&#39;</code> is true.</li>
+<li>For any given row, if that conditional statement is true, the word &quot;yes&quot; gets printed in the column that we have named <code>is_a_senior</code>.</li>
+<li>In any row for which the conditional statement is false, nothing happens in that row, leaving a null value in the <code>is_a_senior</code> column.</li>
+<li>At the same time all this is happening, SQL is retrieving and displaying all the values in the <code>player_name</code> and <code>year</code> columns.</li>
 </ol>
 
-<p>This particular query makes it pretty easy to see what&#39;s happening because we&#39;ve included the <code>CASE</code> statement along with <code>columna</code> itself. You can check each row to see whether <code>columna</code> meets the condition <code>columna &gt; 1</code> and then see the result in the column generated using the <code>CASE</code> statement.</p>
+<p>This particular query makes it pretty easy to see what&#39;s happening because we&#39;ve included the <code>CASE</code> statement along with the <code>year</code> column itself. You can check each row to see whether <code>year</code> meets the condition <code>year = &#39;SR&#39;</code> and then see the result in the column generated using the <code>CASE</code> statement.</p>
 
-<p>But what if you don&#39;t want null values in the <code>sample_case_statement</code> column? The following query replaces those nulls with &quot;no&quot;:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT columna,
-       CASE WHEN columna &gt; 1 THEN &#39;yes&#39; 
-            ELSE &#39;no&#39; END AS sample_case_statement
-  FROM mode_sample_table_7
+<ul>
+<li>Practice Problem
+<a href="link">answer</a></li>
+</ul>
+
+<p>But what if you don&#39;t want null values in the <code>is_a_senior</code> column? The following query replaces those nulls with &quot;no&quot;:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT player_name,
+       year,
+       CASE WHEN year = &#39;SR&#39; THEN &#39;yes&#39;
+            ELSE &#39;no&#39; END AS is_a_senior
+  FROM benn.college_football_players
 </code></pre></div>
+<ul>
+<li>Practice Problem
+<a href="link">answer</a></li>
+</ul>
+
 <p>You can also define a number of outcomes in a <code>CASE</code> statement by including as many <code>WHEN</code>/<code>THEN</code> statements as you&#39;d like:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT columna,
-       CASE WHEN columna &gt; 10 THEN &#39;yes&#39;
-            WHEN columna &gt; 7 THEN &#39;maybe&#39;
-            WHEN columna &gt; 3 THEN &#39;maybe not&#39;
-            ELSE &#39;no&#39; END AS sample_case_statement
-  FROM mode_sample_table_7
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT player_name,
+       weight,
+       CASE WHEN weight &gt; 250 THEN &#39;over 250&#39;
+            WHEN weight &gt; 200 THEN &#39;200-250&#39;
+            WHEN weight &gt; 175 THEN &#39;175-200&#39;
+            ELSE &#39;under 175&#39; END AS weight_group
+  FROM benn.college_football_players
 </code></pre></div>
-<p>In the above example, the <code>WHEN</code>/<code>THEN</code> statements will get evaluated in the order that they&#39;re written. So if the value in columna of a given row is 15, it will produce a result of &quot;yes.&quot; Here&#39;s what happens if the value in columna is 4:</p>
+<p>In the above example, the <code>WHEN</code>/<code>THEN</code> statements will get evaluated in the order that they&#39;re written. So if the value in the <code>weight</code> column of a given row is 300, it will produce a result of &quot;over 250.&quot; Here&#39;s what happens if the value in the <code>weight</code> column is 180:</p>
 
 <ol>
-<li>Check to see if columna is greater than 10. 4 is not greater than 10, so move on to the next <code>WHEN</code>/<code>THEN</code></li>
-<li>Check to see if columna is greater than 7. 4 is not greater than 7, so move on to the next <code>WHEN</code>/<code>THEN</code></li>
-<li>Check to see if columna is greater than 3. 4 <strong>is</strong> greater than 3, so record &quot;maybe not&quot; in the <code>sample_case_statement</code> column</li>
+<li>Check to see if <code>weight</code> is greater than 250. 180 is not greater than 250, so move on to the next <code>WHEN</code>/<code>THEN</code></li>
+<li>Check to see if <code>weight</code> is greater than 200. 180 is not greater than 200, so move on to the next <code>WHEN</code>/<code>THEN</code></li>
+<li>Check to see if <code>weight</code> is greater than 175. 180 <strong>is</strong> greater than 175, so record &quot;175-200&quot; in the <code>weight_group</code> column.</li>
 </ol>
 
-<p>While the above works, it&#39;s really best practice to create statements that don&#39;t overlap. <code>WHEN columna &gt; 10</code> and <code>WHEN columna &gt; 7</code> overlap for every value greater than 10, which is a little confusing. A better way to write the above would be:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT columna,
-       CASE WHEN columna &gt; 10 THEN &#39;yes&#39;
-            WHEN columna &gt; 7  AND columna &lt;= 10 THEN &#39;maybe&#39;
-            WHEN columna &gt; 3 AND columna &lt;= 7 THEN &#39;maybe not&#39;
-            ELSE &#39;no&#39; END AS sample_case_statement
-  FROM mode_sample_table_7
+<!-- eventually draw decision tree diagram -->
+
+<p>While the above works, it&#39;s really best practice to create statements that don&#39;t overlap. <code>WHEN weight &gt; 250</code> and <code>WHEN weight &gt; 200</code> overlap for every value greater than 250, which is a little confusing. A better way to write the above would be:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT player_name,
+       weight,
+       CASE WHEN weight &gt; 250 THEN &#39;over 250&#39;
+            WHEN weight &gt; 200 AND weight &lt;= 250 THEN &#39;200-250&#39;
+            WHEN weight &gt; 175 AND weight &lt;= 200 THEN &#39;175-200&#39;
+            ELSE &#39;under 175&#39; END AS weight_group
+  FROM benn.college_football_players
 </code></pre></div>
+<ul>
+<li>Practice Problem
+<a href="link">answer</a></li>
+</ul>
+
 <p>You can also string together multiple conditional statements with <code>AND</code> and <code>OR</code> the same way you might in a <code>WHERE</code> clause:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT columna,
-       CASE WHEN columna &gt; 10  AND columnb = &#39;awesome&#39; THEN &#39;yes&#39;
-            ELSE &#39;no&#39; END AS sample_case_statement
-  FROM mode_sample_table_7
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT player_name,
+       CASE WHEN year = &#39;FR&#39; AND position = &#39;WR&#39; THEN &#39;frosh_wr&#39;
+            ELSE NULL END AS sample_case_statement
+  FROM benn.college_football_players
 </code></pre></div>
 <h3>A quick review:</h3>
 
@@ -134,69 +159,85 @@
 <li>You can include multiple <code>WHEN</code> statements, as well as an <code>ELSE</code> statement to deal with any unaddressed conditions.</li>
 </ol>
 
-<h3>Using CASE in aggregations</h3>
+<ul>
+<li><p>Practice Problem
+<a href="link">answer</a></p></li>
+<li><p>Practice Problem
+<a href="link">answer</a></p></li>
+</ul>
+
+<h3>Using CASE with aggregations</h3>
 
 <p><code>CASE</code>&#39;s slightly more complicated and substnatially more useful functionality comes from pairing it with aggregators. For example, let&#39;s say you want to only count rows that fulfill a certain condition. Since <code>COUNT</code> ignores nulls, you could use a <code>CASE</code> statement to evaluate the condition and produce null or non-null values depending on the outcome:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(CASE WHEN columna = 7 THEN columna
-                  ELSE null END) AS columna_count
-  FROM mode_sample_table_8
-</code></pre></div>
-<p>Now, you might be thinking &quot;why wouldn&#39;t I just use a <code>WHERE</code> clause to filter out the rows I don&#39;t want to count?&quot; You could do that -- it would look like this:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(columna) AS columna_count
-  FROM mode_sample_table_8
- WHERE columna = 7
-</code></pre></div>
-<p>But what if you also wanted to count a couple other conditions? Limiting using the <code>WHERE</code> clause only allows you to count one condition. Here&#39;s an example of counting multiple conditions in one query:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE WHEN columna &lt; 7 THEN &#39;&lt;7&#39;
-            WHEN columna = 7 THEN &#39;=7&#39;
-            WHEN columna &gt; 7 THEN &#39;&gt;7&#39;
-            END AS columna_condition,
-       COUNT(columna) AS count
-  FROM mode_sample_table_7
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE WHEN year = &#39;FR&#39; THEN &#39;FR&#39;
+            ELSE &#39;Not FR&#39; END AS year_group,
+            COUNT(1) AS count
+  FROM benn.college_football_players
  GROUP BY 1
 </code></pre></div>
-<p>The above query is an excellent place to use numbers instead of columns in the <code>GROUP BY</code> clause because repeating the <code>CASE</code> statement in the <code>GROUP BY</code> clause would make the query obnoxiously long. Note that if you do choose to repeat the entire <code>CASE</code> statement, you shouod remove the &quot;AS columna_condition&quot; column naming:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE WHEN columna &lt; 7 THEN &#39;&lt;7&#39;
-            WHEN columna = 7 THEN &#39;=7&#39;
-            WHEN columna &gt; 7 THEN &#39;&gt;7&#39;
-            END AS columna_condition,
-       COUNT(columna) AS count
-  FROM mode_sample_table_7
- GROUP BY CASE WHEN columna &lt; 7 THEN &#39;&lt;7&#39;
-            WHEN columna = 7 THEN &#39;=7&#39;
-            WHEN columna &gt; 7 THEN &#39;&gt;7&#39;
-            END
+<p>Now, you might be thinking &quot;why wouldn&#39;t I just use a <code>WHERE</code> clause to filter out the rows I don&#39;t want to count?&quot; You could do that -- it would look like this:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(1) AS fr_count
+  FROM benn.college_football_players
+ WHERE year = &#39;FR&#39;
 </code></pre></div>
-<h3>Common uses for CASE</h3>
-
-<p>The previous example is an excellent lead-in to a primary use-<code>CASE</code> for <code>CASE</code> (sorry for that): creating histograms. The only problem with it is that it displays your results vertically.</p>
-
-<p>SOMETHING ABOUT HOW YOU SOMETIMES WANT SHIT IN DIFFERENT COLUMNS</p>
-
-<p>CHECK HOW EXCEL DOES GRAPHING AND VALIDATE ALL THIS SHIT</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(CASE WHEN columna &lt; 7 THEN columna
-                  ELSE null END) AS columna_lt7_count,
-       COUNT(CASE WHEN columna = 7 THEN columna
-                  ELSE null END) AS columna_7_count,
-       COUNT(CASE WHEN columna &gt; 7 THEN columna
-                  ELSE null END) AS columna_gt7_count
-  FROM mode_sample_table_8
+<p>But what if you also wanted to count a couple other conditions? Limiting using the <code>WHERE</code> clause only allows you to count one condition. Here&#39;s an example of counting multiple conditions in one query:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE WHEN year = &#39;FR&#39; THEN &#39;FR&#39;
+            WHEN year = &#39;SO&#39; THEN &#39;SO&#39;
+            WHEN year = &#39;JR&#39; THEN &#39;JR&#39;
+            WHEN year = &#39;SR&#39; THEN &#39;SR&#39;
+            ELSE &#39;No Year Data&#39; END AS year_group,
+            COUNT(1) AS count
+  FROM benn.college_football_players
+ GROUP BY 1
 </code></pre></div>
-<p>Looking at the two previous examples &mdash; one vertically oriented; one, horizontally &mdash; you might notice that <code>CASE</code> provides a pretty easy way to transpose existing data from vertical to horizontal orientation. Take this existing vertically-oriented dataset:</p>
+<p>The above query is an excellent place to use numbers instead of columns in the <code>GROUP BY</code> clause because repeating the <code>CASE</code> statement in the <code>GROUP BY</code> clause would make the query obnoxiously long. Note that if you do choose to repeat the entire <code>CASE</code> statement, you shouod remove the <code>AS year_group</code> column naming:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE WHEN year = &#39;FR&#39; THEN &#39;FR&#39;
+            WHEN year = &#39;SO&#39; THEN &#39;SO&#39;
+            WHEN year = &#39;JR&#39; THEN &#39;JR&#39;
+            WHEN year = &#39;SR&#39; THEN &#39;SR&#39;
+            ELSE &#39;No Year Data&#39; END AS year_group,
+            COUNT(1) AS count
+  FROM benn.college_football_players
+ GROUP BY CASE WHEN year = &#39;FR&#39; THEN &#39;FR&#39;
+               WHEN year = &#39;SO&#39; THEN &#39;SO&#39;
+               WHEN year = &#39;JR&#39; THEN &#39;JR&#39;
+               WHEN year = &#39;SR&#39; THEN &#39;SR&#39;
+               ELSE &#39;No Year Data&#39; END
+</code></pre></div>
+<ul>
+<li><p>Practice Problem
+<a href="link">answer</a></p></li>
+<li><p>Practice Problem
+<a href="link">answer</a></p></li>
+</ul>
 
-<!-- EXAMPLE-->
+<h3>Using CASE Within Aggregations</h3>
 
-<p>You can transpose it to a horizontal orientation using a query similar to the histogram query above:</p>
-
-<!--pivoted example-->
-
-<p>This is called &quot;pivoting,&quot; and is where the name &quot;Pivot Tables&quot; came from in Excel. It&#39;s worth noting that going from horizontal to vertical orientation can be a substantially more difficult problem depending the circumstances, and will be saved for a <a href="/solutions-to-common-problems/pivoting-columns-to-rows.html">later tutorial</a>.</p>
-
-<p>pivoting data</p>
+<p>The previous example is an excellent lead-in to a primary use-<code>CASE</code> for <code>CASE</code> (sorry for that): creating histograms. In the previous examples, data was displayed vertically, but in some instances, you might want to show data horizontally. This is known as &quot;Pivoting&quot; (like a Pivot Table). Let&#39;s take the following query:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE WHEN year = &#39;FR&#39; THEN &#39;FR&#39;
+            WHEN year = &#39;SO&#39; THEN &#39;SO&#39;
+            WHEN year = &#39;JR&#39; THEN &#39;JR&#39;
+            WHEN year = &#39;SR&#39; THEN &#39;SR&#39;
+            ELSE &#39;No Year Data&#39; END AS year_group,
+            COUNT(1) AS count
+  FROM benn.college_football_players
+ GROUP BY 1
+</code></pre></div>
+<p>And make re-orient it horizontally:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE COUNT(CASE WHEN year = &#39;FR&#39; THEN 1 ELSE NULL END) AS fr_count,
+            COUNT(CASE WHEN year = &#39;SO&#39; THEN 1 ELSE NULL END) AS so_count,
+            COUNT(CASE WHEN year = &#39;JR&#39; THEN 1 ELSE NULL END) AS jr_count,
+            COUNT(CASE WHEN year = &#39;SR&#39; THEN 1 ELSE NULL END) AS sr_count
+  FROM benn.college_football_players
+</code></pre></div>
+<p>It&#39;s worth noting that going from horizontal to vertical orientation can be a substantially more difficult problem depending the circumstances, and is covered in greater depth in a <a href="/solutions-to-common-problems/pivoting-columns-to-rows.html">later lesson</a>.</p>
 
 <h3>Practice Time</h3>
 
-<!--MO FUNCTIONS, MO PROBLEMS-->
+<ul>
+<li><p>case within aggregations practice</p></li>
+<li><p>another case question practice</p></li>
+</ul>
 
 <p>Check out the next lesson: <a href="/intermediate/join-intro.html">Introduction to Joins</a></p>
 

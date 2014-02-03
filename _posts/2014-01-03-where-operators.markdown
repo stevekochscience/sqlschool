@@ -7,20 +7,20 @@ date:   2014-01-01 00:00:57
 
 This lesson will use the same housing development data from the [previous lesson](/the-basics/select-from.html)
 
-<div class="tip">Start by running this code to remind yourself what's in the table that will be used in this tutorial. Remember to switch over to Mode and run any of the code you see in the grey boxes to get a sense of what the output will look like.</div>
+Start by running this code to remind yourself what's in the table that will be used in this tutorial. Remember to switch over to Mode and run any of the code you see in the grey boxes to get a sense of what the output will look like.
 
     SELECT * FROM tutorial.us_housing_units_completed
 
 ###The WHERE Clause
-So you know how to view some data using `SELECT` and `FROM`. The next step is filtering the data using the `WHERE` clause. Here's what it looks like.
+So you know how to view some data using `SELECT` and `FROM`. The next step is filtering the data using the `WHERE` clause. Here's what it looks like:
 
     SELECT *
       FROM tutorial.us_housing_units_completed
      WHERE month = 1
 
-*Note: the clauses always need to be in this order: `SELECT`, `FROM`, `WHERE`.*
+*Note: the clauses always need to be in this order:* `SELECT`, `FROM`, `WHERE`.
 
-The `WHERE` clause works in a plain-English way: the above query does the same thing as `SELECT * FROM tutorial.us_housing_units_completed`, except that the results will only include rows where the **month** column contains the value **1**.
+The `WHERE` clause works in a plain-English way: the above query does the same thing as `SELECT * FROM tutorial.us_housing_units_completed`, except that the results will only include rows where the `month` column contains the value **1**.
 
 **This part is really important: SQL deals with filtering an entire row at a time. In Excel, you can sort or filter one column at a time. In SQL, if you filter something in one column, entire rows will be omitted.** The idea is that each row is one *data point* or *observation*, and all the information contained in that row belongs together.
 
@@ -46,11 +46,19 @@ These make the most sense when applied to numerical columns. For example:
 
 Try running that query with each of the operators in place of `>`. Try some values other than `30` to get a sense of how this works. When you're ready, try to answer thse questions:
 
-* Did the West Region ever produce *more than 50,000* housing units in one month? Remember, the units in the table are already in thousands.
-* [answer here](LINK)
+<div class="practice-prob">
+  Did the West Region ever produce *more than 50,000* housing units in one month? Remember, the units in the table are already in thousands.
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
-* Did the South Region ever produce *20,000 or fewer* housing units in one month?
-* [answer here](LINK)
+<div class="practice-prob">
+  Did the South Region ever produce *20,000 or fewer* housing units in one month?
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###Comparisons on non-numerical data
 All of the above operators work on non-numerical data as well. `=` and `!=` make perfect sense &mdash; they allow you to select rows that match or don't match any value, respectively. For example, run the following query and you'll notice that none of the January rows show up:

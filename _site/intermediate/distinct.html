@@ -16,7 +16,7 @@
   <!-- Mode Stylsheet-->
   <link rel="stylesheet" href="/css/mode-sqlschool.css">
   
-  <title>DISTINCT - </title>
+  <title>Counting the Unique Values in a Column - </title>
 
 </head>
 <body>
@@ -61,7 +61,7 @@
     </div>
     
     <div class="breadcrumbs col-sm-8 col-sm-pull-4">
-      <a class="category" href="/#intermediate">intermediate</a> / DISTINCT
+      <a href="/#intermediate">&laquo; Back to Index</a>
     </div>
     
   </div>
@@ -69,39 +69,57 @@
 
 <section class="question">
   <div class="container">
-    <h2>DISTINCT</h2>
+    <h2>Counting the Unique Values in a Column</h2>
     
-    <!--note: this one feels like it could come earlier-->
+    <p>This lesson will use the same Apple stock price data from the <a href="/intermediate/aggregation-functions.html">previous lesson</a></p>
 
+<div class="tip">Start by running this code to remind yourself what's in the table that will be used in this tutorial. Remember to switch over to Mode and run any of the code you see in the grey boxes to get a sense of what the output will look like.</div>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.aapl_historical_stock_price
+</code></pre></div>
 <h3>DISTINCT</h3>
 
 <p>You&#39;ll occasionally want to look at only the unique values in a particular column. You can do this using <code>SELECT DISTINCT</code> syntax:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT DISTINCT columna
-  FROM mode_sample_table_6
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT DISTINCT month
+  FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
 <p>If you include 2 (or more) columns in a <code>SELECT DISTINCT</code> clause, your results will contain all of the unique pairs of those two columns:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT DISTINCT columna, columnb
-  FROM mode_sample_table_6
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT DISTINCT year, month
+  FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
 <p><em>Note: You only need to include <code>DISTINCT</code> once in your <code>SELECT</code> clause &mdash; you do not need to add it for each column name.</em></p>
 
+<ul>
+<li>Practice problem
+<a href="LINK">answer</a></li>
+</ul>
+
 <h3>Using  DISTINCT in aggregations</h3>
 
-<p>You can use <code>DISTINCT</code> when performing an aggregation. You will probably use it most commonly with the <code>COUNT</code> function:</p>
-
-<!-- maybe include a practical example here -->
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(DISTINCT columna) AS distinct_count_a
-  FROM mode_sample_table_6
+<p>You can use <code>DISTINCT</code> when performing an aggregation. You will probably use it most commonly with the <code>COUNT</code> function. It&#39;s pretty practical when exploring data to understand how many distinct values you&#39;re working with in a column. In this case, you should run the query below that counts the unique values in the <code>month</code> column.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(DISTINCT month) AS unqiue_months
+  FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
-<p>You&#39;ll notice that <code>DISTINCT</code> goes inside the aggregation function rather than at the beginning of the <code>SELECT</code> clause.</p>
+<p>The results show that there are 12 unique value (other examples may be less obvious). That&#39;s a small enough number that you might be able to aggregate by month and be able to interpret the results fairly early. For example, you might follow this up by taking average trade volumes by month to get a sense of when Apple stock really moves:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT month,
+       AVG(volume) AS avg_trade_volume
+  FROM tutorial.aapl_historical_stock_price
+ GROUP BY month
+ ORDER BY 2 DESC
+</code></pre></div>
+<p>Okay, back to <code>DISTINCT</code>. You&#39;ll notice that <code>DISTINCT</code> goes inside the aggregation function rather than at the beginning of the <code>SELECT</code> clause. Of course, you can <code>SUM</code> or <code>AVG</code> the distinct values in a column, but there are fewer practical applications for them. For <code>MAX</code> and <code>MIN</code>, you probably shouldn&#39;t ever use <code>DISTINCT</code> because the results will be the same as without <code>DISTINCT</code>, and the <code>DISTINCT</code> function will make your query substantially slower to return results.</p>
 
-<p>Of course, you can <code>SUM</code> or <code>AVG</code> the distinct values in a column, but there are fewer practical applications for them. For <code>MAX</code> and <code>MIN</code>, you probably shouldn&#39;t ever use <code>DISTINCT</code> because the results will be the same as without <code>DISTINCT</code>, and the <code>DISTINCT</code> function will make your query substantially slower to return results.</p>
+<ul>
+<li>Practice Problem
+<a href="link">answer</a></li>
+<li>practice problem
+<a href="link">answer</a></li>
+</ul>
 
 <h3>DISTINCT Performance</h3>
 
-<p>It is worth noting that using <code>DISTINCT</code>, particularly in aggregations, can slow your queries down quite a bit. We&#39;ll cover this in greater depth in the <a href="/advanced/faster-queries">advanced tutorial</a>, and provide an excellent workaround in a <a href="/solutions-to-common-problems/fast-count-distinct">pre-built recipe</a>.</p>
+<p>It is worth noting that using <code>DISTINCT</code>, particularly in aggregations, can slow your queries down quite a bit. We&#39;ll cover this in greater depth in the <a href="/advanced/faster-queries.html">advanced tutorial</a>, and provide an excellent workaround in a <a href="/solutions-to-common-problems/fast-count-distinct.html">pre-built recipe</a>.</p>
 
-<p>Check out the next tutorial: <a href="/intermediate/case.html">CASE</a></p>
+<p>Check out the next tutorial: <a href="/intermediate/case.html">Using Conditional Logic to Define New Columns</a></p>
 
   
   </div>

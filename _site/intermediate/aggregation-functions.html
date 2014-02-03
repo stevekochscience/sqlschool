@@ -16,7 +16,7 @@
   <!-- Mode Stylsheet-->
   <link rel="stylesheet" href="/css/mode-sqlschool.css">
   
-  <title>Aggregation Functions - </title>
+  <title>Summary Statistics: Using SQL to Replace Pivot Tables - </title>
 
 </head>
 <body>
@@ -61,7 +61,7 @@
     </div>
     
     <div class="breadcrumbs col-sm-8 col-sm-pull-4">
-      <a class="category" href="/#intermediate">intermediate</a> / Aggregation Functions
+      <a href="/#intermediate">&laquo; Back to Index</a>
     </div>
     
   </div>
@@ -69,139 +69,180 @@
 
 <section class="question">
   <div class="container">
-    <h2>Aggregation Functions</h2>
+    <h2>Summary Statistics: Using SQL to Replace Pivot Tables</h2>
     
-    <div class="tip">Tip: Start by running this code to get a sense of what's in the table that will be used in this tutorial.</div>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.sat_scores
+    <p>Welcome to the Intermediate SQL Tutorial! If you skipped <a href="LINK">The Basics</a>, you should take a quick peek <a href="LINK">at this page</a> to get an idea of how to get the most out of this tutorial. For convenience, here&#39;s the gist:</p>
+
+<ul>
+<li>Open another window to <a href="http://modeanalytics.com">Mode</a>. Make an account if you don&#39;t have one.</li>
+<li>For each lesson, start by running <code>SELECT *</code> on the relevant dataset so you get a sense of what the raw data looks like. Do this in that window you just opened to Mode.</li>
+<li>Run all of the code blocks in the lesson in Mode in the other window. You&#39;ll learn more if you really examine the results and understand what the code is doing.</li>
+</ul>
+
+<h3>Today&#39;s dataset</h3>
+
+<p>For this lesson and the next, you&#39;ll be working with <a href="http://www.apple.com">Apple</a> stock price data. The data was pulled from <a href="http://finance.google.com">Google Finance</a> in January 2014. There is one row for each day (indicated in the <code>date</code> field). <code>open</code> and <code>close</code> are the opening and closing prices of the stock on that day. <code>high</code> and <code>low</code> are the high and low prices for that day. <code>volume</code> is the number of shares traded on that day. Check it out for yourself:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
 <h3>Aggregation Functions</h3>
 
-<p>As the <a href="/the-basics/basic-concepts.html">beginner tutorial</a> points out, SQL is excellent at aggregating data the way you might in a pivot table in Excel. You will use aggregation functions all the time, so it&#39;s important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: <code>COUNT</code>, <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>AVG</code></p>
+<p>As the <a href="/the-basics/basic-concepts.html">beginner tutorial</a> points out, SQL is excellent at aggregating data the way you might in a pivot table in Excel. You will use aggregation functions all the time, so it&#39;s important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: <code>COUNT</code>, <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>AVG</code>. The <a href="/the-basics/where-operators.html">beginner tutorial</a> also pointed out that arithmetic operators only perform operations across rows. Aggregation functions are used to perform operations across entire columns (could be millions of rows of data or more).</p>
 
 <h3>COUNT</h3>
 
 <p>It&#39;s easiest to start with <code>COUNT</code> because verifying your results is extremely simply. The easiest way to get started is to use <code>*</code> to select all rows.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(*)
-  FROM tutorial.sat_scores
+  FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
-<p>You can see that 44 results were returned. Run the following query and note that Mode actually provides a row count, which should be the same as the result of the above query:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM tutorial.sat_scores
+<p>You can see that the result showed a count of all rows to be 3555. Turn the limit off and run the following query and note that Mode actually provides a row count, which should be the same as the result of the above query:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
-<p>Things start to get a little bit tricky when you want to count individual columns. The following code will provide a count of all of rows in which columnb <strong>is not null</strong>.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(student_id)
-  FROM tutorial.sat_scores
+<p>Things start to get a little bit tricky when you want to count individual columns. The following code will provide a count of all of rows in which the <code>high</code> column <strong>is not null</strong>.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(high)
+  FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
-<p>You&#39;ll notice that this result is lower than what you got with <code>COUNT(*)</code>. That&#39;s because columnb has some nulls.</p>
+<p>You&#39;ll notice that this result is lower than what you got with <code>COUNT(*)</code>. That&#39;s because <code>high</code> has some nulls.</p>
+
+<ul>
+<li>Practice Problem
+<a href="LINK">answer</a></li>
+</ul>
 
 <p>One nice thing about <code>COUNT</code> is that you can use it on non-numerical columns:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(teacher)
-  FROM tutorial.sat_scores
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(date)
+  FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
-<p>The above query returns the same result as the previous &mdash; 44 &mdash; even when there are only 3 different teacher names in the table. It&#39;s important to keep in mind that <code>COUNT</code> simply counts the total number of non-null rows, not the distinct values, which are discussed in a <a href="LINK">later tutorial</a> </p>
+<p>The above query returns the same result as the previous: 3555 &mdash; It&#39;s hard to tell because each row has a different <code>date</code> value, but <code>COUNT</code> simply counts the total number of non-null rows, not the distinct values. Counting the number of distinct values in a column is discussed in a <a href="/intermediate/distinct.html">later tutorial</a>. </p>
 
-<p>You might have also noticed that the column header in the results just reads &quot;count.&quot; We recommend naming your columns so that they make a little more sense to the reader. As mentioned in the <a href="LINK">previous tutorial</a>, it&#39;s best to use lower case letters and underscores. You can add column names (also called <em>aliases</em>) using <code>AS</code>:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(student_id) AS student_count
-  FROM tutorial.sat_scores
+<p>You might have also noticed that the column header in the results just reads &quot;count.&quot; We recommend naming your columns so that they make a little more sense to the reader. As mentioned in an <a href="/the-basics/select-from.html">earlier lesson</a>, it&#39;s best to use lower case letters and underscores. You can add column names (also called <em>aliases</em>) using <code>AS</code>:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(date) AS count_of_date
+  FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
 <p>If you must use spaces, you will need to use double quotes.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(student_id) AS &quot;Student Count&quot;
-  FROM tutorial.sat_scores
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(date) AS &quot;Count Of Date&quot;
+  FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
-<p><em>Note: This is really the only place in which you&#39;ll ever want to use double quotes in SQLl; single quotes for everything else.</em></p>
+<p><em>Note: This is really the only place in which you&#39;ll ever want to use double quotes in SQL; single quotes for everything else.</em></p>
+
+<ul>
+<li>Practice Problem: write a query that determines counts of every single column. Which column has the most null values?
+<a href="LINK">answer</a></li>
+</ul>
 
 <h3>SUM</h3>
 
 <p>This works the same way as count, except that it can only be used on numerical columns. As you might expect, <code>SUM</code> totals all the values in a given column:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT SUM(hrs_studied)
-  FROM tutorial.sat_scores
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT SUM(volume)
+  FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
-<p>An important thing to remember: aggregators only aggregate vertically. In this data, you might want to aggregate across a row to add all 3 of a student&#39;s scores to get a total score. You would do this with <a href="LINK%20TO%20EARLIER%20TUTORIAL">simple arithmetic</a>:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT sat_math,
-       sat_verbal,
-       sat_writing,
-       sat_math + sat_verbal + sat_writing AS sat_total
-  FROM tutorial.sat_scores
-</code></pre></div>
+<p>An important thing to remember: aggregators only aggregate vertically. If you want to perform a calculation across rows, you would do this with <a href="LINK%20TO%20EARLIER%20TUTORIAL">simple arithmetic</a>.</p>
+
 <p>You don&#39;t need to worry as much about the presence of nulls with <code>SUM</code> as you would with <code>COUNT</code> &mdash; <code>SUM</code> treats nulls as 0.</p>
+
+<ul>
+<li>practice problem: calculate the average opening price (hint: you will need to use both <code>COUNT</code> and <code>SUM</code>)
+<a href="LINK">answer</a></li>
+</ul>
 
 <h3>MIN/MAX</h3>
 
 <p><code>MIN</code> and <code>MAX</code> are similar to <code>COUNT</code> in that they can be used on non-numerical columns. Depending on the column type, <code>MIN</code> will return the lowest number, earliest date, or non-numerical value as close to &quot;a&quot; as possible. As you might suspect, <code>MAX</code> does the opposite:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT MIN(hrs_studied) AS min_study_time,
-       MAX(hrs_studied) AS max_study_time
-  FROM tutorial.sat_scores
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT MIN(volume) AS min_volume,
+       MAX(volume) AS max_volume
+  FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
 <p>Nulls are treated as lower than 0 or &quot;a&quot; so <code>MIN</code> will return a null value if the column contains one. If you want the lowest real number or value, you can filter out nulls using a <code>WHERE</code> clause:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT MIN(hrs_studied) AS min_study_time,
-       MAX(hrs_studied) AS max_study_time
-  FROM tutorial.sat_scores
- WHERE hrs_studied IS NOT NULL
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT MIN(volume) AS min_volume,
+       MAX(volume) AS max_volume
+  FROM tutorial.aapl_historical_stock_price
+ WHERE volume IS NOT NULL
 </code></pre></div>
+<ul>
+<li>Practice problem: On what day did the stock price peak?
+<a href="LINK">answer</a></li>
+<li>harder practice problem: On what day did the stock increase by the highest dollar value?
+<a href="LINK">answer</a></li>
+</ul>
+
 <h3>AVG</h3>
 
-<p><code>AVG</code> does what you&#39;d think &mdash; it calculated the average of selected values. It is very useful, but has some limitations. First, it can only be used on numerical columns. Second, it ignores nulls completely. There are some cases in which you will want to treat null values as 0. For these cases, you&#39;ll want to write a statement that changes the nulls to 0 (covered in the <a href="LINK%20TO%20CASE%20STATEMENT">intermediate tutorial</a>).</p>
+<p><code>AVG</code> does what you&#39;d think &mdash; it calculated the average of selected values. It is very useful, but has some limitations. First, it can only be used on numerical columns. Second, it ignores nulls completely. There are some cases in which you will want to treat null values as 0. For these cases, you&#39;ll want to write a statement that changes the nulls to 0 (covered in a <a href="/intermediate/case.html">later lesson</a>).</p>
 
 <p>You can see this by comparing these two queries:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(hrs_studied)
-  FROM tutorial.sat_scores
- WHERE hrs_studied IS NOT NULL
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(volume)
+  FROM tutorial.aapl_historical_stock_price
+ WHERE volume IS NOT NULL
 </code></pre></div>
 <p>Produces the same result as:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(hrs_studied)
-  FROM tutorial.sat_scores
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(volume)
+  FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
+<ul>
+<li>practice problem
+<a href="LINK">answer</a></li>
+</ul>
+
 <h3>GROUP BY</h3>
 
 <p>All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count entries by month, for example. <code>GROUP BY</code> allows you to separate your aggregations into sub-groups. Here&#39;s an example:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT teacher,
-       COUNT(student_id)
-  FROM tutorial.sat_scores
- GROUP BY teacher
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year,
+       COUNT(*) as count
+  FROM tutorial.aapl_historical_stock_price
+ GROUP BY year
 </code></pre></div>
 <p>You can group by multiple columns, but you have to separate column names with commas &mdash; just as with <code>ORDER BY</code>:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT school,
-       teacher,
-       COUNT(student_id)
-  FROM tutorial.sat_scores
- GROUP BY school, teacher
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year,
+       month,
+       COUNT(*) as count
+  FROM tutorial.aapl_historical_stock_price
+ GROUP BY year, month
 </code></pre></div>
-<p>As in <a href="LINK">ORDER BY</a>, you can substitute numbers for column names in the <code>GROUP BY</code> clause. It&#39;s generally recommended to do this only when you are grouping many columns, or if something else is causing the text in the <code>GROUP BY</code> clause to be excessively long:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT school,
-       teacher,
-       COUNT(student_id)
-  FROM tutorial.sat_scores
+<ul>
+<li>practice problem
+<a href="link">answer</a></li>
+</ul>
+
+<p>As in <a href="/the-basics/order-by.html">ORDER BY</a>, you can substitute numbers for column names in the <code>GROUP BY</code> clause. It&#39;s generally recommended to do this only when you are grouping many columns, or if something else is causing the text in the <code>GROUP BY</code> clause to be excessively long:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year,
+       month,
+       COUNT(*) as count
+  FROM tutorial.aapl_historical_stock_price
  GROUP BY 1, 2
 </code></pre></div>
 <p><em>Note: this functionality (numbering columns instead of using names) is supported by Mode, but not by every flavor of SQL, so if you&#39;re using another system or connected to certain types of databases, it may not work.</em></p>
 
-<p>The order of column names in your <code>GROUP BY</code> clause doesn&#39;t matter &mdash; the results will be the same regardless. If you want to control how the aggregations are grouped together, use <code>ORDER BY</code>. Try running the query below, then reverse the column names in the <code>ORDER BY</code> statement and see how it looks.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT school,
-       teacher,
-       COUNT(student_id)
-  FROM tutorial.sat_scores
+<p>The order of column names in your <code>GROUP BY</code> clause doesn&#39;t matter &mdash; the results will be the same regardless. If you want to control how the aggregations are grouped together, use <code>ORDER BY</code>. Try running the query below, then reverse the column names in the <code>ORDER BY</code> statement and see how it looks:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year,
+       month,
+       COUNT(*) as count
+  FROM tutorial.aapl_historical_stock_price
  GROUP BY 1, 2
- ORDER BY 1, 2
+ ORDER BY 2, 1
 </code></pre></div>
-<p>There&#39;s one thing to be aware of as you group by multiple columns: SQL evaluates the aggregations before the <code>LIMIT</code> clause. If you don&#39;t group by any columns, you&#39;ll get a 1-row result &mdash; no problem there. If you group by a column with enough unique values that it exceeds the <code>LIMIT</code> number, what will happen is that aggregates will be calculated, and then some rows will simply be omitted from the results. This is actually a nice way to do things because you know you&#39;re going to get the correct aggregates. If SQL cut the table down to 100 rows, then performed the aggregations, your results would be substantially different.</p>
+<p>There&#39;s one thing to be aware of as you group by multiple columns: SQL evaluates the aggregations before the <code>LIMIT</code> clause. If you don&#39;t group by any columns, you&#39;ll get a 1-row result &mdash; no problem there. If you group by a column with enough unique values that it exceeds the <code>LIMIT</code> number, what will happen is that aggregates will be calculated, and then some rows will simply be omitted from the results. This is actually a nice way to do things because you know you&#39;re going to get the correct aggregates. If SQL cut the table down to 100 rows, then performed the aggregations, your results would be substantially different. The above query&#39;s results exceed 100 rows, so it is a perfect example. Try removing the limit and running it again.</p>
 
 <h3>Query Clause Order</h3>
 
 <p>As mentioned in prior tutorials, the order in which you write the clauses is important. Here&#39;s the order for everything you&#39;ve learned so far:</p>
 
 <ol>
-<li>SELECT</li>
-<li>FROM</li>
-<li>WHERE</li>
-<li>GROUP BY</li>
-<li>ORDER BY</li>
+<li><code>SELECT</code></li>
+<li><code>FROM</code></li>
+<li><code>WHERE</code></li>
+<li><code>GROUP BY</code></li>
+<li><code>ORDER BY</code></li>
 </ol>
 
 <h3>Aggregation Practice</h3>
 
-<!-- practice problems-->
+<ul>
+<li><p>problem 1: calculate the average difference between opening and closing prices
+<a href="LINK">answer</a></p></li>
+<li><p>problem 2: something with group by</p></li>
+<li><p>problem 3: something else</p></li>
+</ul>
 
-<p>Check out the next lesson: <a href="/intermediate/distinct.html">DISTINCT</a></p>
+<p>Check out the next lesson: <a href="/intermediate/distinct.html">Counting the unique values in a column</a></p>
 
   
   </div>
