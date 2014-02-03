@@ -16,7 +16,7 @@ This will take you to the Query Builder. This is the bread and butter of Mode &m
 
 Here's what that looks like in practice:
 
-<!--screenshot with that query in browser, ready to click run-->
+![Run the Query](/images/the-basics/run-button.png)
 
 It takes a few seconds for the query to run. When it's done, you will see the results show up in a table below the query window.
 
@@ -31,7 +31,7 @@ There are two required ingredients in any SQL query: a `SELECT` statement and a 
 
 In this case, the query is telling the database to return the `year`, `month`, and `west` columns from the table `tutorial.us_housing_units_completed`. When you run this, you'll get back a set of results that shows values in each of these columns.
 
-<!-- screenshot results  -->
+![Prelimiary Results](/images/the-basics/prelim-results.png)
 
 Note that the three column names were separated by a comma in the query. Whenever you select multiple columns, they must be separated by commas, but you should **not** include a comma after the last column name.
 
@@ -39,7 +39,7 @@ If you want to select every column in a table, you can use `*` instead of the co
 
     SELECT * FROM tutorial.us_housing_units_completed
 
-<!-- screenshot results  -->
+![Query Results](/images/the-basics/results.png)
 
 Now try this practice problem for yourself:
 
@@ -47,7 +47,7 @@ Now try this practice problem for yourself:
   Write a query to select all of the columns in the <code>tutorial.us_housing_units_completed</code> table without using <code>*</code>.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/1e57eb86c128" target="_blank">See the Answer &raquo;</a>
 </div>
 
 *Note: Practice problems will appear in white boxes as above throughout this tutorial.*
@@ -58,7 +58,7 @@ When you've completed the above practice problem, check your answer by following
 2. If your results don't match (or even if they do), you can check out the answer query by clicking the "Query" tab in the Report View.
 3. If you're feeling particularly proud of your work, you can create this report view to share with anyone by clicking the "Share" icon in the query builder window (see screenshot below).
 
-<!-- screenshot highlighting share button-->
+![Sharing is Caring](/images/the-basics/how-to-share.png)
 
 *Copy the URL in the sharing menu and send to all your friends!*
 
@@ -90,13 +90,13 @@ Without the double quotes, that query would read 'West' and 'Region' as separate
   Write a query to select all of the columns in <code>tutorial.us_housing_units_completed</code> and rename them so that their first letters are capitalized
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/9ffec953b677" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###LIMIT
 You may have noticed that checkbox next to the "Run" button that says "Limit."
 
-<!-- screenshot of limit. -->
+![Limit](/images/the-basics/limit-box.png)
 
 The default value is 100; when this box is checked, it's effectively telling the database to only return 100 rows of this table. This particular table has more than 100 rows, so your queries thus far have not been returning the full result sets. Try turning the `LIMIT` off (by clicking the check mark next to it) and running this query. 
 
@@ -104,19 +104,19 @@ The default value is 100; when this box is checked, it's effectively telling the
 
 You'll notice many more rows get returned. You can tell by the id field in the table, which increases by 1 for each row.
 
-<!--screenshot of id field-->
+![ID Field](/images/the-basics/id-field.png)
 
 This exists to keep your queries running quickly. You'll probably find that the aim of many of your queries will simply be to see what a particular table looks like &mdash; you'll want to scan the first few rows of data to get an idea of which fields you care about and how you want to manipulate them. If you query a very large table and don't use a limit, you could end up waiting a long time for your results to return, which doesn't make sense if you only care about the first few.
 
 The limiting functionality is built into Mode, but if you're ever using SQL in another context, you can add a limit with a SQL command. The following syntax does the same thing as having the box checked with a value of 100:
 
-    SELECT * FROM tutorial.sales_performance LIMIT 100
+    SELECT * FROM tutorial.us_housing_units_completed LIMIT 100
 
 <div class="practice-prob">
   Write a query that uses <code>LIMIT</code> manually (written into the query) to restrict the result set to only 15 rows
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/62f423b84e97" target="_blank">See the Answer &raquo;</a>
 </div>
 
 Now that you've got the basics, let's move on to some commands that will allow you to filter the data.
