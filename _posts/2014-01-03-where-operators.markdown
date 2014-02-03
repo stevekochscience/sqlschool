@@ -44,7 +44,7 @@ These make the most sense when applied to numerical columns. For example:
       FROM tutorial.us_housing_units_completed
      WHERE west > 30
 
-Try running that query with each of the operators in place of `>`. Try some values other than `30` to get a sense of how this works. When you're ready, try to answer thse questions:
+Try running that query with each of the operators in place of `>`. Try some values other than `30` to get a sense of how this works. When you're ready, try to answer these questions:
 
 <div class="practice-prob">
   Did the West Region ever produce <em>more than 50,000</em> housing units in one month? Remember, the units in the table are already in thousands.

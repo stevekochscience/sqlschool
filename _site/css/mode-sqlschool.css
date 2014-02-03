@@ -67,7 +67,8 @@ table {
 }
 
 pre, code {
-  color: #3b6d6c;
+  /*color: #3b6d6c;*/
+  color:black;
   background-color:#E5ECEC;
   border: 1px solid #C7CCCB;
   border-radius: 3px;
@@ -76,7 +77,8 @@ pre, code {
 pre code {
   background-color: transparent;
   border:none;
-  color: #3b6d6c;
+  /*color: #3b6d6c;*/
+  color: black;
 }
 
 /* Top Nav */
