@@ -94,10 +94,13 @@
 </code></pre></div>
 <p>You&#39;ll notice that this result is lower than what you got with <code>COUNT(*)</code>. That&#39;s because <code>high</code> has some nulls.</p>
 
-<ul>
-<li>Practice Problem
-<a href="LINK">answer</a></li>
-</ul>
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <p>One nice thing about <code>COUNT</code> is that you can use it on non-numerical columns:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(date)
@@ -115,10 +118,13 @@
 </code></pre></div>
 <p><em>Note: This is really the only place in which you&#39;ll ever want to use double quotes in SQL; single quotes for everything else.</em></p>
 
-<ul>
-<li>Practice Problem: write a query that determines counts of every single column. Which column has the most null values?
-<a href="LINK">answer</a></li>
-</ul>
+<div class="practice-prob">
+  Write a query that determines counts of every single column. Which column has the most null values?
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <h3>SUM</h3>
 
@@ -130,10 +136,13 @@
 
 <p>You don&#39;t need to worry as much about the presence of nulls with <code>SUM</code> as you would with <code>COUNT</code> &mdash; <code>SUM</code> treats nulls as 0.</p>
 
-<ul>
-<li>practice problem: calculate the average opening price (hint: you will need to use both <code>COUNT</code> and <code>SUM</code>)
-<a href="LINK">answer</a></li>
-</ul>
+<div class="practice-prob">
+  Write a query to calculate the average opening price (hint: you will need to use both `COUNT` and `SUM`).
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <h3>MIN/MAX</h3>
 
@@ -148,12 +157,21 @@
   FROM tutorial.aapl_historical_stock_price
  WHERE volume IS NOT NULL
 </code></pre></div>
-<ul>
-<li>Practice problem: On what day did the stock price peak?
-<a href="LINK">answer</a></li>
-<li>harder practice problem: On what day did the stock increase by the highest dollar value?
-<a href="LINK">answer</a></li>
-</ul>
+<div class="practice-prob">
+  On what day did the stock price peak?
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  On what day did the stock increase by the highest dollar value?
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <h3>AVG</h3>
 
@@ -168,10 +186,13 @@
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(volume)
   FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
-<ul>
-<li>practice problem
-<a href="LINK">answer</a></li>
-</ul>
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <h3>GROUP BY</h3>
 
@@ -188,10 +209,13 @@
   FROM tutorial.aapl_historical_stock_price
  GROUP BY year, month
 </code></pre></div>
-<ul>
-<li>practice problem
-<a href="link">answer</a></li>
-</ul>
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <p>As in <a href="/the-basics/order-by.html">ORDER BY</a>, you can substitute numbers for column names in the <code>GROUP BY</code> clause. It&#39;s generally recommended to do this only when you are grouping many columns, or if something else is causing the text in the <code>GROUP BY</code> clause to be excessively long:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year,
@@ -226,12 +250,29 @@
 
 <h3>Aggregation Practice</h3>
 
-<ul>
-<li><p>problem 1: calculate the average difference between opening and closing prices
-<a href="LINK">answer</a></p></li>
-<li><p>problem 2: something with group by</p></li>
-<li><p>problem 3: something else</p></li>
-</ul>
+<div class="practice-prob">
+  Write a query to calculate the average difference between opening and closing prices
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  problem 2: something with group by
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  problem 3
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <p>Check out the next lesson: <a href="/intermediate/distinct.html">Counting the unique values in a column</a></p>
 

@@ -31,10 +31,26 @@ If you want to select every column in a table, you can use `*` instead of the co
 
 <!-- screenshot results  -->
 
-* practice problem: try selecting all of the columns without using "*"
+Now try this practice problem for yourself:
 
-<!--talk about report view-->
-<link to report view of answer>
+<div class="practice-prob">
+  Write a query to select all of the columns in the `tutorial.us_housing_units_completed` table without using `*`.
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+*Note: Practice problems will appear in white boxes as above throughout this tutorial.*
+
+When you've completed the above practice problem, check your answer by following the link below. You'll land on Mode's Report View &mdash; a cleaned-up view of a query meant for sharing. You can learn all about the report view on [Mode's help site](LINK), but for now, here's what you need to know:
+
+1. Following the link will bring you to the Results page of the Report View. The results should look like the results your query produced.
+2. If your results don't match (or even if they do), you can check out the answer query by clicking the "Query" tab in the Report View.
+3. If you're feeling particularly proud of your work, you can create this report view to share with anyone by clicking the "Share" icon in the query builder window (see screenshot below).
+
+<!-- screenshot highlighting share button-->
+
+*Copy the URL in the sharing menu and send to all your friends!*
 
 ###What actually happens when you run a query?
 So when you run a query, what do you get back? As you can see from running the above queries, you get a table. But that table isn't stored permanently in the database. It also doesn't change any tables in the database &mdash; `mode.sample_table_1` will contain the same data every time you query it. Mode does store all of your results for future access, but the important part for the sake of this tutorial is that `SELECT` statements don't change anything in the underlying tables.
@@ -60,8 +76,12 @@ If you'd like your results to look a bit more presentable, you can rename column
 
 Without the double quotes, that query would read 'West' and 'Region' as separate objects and would return an error.
 
-* practice problem: try selecting all of the columns in tutorial.us_housing_units_completed and renaming them so that their first letters are capitalized
-<link to answer>
+<div class="practice-prob">
+  Write a query to select all of the columns in `tutorial.us_housing_units_completed` and rename them so that their first letters are capitalized
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###LIMIT
 You may have noticed that checkbox next to the "Run" button that says "Limit."
@@ -73,6 +93,7 @@ The default value is 100; when this box is checked, it's effectively telling the
     SELECT * FROM tutorial.us_housing_units_completed
 
 You'll notice many more rows get returned. You can tell by the id field in the table, which increases by 1 for each row.
+
 <!--screenshot of id field-->
 
 This exists to keep your queries running quickly. You'll probably find that the aim of many of your queries will simply be to see what a particular table looks like &mdash; you'll want to scan the first few rows of data to get an idea of which fields you care about and how you want to manipulate them. If you query a very large table and don't use a limit, you could end up waiting a long time for your results to return, which doesn't make sense if you only care about the first few.
@@ -81,9 +102,13 @@ The limiting functionality is built into Mode, but if you're ever using SQL in a
 
     SELECT * FROM tutorial.sales_performance LIMIT 100
 
-* Practice Problem: use LIMIT manually (written into the query) to restrict the result set to only 15 rows
-<link to answer>
+<div class="practice-prob">
+  Write a query that uses LIMIT manually (written into the query) to restrict the result set to only 15 rows
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 Now that you've got the basics, let's move on to some commands that will allow you to filter the data.
 
-Next: [WHERE and Comparison Operators](/the-basics/where-operators.html).
+Next: [Filtering Data and Making Simple Calculations](/the-basics/where-operators.html).

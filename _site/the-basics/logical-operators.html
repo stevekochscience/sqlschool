@@ -96,10 +96,13 @@
   FROM benn.billboard_top_100_year_end
  WHERE artist IN (&#39;Taylor Swift&#39;, &#39;Usher&#39;, &#39;Ludacris&#39;)
 </code></pre></div>
-<ul>
-<li>Practice Problem
-<a href="LINK">Answer</a></li>
-</ul>
+<div class="practice-prob">
+  Practice Problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <h3>BETWEEN</h3>
 
@@ -115,10 +118,13 @@
 </code></pre></div>
 <p>Some people prefer the latter example because it more explicitly shows what the query is doing (t&#39;s easy to forget whether or not BETWEEN includes the range bounds).</p>
 
-<ul>
-<li>Practice Problem
-<a href="LINK">Answer</a></li>
-</ul>
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <h3>IS NULL</h3>
 
@@ -131,10 +137,13 @@
 </code></pre></div>
 <p><code>WHERE ****** = NULL</code> will <strong>not</strong> work &mdash; you can&#39;t perform arithmetic on null values.</p>
 
-<ul>
-<li>Practice Problem
-<a href="LINK">Answer</a></li>
-</ul>
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <h3>LIKE</h3>
 
@@ -153,12 +162,21 @@
   FROM benn.billboard_top_100_year_end
  WHERE artist ILIKE &#39;dr_ke&#39;
 </code></pre></div>
-<ul>
-<li><p>Practice Problem
-<a href="LINK">Answer</a></p></li>
-<li><p>Practice Problem
-<a href="LINK">Answer</a></p></li>
-</ul>
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <h3>Logical Operators</h3>
 
@@ -180,12 +198,21 @@
 </code></pre></div>
 <p>You can see that this example is spaced out onto multiple lines &mdash; a good way to make long <code>WHERE</code> clauses more readable.</p>
 
-<ul>
-<li><p>Practice Problem
-<a href="LINK">Answer</a></p></li>
-<li><p>Practice Problem
-<a href="LINK">Answer</a></p></li>
-</ul>
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <h3>OR</h3>
 
@@ -203,14 +230,27 @@
 <p>You will notice that the conditional statement <code>year = 2013</code> will be fulfilled for every row returned. <code>(or)</code> is treated like one separate conditional statement because it is in parentheses, so it must be satisfied in addition to the first statement of <code>year = 2013</code>. You can think of the rows selected as being either of the following:</p>
 
 <ul>
-<li>rows where <code>year = 2013</code> is true and <code>group_name ILIKE &#39;%macklemore%&#39;</code> is true</li>
-<li>rows where <code>year = 2013</code> is true and <code>group_name ILIKE &#39;%timberlake%&#39;</code> is true</li>
-<li><p>rows where <code>year = 2013</code> is true and <code>group_name ILIKE &#39;%macklemore%&#39;</code> is true and <code>group_name ILIKE &#39;%timberlake%&#39;</code> is true</p></li>
-<li><p>Practice Problem
-<a href="LINK">Answer</a></p></li>
-<li><p>Practice Problem
-<a href="LINK">Answer</a></p></li>
+<li>Rows where <code>year = 2013</code> is true and <code>group_name ILIKE &#39;%macklemore%&#39;</code> is true</li>
+<li>Rows where <code>year = 2013</code> is true and <code>group_name ILIKE &#39;%timberlake%&#39;</code> is true</li>
+<li>Rows where <code>year = 2013</code> is true and <code>group_name ILIKE &#39;%macklemore%&#39;</code> is true and <code>group_name ILIKE &#39;%timberlake%&#39;</code> is true</li>
 </ul>
+
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+   
 
 <h3>NOT</h3>
 
@@ -234,14 +274,29 @@
 </code></pre></div>
 <h3>Practice Problems</h3>
 
-<ul>
-<li><p>Practice Problem
-<a href="LINK">Answer</a></p></li>
-<li><p>Practice Problem
-<a href="LINK">Answer</a></p></li>
-<li><p>Practice Problem
-<a href="LINK">Answer</a></p></li>
-</ul>
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <p>Move on to the next segment: <a href="/the-basics/order-by.html">Ordering Your Results</a>.</p>
 

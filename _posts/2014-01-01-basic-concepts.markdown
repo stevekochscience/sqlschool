@@ -29,4 +29,4 @@ If you've used Excel, you should already be familiar with tables &mdash; you can
 ###You're on your way!
 Now that you're familiar with the basics, it's time to dive in and learn some SQL.
 
-Move on to the next segment: [SELECT and FROM](/the-basics/select-from.html).
+Move on to the next segment: [Retrieving Data From the Database](/the-basics/select-from.html).

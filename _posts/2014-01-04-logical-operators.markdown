@@ -39,8 +39,12 @@ As in the previous tutorial, you can use non-numerical values, but they need to 
       FROM benn.billboard_top_100_year_end
      WHERE artist IN ('Taylor Swift', 'Usher', 'Ludacris')
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  Practice Problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###BETWEEN
 This allows you to specify a range and select only rows within a certain range. It has to be paired with the `AND` operator, which you will learn about in just a few moments. Here's how `BETWEEN` looks:
@@ -57,8 +61,12 @@ This allows you to specify a range and select only rows within a certain range. 
 
 Some people prefer the latter example because it more explicitly shows what the query is doing (t's easy to forget whether or not BETWEEN includes the range bounds).
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###IS NULL
 Some tables contain null values &mdash; cells with no data in them at all. This can be confusing for heavy Excel users, because the difference between a cell having no data and a cell containing a space isn't meaningful in Excel. In SQL, the implications can be pretty serious. This is covered in greater detail in the [intermediate tutorial](/intermediate/aggregation-functions.html), but for now, here's what you need to know:
@@ -71,8 +79,12 @@ You can select rows that contain no data in a given column by using the `IS NULL
 
 `WHERE ****** = NULL` will **not** work &mdash; you can't perform arithmetic on null values.
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###LIKE
 `LIKE` allows you to match on similar values rather than exact ones. Using wildcard characters, you can define what must be exactly matched and what can be different. In this example, the results will include rows for which `group_name` starts with "Snoop" and is followed by any number and selection of characters:
@@ -93,11 +105,19 @@ You can also use `_` (a single underscore) to substitute for an individual chara
       FROM benn.billboard_top_100_year_end
      WHERE artist ILIKE 'dr_ke'
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###Logical Operators
 You'll likely want to filter using several conditions &mdash; possibly more often than you filter by only one condition. Logical operators allow you to use multiple comparison operators in one query.
@@ -119,11 +139,19 @@ You can use `AND` with any comparison operator, and as many times as you want. I
 
 You can see that this example is spaced out onto multiple lines &mdash; a good way to make long `WHERE` clauses more readable.
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###OR
 If you want to select rows that satisfy either of two conditions, you can use `OR`. It works the same way as `AND`. Try running this:
@@ -141,15 +169,23 @@ You'll notice that each row will satisfy one of the two conditions. You can comb
    
 You will notice that the conditional statement `year = 2013` will be fulfilled for every row returned. `(or)` is treated like one separate conditional statement because it is in parentheses, so it must be satisfied in addition to the first statement of `year = 2013`. You can think of the rows selected as being either of the following:
 
-* rows where `year = 2013` is true and `group_name ILIKE '%macklemore%'` is true
-* rows where `year = 2013` is true and `group_name ILIKE '%timberlake%'` is true
-* rows where `year = 2013` is true and `group_name ILIKE '%macklemore%'` is true and `group_name ILIKE '%timberlake%'` is true
+* Rows where `year = 2013` is true and `group_name ILIKE '%macklemore%'` is true
+* Rows where `year = 2013` is true and `group_name ILIKE '%timberlake%'` is true
+* Rows where `year = 2013` is true and `group_name ILIKE '%macklemore%'` is true and `group_name ILIKE '%timberlake%'` is true
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
    
 ###NOT
 You can add `NOT` before any conditional statement if you'd like to select the rows for which that statement is false. Run this query and check out how Macklemore magically disappears!
@@ -175,13 +211,25 @@ Using `NOT` with `<` and `>` usually doesn't make sense because you can simply u
 
 ###Practice Problems
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 Move on to the next segment: [Ordering Your Results](/the-basics/order-by.html).

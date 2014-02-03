@@ -34,8 +34,12 @@ If you'd like your results in the opposite order (referred to as descending orde
      WHERE year = 2013
      ORDER BY year_rank DESC
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 You can also order by mutiple columns. This is particularly useful if your data falls into categories and you'd like to organize rows by date, for example, but keep all of the results within a given category together. This example make the most recent years come first, but order top-ranks songs before lower-ranked songs:
 
@@ -62,11 +66,19 @@ Finally, you can make your life a little easier by substituting numbers for colu
 
 When using `ORDER BY` with a row limit (either through the check box on the query editor or by typing in `LIMIT`), the ordering clause is executed first. This means that the results are ordered **before** limiting to only a few rows, so if you were to rank by columnb, for example, you can be sure that you are getting the lowest values of columnb in the entire table, not just in the first 100 rows of the table.
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
-* Practice Problem
-[Answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###Using Comments
 You can "comment out" pieces of code by adding combinations of characters. In other words, you can specify parts of your query that will not actually be treated like SQL code. In can be helpful to include comments that explain your thinking so that you can easily remember what you intended to do if you ever want to revisit your work. Commenting can also be useful if you want to test variations on your query while keeping all of your code intact. 
@@ -87,7 +99,26 @@ You can also leave comments across multiple lines using `/*` to begin the commen
      WHERE year = 2013
 
 ###Practice problems
-<!-- add a bunch of problems -->
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###What Others Have Done
 One of the defining features of Mode is that much of the work done using it is made public for others to view, copy, and improve upon. We strongly encourage you to check out some of the other work in Mode when you feel like taking a break from tutorials.

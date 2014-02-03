@@ -88,13 +88,29 @@
 </code></pre></div>
 <!-- screenshot results  -->
 
-<ul>
-<li>practice problem: try selecting all of the columns without using &quot;*&quot;</li>
-</ul>
+<p>Now try this practice problem for yourself:</p>
 
-<!--talk about report view-->
+<div class="practice-prob">
+  Write a query to select all of the columns in the `tutorial.us_housing_units_completed` table without using `*`.
+</div>
 
-<p><link to report view of answer></p>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<p><em>Note: Practice problems will appear in white boxes as above throughout this tutorial.</em></p>
+
+<p>When you&#39;ve completed the above practice problem, check your answer by following the link below. You&#39;ll land on Mode&#39;s Report View &mdash; a cleaned-up view of a query meant for sharing. You can learn all about the report view on <a href="LINK">Mode&#39;s help site</a>, but for now, here&#39;s what you need to know:</p>
+
+<ol>
+<li>Following the link will bring you to the Results page of the Report View. The results should look like the results your query produced.</li>
+<li>If your results don&#39;t match (or even if they do), you can check out the answer query by clicking the &quot;Query&quot; tab in the Report View.</li>
+<li>If you&#39;re feeling particularly proud of your work, you can create this report view to share with anyone by clicking the &quot;Share&quot; icon in the query builder window (see screenshot below).</li>
+</ol>
+
+<!-- screenshot highlighting share button-->
+
+<p><em>Copy the URL in the sharing menu and send to all your friends!</em></p>
 
 <h3>What actually happens when you run a query?</h3>
 
@@ -120,10 +136,13 @@ FROM tutorial.us_housing_units_completed
 </code></pre></div>
 <p>Without the double quotes, that query would read &#39;West&#39; and &#39;Region&#39; as separate objects and would return an error.</p>
 
-<ul>
-<li>practice problem: try selecting all of the columns in tutorial.us<em>housing</em>units_completed and renaming them so that their first letters are capitalized
-<link to answer></li>
-</ul>
+<div class="practice-prob">
+  Write a query to select all of the columns in `tutorial.us_housing_units_completed` and rename them so that their first letters are capitalized
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <h3>LIMIT</h3>
 
@@ -134,22 +153,26 @@ FROM tutorial.us_housing_units_completed
 <p>The default value is 100; when this box is checked, it&#39;s effectively telling the database to only return 100 rows of this table. This particular table has more than 100 rows, so your queries thus far have not been returning the full result sets. Try turning the <code>LIMIT</code> off (by clicking the check mark next to it) and running this query. </p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.us_housing_units_completed
 </code></pre></div>
-<p>You&#39;ll notice many more rows get returned. You can tell by the id field in the table, which increases by 1 for each row.
-&lt;!--screenshot of id field--&gt;</p>
+<p>You&#39;ll notice many more rows get returned. You can tell by the id field in the table, which increases by 1 for each row.</p>
+
+<!--screenshot of id field-->
 
 <p>This exists to keep your queries running quickly. You&#39;ll probably find that the aim of many of your queries will simply be to see what a particular table looks like &mdash; you&#39;ll want to scan the first few rows of data to get an idea of which fields you care about and how you want to manipulate them. If you query a very large table and don&#39;t use a limit, you could end up waiting a long time for your results to return, which doesn&#39;t make sense if you only care about the first few.</p>
 
 <p>The limiting functionality is built into Mode, but if you&#39;re ever using SQL in another context, you can add a limit with a SQL command. The following syntax does the same thing as having the box checked with a value of 100:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.sales_performance LIMIT 100
 </code></pre></div>
-<ul>
-<li>Practice Problem: use LIMIT manually (written into the query) to restrict the result set to only 15 rows
-<link to answer></li>
-</ul>
+<div class="practice-prob">
+  Write a query that uses LIMIT manually (written into the query) to restrict the result set to only 15 rows
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <p>Now that you&#39;ve got the basics, let&#39;s move on to some commands that will allow you to filter the data.</p>
 
-<p>Next: <a href="/the-basics/where-operators.html">WHERE and Comparison Operators</a>.</p>
+<p>Next: <a href="/the-basics/where-operators.html">Filtering Data and Making Simple Calculations</a>.</p>
 
   
   </div>

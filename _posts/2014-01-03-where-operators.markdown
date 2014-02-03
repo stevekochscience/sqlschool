@@ -118,9 +118,18 @@ The example below illustrates the use of `+`:
 ###Practice time
 Sharpen your skills by tackling these questions:
 
-* question 1
-[answer 1](LINK)
-* question 2
-[answer 2](link)
+<div class="practice-prob">
+  question 1
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+ question 2
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 Move on to the next lesson: [Logical Operators](/the-basics/logical-operators.html).

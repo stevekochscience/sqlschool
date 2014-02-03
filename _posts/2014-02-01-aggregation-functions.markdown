@@ -37,8 +37,12 @@ Things start to get a little bit tricky when you want to count individual column
 
 You'll notice that this result is lower than what you got with `COUNT(*)`. That's because `high` has some nulls.
 
-* Practice Problem
-[answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 One nice thing about `COUNT` is that you can use it on non-numerical columns:
 
@@ -59,8 +63,12 @@ If you must use spaces, you will need to use double quotes.
 
 *Note: This is really the only place in which you'll ever want to use double quotes in SQL; single quotes for everything else.*
 
-* Practice Problem: write a query that determines counts of every single column. Which column has the most null values?
-[answer](LINK)
+<div class="practice-prob">
+  Write a query that determines counts of every single column. Which column has the most null values?
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###SUM
 This works the same way as count, except that it can only be used on numerical columns. As you might expect, `SUM` totals all the values in a given column:
@@ -72,8 +80,12 @@ An important thing to remember: aggregators only aggregate vertically. If you wa
 
 You don't need to worry as much about the presence of nulls with `SUM` as you would with `COUNT` &mdash; `SUM` treats nulls as 0.
 
-* practice problem: calculate the average opening price (hint: you will need to use both `COUNT` and `SUM`)
-[answer](LINK)
+<div class="practice-prob">
+  Write a query to calculate the average opening price (hint: you will need to use both `COUNT` and `SUM`).
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###MIN/MAX
 `MIN` and `MAX` are similar to `COUNT` in that they can be used on non-numerical columns. Depending on the column type, `MIN` will return the lowest number, earliest date, or non-numerical value as close to "a" as possible. As you might suspect, `MAX` does the opposite:
@@ -89,10 +101,19 @@ Nulls are treated as lower than 0 or "a" so `MIN` will return a null value if th
       FROM tutorial.aapl_historical_stock_price
      WHERE volume IS NOT NULL
 
-* Practice problem: On what day did the stock price peak?
-[answer](LINK)
-* harder practice problem: On what day did the stock increase by the highest dollar value?
-[answer](LINK)
+<div class="practice-prob">
+  On what day did the stock price peak?
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  On what day did the stock increase by the highest dollar value?
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###AVG
 `AVG` does what you'd think &mdash; it calculated the average of selected values. It is very useful, but has some limitations. First, it can only be used on numerical columns. Second, it ignores nulls completely. There are some cases in which you will want to treat null values as 0. For these cases, you'll want to write a statement that changes the nulls to 0 (covered in a [later lesson](/intermediate/case.html)).
@@ -108,8 +129,12 @@ Produces the same result as:
     SELECT AVG(volume)
       FROM tutorial.aapl_historical_stock_price
 
-* practice problem
-[answer](LINK)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###GROUP BY
 All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count entries by month, for example. `GROUP BY` allows you to separate your aggregations into sub-groups. Here's an example:
@@ -127,8 +152,12 @@ You can group by multiple columns, but you have to separate column names with co
       FROM tutorial.aapl_historical_stock_price
      GROUP BY year, month
 
-* practice problem
-[answer](link)
+<div class="practice-prob">
+  practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 As in [ORDER BY](/the-basics/order-by.html), you can substitute numbers for column names in the `GROUP BY` clause. It's generally recommended to do this only when you are grouping many columns, or if something else is causing the text in the `GROUP BY` clause to be excessively long:
 
@@ -161,12 +190,27 @@ As mentioned in prior tutorials, the order in which you write the clauses is imp
 5. `ORDER BY`
 
 ###Aggregation Practice
-* problem 1: calculate the average difference between opening and closing prices
-[answer](LINK)
 
-* problem 2: something with group by
+<div class="practice-prob">
+  Write a query to calculate the average difference between opening and closing prices
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
-* problem 3: something else
+<div class="practice-prob">
+  problem 2: something with group by
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  problem 3
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 
 Check out the next lesson: [Counting the unique values in a column](/intermediate/distinct.html)
