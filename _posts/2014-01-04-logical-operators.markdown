@@ -139,22 +139,22 @@ You can use `AND` with any comparison operator, and as many times as you want. I
       FROM tutorial.billboard_top_100_year_end
      WHERE year = 2012
        AND year_rank <= 10
-       AND group_name ILIKE '%feat%'
+       AND "group" ILIKE '%feat%'
 
 You can see that this example is spaced out onto multiple lines &mdash; a good way to make long `WHERE` clauses more readable.
 
 <div class="practice-prob">
-  practice problem
+  Write a query that surfaces all rows for top-10 hits for which Ludacris is part of the Group.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/e1731ac0419f">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
-  practice problem
+  Write a query that surfaces the top-ranked records in 1990, 2000, and 2010
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/5f3ec7055dc0">See the Answer &raquo;</a>
 </div>
 
 ###OR
@@ -169,7 +169,7 @@ You'll notice that each row will satisfy one of the two conditions. You can comb
     SELECT *
       FROM tutorial.billboard_top_100_year_end
      WHERE year = 2013
-       AND (group_name ILIKE '%macklemore%' OR group_name ILIKE '%timberlake%')
+       AND ("group" ILIKE '%macklemore%' OR "group" ILIKE '%timberlake%')
    
 You will notice that the conditional statement `year = 2013` will be fulfilled for every row returned. `(or)` is treated like one separate conditional statement because it is in parentheses, so it must be satisfied in addition to the first statement of `year = 2013`. You can think of the rows selected as being either of the following:
 
@@ -178,17 +178,17 @@ You will notice that the conditional statement `year = 2013` will be fulfilled f
 * Rows where `year = 2013` is true and `group_name ILIKE '%macklemore%'` is true and `group_name ILIKE '%timberlake%'` is true
 
 <div class="practice-prob">
-  practice problem
+  Write a query that returns all rows for top-10 songs that featured either Katy Perry or Bon Jovi
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/aa5a19da7f2e">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
-  practice problem
+  Write a query that returns all songs with titles that contain the word "California" in either the 1970s or 1990s.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/ca79c861050c">See the Answer &raquo;</a>
 </div>
    
 ###NOT
@@ -211,7 +211,14 @@ Using `NOT` with `<` and `>` usually doesn't make sense because you can simply u
     SELECT *
       FROM tutorial.billboard_top_100_year_end
      WHERE year = 2013 
-       AND year_rank NOT > 5 --IS NOT NULL
+       AND artist IS NOT NULL
+
+<div class="practice-prob">
+  Write a query that returns all rows for songs that were on the charts in 2013 and do not contain the letter "a"
+</div>
+<div class="practice-prob-answer">
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/f64867a56523">See the Answer &raquo;</a>
+</div>
 
 ###Practice Problems
 
