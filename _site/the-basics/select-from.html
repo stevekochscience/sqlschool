@@ -62,38 +62,45 @@
   <div class="container">
     <h2>Retrieving Data From the Database</h2>
     
-    <h3>Opening Mode; Getting Started</h3>
+    <h3>Opening Mode and Getting Started</h3>
 
-<p>If you haven&#39;t already, open a second browser window to <a href="http://stealth.modeanalytics.com" target="_blank">Mode</a>. You will arrive at the homepage. You can use the homepage to explore the community or to quickly access a project you were working on previously, but since you probably haven&#39;t used Mode yet, click &quot;New Query&quot; to get started.</p>
+<p>If you haven&#39;t already, open a second browser window to <a href="http://stealth.modeanalytics.com" target="_blank">Mode</a> and log in. You&#39;ll arrive at your homepage. You can use the homepage to explore the community or to quickly access a project you were working on previously. Since you probably haven&#39;t used Mode yet, click &quot;New Query&quot; to get started.</p>
 
-<p><img src="/images/the-basics/home-screen.png" alt="Create a New Query"></p>
+<p><img src="/images/the-basics/new-query.png" alt="Create a New Query"></p>
 
-<p>This will take you to the Query Builder. This is the bread and butter of Mode &mdash; it&#39;s where you&#39;ll test all of the skills you learn in this tutorial. Along those lines, every time you see a grey box like this, you should copy it into the query builder and click &quot;run&quot; to execute the query:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.us_housing_units_completed
+<p>This will take you to the Query Builder. This is the bread and butter of Mode&mdash;it&#39;s where you&#39;ll be able to use all the skills you learn in this tutorial. From the Query Builder, you can run queries against all of the data in Mode. </p>
+
+<p>For this tutorial, SQL queries will be shown in grey boxes like the one below. To run a query, simply copy the text from the box into the Query Builder and click the orange &quot;Run Query&quot; button.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * 
+  FROM tutorial.us_housing_units_completed
 </code></pre></div>
-<p>Here&#39;s what that looks like in practice:</p>
+<p>It&#39;s super easy. </p>
 
 <p><img src="/images/the-basics/run-button.png" alt="Run the Query"></p>
 
-<p>It takes a few seconds for the query to run. When it&#39;s done, you will see the results show up in a table below the query window.</p>
+<p>It takes a few seconds for the query to run. When it&#39;s done, you&#39;ll see the results show up in a table below the query window.</p>
 
-<p>In this lesson, you&#39;ll work with real data from the US Census showing completed housing units in major regions. Each column represents a region, and the values represent the number of housing units completed in thousands. The data was collected on Jan. 31, 2014 and can be accessed at <a href="http://www.census.gov/econ/currentdata/">the US Census website</a>.</p>
+<p>In this first lesson, you&#39;ll work with real data from the U.S. Census. This data show the number of completed housing units in major regions of the United States. The table we&#39;ll be working with has a colmn with each region. The values in each row represent the number of housing units completed in thousands during the corresponding month. The data was collected on Jan. 31, 2014 and can be accessed at <a href="http://www.census.gov/econ/currentdata/">the U.S. Census website</a>.</p>
 
 <h3>Basic Syntax</h3>
 
-<p>There are two required ingredients in any SQL query: a <code>SELECT</code> statement and a <code>FROM</code> statement &mdash; and they have to be in that order. <code>SELECT</code> indicates which columns you&#39;d like to view, and <code>FROM</code> identifies the table that they live in. Let&#39;s start by looking at a couple columns from the housing unit table:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year, month, west FROM tutorial.us_housing_units_completed
+<p>There are two required ingredients in any SQL query: a <code>SELECT</code> statement and a <code>FROM</code> statement&mdash;and they have to be in that order. <code>SELECT</code> indicates which columns you&#39;d like to view, and <code>FROM</code> identifies the table that they live in. Let&#39;s start by looking at a couple columns from the housing unit table:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year, 
+       month, 
+       west 
+  FROM tutorial.us_housing_units_completed
 </code></pre></div>
-<p><em>Don&#39;t forget to run that query!</em></p>
+<p><em>To see the results yourself, copy and paste this query into a Query Builder and click run!</em></p>
 
-<p>In this case, the query is telling the database to return the <code>year</code>, <code>month</code>, and <code>west</code> columns from the table <code>tutorial.us_housing_units_completed</code>. When you run this, you&#39;ll get back a set of results that shows values in each of these columns.</p>
+<p>In this case, the query is telling the database to return the <code>year</code>, <code>month</code>, and <code>west</code> columns from the table <code>tutorial.us_housing_units_completed</code>. (Remember that when referencing tables, the table names have to be preceded by <a href="/the-basics/basic-concepts.html">the name of user who uploaded it</a>.) When you run this query, you&#39;ll get back a set of results that shows values in each of these columns.</p>
 
 <p><img src="/images/the-basics/prelim-results.png" alt="Prelimiary Results"></p>
 
 <p>Note that the three column names were separated by a comma in the query. Whenever you select multiple columns, they must be separated by commas, but you should <strong>not</strong> include a comma after the last column name.</p>
 
 <p>If you want to select every column in a table, you can use <code>*</code> instead of the column names:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.us_housing_units_completed
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * 
+  FROM tutorial.us_housing_units_completed
 </code></pre></div>
 <p><img src="/images/the-basics/results.png" alt="Query Results"></p>
 
@@ -104,12 +111,12 @@
 </div>
 
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/1e57eb86c128" target="_blank">See the Answer &raquo;</a>
+  <a href="https://stealth.modeanalytics.com/tutorial/reports/7ffd26af1f17/runs/8fd984d825c7" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <p><em>Note: Practice problems will appear in white boxes as above throughout this tutorial.</em></p>
 
-<p>When you&#39;ve completed the above practice problem, check your answer by following the link below. You&#39;ll land on Mode&#39;s Report View &mdash; a cleaned-up view of a query meant for sharing. You can learn all about the report view on <a href="LINK">Mode&#39;s help site</a>, but for now, here&#39;s what you need to know:</p>
+<p>When you&#39;ve completed the above practice problem, check your answer by following the link below. You&#39;ll land on Mode&#39;s Report View&mdash;a cleaned-up view of a query meant for sharing queries and results. You can learn more about the report view on <a href="LINK">Mode&#39;s help site</a>, but for now, here&#39;s what you need to know:</p>
 
 <ol>
 <li>Following the link will bring you to the Results page of the Report View. The results should look like the results your query produced.</li>
@@ -119,29 +126,30 @@
 
 <p><img src="/images/the-basics/how-to-share.png" alt="Sharing is Caring"></p>
 
-<p><em>Copy the URL in the sharing menu and send to all your friends!</em></p>
+<p><em>Copy the URL in the share menu and send to all your friends!</em></p>
 
 <h3>What actually happens when you run a query?</h3>
 
-<p>So when you run a query, what do you get back? As you can see from running the above queries, you get a table. But that table isn&#39;t stored permanently in the database. It also doesn&#39;t change any tables in the database &mdash; <code>mode.sample_table_1</code> will contain the same data every time you query it. Mode does store all of your results for future access, but the important part for the sake of this tutorial is that <code>SELECT</code> statements don&#39;t change anything in the underlying tables.</p>
+<p>When you run a query, what do you get back? As you can see from running the queries above, you get a table. But that table isn&#39;t stored permanently in the database. It also doesn&#39;t change any tables in the database&mdash;<code>tutorial.us_housing_units_completed</code> will contain the same data every time you query it, and the data will never change no matter how many times you query it. Mode does store all of your results for future access, but <code>SELECT</code> statements don&#39;t change anything in the underlying tables.</p>
 
 <h3>Formatting convention</h3>
 
-<p>You might have noticed that the <code>SELECT</code> and `FROM&#39; commands are capitalized. This isn&#39;t actually necessary &mdash; SQL will understand these commands if you type them in lowercase. Capitalizing commands is simply a convention that makes queries easier to read. Similarly, SQL treats one space, multiple spaces, or a line break as being the same thing. For example, SQL treats this the same way it does the previous query:</p>
+<p>You might have noticed that the <code>SELECT</code> and `FROM&#39; commands are capitalized. This isn&#39;t actually necessary&mdash;SQL will understand these commands if you type them in lowercase. Capitalizing commands is simply a convention that makes queries easier to read. Similarly, SQL treats one space, multiple spaces, or a line break as being the same thing. For example, SQL treats this the same way it does the previous query:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *        FROM tutorial.us_housing_units_completed
 </code></pre></div>
 <p>It also treats this the same way:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-FROM tutorial.us_housing_units_completed
+  FROM tutorial.us_housing_units_completed
 </code></pre></div>
-<p>There are several conventions for formatting line breaks, some of which you&#39;ll pick up on through this tutorial and by simply checking out other people&#39;s work on Mode. It&#39;s up to you to determine what formatting elements are easiest for you to read and keep track of.</p>
+<p>While most capitalization conventions are the same, there are several conventions for formatting line breaks. You&#39;ll pick up on several of these in this tutorial and in other people&#39;s work on Mode. It&#39;s up to you to determine what formatting method is easiest for you to read and understand.</p>
 
 <h3>Column names</h3>
 
-<p>While we&#39;re on the topic of formatting, it&#39;s worth noting the format of column names. You may notice that all of the columns in the <code>tutorial.us_housing_units_completed</code> table are named in lower case, and use underscores instead of spaces. Even the table name itself uses underscores instead of spaces. This is because it&#39;s annoying to deal with spaces in SQL &mdash; if you want to have spaces in column names, you need to always refer to those columns in double quotes.</p>
+<p>While we&#39;re on the topic of formatting, it&#39;s worth noting the format of column names. All of the columns in the <code>tutorial.us_housing_units_completed</code> table are named in lower case, and use underscores instead of spaces. The table name itself also uses underscores instead of spaces. Most people avoid putting spaces in column names because it&#39;s annoying to deal with spaces in SQL&mdash;if you want to have spaces in column names, you need to always refer to those columns in double quotes.</p>
 
 <p>If you&#39;d like your results to look a bit more presentable, you can rename columns to include spaces. For example, if you want the <code>west</code> column to appear as <code>West Region</code> in the results, you would have to type:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT west AS &quot;West Region&quot; FROM tutorial.us_housing_units_completed
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT west AS &quot;West Region&quot; 
+  FROM tutorial.us_housing_units_completed
 </code></pre></div>
 <p>Without the double quotes, that query would read &#39;West&#39; and &#39;Region&#39; as separate objects and would return an error.</p>
 
@@ -150,7 +158,7 @@ FROM tutorial.us_housing_units_completed
 </div>
 
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/9ffec953b677" target="_blank">See the Answer &raquo;</a>
+  <a href="stealth.modeanalytics.com/tutorial/reports/740ad94d2ef9" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <h3>LIMIT</h3>
@@ -159,17 +167,20 @@ FROM tutorial.us_housing_units_completed
 
 <p><img src="/images/the-basics/limit-box.png" alt="Limit"></p>
 
-<p>The default value is 100; when this box is checked, it&#39;s effectively telling the database to only return 100 rows of this table. This particular table has more than 100 rows, so your queries thus far have not been returning the full result sets. Try turning the <code>LIMIT</code> off (by clicking the check mark next to it) and running this query. </p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.us_housing_units_completed
+<p>As you might expect, the limit restricts how many rows the SQL query returns. The default value is 100; when this box is checked, it&#39;s telling the database to only return the first 100 rows of the query. Because <code>tutorial.us_housing_units_completed</code> has more than 100 rows, the queries thus far haven&#39;t been returning the full result sets. Try turning the <code>LIMIT</code> off (by clicking the check mark next to it) and running this query. </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * 
+  FROM tutorial.us_housing_units_completed
 </code></pre></div>
-<p>You&#39;ll notice many more rows get returned. You can tell by the id field in the table, which increases by 1 for each row.</p>
+<p>You&#39;ll notice many more rows get returned. You can tell by the <code>id</code> field in the table, which increases by 1 for each row.</p>
 
 <p><img src="/images/the-basics/id-field.png" alt="ID Field"></p>
 
-<p>This exists to keep your queries running quickly. You&#39;ll probably find that the aim of many of your queries will simply be to see what a particular table looks like &mdash; you&#39;ll want to scan the first few rows of data to get an idea of which fields you care about and how you want to manipulate them. If you query a very large table and don&#39;t use a limit, you could end up waiting a long time for your results to return, which doesn&#39;t make sense if you only care about the first few.</p>
+<p>Many analysts use limits as a simple way to keep their queries from taking too long to return. You&#39;ll probably find that the aim of many of your queries will simply be to see what a particular table looks like&mdash;you&#39;ll want to scan the first few rows of data to get an idea of which fields you care about and how you want to manipulate them. If you query a very large table (such as one with hundreds of thousands or millions of rows) and don&#39;t use a limit, you could end up waiting a long time for all of your results to be displayed, which doesn&#39;t make sense if you only care about the first few. </p>
 
-<p>The limiting functionality is built into Mode, but if you&#39;re ever using SQL in another context, you can add a limit with a SQL command. The following syntax does the same thing as having the box checked with a value of 100:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.us_housing_units_completed LIMIT 100
+<p>The limiting functionality is built into Mode to prevent you from accidentally returning millions of rows without meaning to (we&#39;ve all done it). If you&#39;re ever using SQL in another context, however, you can add a limit with a SQL command. The following syntax does the same thing as having the box checked with a value of 100:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * 
+  FROM tutorial.us_housing_units_completed 
+ LIMIT 100
 </code></pre></div>
 <div class="practice-prob">
   Write a query that uses <code>LIMIT</code> manually (written into the query) to restrict the result set to only 15 rows
@@ -179,7 +190,7 @@ FROM tutorial.us_housing_units_completed
   <a href="http://stealth.modeanalytics.com/tutorial/reports/62f423b84e97" target="_blank">See the Answer &raquo;</a>
 </div>
 
-<p>Now that you&#39;ve got the basics, let&#39;s move on to some commands that will allow you to filter the data.</p>
+<p>Congrats on learning the basics! Let&#39;s now move on to some commands that will allow you to filter the data.</p>
 
 <p>Next: <a href="/the-basics/where-operators.html">Filtering Data and Making Simple Calculations</a>.</p>
 
