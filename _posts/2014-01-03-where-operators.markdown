@@ -50,14 +50,14 @@ Try running that query with each of the operators in place of `>`. Try some valu
   Did the West Region ever produce <em>more than 50,000</em> housing units in one month? Remember, the units in the table are already in thousands.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/eb5326c39637" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Did the South Region ever produce <em>20,000 or fewer</em> housing units in one month?
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/00e816870a30" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Comparisons on non-numerical data
@@ -87,14 +87,14 @@ The way SQL treats alphabetical ordering is a little bit tricky. You may have no
   Write a query that only shows rows from Q1 of a given year (Jan-Mar)
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/1b0ec94376a6" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
  Write a query that only shows rows from Q4 of a given year (Oct-Dec)
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/122ce812e03f" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Arithmetic
