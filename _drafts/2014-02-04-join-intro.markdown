@@ -8,7 +8,12 @@ date:   2014-02-01 00:00:56
 ###Intro to joins - relational concepts
 If you remember from the [basic concepts tutorial](/the-basics/basic-concepts.html), the tables you've been working with up to this point are all part of the same schema in a relational database. The term "relational database" referrs to the fact that the tables within it "relate" to one another &mdash; they contain common identifiers that allow information from multiple tables to be combined easily.
 
-As a practical example, let's examine how Twitter might use relational databases (*note: completely hypothetical*). One way to store Twitter's data would be to have one big table in which each row represents one tweet. The columns would express the content of each tweet, the time they were tweeted, and the people who tweeted them. It turns out, though, that identifying the people who tweeted is a little tricky. There's a lot to a person's twitter identity &mdash; a username, a bio, followers, followees, etc. Does all that info go in this table with every tweet? It *could*, but it probably shouldn't.
+As a practical example, let's  <!-- come up with some practical example-->
+
+Okay, now back to football players. <!-- explain why we would join lat/long data onto player table-->
+
+
+examine how Twitter might use relational databases (*note: completely hypoth  etical*). One way to store Twitter's data would be to have one big table in which each row represents one tweet. The columns would express the content of each tweet, the time they were tweeted, and the people who tweeted them. It turns out, though, that identifying the people who tweeted is a little tricky. There's a lot to a person's twitter identity &mdash; a username, a bio, followers, followees, etc. Does all that info go in this table with every tweet? It *could*, but it probably shouldn't.
 
 <!--image showing how this table might look-->
 

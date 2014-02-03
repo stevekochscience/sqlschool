@@ -6,18 +6,28 @@ date:   2014-01-01 00:00:58
 ---
 
 ###Opening Mode; Getting Started
-<!--homepage stuff -->
+If you haven't already, open a second browser window to <a href="http://stealth.modeanalytics.com" target="_blank">Mode</a>. You will arrive at the homepage. You can use the homepage to explore the community or to quickly access a project you were working on previously, but since you probably haven't used Mode yet, click "New Query" to get started.
 
-<!--new query -->
+![Create a New Query](/images/the-basics/home-screen.png)
+
+This will take you to the Query Builder. This is the bread and butter of Mode &mdash; it's where you'll test all of the skills you learn in this tutorial. Along those lines, every time you see a grey box like this, you should copy it into the query builder and click "run" to execute the query:
+
+    SELECT * FROM tutorial.us_housing_units_completed
+
+Here's what that looks like in practice:
+
+<!--screenshot with that query in browser, ready to click run-->
+
+It takes a few seconds for the query to run. When it's done, you will see the results show up in a table below the query window.
 
 In this lesson, you'll work with real data from the US Census showing completed housing units in major regions. Each column represents a region, and the values represent the number of housing units completed in thousands. The data was collected on Jan. 31, 2014 and can be accessed at [the US Census website](http://www.census.gov/econ/currentdata/).
-
-<!--big note that the user should switch windows and run a query every time they see one in a grey box-->
 
 ###Basic Syntax
 There are two required ingredients in any SQL query: a `SELECT` statement and a `FROM` statement &mdash; and they have to be in that order. `SELECT` indicates which columns you'd like to view, and `FROM` identifies the table that they live in. Let's start by looking at a couple columns from the housing unit table:
 
     SELECT year, month, west FROM tutorial.us_housing_units_completed
+
+*Don't forget to run that query!*
 
 In this case, the query is telling the database to return the `year`, `month`, and `west` columns from the table `tutorial.us_housing_units_completed`. When you run this, you'll get back a set of results that shows values in each of these columns.
 
@@ -34,7 +44,7 @@ If you want to select every column in a table, you can use `*` instead of the co
 Now try this practice problem for yourself:
 
 <div class="practice-prob">
-  Write a query to select all of the columns in the `tutorial.us_housing_units_completed` table without using `*`.
+  Write a query to select all of the columns in the <code>tutorial.us_housing_units_completed</code> table without using <code>*</code>.
 </div>
 <div class="practice-prob-answer">
   <a href="LINK">See the Answer &raquo;</a>
@@ -77,7 +87,7 @@ If you'd like your results to look a bit more presentable, you can rename column
 Without the double quotes, that query would read 'West' and 'Region' as separate objects and would return an error.
 
 <div class="practice-prob">
-  Write a query to select all of the columns in `tutorial.us_housing_units_completed` and rename them so that their first letters are capitalized
+  Write a query to select all of the columns in <code>tutorial.us_housing_units_completed</code> and rename them so that their first letters are capitalized
 </div>
 <div class="practice-prob-answer">
   <a href="LINK">See the Answer &raquo;</a>
@@ -103,7 +113,7 @@ The limiting functionality is built into Mode, but if you're ever using SQL in a
     SELECT * FROM tutorial.sales_performance LIMIT 100
 
 <div class="practice-prob">
-  Write a query that uses LIMIT manually (written into the query) to restrict the result set to only 15 rows
+  Write a query that uses <code>LIMIT</code> manually (written into the query) to restrict the result set to only 15 rows
 </div>
 <div class="practice-prob-answer">
   <a href="LINK">See the Answer &raquo;</a>
