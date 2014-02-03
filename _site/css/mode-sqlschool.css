@@ -99,7 +99,6 @@ li#navbar-sqlschool, li#navbar-logo {
   font-family: Antenna;
   font-style: normal;
   font-weight: normal;
-  color: #999999;
 }
 
 img#header-logo {
@@ -108,14 +107,15 @@ img#header-logo {
   padding-bottom:12px;
 }
 
-.navbar-nav>li>a {
+.navbar-nav>li>a, li#navbar-sqlschool a{
   color:#999999;
 }
 
-.navbar-nav>li>a:hover {
+.navbar-nav>li>a:hover, li#navbar-sqlschool a:hover {
   color:#DD5426;  /* Mode Orange */
   background:transparent;
   text-decoration:underline;
+  cursor:pointer;
 }
 
 span.icon-bar {
@@ -183,16 +183,22 @@ div.practice-prob-answer {
   text-align:right;
 }
 
-div.tip {
-  font-size: 0.8em;
-  background-color: #d8ebf8;
-  border-radius: 3px;
-  border: 1px solid #97c1da;
-  color: #264c72;
-  padding: 15px;
+table {
+  background-color: #FFF;
+  border: 1px solid #C7CCCB;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   text-shadow: 0 1px 0 rgba(255,255,255,0.8);
-  margin-bottom: 10px;
+}
+
+td {
+  padding: 7px;
+  border: 1px solid #C7CCCB;
+  border-left: none;
+  border-right: none;
+}
+
+td.right {
+  text-align:right;
 }
 
 /* Footer */

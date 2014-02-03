@@ -30,12 +30,12 @@ You can filter your results in a number of ways using comparison and logical ope
 The most basic way to filter data is using comparison operators. The easiest way to understand them is to start by looking at the list of them:
 
 <table>
-  <tr><td>Equal to</td><td><code>=</code></td></tr>
-  <tr><td>Not equal to</td><td><code><></code> or <code>!=</code></td></tr>
-  <tr><td>Greater than</td><td><code>></code></td></tr>
-  <tr><td>Less than</td><td><code><</code></td></tr>
-  <tr><td>Greater than or equal to</td><td><code>>=</code></td></tr>
-  <tr><td>Less than or equal to</td><td><code><=</code></td></tr>
+  <tr><td>Equal to</td><td class="right"><code>=</code></td></tr>
+  <tr><td>Not equal to</td><td class="right"><code><></code> or <code>!=</code></td></tr>
+  <tr><td>Greater than</td><td class="right"><code>></code></td></tr>
+  <tr><td>Less than</td><td class="right"><code><</code></td></tr>
+  <tr><td>Greater than or equal to</td><td class="right"><code>>=</code></td></tr>
+  <tr><td>Less than or equal to</td><td class="right"><code><=</code></td></tr>
 </table>
 
 These make the most sense when applied to numerical columns. For example:
@@ -47,14 +47,14 @@ These make the most sense when applied to numerical columns. For example:
 Try running that query with each of the operators in place of `>`. Try some values other than `30` to get a sense of how this works. When you're ready, try to answer thse questions:
 
 <div class="practice-prob">
-  Did the West Region ever produce *more than 50,000* housing units in one month? Remember, the units in the table are already in thousands.
+  Did the West Region ever produce <em>more than 50,000</em> housing units in one month? Remember, the units in the table are already in thousands.
 </div>
 <div class="practice-prob-answer">
   <a href="LINK">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
-  Did the South Region ever produce *20,000 or fewer* housing units in one month?
+  Did the South Region ever produce <em>20,000 or fewer</em> housing units in one month?
 </div>
 <div class="practice-prob-answer">
   <a href="LINK">See the Answer &raquo;</a>
@@ -83,11 +83,19 @@ If you're using `>`, `<`, `>=`, or `<=`, you don't necessarily need to be too sp
 
 The way SQL treats alphabetical ordering is a little bit tricky. You may have noticed in the above query that selecting `month_name > 'J'` will yield only rows in which fieldname starts with "n" or later in the alphabet. "Wait a minute," you might say. "January is included in the results &mdash; shouldn't I have to use `month_name >= 'J` to make that happen?" SQL considers 'Ja' to be greater than 'J' because it has an extra letter. It's worth noting that most dictionaries would list 'Ja' after 'J' as well.
 
-* Practice problems: Write a query that only shows rows from Q1 of a given year (Jan-Mar)
-[answer]
+<div class="practice-prob">
+  Write a query that only shows rows from Q1 of a given year (Jan-Mar)
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
-* Write a query that only shows rows from Q4 of a given year (Oct-Dec)
-[answer]
+<div class="practice-prob">
+ Write a query that only shows rows from Q4 of a given year (Oct-Dec)
+</div>
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 ###Arithmetic
 You can perform arithmetic in SQL using the same operators you would in Excel: `+`, `-`, `*`, `/`. SQL is a little tricky in that these only work in a given row. To clarify, you can only add values in multiple columns **from the same row** together using `+` &mdash; if you want to add values across multiple rows, you'll need to use [Aggregation Functions](/intermediate-sql/aggregation-functions.html), which are covered in the Intermediate Tutorial.

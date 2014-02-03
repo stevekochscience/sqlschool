@@ -33,7 +33,7 @@
         </button>
         <ul class="navbar-logo">
           <li id="navbar-logo" ><a href="/"><img id = "header-logo" src="/images/logo.png" /></a></li>
-          <li id="navbar-sqlschool">SQL SCHOOL</li>
+          <li id="navbar-sqlschool"><a href-"/">SQL SCHOOL</a></li>
         </ul>
       </div>
       <!-- Everything here gets hidden for phones -->
@@ -87,12 +87,12 @@
 <p>The most basic way to filter data is using comparison operators. The easiest way to understand them is to start by looking at the list of them:</p>
 
 <table>
-  <tr><td>Equal to</td><td><code>=</code></td></tr>
-  <tr><td>Not equal to</td><td><code><></code> or <code>!=</code></td></tr>
-  <tr><td>Greater than</td><td><code>></code></td></tr>
-  <tr><td>Less than</td><td><code><</code></td></tr>
-  <tr><td>Greater than or equal to</td><td><code>>=</code></td></tr>
-  <tr><td>Less than or equal to</td><td><code><=</code></td></tr>
+  <tr><td>Equal to</td><td class="right"><code>=</code></td></tr>
+  <tr><td>Not equal to</td><td class="right"><code><></code> or <code>!=</code></td></tr>
+  <tr><td>Greater than</td><td class="right"><code>></code></td></tr>
+  <tr><td>Less than</td><td class="right"><code><</code></td></tr>
+  <tr><td>Greater than or equal to</td><td class="right"><code>>=</code></td></tr>
+  <tr><td>Less than or equal to</td><td class="right"><code><=</code></td></tr>
 </table>
 
 <p>These make the most sense when applied to numerical columns. For example:</p>
@@ -103,7 +103,7 @@
 <p>Try running that query with each of the operators in place of <code>&gt;</code>. Try some values other than <code>30</code> to get a sense of how this works. When you&#39;re ready, try to answer thse questions:</p>
 
 <div class="practice-prob">
-  Did the West Region ever produce *more than 50,000* housing units in one month? Remember, the units in the table are already in thousands.
+  Did the West Region ever produce <em>more than 50,000</em> housing units in one month? Remember, the units in the table are already in thousands.
 </div>
 
 <div class="practice-prob-answer">
@@ -111,7 +111,7 @@
 </div>
 
 <div class="practice-prob">
-  Did the South Region ever produce *20,000 or fewer* housing units in one month?
+  Did the South Region ever produce <em>20,000 or fewer</em> housing units in one month?
 </div>
 
 <div class="practice-prob-answer">
@@ -139,12 +139,21 @@
 </code></pre></div>
 <p>The way SQL treats alphabetical ordering is a little bit tricky. You may have noticed in the above query that selecting <code>month_name &gt; &#39;J&#39;</code> will yield only rows in which fieldname starts with &quot;n&quot; or later in the alphabet. &quot;Wait a minute,&quot; you might say. &quot;January is included in the results &mdash; shouldn&#39;t I have to use <code>month_name &gt;= &#39;J</code> to make that happen?&quot; SQL considers &#39;Ja&#39; to be greater than &#39;J&#39; because it has an extra letter. It&#39;s worth noting that most dictionaries would list &#39;Ja&#39; after &#39;J&#39; as well.</p>
 
-<ul>
-<li><p>Practice problems: Write a query that only shows rows from Q1 of a given year (Jan-Mar)
-[answer]</p></li>
-<li><p>Write a query that only shows rows from Q4 of a given year (Oct-Dec)
-[answer]</p></li>
-</ul>
+<div class="practice-prob">
+  Write a query that only shows rows from Q1 of a given year (Jan-Mar)
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+ Write a query that only shows rows from Q4 of a given year (Oct-Dec)
+</div>
+
+<div class="practice-prob-answer">
+  <a href="LINK">See the Answer &raquo;</a>
+</div>
 
 <h3>Arithmetic</h3>
 
