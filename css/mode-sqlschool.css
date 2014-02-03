@@ -109,7 +109,11 @@ img#header-logo {
   padding-bottom:12px;
 }
 
-.navbar-nav>li>a, li#navbar-sqlschool a{
+li#navbar-sqlschool a {
+  color: #3b6d6c;
+}
+
+.navbar-nav>li>a {
   color:#999999;
 }
 
