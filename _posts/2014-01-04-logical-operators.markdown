@@ -204,7 +204,7 @@ Using `NOT` with `<` and `>` usually doesn't make sense because you can simply u
     SELECT *
       FROM tutorial.billboard_top_100_year_end
      WHERE year = 2013 
-       AND group_name NOT ILIKE '%macklemore%'
+       AND "group" NOT ILIKE '%macklemore%'
 
 `NOT` is mostly commonly used to identify non-null rows, but the syntax is somewhat special &mdash; you need to include `IS` beforehand. Here's how that looks:
 
@@ -223,24 +223,17 @@ Using `NOT` with `<` and `>` usually doesn't make sense because you can simply u
 ###Practice Problems
 
 <div class="practice-prob">
-  practice problem
+  Write a query that lists all of T-Pain's top-100 hits in order by rank on the charts.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/e162590d4dd9">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
-  practice problem
+  Write a query that lists all songs from the 1960s with "love" in the title.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
-</div>
-
-<div class="practice-prob">
-  practice problem
-</div>
-<div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/11c78511873a">See the Answer &raquo;</a>
 </div>
 
 Move on to the next segment: [Ordering Your Results](/the-basics/order-by.html).

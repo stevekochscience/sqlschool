@@ -98,7 +98,7 @@ Without the double quotes, that query would read 'West' and 'Region' as separate
   Write a query to select all of the columns in <code>tutorial.us_housing_units_completed</code> and rename them so that their first letters are capitalized
 </div>
 <div class="practice-prob-answer">
-  <a href="stealth.modeanalytics.com/tutorial/reports/740ad94d2ef9" target="_blank">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/740ad94d2ef9" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###LIMIT
