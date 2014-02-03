@@ -35,10 +35,10 @@ If you'd like your results in the opposite order (referred to as descending orde
      ORDER BY year_rank DESC
 
 <div class="practice-prob">
-  practice problem
+  Write a query that returns all rows from 2012, ordered by song title from Z to A.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/bb73b574f95a" target="_blank">See the Answer &raquo;</a>
 </div>
 
 You can also order by mutiple columns. This is particularly useful if your data falls into categories and you'd like to organize rows by date, for example, but keep all of the results within a given category together. This example make the most recent years come first, but order top-ranks songs before lower-ranked songs:
@@ -67,17 +67,10 @@ Finally, you can make your life a little easier by substituting numbers for colu
 When using `ORDER BY` with a row limit (either through the check box on the query editor or by typing in `LIMIT`), the ordering clause is executed first. This means that the results are ordered **before** limiting to only a few rows, so if you were to rank by columnb, for example, you can be sure that you are getting the lowest values of columnb in the entire table, not just in the first 100 rows of the table.
 
 <div class="practice-prob">
-  practice problem
+  Write a query that returns all rows from 2010 ordered by rank, with artists ordered alphabetically for each song.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
-</div>
-
-<div class="practice-prob">
-  practice problem
-</div>
-<div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/1e40d45ef12f" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Using Comments
@@ -100,10 +93,10 @@ You can also leave comments across multiple lines using `/*` to begin the commen
 
 ###Practice problems
 <div class="practice-prob">
-  practice problem
+  Write a query that shows all rows for with T-Pain was a group member, ordered by rank on the charts.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/e162590d4dd9">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">

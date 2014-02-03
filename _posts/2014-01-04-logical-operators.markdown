@@ -53,14 +53,14 @@ You can also use `_` (a single underscore) to substitute for an individual chara
   Write a query that returns all rows for which Ludacris was a member of the group. Note that when you query the <code>group</code> column, you will need to put it in double quotes: <code>"group"</code>. This is because <code>GROUP</code> also happens to be a SQL command (which you will learn about later).
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/67228a008c9d">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/67228a008c9d" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Write a query that returns all rows for which the first artist listed in the group has a name that begins with "DJ"
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/6cc7b85cc096">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/6cc7b85cc096" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###IN
@@ -80,7 +80,7 @@ As in the previous tutorial, you can use non-numerical values, but they need to 
   Write a query that shows all of the entries for Elvis and M.C. Hammer. Hint: M.C. Hammer is actually on the list under multiple names.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/b7c9462034d0">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/b7c9462034d0" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###BETWEEN
@@ -102,7 +102,7 @@ Some people prefer the latter example because it more explicitly shows what the 
   Write a query that shows all top 100 songs from January 1, 1985 through December 31, 1990.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/4ae007b7d3e3">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/4ae007b7d3e3" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###IS NULL
@@ -120,7 +120,7 @@ You can select rows that contain no data in a given column by using the `IS NULL
   Write a query that shows all of the rows for which <code>song_name</code> is null.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/c97c1d0b0fba">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/c97c1d0b0fba" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Logical Operators
@@ -147,14 +147,14 @@ You can see that this example is spaced out onto multiple lines &mdash; a good w
   Write a query that surfaces all rows for top-10 hits for which Ludacris is part of the Group.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/e1731ac0419f">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/e1731ac0419f" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Write a query that surfaces the top-ranked records in 1990, 2000, and 2010
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/5f3ec7055dc0">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/5f3ec7055dc0" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###OR
@@ -181,14 +181,14 @@ You will notice that the conditional statement `year = 2013` will be fulfilled f
   Write a query that returns all rows for top-10 songs that featured either Katy Perry or Bon Jovi
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/aa5a19da7f2e">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/aa5a19da7f2e" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Write a query that returns all songs with titles that contain the word "California" in either the 1970s or 1990s.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/ca79c861050c">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/ca79c861050c" target="_blank">See the Answer &raquo;</a>
 </div>
    
 ###NOT
@@ -217,23 +217,23 @@ Using `NOT` with `<` and `>` usually doesn't make sense because you can simply u
   Write a query that returns all rows for songs that were on the charts in 2013 and do not contain the letter "a"
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/f64867a56523">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/f64867a56523" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Practice Problems
 
 <div class="practice-prob">
-  Write a query that lists all of T-Pain's top-100 hits in order by rank on the charts.
+  Write a query that lists all top-100 recordings feature Dr. Dre before 2001 or after 2009.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/e162590d4dd9">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/88c81c1a02e8" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Write a query that lists all songs from the 1960s with "love" in the title.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/11c78511873a">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/11c78511873a" target="_blank">See the Answer &raquo;</a>
 </div>
 
 Move on to the next segment: [Ordering Your Results](/the-basics/order-by.html).
