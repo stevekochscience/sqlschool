@@ -13,7 +13,7 @@ Welcome to the Intermediate SQL Tutorial! If you skipped [The Basics](LINK), you
 
 ###Today's dataset
 
-For this lesson and the next, you'll be working with [Apple](http://www.apple.com) stock price data. The data was pulled from [Google Finance](http://finance.google.com) in January 2014. There is one row for each day (indicated in the `date` field). `open` and `close` are the opening and closing prices of the stock on that day. `high` and `low` are the high and low prices for that day. `volume` is the number of shares traded on that day. Check it out for yourself:
+For this lesson and the next, you'll be working with [Apple](http://www.apple.com) stock price data. The data was pulled from [Google Finance](http://finance.google.com) in January 2014. There is one row for each day (indicated in the `date` field). `open` and `close` are the opening and closing prices of the stock on that day. `high` and `low` are the high and low prices for that day. `volume` is the number of shares traded on that day. Some data has been intentionally removed for the sake of this lesson. Check it out for yourself:
 
     SELECT * FROM tutorial.aapl_historical_stock_price
 
