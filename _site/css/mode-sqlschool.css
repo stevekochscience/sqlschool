@@ -83,25 +83,29 @@ nav#header-nav {
   height:50px;
 }
 
-div#header-container {
+div.container#header-container {
   padding:0;
 }
 
-div.navbar-header {
+li#navbar-logo {
   background-color: #3B6D6C;
   padding-left: 7px;
   padding-right: 7px;
 }
 
-a#navbar-brand {
+li#navbar-sqlschool, li#navbar-logo {
+  float:left;
   line-height:50px;
-  color: white;
+  font-family: Antenna;
+  font-style: normal;
+  font-weight: normal;
+  color: #999999;
 }
 
 img#header-logo {
-  display:inline;
   border: none;
-  margin-right: 7px;
+  padding-top:13px;
+  padding-bottom:12px;
 }
 
 .navbar-nav>li>a {
@@ -112,6 +116,10 @@ img#header-logo {
   color:#DD5426;  /* Mode Orange */
   background:transparent;
   text-decoration:underline;
+}
+
+span.icon-bar {
+  background-color: #999999;
 }
 
 /* Main */
