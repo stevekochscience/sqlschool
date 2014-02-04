@@ -10,7 +10,7 @@ For the next few lessons, you'll work with data on College Football Players. <!-
     SELECT * FROM benn.college_football_players
 
 ###CASE
-The `CASE` statement is SQL's way of handling if/then logic. It's easiest to understand in the context of an example:
+The `CASE` statement is SQL's way of handling if/then logic. The `CASE` statement is followed by at least one pair of `WHEN` and `THEN` statements &mdash; SQL's equivalent of IF/THEN. It must end with the `END` statement. The `ELSE` statement is optional, and provides a way to capture values not specified in the `WHEN`/`THEN` statements. It's easiest to understand in the context of an example:
 
     SELECT player_name,
            year,
@@ -25,10 +25,7 @@ In plain english, here's what's happening:
 3. In any row for which the conditional statement is false, nothing happens in that row, leaving a null value in the `is_a_senior` column.
 4. At the same time all this is happening, SQL is retrieving and displaying all the values in the `player_name` and `year` columns.
 
-This particular query makes it pretty easy to see what's happening because we've included the `CASE` statement along with the `year` column itself. You can check each row to see whether `year` meets the condition `year = 'SR'` and then see the result in the column generated using the `CASE` statement.
-
-* Practice Problem
-[answer](link)
+The above query makes it pretty easy to see what's happening because we've included the `CASE` statement along with the `year` column itself. You can check each row to see whether `year` meets the condition `year = 'SR'` and then see the result in the column generated using the `CASE` statement.
 
 But what if you don't want null values in the `is_a_senior` column? The following query replaces those nulls with "no":
 
@@ -38,8 +35,12 @@ But what if you don't want null values in the `is_a_senior` column? The followin
                 ELSE 'no' END AS is_a_senior
       FROM benn.college_football_players
 
-* Practice Problem
-[answer](link)
+<div class="practice-prob">
+  Write a query that includes a column that is flagged "yes" when a player is from California, and sort the results with those players first.
+</div>
+<div class="practice-prob-answer">
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/88e5eb7c9b80" target="_blank">See the Answer &raquo;</a>
+</div>
 
 You can also define a number of outcomes in a `CASE` statement by including as many `WHEN`/`THEN` statements as you'd like:
 
@@ -69,8 +70,12 @@ While the above works, it's really best practice to create statements that don't
                 ELSE 'under 175' END AS weight_group
       FROM benn.college_football_players
 
-* Practice Problem
-[answer](link)
+<div class="practice-prob">
+  Write a query that includes players' names and a column that classifies them into three categories based on height. Keep in mind the answer is only one possible answer.
+</div>
+<div class="practice-prob-answer">
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/3374045ecce5" target="_blank">See the Answer &raquo;</a>
+</div>
 
 You can also string together multiple conditional statements with `AND` and `OR` the same way you might in a `WHERE` clause:
 
@@ -83,14 +88,22 @@ You can also string together multiple conditional statements with `AND` and `OR`
 
 1. The `CASE` statement always goes in the `SELECT` clause
 2. `CASE` must include the following components: `WHEN`, `THEN`, and `END`. `ELSE` is an optional component.
-3. You can make any conditional statement using any [conditional operator](LINK to prev tutorial) between `WHEN` and `THEN`
+3. You can make any conditional statement using any [conditional operator](/the-basics/where-operators.html) between `WHEN` and `THEN`. This includes stringing together multiple conditional statements using `AND` and `OR`.
 4. You can include multiple `WHEN` statements, as well as an `ELSE` statement to deal with any unaddressed conditions.
 
-* Practice Problem
-[answer](link)
+<div class="practice-prob">
+  Practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="http://" target="_blank">See the Answer &raquo;</a>
+</div>
 
-* Practice Problem
-[answer](link)
+<div class="practice-prob">
+  Practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="http://" target="_blank">See the Answer &raquo;</a>
+</div>
 
 ###Using CASE with aggregations
 `CASE`'s slightly more complicated and substnatially more useful functionality comes from pairing it with aggregators. For example, let's say you want to only count rows that fulfill a certain condition. Since `COUNT` ignores nulls, you could use a `CASE` statement to evaluate the condition and produce null or non-null values depending on the outcome:
@@ -133,11 +146,19 @@ The above query is an excellent place to use numbers instead of columns in the `
                    WHEN year = 'SR' THEN 'SR'
                    ELSE 'No Year Data' END
 
-* Practice Problem
-[answer](link)
+<div class="practice-prob">
+  Practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="http://" target="_blank">See the Answer &raquo;</a>
+</div>
 
-* Practice Problem
-[answer](link)
+<div class="practice-prob">
+  Practice problem
+</div>
+<div class="practice-prob-answer">
+  <a href="http://" target="_blank">See the Answer &raquo;</a>
+</div>
 
 ###Using CASE Within Aggregations
 The previous example is an excellent lead-in to a primary use-`CASE` for `CASE` (sorry for that): creating histograms. In the previous examples, data was displayed vertically, but in some instances, you might want to show data horizontally. This is known as "Pivoting" (like a Pivot Table). Let's take the following query:
