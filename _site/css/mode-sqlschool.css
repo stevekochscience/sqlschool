@@ -50,11 +50,13 @@ img {
 }
 
 ul, ol {
-  list-style: none;
+  margin-left:10px;
+  list-style:none;
 }
 
-li {
-  margin-left: 10px;
+section ul li:before {
+  content: "\00BB";
+  margin-right:5px;
 }
 
 table {
@@ -155,10 +157,6 @@ li {
   color: black;
   margin-left: 12px;
   margin-bottom: 5px;
-}
-
-ul.table-of-contents li a {
-  display: block;
 }
 
 /* Individual Lesson Pages */
