@@ -106,23 +106,37 @@ The example below illustrates the use of `+`:
            month,
            west,
            south,
-           west + south
+           west + south AS south_plus_west
       FROM tutorial.us_housing_units_completed
 
-<!--explanation of the above -->
+The above example produces a column showing the sum of whatever is in the `south` and `west` columns for each row. You can chain arithmetic functions, including both column names and actual numbers. 
 
 <!-- example using another operator-->
 
-<!-- parenthesis example -->
+<div class="practice-prob">
+  problem1
+</div>
+<div class="practice-prob-answer">
+  <a href="http://" target="_blank">See the Answer &raquo;</a>
+</div>
+
+As in Excel, you can use parenthesis to manage the [order of operations](http://www.mathgoodies.com/lessons/vol7/order_operations.html)For example, if you wanted to average the `west` and `south` columns, you could write something like this:
+
+    SELECT year,
+           month,
+           west,
+           south,
+           (west + south)/2 AS south_west_avg
+      FROM tutorial.us_housing_units_completed
 
 ###Practice time
 Sharpen your skills by tackling these questions:
 
 <div class="practice-prob">
-  question 1
+  problem1
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
