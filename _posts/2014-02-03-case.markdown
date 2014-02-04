@@ -5,7 +5,7 @@ title:  "Using Conditional Logic to Define New Columns"
 date:   2014-02-01 00:00:57
 ---
 
-For the next few lessons, you'll work with data on College Football Players. <!-- Benn fill in info about College football player data, where it is sourced from, etc. -->In this particular lesson, you'll stick to roster information. This table is pretty self-explanatory &mdash; one row per player, with columns that describe attributes for that player. Run this query to check out the raw data:
+For the next few lessons, you'll work with data on College Football Players. This data was collected from ESPN on January 15, 2014 from the rosters listed on [this page](http://espn.go.com/college-football/teams) using a Python scraper [available here](https://github.com/mode/blog/blob/master/2014-01-16-football-hometowns/espn_cfb_scraper.py) In this particular lesson, you'll stick to roster information. This table is pretty self-explanatory &mdash; one row per player, with columns that describe attributes for that player. Run this query to check out the raw data:
 
     SELECT * FROM benn.college_football_players
 
@@ -92,17 +92,10 @@ You can also string together multiple conditional statements with `AND` and `OR`
 4. You can include multiple `WHEN` statements, as well as an `ELSE` statement to deal with any unaddressed conditions.
 
 <div class="practice-prob">
-  Practice problem
+  Write a query that selects all columns from `benn.college_football_players` and adds an additional column that displays the player's name if that player is a junior or senior.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://" target="_blank">See the Answer &raquo;</a>
-</div>
-
-<div class="practice-prob">
-  Practice problem
-</div>
-<div class="practice-prob-answer">
-  <a href="http://" target="_blank">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/d7358e7734a2" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Using CASE with aggregations
@@ -147,10 +140,10 @@ The above query is an excellent place to use numbers instead of columns in the `
                    ELSE 'No Year Data' END
 
 <div class="practice-prob">
-  Practice problem
+  Write a query that counts the number of 300lb+ players for each of the following regions: West Coast (CA, OR, WA), Texas, and Other (Everywhere else). 
 </div>
 <div class="practice-prob-answer">
-  <a href="http://" target="_blank">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/7f631173fabb" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">

@@ -62,12 +62,12 @@
   <div class="container">
     <h2>Using Conditional Logic to Define New Columns</h2>
     
-    <p>For the next few lessons, you&#39;ll work with data on College Football Players. &lt;!-- Benn fill in info about College football player data, where it is sourced from, etc. --&gt;In this particular lesson, you&#39;ll stick to roster information. This table is pretty self-explanatory &mdash; one row per player, with columns that describe attributes for that player. Run this query to check out the raw data:</p>
+    <p>For the next few lessons, you&#39;ll work with data on College Football Players. This data was collected from ESPN on January 15, 2014 from the rosters listed on <a href="http://espn.go.com/college-football/teams">this page</a> using a Python scraper <a href="https://github.com/mode/blog/blob/master/2014-01-16-football-hometowns/espn_cfb_scraper.py">available here</a> In this particular lesson, you&#39;ll stick to roster information. This table is pretty self-explanatory &mdash; one row per player, with columns that describe attributes for that player. Run this query to check out the raw data:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM benn.college_football_players
 </code></pre></div>
 <h3>CASE</h3>
 
-<p>The <code>CASE</code> statement is SQL&#39;s way of handling if/then logic. It&#39;s easiest to understand in the context of an example:</p>
+<p>The <code>CASE</code> statement is SQL&#39;s way of handling if/then logic. The <code>CASE</code> statement is followed by at least one pair of <code>WHEN</code> and <code>THEN</code> statements &mdash; SQL&#39;s equivalent of IF/THEN. It must end with the <code>END</code> statement. The <code>ELSE</code> statement is optional, and provides a way to capture values not specified in the <code>WHEN</code>/<code>THEN</code> statements. It&#39;s easiest to understand in the context of an example:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT player_name,
        year,
        CASE WHEN year = &#39;SR&#39; THEN &#39;yes&#39;
@@ -83,12 +83,7 @@
 <li>At the same time all this is happening, SQL is retrieving and displaying all the values in the <code>player_name</code> and <code>year</code> columns.</li>
 </ol>
 
-<p>This particular query makes it pretty easy to see what&#39;s happening because we&#39;ve included the <code>CASE</code> statement along with the <code>year</code> column itself. You can check each row to see whether <code>year</code> meets the condition <code>year = &#39;SR&#39;</code> and then see the result in the column generated using the <code>CASE</code> statement.</p>
-
-<ul>
-<li>Practice Problem
-<a href="link">answer</a></li>
-</ul>
+<p>The above query makes it pretty easy to see what&#39;s happening because we&#39;ve included the <code>CASE</code> statement along with the <code>year</code> column itself. You can check each row to see whether <code>year</code> meets the condition <code>year = &#39;SR&#39;</code> and then see the result in the column generated using the <code>CASE</code> statement.</p>
 
 <p>But what if you don&#39;t want null values in the <code>is_a_senior</code> column? The following query replaces those nulls with &quot;no&quot;:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT player_name,
@@ -97,10 +92,13 @@
             ELSE &#39;no&#39; END AS is_a_senior
   FROM benn.college_football_players
 </code></pre></div>
-<ul>
-<li>Practice Problem
-<a href="link">answer</a></li>
-</ul>
+<div class="practice-prob">
+  Write a query that includes a column that is flagged "yes" when a player is from California, and sort the results with those players first.
+</div>
+
+<div class="practice-prob-answer">
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/88e5eb7c9b80" target="_blank">See the Answer &raquo;</a>
+</div>
 
 <p>You can also define a number of outcomes in a <code>CASE</code> statement by including as many <code>WHEN</code>/<code>THEN</code> statements as you&#39;d like:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT player_name,
@@ -130,10 +128,13 @@
             ELSE &#39;under 175&#39; END AS weight_group
   FROM benn.college_football_players
 </code></pre></div>
-<ul>
-<li>Practice Problem
-<a href="link">answer</a></li>
-</ul>
+<div class="practice-prob">
+  Write a query that includes players' names and a column that classifies them into three categories based on height. Keep in mind the answer is only one possible answer.
+</div>
+
+<div class="practice-prob-answer">
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/3374045ecce5" target="_blank">See the Answer &raquo;</a>
+</div>
 
 <p>You can also string together multiple conditional statements with <code>AND</code> and <code>OR</code> the same way you might in a <code>WHERE</code> clause:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT player_name,
@@ -146,16 +147,17 @@
 <ol>
 <li>The <code>CASE</code> statement always goes in the <code>SELECT</code> clause</li>
 <li><code>CASE</code> must include the following components: <code>WHEN</code>, <code>THEN</code>, and <code>END</code>. <code>ELSE</code> is an optional component.</li>
-<li>You can make any conditional statement using any <a href="LINK%20to%20prev%20tutorial">conditional operator</a> between <code>WHEN</code> and <code>THEN</code></li>
+<li>You can make any conditional statement using any <a href="/the-basics/where-operators.html">conditional operator</a> between <code>WHEN</code> and <code>THEN</code>. This includes stringing together multiple conditional statements using <code>AND</code> and <code>OR</code>.</li>
 <li>You can include multiple <code>WHEN</code> statements, as well as an <code>ELSE</code> statement to deal with any unaddressed conditions.</li>
 </ol>
 
-<ul>
-<li><p>Practice Problem
-<a href="link">answer</a></p></li>
-<li><p>Practice Problem
-<a href="link">answer</a></p></li>
-</ul>
+<div class="practice-prob">
+  Write a query that selects all columns from `benn.college_football_players` and adds an additional column that displays the player's name if that player is a junior or senior.
+</div>
+
+<div class="practice-prob-answer">
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/d7358e7734a2" target="_blank">See the Answer &raquo;</a>
+</div>
 
 <h3>Using CASE with aggregations</h3>
 
@@ -195,12 +197,21 @@
                WHEN year = &#39;SR&#39; THEN &#39;SR&#39;
                ELSE &#39;No Year Data&#39; END
 </code></pre></div>
-<ul>
-<li><p>Practice Problem
-<a href="link">answer</a></p></li>
-<li><p>Practice Problem
-<a href="link">answer</a></p></li>
-</ul>
+<div class="practice-prob">
+  Write a query that counts the number of 300lb+ players for each of the following regions: West Coast (CA, OR, WA), Texas, and Other (Everywhere else). 
+</div>
+
+<div class="practice-prob-answer">
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/7f631173fabb" target="_blank">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  Practice problem
+</div>
+
+<div class="practice-prob-answer">
+  <a href="http://" target="_blank">See the Answer &raquo;</a>
+</div>
 
 <h3>Using CASE Within Aggregations</h3>
 
