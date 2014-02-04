@@ -18,7 +18,7 @@ title: "MODE: Help"
       <h4 class="category" id="{{ category }}">
         {{ category | replace:'-', ' ' }}
       </h4>
-      <ul class="questions">
+      <ul class="table-of-contents">
         {% for post in site.posts %}
             {% for cat in post.category %}
               {% if cat == category %}

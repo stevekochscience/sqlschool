@@ -109,18 +109,23 @@ The example below illustrates the use of `+`:
            west + south AS south_plus_west
       FROM tutorial.us_housing_units_completed
 
-The above example produces a column showing the sum of whatever is in the `south` and `west` columns for each row. You can chain arithmetic functions, including both column names and actual numbers. 
+The above example produces a column showing the sum of whatever is in the `south` and `west` columns for each row. You can chain arithmetic functions, including both column names and actual numbers:
 
-<!-- example using another operator-->
+    SELECT year,
+           month,
+           west,
+           south,
+           west + south - 4 * year AS nonsense_column
+      FROM tutorial.us_housing_units_completed
 
 <div class="practice-prob">
-  problem1
+  Write a query that calculates the sum of all four regions in a separate column.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://" target="_blank">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/b83cefc05943" target="_blank">See the Answer &raquo;</a>
 </div>
 
-As in Excel, you can use parenthesis to manage the [order of operations](http://www.mathgoodies.com/lessons/vol7/order_operations.html)For example, if you wanted to average the `west` and `south` columns, you could write something like this:
+As in Excel, you can use parenthesis to manage the [order of operations](http://www.mathgoodies.com/lessons/vol7/order_operations.html). For example, if you wanted to average the `west` and `south` columns, you could write something like this:
 
     SELECT year,
            month,
@@ -129,21 +134,23 @@ As in Excel, you can use parenthesis to manage the [order of operations](http://
            (west + south)/2 AS south_west_avg
       FROM tutorial.us_housing_units_completed
 
+It occasionally makes sense to use parentheses even when it's not absolutely necessary just to make your query a bit easier to read. 
+
 ###Practice time
 Sharpen your skills by tackling these questions:
 
 <div class="practice-prob">
-  problem1
+  Write a query that returns all rows for which more units were produced in the West region than in the Midwest and Northeast combined.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://" target="_blank">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/bb17c0984edb" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
- question 2
+ Write a query that calculates the percentage of all houses completed in the United States represented by each region. Only return results from the year 2000 and later. Hint: There should be four columns of percentages.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/bffb59fa65a0" target="_blank">See the Answer &raquo;</a>
 </div>
 
 Move on to the next lesson: [Logical Operators](/the-basics/logical-operators.html).
