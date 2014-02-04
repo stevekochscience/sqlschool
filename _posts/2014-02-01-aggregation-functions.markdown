@@ -67,7 +67,7 @@ If you must use spaces, you will need to use double quotes.
   Write a query that determines counts of every single column. Which column has the most null values?
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/4da53e30e228" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###SUM
@@ -76,7 +76,7 @@ This works the same way as count, except that it can only be used on numerical c
     SELECT SUM(volume)
       FROM tutorial.aapl_historical_stock_price
 
-An important thing to remember: aggregators only aggregate vertically. If you want to perform a calculation across rows, you would do this with [simple arithmetic](LINK TO EARLIER TUTORIAL).
+An important thing to remember: aggregators only aggregate vertically. If you want to perform a calculation across rows, you would do this with [simple arithmetic](/the-basics/where-operators.html).
 
 You don't need to worry as much about the presence of nulls with `SUM` as you would with `COUNT` &mdash; `SUM` treats nulls as 0.
 
@@ -84,7 +84,7 @@ You don't need to worry as much about the presence of nulls with `SUM` as you wo
   Write a query to calculate the average opening price (hint: you will need to use both `COUNT` and `SUM`).
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/4106c16551ac" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###MIN/MAX
@@ -102,17 +102,17 @@ Nulls are treated as lower than 0 or "a" so `MIN` will return a null value if th
      WHERE volume IS NOT NULL
 
 <div class="practice-prob">
-  On what day did the stock price peak?
+  What was Apple's highest stock price (at the time of this data collection)?
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/f374f60f4e9c" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
-  On what day did the stock increase by the highest dollar value?
+  What was the highest single-day increase in Apple's share value?
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/1ed0029e2c68">See the Answer &raquo;</a>
 </div>
 
 ###AVG

@@ -131,8 +131,8 @@ span.icon-bar {
 }
 
 /* Main */
-input.form-control {
-  width:600px;
+section.head h1 {
+  margin-bottom: -.2em;
 }
 
 div.breadcrumbs {
