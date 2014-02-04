@@ -5,7 +5,7 @@ title:  "Summary Statistics: Using SQL to Replace Pivot Tables"
 date:   2014-02-01 00:00:59
 ---
 
-Welcome to the Intermediate SQL Tutorial! If you skipped [The Basics](LINK), you should take a quick peek [at this page](LINK) to get an idea of how to get the most out of this tutorial. For convenience, here's the gist:
+Welcome to the Intermediate SQL Tutorial! If you skipped [The Basics](LINK), you should take a quick peek [at this page](/the-basics/select-from.html) to get an idea of how to get the most out of this tutorial. For convenience, here's the gist:
 
 * Open another window to [Mode](http://modeanalytics.com). Make an account if you don't have one.
 * For each lesson, start by running `SELECT *` on the relevant dataset so you get a sense of what the raw data looks like. Do this in that window you just opened to Mode.
@@ -38,10 +38,10 @@ Things start to get a little bit tricky when you want to count individual column
 You'll notice that this result is lower than what you got with `COUNT(*)`. That's because `high` has some nulls.
 
 <div class="practice-prob">
-  practice problem
+  Write to query to count the number of non-null rows in the `low` column.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/ce67f767fd35" target="_blank">See the Answer &raquo;</a>
 </div>
 
 One nice thing about `COUNT` is that you can use it on non-numerical columns:
@@ -130,10 +130,10 @@ Produces the same result as:
       FROM tutorial.aapl_historical_stock_price
 
 <div class="practice-prob">
-  practice problem
+  Write a query that calculates the average daily trade volume for Apple stock.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/0328fbae6c07" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###GROUP BY
@@ -153,10 +153,10 @@ You can group by multiple columns, but you have to separate column names with co
      GROUP BY year, month
 
 <div class="practice-prob">
-  practice problem
+  Calculate the total number shares traded each month. Order your results chronologically.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/36b338ee7ec5" target="_blank">See the Answer &raquo;</a>
 </div>
 
 As in [ORDER BY](/the-basics/order-by.html), you can substitute numbers for column names in the `GROUP BY` clause. It's generally recommended to do this only when you are grouping many columns, or if something else is causing the text in the `GROUP BY` clause to be excessively long:
@@ -192,25 +192,17 @@ As mentioned in prior tutorials, the order in which you write the clauses is imp
 ###Aggregation Practice
 
 <div class="practice-prob">
-  Write a query to calculate the average difference between opening and closing prices
+  Write a query to calculate the average difference between opening and closing prices, grouped by year
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/c1881e6c354d" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
-  problem 2: something with group by
+  Write a query that calculates the lowest and highest prices that Apple stock achieved each month.
 </div>
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/9d9f9dcd83bb" target="_blank">See the Answer &raquo;</a>
 </div>
-
-<div class="practice-prob">
-  problem 3
-</div>
-<div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
-</div>
-
 
 Check out the next lesson: [Counting the unique values in a column](/intermediate/distinct.html)
