@@ -69,48 +69,48 @@
 <h3>ORDER BY</h3>
 
 <p>Now that you can filter, it&#39;s time to learn how to sort. The <code>ORDER BY</code> clause allows you to reorder your results based on the data in one or more columns. First, take a look at how the table is ordered by default:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM benn.billboard_top_100_year_end
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.billboard_top_100_year_end
 </code></pre></div>
 <p>Now let&#39;s see what happens when we order by one of the columns:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * 
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  ORDER BY artist
 </code></pre></div>
 <p>You&#39;ll notice that the results are now ordered alphabetically from a to z based on the content in the <code>artist</code> column. This is referred to as ascending order, and is the SQL&#39;s default. If you order a numerical column in ascending order, it will start with smaller (or most negative) numbers, with each successive row having a higher numerical value than the previous. Here&#39;s an example using a numerical column:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * 
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013
  ORDER BY year_rank
 </code></pre></div>
 <p>If you&#39;d like your results in the opposite order (referred to as descending order), you need to add the <code>DESC</code> operator:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * 
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013
  ORDER BY year_rank DESC
 </code></pre></div>
 <div class="practice-prob">
-  practice problem
+  Write a query that returns all rows from 2012, ordered by song title from Z to A.
 </div>
 
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/bb73b574f95a" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <p>You can also order by mutiple columns. This is particularly useful if your data falls into categories and you&#39;d like to organize rows by date, for example, but keep all of the results within a given category together. This example make the most recent years come first, but order top-ranks songs before lower-ranked songs:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * 
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013
  ORDER BY year DESC, year_rank
 </code></pre></div>
 <p>You can see a couple things from the above query: First, columns in the <code>ORDER BY</code> clause must be separated by commas. Second, the <code>DESC</code> operator is only applied to the column that precedes it. Finally, the results are sorted by the first column mentioned (<code>year</code>), then by <code>year_rank</code> afterward. You can see the difference the order makes by running the following query:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * 
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013
  ORDER BY year_rank, year DESC
 </code></pre></div>
 <p>Finally, you can make your life a little easier by substituting numbers for column names in the <code>ORDER BY</code> clause. The numbers will correspond to the order in which you list columns in the <code>SELECT</code> clause. For example, the following query is exactly equivalent to the previous query:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * 
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013
  ORDER BY 2, 1 DESC
 </code></pre></div>
@@ -119,19 +119,11 @@
 <p>When using <code>ORDER BY</code> with a row limit (either through the check box on the query editor or by typing in <code>LIMIT</code>), the ordering clause is executed first. This means that the results are ordered <strong>before</strong> limiting to only a few rows, so if you were to rank by columnb, for example, you can be sure that you are getting the lowest values of columnb in the entire table, not just in the first 100 rows of the table.</p>
 
 <div class="practice-prob">
-  practice problem
+  Write a query that returns all rows from 2010 ordered by rank, with artists ordered alphabetically for each song.
 </div>
 
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
-</div>
-
-<div class="practice-prob">
-  practice problem
-</div>
-
-<div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/1e40d45ef12f" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <h3>Using Comments</h3>
@@ -140,7 +132,7 @@
 
 <p>You can use<code>--</code> (two dashes)  to comment out everything to the right of them on a given line:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *  --This comment won&#39;t affect the way the code runs
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013
 </code></pre></div>
 <p>You can also leave comments across multiple lines using <code>/*</code> to begin the comment and <code>*/</code> to close it:</p>
@@ -148,17 +140,17 @@
 it could only fit on multiple lines. Fortunately,
 it, too, will not affect how this code runs. */
 SELECT *
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013
 </code></pre></div>
 <h3>Practice problems</h3>
 
 <div class="practice-prob">
-  practice problem
+  Write a query that shows all rows for with T-Pain was a group member, ordered by rank on the charts.
 </div>
 
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/e162590d4dd9">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">

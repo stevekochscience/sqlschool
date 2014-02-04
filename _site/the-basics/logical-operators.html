@@ -62,8 +62,11 @@
   <div class="container">
     <h2>Using Multiple Filters at Once</h2>
     
-    <p>The data in this lesson is from <a href="http://www.billboard.com/charts">Billboard Music Charts</a>. It was collected in January 2014 and contains data from ___ through 2013. The results in this table are the <em>year-end</em> results &mdash; the top 100 songs at the end of each year. Check out the dataset for yourself:</p>
+    <p>The data in this lesson is from <a href="http://www.billboard.com/charts">Billboard Music Charts</a>. It was collected in January 2014 and contains data from ___ through 2013. The results in this table are the <em>year-end</em> results &mdash; the top 100 songs at the end of each year. Some of the data has been intentionally removed for the sake of this lesson. You can see the full dataset at:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM benn.billboard_top_100_year_end
+</code></pre></div>
+<p>For the lesson, you will use this table. It&#39;s very similar:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.billboard_top_100_year_end
 </code></pre></div>
 <ul>
 <li><code>year_rank</code> is the rank of that song at the end of the listed year</li>
@@ -73,7 +76,7 @@
 
 <p>You can get a better sense of some of the nuances of this by running the following query. It uses the <code>ORDER BY</code> clause, which we will get to in the next lesson. Don&#39;t worry about it for now:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  ORDER BY year DESC, year_rank
 </code></pre></div>
 <p>You&#39;ll notice that Macklemore does a lot of collaborations. Since his songs are listed as featuring other artists like Ryan Lewis, there are multiple lines in the dataset for Ryan Lewis. Daft Punk and Pharrell Williams are also listed as two artists. Daft Punk is actually a duo, but since the album lists them together under the name Daft Punk, that&#39;s how Billboard treats them.</p>
@@ -84,46 +87,79 @@
 
 <p>In the <a href="/the-basics/where-operators.html">previous tutorial</a>, you played with some comparison opertors. There are a couple more that you&#39;re likely to find very useful. They&#39;re all special snowflakes, so we&#39;ll go through them individually:</p>
 
+<h3>LIKE</h3>
+
+<p><code>LIKE</code> allows you to match on similar values rather than exact ones. Using wildcard characters, you can define what must be exactly matched and what can be different. In this example, the results will include rows for which <code>group_name</code> starts with &quot;Snoop&quot; and is followed by any number and selection of characters:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE group_name LIKE &#39;Snoop%&#39;
+</code></pre></div>
+<p>The <code>%</code> used above represents any character or set of characters. In this case, <code>%</code> is referred to as a &quot;wildcard.&quot; In the SQL that Mode uses, <code>LIKE</code> is case-sensitive, meaning that the above query will only capture matches that start with a capital &quot;S&quot; and lower-case &quot;noop.&quot; To match in a way that is not case-sensitive, you can use the <code>ILIKE</code> command:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE group_name ILIKE &#39;snoop%&#39;
+</code></pre></div>
+<p>You can also use <code>_</code> (a single underscore) to substitute for an individual character:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE artist ILIKE &#39;dr_ke&#39;
+</code></pre></div>
+<div class="practice-prob">
+  Write a query that returns all rows for which Ludacris was a member of the group. Note that when you query the <code>group</code> column, you will need to put it in double quotes: <code>"group"</code>. This is because <code>GROUP</code> also happens to be a SQL command (which you will learn about later).
+</div>
+
+<div class="practice-prob-answer">
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/67228a008c9d" target="_blank">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  Write a query that returns all rows for which the first artist listed in the group has a name that begins with "DJ"
+</div>
+
+<div class="practice-prob-answer">
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/6cc7b85cc096" target="_blank">See the Answer &raquo;</a>
+</div>
+
 <h3>IN</h3>
 
 <p>You&#39;ll probably want to use <code>IN</code> pretty frequently &mdash; it allows you to specify a list of values that you&#39;d like to include. For example, the following query will return results for which the <code>year_rank</code> column is equal to one of the values in the list:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year_rank IN (1, 2, 3)
 </code></pre></div>
 <p>As in the previous tutorial, you can use non-numerical values, but they need to go inside single quotes. Regardless of the data type, the values in the list must be separated by commas. Here&#39;s another example:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE artist IN (&#39;Taylor Swift&#39;, &#39;Usher&#39;, &#39;Ludacris&#39;)
 </code></pre></div>
 <div class="practice-prob">
-  Practice Problem
+  Write a query that shows all of the entries for Elvis and M.C. Hammer. Hint: M.C. Hammer is actually on the list under multiple names.
 </div>
 
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/b7c9462034d0" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <h3>BETWEEN</h3>
 
 <p>This allows you to specify a range and select only rows within a certain range. It has to be paired with the <code>AND</code> operator, which you will learn about in just a few moments. Here&#39;s how <code>BETWEEN</code> looks:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year_rank BETWEEN 5 AND 10
 </code></pre></div>
 <p><code>BETWEEN</code> includes the values that you specify in the query, so the above query will return the exact same results as the following query:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year_rank &gt;= 5 AND year_rank &lt;= 10
 </code></pre></div>
 <p>Some people prefer the latter example because it more explicitly shows what the query is doing (t&#39;s easy to forget whether or not BETWEEN includes the range bounds).</p>
 
 <div class="practice-prob">
-  practice problem
+  Write a query that shows all top 100 songs from January 1, 1985 through December 31, 1990.
 </div>
 
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/4ae007b7d3e3" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <h3>IS NULL</h3>
@@ -132,50 +168,17 @@
 
 <p>You can select rows that contain no data in a given column by using the <code>IS NULL</code> operator:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
- WHERE ****** IS NULL
+  FROM tutorial.billboard_top_100_year_end
+ WHERE artist IS NULL
 </code></pre></div>
-<p><code>WHERE ****** = NULL</code> will <strong>not</strong> work &mdash; you can&#39;t perform arithmetic on null values.</p>
+<p><code>WHERE artist = NULL</code> will <strong>not</strong> work &mdash; you can&#39;t perform arithmetic on null values.</p>
 
 <div class="practice-prob">
-  practice problem
+  Write a query that shows all of the rows for which <code>song_name</code> is null.
 </div>
 
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
-</div>
-
-<h3>LIKE</h3>
-
-<p><code>LIKE</code> allows you to match on similar values rather than exact ones. Using wildcard characters, you can define what must be exactly matched and what can be different. In this example, the results will include rows for which <code>group_name</code> starts with &quot;Snoop&quot; and is followed by any number and selection of characters:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
- WHERE group_name LIKE &#39;Snoop%&#39;
-</code></pre></div>
-<p>The <code>%</code> used above represents any character or set of characters. In this case, <code>%</code> is referred to as a &quot;wildcard.&quot; In the SQL that Mode uses, <code>LIKE</code> is case-sensitive, meaning that the above query will only capture matches that start with a capital &quot;S&quot; and lower-case &quot;noop.&quot; To match in a way that is not case-sensitive, you can use the <code>ILIKE</code> command:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
- WHERE group_name ILIKE &#39;snoop%&#39;
-</code></pre></div>
-<p>You can also use <code>_</code> (a single underscore) to substitute for an individual character:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
- WHERE artist ILIKE &#39;dr_ke&#39;
-</code></pre></div>
-<div class="practice-prob">
-  practice problem
-</div>
-
-<div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
-</div>
-
-<div class="practice-prob">
-  practice problem
-</div>
-
-<div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/c97c1d0b0fba" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <h3>Logical Operators</h3>
@@ -186,46 +189,46 @@
 
 <p><code>AND</code> will let you select only rows that satisfy two conditions. The following query will return all rows for top-10 recordings in 2012.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year = 2012 AND year_rank &lt;= 10
 </code></pre></div>
 <p>You can use <code>AND</code> with any comparison operator, and as many times as you want. If you run this query, you&#39;ll notice that all of the requirements are satisfied.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year = 2012
    AND year_rank &lt;= 10
-   AND group_name ILIKE &#39;%feat%&#39;
+   AND &quot;group&quot; ILIKE &#39;%feat%&#39;
 </code></pre></div>
 <p>You can see that this example is spaced out onto multiple lines &mdash; a good way to make long <code>WHERE</code> clauses more readable.</p>
 
 <div class="practice-prob">
-  practice problem
+  Write a query that surfaces all rows for top-10 hits for which Ludacris is part of the Group.
 </div>
 
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/e1731ac0419f" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
-  practice problem
+  Write a query that surfaces the top-ranked records in 1990, 2000, and 2010
 </div>
 
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/5f3ec7055dc0" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <h3>OR</h3>
 
 <p>If you want to select rows that satisfy either of two conditions, you can use <code>OR</code>. It works the same way as <code>AND</code>. Try running this:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year_rank = 5 OR artist = &#39;Gotye&#39;
 </code></pre></div>
 <p>You&#39;ll notice that each row will satisfy one of the two conditions. You can combine <code>AND</code> with <code>OR</code> using parenthesis. The following query will return rows that satisfy <strong>both</strong> of the following conditions:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013
-   AND (group_name ILIKE &#39;%macklemore%&#39; OR group_name ILIKE &#39;%timberlake%&#39;)
+   AND (&quot;group&quot; ILIKE &#39;%macklemore%&#39; OR &quot;group&quot; ILIKE &#39;%timberlake%&#39;)
 </code></pre></div>
 <p>You will notice that the conditional statement <code>year = 2013</code> will be fulfilled for every row returned. <code>(or)</code> is treated like one separate conditional statement because it is in parentheses, so it must be satisfied in addition to the first statement of <code>year = 2013</code>. You can think of the rows selected as being either of the following:</p>
 
@@ -236,19 +239,19 @@
 </ul>
 
 <div class="practice-prob">
-  practice problem
+  Write a query that returns all rows for top-10 songs that featured either Katy Perry or Bon Jovi
 </div>
 
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/aa5a19da7f2e" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
-  practice problem
+  Write a query that returns all songs with titles that contain the word "California" in either the 1970s or 1990s.
 </div>
 
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/ca79c861050c" target="_blank">See the Answer &raquo;</a>
 </div>
    
 
@@ -256,46 +259,46 @@
 
 <p>You can add <code>NOT</code> before any conditional statement if you&#39;d like to select the rows for which that statement is false. Run this query and check out how Macklemore magically disappears!</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013 
    AND year_rank NOT &gt; 5
 </code></pre></div>
 <p>Using <code>NOT</code> with <code>&lt;</code> and <code>&gt;</code> usually doesn&#39;t make sense because you can simply use the opposite comparative operator instead. <code>NOT</code> is more commonly used with <code>LIKE</code>:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013 
-   AND group_name NOT ILIKE &#39;%macklemore%&#39;
+   AND &quot;group&quot; NOT ILIKE &#39;%macklemore%&#39;
 </code></pre></div>
 <p><code>NOT</code> is mostly commonly used to identify non-null rows, but the syntax is somewhat special &mdash; you need to include <code>IS</code> beforehand. Here&#39;s how that looks:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
-  FROM benn.billboard_top_100_year_end
+  FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013 
-   AND year_rank NOT &gt; 5 --IS NOT NULL
+   AND artist IS NOT NULL
 </code></pre></div>
+<div class="practice-prob">
+  Write a query that returns all rows for songs that were on the charts in 2013 and do not contain the letter "a"
+</div>
+
+<div class="practice-prob-answer">
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/f64867a56523" target="_blank">See the Answer &raquo;</a>
+</div>
+
 <h3>Practice Problems</h3>
 
 <div class="practice-prob">
-  practice problem
+  Write a query that lists all top-100 recordings feature Dr. Dre before 2001 or after 2009.
 </div>
 
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/88c81c1a02e8" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
-  practice problem
+  Write a query that lists all songs from the 1960s with "love" in the title.
 </div>
 
 <div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
-</div>
-
-<div class="practice-prob">
-  practice problem
-</div>
-
-<div class="practice-prob-answer">
-  <a href="LINK">See the Answer &raquo;</a>
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/11c78511873a" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <p>Move on to the next segment: <a href="/the-basics/order-by.html">Ordering Your Results</a>.</p>
