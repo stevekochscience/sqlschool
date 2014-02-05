@@ -137,6 +137,11 @@ section.head h1 {
   margin-bottom: -.2em;
 }
 
+section.main, section.question {
+  min-height:100%;
+  margin: 0 auto -55px;
+}
+
 div.breadcrumbs {
   margin-top:10px;
 }
@@ -208,9 +213,12 @@ td.right {
 }
 
 /* Footer */
-footer {
-  background-color: #3B6D6C;
+div.push, footer {
+  clear:both;
+  height:55px;
 }
+
+footer {background-color:#3B6D6C;}
 
 nav.navbar-footer li a {
   color:white;
