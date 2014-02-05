@@ -80,7 +80,7 @@
 
 <p>It takes a few seconds for the query to run. When it&#39;s done, you&#39;ll see the results show up in a table below the query window.</p>
 
-<p>In this first lesson, you&#39;ll work with real data from the U.S. Census. This data show the number of completed housing units in major regions of the United States. The table we&#39;ll be working with has a colmn with each region. The values in each row represent the number of housing units completed in thousands during the corresponding month. The data was collected on Jan. 31, 2014 and can be accessed at <a href="http://www.census.gov/econ/currentdata/">the U.S. Census website</a>.</p>
+<p>In this first lesson, you&#39;ll work with real data from the U.S. Census. This dataset shows the number of completed housing units in major regions of the United States. The table we&#39;ll be working with has a column for each region. The values in each row represent the number of housing units completed in thousands during the corresponding month. The data was collected on Jan. 31, 2014 and can be accessed at <a href="http://www.census.gov/econ/currentdata/">the U.S. Census website</a>.</p>
 
 <h3>Basic Syntax</h3>
 
@@ -111,7 +111,7 @@
 </div>
 
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/7ffd26af1f17/runs/8fd984d825c7" target="_blank">See the Answer &raquo;</a>
+  <a href="https://stealth.modeanalytics.com/tutorial/reports/cc50612804ae" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <p><em>Note: Practice problems will appear in white boxes as above throughout this tutorial.</em></p>
@@ -151,8 +151,11 @@
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT west AS &quot;West Region&quot; 
   FROM tutorial.us_housing_units_completed
 </code></pre></div>
-<p>Without the double quotes, that query would read &#39;West&#39; and &#39;Region&#39; as separate objects and would return an error.</p>
-
+<p>Without the double quotes, that query would read &#39;West&#39; and &#39;Region&#39; as separate objects and would return an error. Note that the results will only return capital letters if you put column names in double quotes. The following query, for example, will return results with lower-case column names.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT west AS West_Region,
+       south AS South_Region
+  FROM tutorial.us_housing_units_completed
+</code></pre></div>
 <div class="practice-prob">
   Write a query to select all of the columns in <code>tutorial.us_housing_units_completed</code> and rename them so that their first letters are capitalized
 </div>

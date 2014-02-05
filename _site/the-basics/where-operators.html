@@ -62,7 +62,7 @@
   <div class="container">
     <h2>Filtering Data and Making Simple Calculations</h2>
     
-    <p>This lesson will use the same housing development data from the <a href="/the-basics/select-from.html">previous lesson</a></p>
+    <p>This lesson will use the same housing development data from the <a href="/the-basics/select-from.html">previous lesson</a>.</p>
 
 <p>Start by running this code to remind yourself what&#39;s in the table that will be used in this tutorial. Remember to switch over to Mode and run any of the code you see in the grey boxes to get a sense of what the output will look like.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.us_housing_units_completed
@@ -125,7 +125,7 @@
   FROM tutorial.us_housing_units_completed
  WHERE month_name != &#39;January&#39;
 </code></pre></div>
-<p>There are some important rules when using these operators, though. If you&#39;re using an operator with values that are non-numeric, you need to put the value in single quotes: <code>&#39;value&#39;</code>. <em>Note: SQL uses single quotes (as opposed to double quotes) in every instance except one, which we will get to in a later tutorial.</em></p>
+<p>There are some important rules when using these operators, though. If you&#39;re using an operator with values that are non-numeric, you need to put the value in single quotes: <code>&#39;value&#39;</code>. <em>Note: SQL uses single quotes (as opposed to double quotes) in every instance in reference to column names as identified in the <a href="/the-basics/select-from.html">previous lesson</a>.</em></p>
 
 <p>You can use <code>&gt;</code>, <code>&lt;</code>, and the rest of the operators on non-numeric columns as well &mdash; they filter based on alphabetical order. Try running this a couple times with different operators:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
@@ -137,10 +137,10 @@
   FROM tutorial.us_housing_units_completed
  WHERE month_name &gt; &#39;J&#39;
 </code></pre></div>
-<p>The way SQL treats alphabetical ordering is a little bit tricky. You may have noticed in the above query that selecting <code>month_name &gt; &#39;J&#39;</code> will yield only rows in which fieldname starts with &quot;n&quot; or later in the alphabet. &quot;Wait a minute,&quot; you might say. &quot;January is included in the results &mdash; shouldn&#39;t I have to use <code>month_name &gt;= &#39;J</code> to make that happen?&quot; SQL considers &#39;Ja&#39; to be greater than &#39;J&#39; because it has an extra letter. It&#39;s worth noting that most dictionaries would list &#39;Ja&#39; after &#39;J&#39; as well.</p>
+<p>The way SQL treats alphabetical ordering is a little bit tricky. You may have noticed in the above query that selecting <code>month_name &gt; &#39;J&#39;</code> will yield only rows in which <code>month_name</code> starts with &quot;j&quot; or later in the alphabet. &quot;Wait a minute,&quot; you might say. &quot;January is included in the results &mdash; shouldn&#39;t I have to use <code>month_name &gt;= &#39;J</code> to make that happen?&quot; SQL considers &#39;Ja&#39; to be greater than &#39;J&#39; because it has an extra letter. It&#39;s worth noting that most dictionaries would list &#39;Ja&#39; after &#39;J&#39; as well.</p>
 
 <div class="practice-prob">
-  Write a query that only shows rows from Q1 of a given year (Jan-Mar)
+  Write a query that only shows rows for which the month name is February.
 </div>
 
 <div class="practice-prob-answer">
@@ -148,7 +148,7 @@
 </div>
 
 <div class="practice-prob">
- Write a query that only shows rows from Q4 of a given year (Oct-Dec)
+ Write a query that only shows rows for which the month name starts with the letter "M" or an earlier letter in the alphabet.
 </div>
 
 <div class="practice-prob-answer">

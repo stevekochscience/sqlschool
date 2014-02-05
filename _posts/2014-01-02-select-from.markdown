@@ -23,7 +23,7 @@ It's super easy.
 
 It takes a few seconds for the query to run. When it's done, you'll see the results show up in a table below the query window.
 
-In this first lesson, you'll work with real data from the U.S. Census. This data show the number of completed housing units in major regions of the United States. The table we'll be working with has a colmn with each region. The values in each row represent the number of housing units completed in thousands during the corresponding month. The data was collected on Jan. 31, 2014 and can be accessed at [the U.S. Census website](http://www.census.gov/econ/currentdata/).
+In this first lesson, you'll work with real data from the U.S. Census. This dataset shows the number of completed housing units in major regions of the United States. The table we'll be working with has a column for each region. The values in each row represent the number of housing units completed in thousands during the corresponding month. The data was collected on Jan. 31, 2014 and can be accessed at [the U.S. Census website](http://www.census.gov/econ/currentdata/).
 
 ###Basic Syntax
 There are two required ingredients in any SQL query: a `SELECT` statement and a `FROM` statement&mdash;and they have to be in that order. `SELECT` indicates which columns you'd like to view, and `FROM` identifies the table that they live in. Let's start by looking at a couple columns from the housing unit table:
@@ -54,7 +54,7 @@ Now try this practice problem for yourself:
   Write a query to select all of the columns in the <code>tutorial.us_housing_units_completed</code> table without using <code>*</code>.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/7ffd26af1f17/runs/8fd984d825c7" target="_blank">See the Answer &raquo;</a>
+  <a href="https://stealth.modeanalytics.com/tutorial/reports/cc50612804ae" target="_blank">See the Answer &raquo;</a>
 </div>
 
 *Note: Practice problems will appear in white boxes as above throughout this tutorial.*
@@ -92,7 +92,11 @@ If you'd like your results to look a bit more presentable, you can rename column
     SELECT west AS "West Region" 
       FROM tutorial.us_housing_units_completed
 
-Without the double quotes, that query would read 'West' and 'Region' as separate objects and would return an error.
+Without the double quotes, that query would read 'West' and 'Region' as separate objects and would return an error. Note that the results will only return capital letters if you put column names in double quotes. The following query, for example, will return results with lower-case column names.
+
+    SELECT west AS West_Region,
+           south AS South_Region
+      FROM tutorial.us_housing_units_completed
 
 <div class="practice-prob">
   Write a query to select all of the columns in <code>tutorial.us_housing_units_completed</code> and rename them so that their first letters are capitalized

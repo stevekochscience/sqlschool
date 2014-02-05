@@ -35,13 +35,13 @@ In the [previous tutorial](/the-basics/where-operators.html), you played with so
 
     SELECT *
       FROM tutorial.billboard_top_100_year_end
-     WHERE group_name LIKE 'Snoop%'
+     WHERE "group" LIKE 'Snoop%'
 
 The `%` used above represents any character or set of characters. In this case, `%` is referred to as a "wildcard." In the SQL that Mode uses, `LIKE` is case-sensitive, meaning that the above query will only capture matches that start with a capital "S" and lower-case "noop." To match in a way that is not case-sensitive, you can use the `ILIKE` command:
 
     SELECT *
       FROM tutorial.billboard_top_100_year_end
-     WHERE group_name ILIKE 'snoop%'
+     WHERE "group" ILIKE 'snoop%'
 
 You can also use `_` (a single underscore) to substitute for an individual character:
 
@@ -49,8 +49,10 @@ You can also use `_` (a single underscore) to substitute for an individual chara
       FROM tutorial.billboard_top_100_year_end
      WHERE artist ILIKE 'dr_ke'
 
+Note that when you query the <code>group</code> column, you will need to put it in double quotes: <code>"group"</code>. This is because <code>GROUP</code> also happens to be a SQL command (which you will learn about later).
+
 <div class="practice-prob">
-  Write a query that returns all rows for which Ludacris was a member of the group. Note that when you query the <code>group</code> column, you will need to put it in double quotes: <code>"group"</code>. This is because <code>GROUP</code> also happens to be a SQL command (which you will learn about later).
+  Write a query that returns all rows for which Ludacris was a member of the group.
 </div>
 <div class="practice-prob-answer">
   <a href="http://stealth.modeanalytics.com/tutorial/reports/67228a008c9d" target="_blank">See the Answer &raquo;</a>
@@ -77,7 +79,7 @@ As in the previous tutorial, you can use non-numerical values, but they need to 
      WHERE artist IN ('Taylor Swift', 'Usher', 'Ludacris')
 
 <div class="practice-prob">
-  Write a query that shows all of the entries for Elvis and M.C. Hammer. Hint: M.C. Hammer is actually on the list under multiple names.
+  Write a query that shows all of the entries for Elvis and M.C. Hammer. Hint: M.C. Hammer is actually on the list under multiple names, so you may need to first write a query to figure out exactly how M.C. Hammer is listed. You're likely to face similar problems that require some exploration in many real-life scenarios.
 </div>
 <div class="practice-prob-answer">
   <a href="http://stealth.modeanalytics.com/tutorial/reports/b7c9462034d0" target="_blank">See the Answer &raquo;</a>
@@ -192,14 +194,14 @@ You will notice that the conditional statement `year = 2013` will be fulfilled f
 </div>
    
 ###NOT
-You can add `NOT` before any conditional statement if you'd like to select the rows for which that statement is false. Run this query and check out how Macklemore magically disappears!
+You can add `NOT` before any conditional statement if you'd like to select the rows for which that statement is false.
 
     SELECT *
       FROM tutorial.billboard_top_100_year_end
      WHERE year = 2013 
-       AND year_rank NOT > 5
+       AND year_rank NOT 1
 
-Using `NOT` with `<` and `>` usually doesn't make sense because you can simply use the opposite comparative operator instead. `NOT` is more commonly used with `LIKE`:
+Using `NOT` with `<` and `>` usually doesn't make sense because you can simply use the opposite comparative operator instead. `NOT` is more commonly used with `LIKE`. Run this query and check out how Macklemore magically disappears!
 
     SELECT *
       FROM tutorial.billboard_top_100_year_end

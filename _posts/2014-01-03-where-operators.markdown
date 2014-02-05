@@ -5,7 +5,7 @@ title:  "Filtering Data and Making Simple Calculations"
 date:   2014-01-01 00:00:57
 ---
 
-This lesson will use the same housing development data from the [previous lesson](/the-basics/select-from.html)
+This lesson will use the same housing development data from the [previous lesson](/the-basics/select-from.html).
 
 Start by running this code to remind yourself what's in the table that will be used in this tutorial. Remember to switch over to Mode and run any of the code you see in the grey boxes to get a sense of what the output will look like.
 
@@ -67,7 +67,7 @@ All of the above operators work on non-numerical data as well. `=` and `!=` make
       FROM tutorial.us_housing_units_completed
      WHERE month_name != 'January'
 
-There are some important rules when using these operators, though. If you're using an operator with values that are non-numeric, you need to put the value in single quotes: `'value'`. *Note: SQL uses single quotes (as opposed to double quotes) in every instance except one, which we will get to in a later tutorial.*
+There are some important rules when using these operators, though. If you're using an operator with values that are non-numeric, you need to put the value in single quotes: `'value'`. *Note: SQL uses single quotes (as opposed to double quotes) in every instance in reference to column names as identified in the [previous lesson](/the-basics/select-from.html).*
 
 You can use `>`, `<`, and the rest of the operators on non-numeric columns as well &mdash; they filter based on alphabetical order. Try running this a couple times with different operators:
 
@@ -81,17 +81,17 @@ If you're using `>`, `<`, `>=`, or `<=`, you don't necessarily need to be too sp
       FROM tutorial.us_housing_units_completed
      WHERE month_name > 'J'
 
-The way SQL treats alphabetical ordering is a little bit tricky. You may have noticed in the above query that selecting `month_name > 'J'` will yield only rows in which fieldname starts with "n" or later in the alphabet. "Wait a minute," you might say. "January is included in the results &mdash; shouldn't I have to use `month_name >= 'J` to make that happen?" SQL considers 'Ja' to be greater than 'J' because it has an extra letter. It's worth noting that most dictionaries would list 'Ja' after 'J' as well.
+The way SQL treats alphabetical ordering is a little bit tricky. You may have noticed in the above query that selecting `month_name > 'J'` will yield only rows in which `month_name` starts with "j" or later in the alphabet. "Wait a minute," you might say. "January is included in the results &mdash; shouldn't I have to use `month_name >= 'J` to make that happen?" SQL considers 'Ja' to be greater than 'J' because it has an extra letter. It's worth noting that most dictionaries would list 'Ja' after 'J' as well.
 
 <div class="practice-prob">
-  Write a query that only shows rows from Q1 of a given year (Jan-Mar)
+  Write a query that only shows rows for which the month name is February.
 </div>
 <div class="practice-prob-answer">
   <a href="http://stealth.modeanalytics.com/tutorial/reports/1b0ec94376a6" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
- Write a query that only shows rows from Q4 of a given year (Oct-Dec)
+ Write a query that only shows rows for which the month name starts with the letter "M" or an earlier letter in the alphabet.
 </div>
 <div class="practice-prob-answer">
   <a href="http://stealth.modeanalytics.com/tutorial/reports/122ce812e03f" target="_blank">See the Answer &raquo;</a>

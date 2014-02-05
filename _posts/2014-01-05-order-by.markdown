@@ -20,7 +20,7 @@ Now let's see what happens when we order by one of the columns:
       FROM tutorial.billboard_top_100_year_end
      ORDER BY artist
 
-You'll notice that the results are now ordered alphabetically from a to z based on the content in the `artist` column. This is referred to as ascending order, and is the SQL's default. If you order a numerical column in ascending order, it will start with smaller (or most negative) numbers, with each successive row having a higher numerical value than the previous. Here's an example using a numerical column:
+You'll notice that the results are now ordered alphabetically from a to z based on the content in the `artist` column. This is referred to as ascending order, and is SQL's default. If you order a numerical column in ascending order, it will start with smaller (or most negative) numbers, with each successive row having a higher numerical value than the previous. Here's an example using a numerical column:
 
     SELECT * 
       FROM tutorial.billboard_top_100_year_end
@@ -45,21 +45,21 @@ You can also order by mutiple columns. This is particularly useful if your data 
 
     SELECT * 
       FROM tutorial.billboard_top_100_year_end
-     WHERE year = 2013
+      WHERE year_rank <= 3
      ORDER BY year DESC, year_rank
 
 You can see a couple things from the above query: First, columns in the `ORDER BY` clause must be separated by commas. Second, the `DESC` operator is only applied to the column that precedes it. Finally, the results are sorted by the first column mentioned (`year`), then by `year_rank` afterward. You can see the difference the order makes by running the following query:
 
     SELECT * 
       FROM tutorial.billboard_top_100_year_end
-     WHERE year = 2013
+     WHERE year_rank <= 3
      ORDER BY year_rank, year DESC
 
 Finally, you can make your life a little easier by substituting numbers for column names in the `ORDER BY` clause. The numbers will correspond to the order in which you list columns in the `SELECT` clause. For example, the following query is exactly equivalent to the previous query:
 
     SELECT * 
       FROM tutorial.billboard_top_100_year_end
-     WHERE year = 2013
+     WHERE year_rank <= 3
      ORDER BY 2, 1 DESC
 
 *Note: this functionality (numbering columns instead of using names) is supported by Mode, but not by every flavor of SQL, so if you're using another system or connected to certain types of databases, it may not work.*
@@ -74,7 +74,7 @@ When using `ORDER BY` with a row limit (either through the check box on the quer
 </div>
 
 ###Using Comments
-You can "comment out" pieces of code by adding combinations of characters. In other words, you can specify parts of your query that will not actually be treated like SQL code. In can be helpful to include comments that explain your thinking so that you can easily remember what you intended to do if you ever want to revisit your work. Commenting can also be useful if you want to test variations on your query while keeping all of your code intact. 
+You can "comment out" pieces of code by adding combinations of characters. In other words, you can specify parts of your query that will not actually be treated like SQL code. It can be helpful to include comments that explain your thinking so that you can easily remember what you intended to do if you ever want to revisit your work. Commenting can also be useful if you want to test variations on your query while keeping all of your code intact. 
 
 You can use`--` (two dashes)  to comment out everything to the right of them on a given line:
 
@@ -93,7 +93,7 @@ You can also leave comments across multiple lines using `/*` to begin the commen
 
 ###Practice problems
 <div class="practice-prob">
-  Write a query that shows all rows for with T-Pain was a group member, ordered by rank on the charts.
+  Write a query that shows all rows for which T-Pain was a group member, ordered by rank on the charts.
 </div>
 <div class="practice-prob-answer">
   <a href="http://stealth.modeanalytics.com/tutorial/reports/e162590d4dd9" target="_blank">See the Answer &raquo;</a>

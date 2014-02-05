@@ -23,9 +23,16 @@ Let's say we want to figure out which conference has the highest average weight.
 There's a lot of new stuff happening here, so we'll go step-by-step.
 
 ###Aliases
-When performing joins, it's easiest to give your table names aliases. `benn.college_football_players` is pretty long and annoying to type&mdash;`players` is much easier. You can give a table an alias by adding a space after the table name and typing the alias. As with column names, best practice here is to use underscores instead of spaces and all lowercase letters.
+When performing joins, it's easiest to give your table names aliases. `benn.college_football_players` is pretty long and annoying to type&mdash;`players` is much easier. You can give a table an alias by adding a space after the table name and typing the alias. As with column names, best practice here is to use all lowercase letters and underscores instead of spaces.
 
 Once you've given a table an alias, you can refer to columns in that table in the `SELECT` clause using the alias name. For example, the first column selected in the above query is `teams.conference`. Because of the alias, this is equivalent to `benn.college_football_teams.conference`: we're selecting the `conference` column in the `college_football_teams` table in `benn`'s schema.
+
+<div class="practice-prob">
+  Write a query that selects the school name, player name, position, and weight for every player in Georgia, ordered by weight (heaviest to lightest). Be sure to make an alias for the table, and to reference all column names in relation to the alias.
+</div>
+<div class="practice-prob-answer">
+  <a href="http://stealth.modeanalytics.com/tutorial/reports/b4bc413f9399" target="_blank">See the Answer &raquo;</a>
+</div>
 
 ###JOIN and ON
 After the `FROM` statement, we have two new statements: `JOIN`, which is followed by a table name, and `ON`, which is followed a couple column names separated by an equals sign.
@@ -72,5 +79,24 @@ The most common type of join&mdash;an *inner join*&mdash;can be written as eithe
 ![inner join](http://www.w3schools.com/sql/img_innerjoin.gif)
 
 Therefore, if a player goes to a school that isn't in the `teams` table, that player won't be included in the result from an Inner Join. Similarly, if there are schools in the `teams` table that don't match to any schools in the `players` table, those rows won't be inlcuded in the results either.
+
+###Tricky Stuff
+<!-- can't have 2 column names that are the same-->
+
+###Practice
+
+<div class="practice-prob">
+  Join practice 1
+</div>
+<div class="practice-prob-answer">
+  <a href="http://" target="_blank">See the Answer &raquo;</a>
+</div>
+
+<div class="practice-prob">
+  Join practice 2
+</div>
+<div class="practice-prob-answer">
+  <a href="http://" target="_blank">See the Answer &raquo;</a>
+</div>
 
 If you want to keep the rows that aren't matched, you'll can use Outer Joins, which are covered in [next lesson](/intermediate/outer-joins.html).

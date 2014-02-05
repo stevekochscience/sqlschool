@@ -92,20 +92,22 @@
 <p><code>LIKE</code> allows you to match on similar values rather than exact ones. Using wildcard characters, you can define what must be exactly matched and what can be different. In this example, the results will include rows for which <code>group_name</code> starts with &quot;Snoop&quot; and is followed by any number and selection of characters:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
   FROM tutorial.billboard_top_100_year_end
- WHERE group_name LIKE &#39;Snoop%&#39;
+ WHERE &quot;group&quot; LIKE &#39;Snoop%&#39;
 </code></pre></div>
 <p>The <code>%</code> used above represents any character or set of characters. In this case, <code>%</code> is referred to as a &quot;wildcard.&quot; In the SQL that Mode uses, <code>LIKE</code> is case-sensitive, meaning that the above query will only capture matches that start with a capital &quot;S&quot; and lower-case &quot;noop.&quot; To match in a way that is not case-sensitive, you can use the <code>ILIKE</code> command:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
   FROM tutorial.billboard_top_100_year_end
- WHERE group_name ILIKE &#39;snoop%&#39;
+ WHERE &quot;group&quot; ILIKE &#39;snoop%&#39;
 </code></pre></div>
 <p>You can also use <code>_</code> (a single underscore) to substitute for an individual character:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
   FROM tutorial.billboard_top_100_year_end
  WHERE artist ILIKE &#39;dr_ke&#39;
 </code></pre></div>
+<p>Note that when you query the <code>group</code> column, you will need to put it in double quotes: <code>&quot;group&quot;</code>. This is because <code>GROUP</code> also happens to be a SQL command (which you will learn about later).</p>
+
 <div class="practice-prob">
-  Write a query that returns all rows for which Ludacris was a member of the group. Note that when you query the <code>group</code> column, you will need to put it in double quotes: <code>"group"</code>. This is because <code>GROUP</code> also happens to be a SQL command (which you will learn about later).
+  Write a query that returns all rows for which Ludacris was a member of the group.
 </div>
 
 <div class="practice-prob-answer">
@@ -133,7 +135,7 @@
  WHERE artist IN (&#39;Taylor Swift&#39;, &#39;Usher&#39;, &#39;Ludacris&#39;)
 </code></pre></div>
 <div class="practice-prob">
-  Write a query that shows all of the entries for Elvis and M.C. Hammer. Hint: M.C. Hammer is actually on the list under multiple names.
+  Write a query that shows all of the entries for Elvis and M.C. Hammer. Hint: M.C. Hammer is actually on the list under multiple names, so you may need to first write a query to figure out exactly how M.C. Hammer is listed. You're likely to face similar problems that require some exploration in many real-life scenarios.
 </div>
 
 <div class="practice-prob-answer">
@@ -257,13 +259,13 @@
 
 <h3>NOT</h3>
 
-<p>You can add <code>NOT</code> before any conditional statement if you&#39;d like to select the rows for which that statement is false. Run this query and check out how Macklemore magically disappears!</p>
+<p>You can add <code>NOT</code> before any conditional statement if you&#39;d like to select the rows for which that statement is false.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
   FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013 
-   AND year_rank NOT &gt; 5
+   AND year_rank NOT 1
 </code></pre></div>
-<p>Using <code>NOT</code> with <code>&lt;</code> and <code>&gt;</code> usually doesn&#39;t make sense because you can simply use the opposite comparative operator instead. <code>NOT</code> is more commonly used with <code>LIKE</code>:</p>
+<p>Using <code>NOT</code> with <code>&lt;</code> and <code>&gt;</code> usually doesn&#39;t make sense because you can simply use the opposite comparative operator instead. <code>NOT</code> is more commonly used with <code>LIKE</code>. Run this query and check out how Macklemore magically disappears!</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
   FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013 
