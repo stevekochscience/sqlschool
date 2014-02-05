@@ -24,7 +24,9 @@ SQL is great for performing the types of aggregations that you might normally do
 [We have no idea.](http://patorjk.com/blog/2012/01/26/pronouncing-sql-s-q-l-or-sequel/)
 
 ###What's a database?
-From [Wikipedia](http://en.wikipedia.org/wiki/Database): A database is an organized collection of data. There are many ways to organize a database and many different types of databases designed for different purposes. Mode's structure is fairly simple:
+From [Wikipedia](http://en.wikipedia.org/wiki/Database): A database is an organized collection of data.
+
+There are many ways to organize a database and many different types of databases designed for different purposes. Mode's structure is fairly simple:
 
 <!-- diagram showing schema/table/row+column -->
 
