@@ -11,6 +11,8 @@ Welcome to the Intermediate SQL Tutorial! If you skipped [The Basics](LINK), you
 * For each lesson, start by running `SELECT *` on the relevant dataset so you get a sense of what the raw data looks like. Do this in that window you just opened to Mode.
 * Run all of the code blocks in the lesson in Mode in the other window. You'll learn more if you really examine the results and understand what the code is doing.
 
+In the previous tutorial, many of the practice problems could only be solved in one or two ways with the skills you had learned. As you learn more skills and problems get harder, there will be many ways of producing the correct results. Keep in mind that the answers to practice problems should be used as a reference, but are by no means the only ways of answering the questions.
+
 ###Today's dataset
 
 For this lesson and the next, you'll be working with [Apple](http://www.apple.com) stock price data. The data was pulled from [Google Finance](http://finance.google.com) in January 2014. There is one row for each day (indicated in the `date` field). `open` and `close` are the opening and closing prices of the stock on that day. `high` and `low` are the high and low prices for that day. `volume` is the number of shares traded on that day. Some data has been intentionally removed for the sake of this lesson. Check it out for yourself:
