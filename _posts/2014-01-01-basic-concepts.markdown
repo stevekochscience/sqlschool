@@ -30,7 +30,7 @@ There are many ways to organize a database and many different types of databases
 
 <!-- diagram showing schema/table/row+column -->
 
-If you've used Excel, you should already be familiar with tables&mdash;tables similar to spreadsheets. Tables have rows and columns just like Excel, but are a little more rigid. Database tables, for instance, are always organized by column, and each column must have a unique name. To get a sense of this organization, the image below shows a sample table containing data from the 2010 Academy Awards:
+If you've used Excel, you should already be familiar with tables &mdash; they're similar to spreadsheets. Tables have rows and columns just like Excel, but are a little more rigid. Database tables, for instance, are always organized by column, and each column must have a unique name. To get a sense of this organization, the image below shows a sample table containing data from the 2010 Academy Awards:
 
 ![Create a New Query](/images/the-basics/sample-table.png)
 
