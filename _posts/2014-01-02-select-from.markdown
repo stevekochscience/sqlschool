@@ -17,7 +17,7 @@ For this tutorial, SQL queries will be shown in grey boxes like the one below. T
     SELECT * 
       FROM tutorial.us_housing_units_completed
 
-It's super easy. 
+Give this a shot, then keep reading to learn what the query is doing.
 
 ![Run the Query](/images/the-basics/run-button.png)
 
@@ -33,9 +33,11 @@ There are two required ingredients in any SQL query: a `SELECT` statement and a 
            west 
       FROM tutorial.us_housing_units_completed
 
-*To see the results yourself, copy and paste this query into a Query Builder and click run!*
+To see the results yourself, copy and paste this query into a Query Builder and click run! If you ran the previous query, or if you already have text in Mode's query window, you'll need to paste over or delete the query that was there previously. If you simply copy and paste this query below the previous one, you'll get an error &mdash; you can only run one `SELECT` statement at a time.
 
-In this case, the query is telling the database to return the `year`, `month`, and `west` columns from the table `tutorial.us_housing_units_completed`. (Remember that when referencing tables, the table names have to be preceded by [the name of user who uploaded it](/the-basics/basic-concepts.html).) When you run this query, you'll get back a set of results that shows values in each of these columns.
+<!--image "do this, not this"-->
+
+So what's happening in the above query? In this case, the query is telling the database to return the `year`, `month`, and `west` columns from the table `tutorial.us_housing_units_completed`. (Remember that when referencing tables, the table names have to be preceded by [the name of user who uploaded it](/the-basics/basic-concepts.html).) When you run this query, you'll get back a set of results that shows values in each of these columns.
 
 ![Prelimiary Results](/images/the-basics/prelim-results.png)
 

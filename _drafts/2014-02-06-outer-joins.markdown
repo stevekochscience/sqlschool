@@ -8,7 +8,7 @@ date:   2014-02-01 00:00:54
 The data for this lesson was pulled from [Crunchbase](http://info.crunchbase.com/about/crunchbase-data-exports/), a crowdsourced index of startups, founders, investors, and the activities of all three. It was collected Feb. 5, 2014, and large portions of both tables were randomly dropped for the sake of this lesson. The first table shows...:
 
     SELECT *
-      FROM
+      FROM tutorial.crunchbase_companies
 
 The second table shows...:
 
