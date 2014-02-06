@@ -20,24 +20,25 @@ For this lesson and the next, you'll be working with [Apple](http://www.apple.co
     SELECT * FROM tutorial.aapl_historical_stock_price
 
 ###Aggregation Functions
-As the [beginner tutorial](/the-basics/basic-concepts.html) points out, SQL is excellent at aggregating data the way you might in a pivot table in Excel. You will use aggregation functions all the time, so it's important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`. The [beginner tutorial](/the-basics/where-operators.html) also pointed out that arithmetic operators only perform operations across rows. Aggregation functions are used to perform operations across entire columns (could be millions of rows of data or more).
+As the [beginner tutorial](/the-basics/basic-concepts.html) points out, SQL is excellent at aggregating data the way you might in a [pivot table](http://en.wikipedia.org/wiki/Pivot_table) in Excel. You will use aggregation functions all the time, so it's important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`. The [beginner tutorial](/the-basics/where-operators.html) also pointed out that arithmetic operators only perform operations across rows. Aggregation functions are used to perform operations across entire columns (could be millions of rows of data or more).
 
 ###COUNT
-It's easiest to start with `COUNT` because verifying your results is extremely simply. The easiest way to get started is to use `*` to select all rows.
+It's easiest to start with `COUNT` because verifying your results is extremely simple. The easiest way to get started is to use `*` to select all rows.
 
     SELECT COUNT(*)
       FROM tutorial.aapl_historical_stock_price
 
+<!--
 You can see that the result showed a count of all rows to be 3555. Turn the limit off and run the following query and note that Mode actually provides a row count, which should be the same as the result of the above query:
 
     SELECT * FROM tutorial.aapl_historical_stock_price
-
+-->
 Things start to get a little bit tricky when you want to count individual columns. The following code will provide a count of all of rows in which the `high` column **is not null**.
 
     SELECT COUNT(high)
       FROM tutorial.aapl_historical_stock_price
 
-You'll notice that this result is lower than what you got with `COUNT(*)`. That's because `high` has some nulls.
+You'll notice that this result is lower than what you got with `COUNT(*)`. That's because `high` has some nulls. In this case, we've deleted some data to make the lesson interesting, but it might often be that case that you will run into naturally-occurring null rows. For example, imagine you've got a table with one column showing email addresses for everyone you sent a marketing email to, and another column showing the date and time that each person opened the email. If someone didn't open the email, the date/time field would likely be null.
 
 <div class="practice-prob">
   Write a query to count the number of non-null rows in the `low` column.
@@ -80,7 +81,7 @@ This works the same way as count, except that it can only be used on numerical c
 
 An important thing to remember: aggregators only aggregate vertically. If you want to perform a calculation across rows, you would do this with [simple arithmetic](/the-basics/where-operators.html).
 
-You don't need to worry as much about the presence of nulls with `SUM` as you would with `COUNT` &mdash; `SUM` treats nulls as 0.
+You don't need to worry as much about the presence of nulls with `SUM` as you would with `COUNT`, as `SUM` treats nulls as 0.
 
 <div class="practice-prob">
   Write a query to calculate the average opening price (hint: you will need to use both `COUNT` and `SUM`).
@@ -122,13 +123,13 @@ Nulls are treated as lower than 0 or "a" so `MIN` will return a null value if th
 
 You can see this by comparing these two queries:
 
-    SELECT AVG(volume)
+    SELECT AVG(high)
       FROM tutorial.aapl_historical_stock_price
      WHERE volume IS NOT NULL
 
 Produces the same result as:
 
-    SELECT AVG(volume)
+    SELECT AVG(high)
       FROM tutorial.aapl_historical_stock_price
 
 <div class="practice-prob">
@@ -194,7 +195,7 @@ As mentioned in prior tutorials, the order in which you write the clauses is imp
 ###Aggregation Practice
 
 <div class="practice-prob">
-  Write a query to calculate the average difference between opening and closing prices, grouped by year
+  Write a query to calculate the average daily price change in Apple stock, grouped by year
 </div>
 <div class="practice-prob-answer">
   <a href="http://stealth.modeanalytics.com/tutorial/reports/c1881e6c354d" target="_blank">See the Answer &raquo;</a>
