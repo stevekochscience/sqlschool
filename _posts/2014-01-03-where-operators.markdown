@@ -91,7 +91,7 @@ The way SQL treats alphabetical ordering is a little bit tricky. You may have no
 </div>
 
 <div class="practice-prob">
- Write a query that only shows rows for which the month name starts with the letter "M" or an earlier letter in the alphabet.
+ Write a query that only shows rows for which the <code>month_name</code> starts with the letter "M" or an earlier letter in the alphabet.
 </div>
 <div class="practice-prob-answer">
   <a href="http://stealth.modeanalytics.com/tutorial/reports/122ce812e03f" target="_blank">See the Answer &raquo;</a>

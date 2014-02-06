@@ -5,6 +5,16 @@ title:  "Outer Joins"
 date:   2014-02-01 00:00:54
 ---
 
+The data for this lesson was pulled from [Crunchbase](http://info.crunchbase.com/about/crunchbase-data-exports/), a crowdsourced index of startups, founders, investors, and the activities of all three. It was collected Feb. 5, 2014, and large portions of both tables were randomly dropped for the sake of this lesson. The first table shows...:
+
+    SELECT *
+      FROM
+
+The second table shows...:
+
+    SELECT *
+      FROM tutorial.crunchbase_acquisitions
+
 ###Outer Joins
 When performing an Inner Join, rows from either table that are unmatched in the other table are not returned. In an Outer Join, unmatched rows in one or both tables can be returned. There are a few types of outer joins. `LEFT JOIN` and `RIGHT JOIN` only return unmatched rows from one table, while `FULL OUTER JOIN` returns unmatched rows from both tables.
 
