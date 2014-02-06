@@ -40,7 +40,7 @@ Things start to get a little bit tricky when you want to count individual column
 You'll notice that this result is lower than what you got with `COUNT(*)`. That's because `high` has some nulls.
 
 <div class="practice-prob">
-  Write to query to count the number of non-null rows in the `low` column.
+  Write a query to count the number of non-null rows in the `low` column.
 </div>
 <div class="practice-prob-answer">
   <a href="http://stealth.modeanalytics.com/tutorial/reports/ce67f767fd35" target="_blank">See the Answer &raquo;</a>
