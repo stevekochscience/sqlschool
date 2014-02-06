@@ -26,7 +26,7 @@ To make that a bit easier, we've collected documentation for some popular databa
 * [PostgreSQL](http://www.postgresql.org/docs/manuals/ "PostgreSQL")
 * [Redshift](http://docs.aws.amazon.com/redshift/latest/dg/cm_chap_SQLCommandRef.html "Redshift")
 * [Oracle](http://docs.oracle.com/cd/E11882_01/server.112/e41084/toc.htm "Oracle")
-* [MS SQl Server (T-SQL)](http://technet.microsoft.com/en-us/library/ms189826(v=sql.90).aspx)
+* [MS SQl Server (T-SQL)](http://technet.microsoft.com/en-us/library/ms189826.aspx)
 * [HIVE](https://cwiki.apache.org/confluence/display/Hive/LanguageManual "HIVE")
 * [Impala](http://www.cloudera.com/content/cloudera-content/cloudera-docs/Impala/latest/Installing-and-Using-Impala/ciiu_langref.html "Impala")
 * [TeraData](http://www.info.teradata.com/templates/eSrchResults.cfm?prodline=&txtpid=&txtrelno=&txtttlkywrd=SQLREF,TNTSEQ&rdsort=Title&srtord=Asc&nm=SQL+Reference)
