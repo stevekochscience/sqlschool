@@ -70,33 +70,49 @@ Once you've generated this new table after the join, you can use the same aggreg
 
 In the example above, all of the players in the `players` table match to one school in the `teams` table. But what if the data isn't so clean? What if there are multiple schools in the `teams` table with the same name? Or if a player goes to a school that isn't in the `teams` table? 
 
-If there are multiple schools in the `teams` table with the same name, each one of those rows will get joined to matching rows in the `players` table. Returing to the previous example with Michael Campanaro, if there were three rows in the `teams` table where `school_name = "Wake Forest"`, the join query above would return three rows with Michael Campanaro. The first ten columns of these rows&mdash;the columns from the `players` table&mdash;would all be the same. The next five columns would match each of the three rows from the `teams` table.
+If there are multiple schools in the `teams` table with the same name, each one of those rows will get joined to matching rows in the `players` table. Returing to the previous example with Michael Campanaro, if there were three rows in the `teams` table where `school_name = "Wake Forest"`, the join query above would return three rows with Michael Campanaro. The first ten columns of these rows &mdash; the columns from the `players` table &mdash; would all be the same. The next five columns would match each of the three rows from the `teams` table.
 
 While SQL always handles this first case the same, how it handles the second case depends on the type of join in the query. In addition to identifying the table you want to join onto the table in the `FROM` clause, the `JOIN` identifies the type of join you want to perform. 
 
-The most common type of join&mdash;an *inner join*&mdash;can be written as either `JOIN benn.college_football_teams teams` or `INNER JOIN benn.college_football_teams teams`. Inner Joins eliminate rows from both tables that do not satisfy the join condition set forth in the `ON` statement. In mathematical terms, an Inner Join is the *intersection* of the two tables.
+The most common type of join &mdash; an *inner join* &mdash; can be written as either `JOIN benn.college_football_teams teams` or `INNER JOIN benn.college_football_teams teams`. Inner Joins eliminate rows from both tables that do not satisfy the join condition set forth in the `ON` statement. In mathematical terms, an Inner Join is the *intersection* of the two tables.
 
 ![inner join](http://www.w3schools.com/sql/img_innerjoin.gif)
 
 Therefore, if a player goes to a school that isn't in the `teams` table, that player won't be included in the result from an Inner Join. Similarly, if there are schools in the `teams` table that don't match to any schools in the `players` table, those rows won't be inlcuded in the results either.
 
 ###Tricky Stuff
-<!-- can't have 2 column names that are the same-->
+When you join two tables, it might be the case that both tables have columns with identical names. In the below example, both tables have columns called `school_name`:
+
+    SELECT players.*,
+           teams.*
+      FROM benn.college_football_players players
+      JOIN benn.college_football_teams teams
+        ON teams.school_name = players.school_name
+
+The results can only support one column with a given name &mdash; when you include 2 columns of the same name, the results will simply show the exact same result set for both columns **even if the two columns should contain different data**. You can avoid this by naming the columns individually. It happens that these two columns will actually contain the same data because they are used for the join key, but the following query technically allows these columns to be independent:
+
+    SELECT players.school_name AS players_school_name,
+           teams.school_name AS teams_school name
+      FROM benn.college_football_players players
+      JOIN benn.college_football_teams teams
+        ON teams.school_name = players.school_name
 
 ###Practice
 
 <div class="practice-prob">
-  Join practice 1
+  Write a query that displays player names, school names and conferences for schools in the "FBS (Division I-A Teams)" division.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://" target="_blank">See the Answer &raquo;</a>
+  <a href="http://https://stealth.modeanalytics.com/derek/reports/5524469aae3e" target="_blank">See the Answer &raquo;</a>
 </div>
 
+<!-->
 <div class="practice-prob">
   Join practice 2
 </div>
 <div class="practice-prob-answer">
   <a href="http://" target="_blank">See the Answer &raquo;</a>
 </div>
+-->
 
 If you want to keep the rows that aren't matched, you'll can use Outer Joins, which are covered in [next lesson](/intermediate/outer-joins.html).

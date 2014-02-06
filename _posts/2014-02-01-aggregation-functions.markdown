@@ -5,7 +5,7 @@ title:  "Summary Statistics: Using SQL to Replace Pivot Tables"
 date:   2014-02-01 00:00:59
 ---
 
-Welcome to the Intermediate SQL Tutorial! If you skipped [The Basics](LINK), you should take a quick peek [at this page](/the-basics/select-from.html) to get an idea of how to get the most out of this tutorial. For convenience, here's the gist:
+Welcome to the Intermediate SQL Tutorial! If you skipped [The Basics](/the-basics/basic-concepts.html), you should take a quick peek [at this page](/the-basics/select-from.html) to get an idea of how to get the most out of this tutorial. For convenience, here's the gist:
 
 * Open another window to [Mode](http://modeanalytics.com). Make an account if you don't have one.
 * For each lesson, start by running `SELECT *` on the relevant dataset so you get a sense of what the raw data looks like. Do this in that window you just opened to Mode.
