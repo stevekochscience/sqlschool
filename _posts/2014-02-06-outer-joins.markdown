@@ -157,20 +157,12 @@ It is very likely that you will need to do some exploratory analysis on this tab
   <a href="https://stealth.modeanalytics.com/tutorial/reports/1cf1d38ba1fc" target="_blank">See the Answer &raquo;</a>
 </div>
 
-<!--><div class="practice-prob">
-  practice
-</div>
-<div class="practice-prob-answer">
-  <a href="" target="_blank">See the Answer &raquo;</a>
-</div>
-
 <div class="practice-prob">
-  Outer Joins practice prob 1
+  Write a query that lists investors based on the number of currently operating companies in which they are invested. Include a row for companies with no investor, and order from most companies to least.
 </div>
 <div class="practice-prob-answer">
-  <a href="" target="_blank">See the Answer &raquo;</a>
+  <a href="https://stealth.modeanalytics.com/tutorial/reports/58d5744f474b" target="_blank">See the Answer &raquo;</a>
 </div>
--->
 
 <!--
 Check out the next lesson: [Full Join and UNION](/intermediate/full-join-union.html)
