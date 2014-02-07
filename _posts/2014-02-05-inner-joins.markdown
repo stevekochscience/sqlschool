@@ -31,7 +31,7 @@ Once you've given a table an alias, you can refer to columns in that table in th
   Write a query that selects the school name, player name, position, and weight for every player in Georgia, ordered by weight (heaviest to lightest). Be sure to make an alias for the table, and to reference all column names in relation to the alias.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/b4bc413f9399" target="_blank">See the Answer &raquo;</a>
+  <a href="https://stealth.modeanalytics.com/tutorial/reports/b4bc413f9399" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###JOIN and ON
@@ -103,7 +103,7 @@ The results can only support one column with a given name &mdash; when you inclu
   Write a query that displays player names, school names and conferences for schools in the "FBS (Division I-A Teams)" division.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://https://stealth.modeanalytics.com/derek/reports/5524469aae3e" target="_blank">See the Answer &raquo;</a>
+  <a href="https://stealth.modeanalytics.com/derek/reports/5524469aae3e" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <!-->
