@@ -5,6 +5,9 @@ title:  "Advanced Joins; Appending Data to the End of a Dataset"
 date:   2014-02-01 00:00:53
 ---
 
+###Inequality joins
+You can 
+
 ###FULL OUTER JOIN
 You're not likely to use `FULL JOIN` (can also be written as `FULL OUTER JOIN`) too often, but it's worth covering anyway. `LEFT JOIN` and `RIGHT JOIN` each return unmatched rows from one of the tables &mdash; `FULL JOIN` returns unmatched rows from both tables. It is commonly used in conjunction with aggregations to understand the amount of overlap between two tables:
 

@@ -1,7 +1,7 @@
 ---
 layout: sqlschool-lesson
 category: "advanced"
-title:  "Data Types and Expressions"
+title:  "Data Types"
 date:   2014-03-01 00:00:59
 ---
 
@@ -29,14 +29,53 @@ The `INTEGER` data type, for example, only stores whole numbers &mdash; no decim
 </table>
 
 ###Changing a Column's Data Type
+It's certainly best for data to be stored in its optimal format from the beginning, but if it isn't, you can always change it in your query. It's particularly common for dates or numbers, for example, to be stored as strings. This becomes problematic when you want to sum a column and you get an error because SQL is reading numbers as strings. When this happens, you can use `CAST` or `CONVERT` to change the data type to a numeric one that will allow you to perform the sum.
 
+You can actually achieve this with three different type of syntax. The following examples all produce the same result:
 
-* CAST
+* `CAST(column_name AS integer)`
+* `CONVERT(column_name, integer)`
+* `column_name::integer`
+
+You could replace `integer` with any other data type that would make sense for that column &mdash; all values in a given column must fit with the new data types.
+
+<div class="practice-prob">
+  CAST practice
+</div>
+<div class="practice-prob-answer">
+  <a href="" target="_blank">See the Answer &raquo;</a>
+</div>
+
+Mode's public service (the thing you're using to complete this tutorial) performs implicit conversion in [certain circumstances](http://docs.aws.amazon.com/redshift/latest/dg/r_Type_conversion.html), so data types are rarely likely to be problematic. However, if you're accessing an external database (your employer's, for example), you may need to be careful about managing data types for some functions.
+
+###Why Dates are Formatted Year-First
+
 
 ###Crazy Rules for Dates/Times
-* date functions, INTERVAL, and how numerical operators work on dates
+Maybe you'd like to calculate a field of dates a week after an existing field. Or maybe you'd like to create a field that indicates how many days apart the values in two other date fields are. When you perform arithmetic on dates, the results are often stored as the `interval` data type &mdash; a series of integers that represent a period of time.
+
+<!--example that casts a field as an interval, then does some addition -->
+
+You can introduce intervals using the `INTERVAL` function as well:
+
+    SELECT date
+    date + INTERVAL('1 week')
+      FROM table
+
+The interval is defined using plain-English terms like '10 seconds' or '5 months'. Also note that adding or subtracting a `date` column and an `interval` column results in another `date` column:
+
+<!-- date functions, INTERVAL, and how numerical operators work on dates-->
+
+If you subtract one date column from another, you get an `interval` column:
+
+<!--example of above concept -->
+
+<div class="practice-prob">
+  CAST practice
+</div>
+<div class="practice-prob-answer">
+  <a href="" target="_blank">See the Answer &raquo;</a>
+</div>
 
 
-
-http://www.firstsql.com/tutor3.htm#exp
 

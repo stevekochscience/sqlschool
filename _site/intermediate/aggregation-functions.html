@@ -79,25 +79,28 @@
 </code></pre></div>
 <h3>Aggregation Functions</h3>
 
-<p>As the <a href="/the-basics/basic-concepts.html">beginner tutorial</a> points out, SQL is excellent at aggregating data the way you might in a pivot table in Excel. You will use aggregation functions all the time, so it&#39;s important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: <code>COUNT</code>, <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>AVG</code>. The <a href="/the-basics/where-operators.html">beginner tutorial</a> also pointed out that arithmetic operators only perform operations across rows. Aggregation functions are used to perform operations across entire columns (could be millions of rows of data or more).</p>
+<p>As the <a href="/the-basics/basic-concepts.html">beginner tutorial</a> points out, SQL is excellent at aggregating data the way you might in a <a href="http://en.wikipedia.org/wiki/Pivot_table">pivot table</a> in Excel. You will use aggregation functions all the time, so it&#39;s important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: <code>COUNT</code>, <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>AVG</code>. The <a href="/the-basics/where-operators.html">beginner tutorial</a> also pointed out that arithmetic operators only perform operations across rows. Aggregation functions are used to perform operations across entire columns (could be millions of rows of data or more).</p>
 
 <h3>COUNT</h3>
 
-<p>It&#39;s easiest to start with <code>COUNT</code> because verifying your results is extremely simply. The easiest way to get started is to use <code>*</code> to select all rows.</p>
+<p>It&#39;s easiest to start with <code>COUNT</code> because verifying your results is extremely simple. The easiest way to get started is to use <code>*</code> to select all rows.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(*)
   FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
-<p>You can see that the result showed a count of all rows to be 3555. Turn the limit off and run the following query and note that Mode actually provides a row count, which should be the same as the result of the above query:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.aapl_historical_stock_price
-</code></pre></div>
+<!--
+You can see that the result showed a count of all rows to be 3555. Turn the limit off and run the following query and note that Mode actually provides a row count, which should be the same as the result of the above query:
+
+    SELECT * FROM tutorial.aapl_historical_stock_price
+-->
+
 <p>Things start to get a little bit tricky when you want to count individual columns. The following code will provide a count of all of rows in which the <code>high</code> column <strong>is not null</strong>.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(high)
   FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
-<p>You&#39;ll notice that this result is lower than what you got with <code>COUNT(*)</code>. That&#39;s because <code>high</code> has some nulls.</p>
+<p>You&#39;ll notice that this result is lower than what you got with <code>COUNT(*)</code>. That&#39;s because <code>high</code> has some nulls. In this case, we&#39;ve deleted some data to make the lesson interesting, but it might often be that case that you will run into naturally-occurring null rows. For example, imagine you&#39;ve got a table with one column showing email addresses for everyone you sent a marketing email to, and another column showing the date and time that each person opened the email. If someone didn&#39;t open the email, the date/time field would likely be null.</p>
 
 <div class="practice-prob">
-  Write to query to count the number of non-null rows in the `low` column.
+  Write a query to count the number of non-null rows in the `low` column.
 </div>
 
 <div class="practice-prob-answer">
@@ -136,7 +139,7 @@
 </code></pre></div>
 <p>An important thing to remember: aggregators only aggregate vertically. If you want to perform a calculation across rows, you would do this with <a href="/the-basics/where-operators.html">simple arithmetic</a>.</p>
 
-<p>You don&#39;t need to worry as much about the presence of nulls with <code>SUM</code> as you would with <code>COUNT</code> &mdash; <code>SUM</code> treats nulls as 0.</p>
+<p>You don&#39;t need to worry as much about the presence of nulls with <code>SUM</code> as you would with <code>COUNT</code>, as <code>SUM</code> treats nulls as 0.</p>
 
 <div class="practice-prob">
   Write a query to calculate the average opening price (hint: you will need to use both `COUNT` and `SUM`).
@@ -180,12 +183,12 @@
 <p><code>AVG</code> does what you&#39;d think &mdash; it calculated the average of selected values. It is very useful, but has some limitations. First, it can only be used on numerical columns. Second, it ignores nulls completely. There are some cases in which you will want to treat null values as 0. For these cases, you&#39;ll want to write a statement that changes the nulls to 0 (covered in a <a href="/intermediate/case.html">later lesson</a>).</p>
 
 <p>You can see this by comparing these two queries:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(volume)
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(high)
   FROM tutorial.aapl_historical_stock_price
  WHERE volume IS NOT NULL
 </code></pre></div>
 <p>Produces the same result as:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(volume)
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(high)
   FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
 <div class="practice-prob">
@@ -253,7 +256,7 @@
 <h3>Aggregation Practice</h3>
 
 <div class="practice-prob">
-  Write a query to calculate the average difference between opening and closing prices, grouped by year
+  Write a query to calculate the average daily price change in Apple stock, grouped by year
 </div>
 
 <div class="practice-prob-answer">
