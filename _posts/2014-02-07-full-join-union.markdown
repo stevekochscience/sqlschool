@@ -1,7 +1,7 @@
 ---
 layout: sqlschool-lesson
 category: "intermediate"
-title:  "Advanced Joins; Appending Data to the End of a Dataset"
+title:  "Full Joins and Appending Data"
 date:   2014-02-01 00:00:53
 ---
 
