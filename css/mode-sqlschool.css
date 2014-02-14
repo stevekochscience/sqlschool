@@ -209,14 +209,14 @@ table {
   text-shadow: 0 1px 0 rgba(255,255,255,0.8);
 }
 
-td {
+td, th {
   padding: 7px;
   border: 1px solid #C7CCCB;
   border-left: none;
   border-right: none;
 }
 
-td.right {
+td.right, th.right {
   text-align:right;
 }
 

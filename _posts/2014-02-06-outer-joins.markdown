@@ -164,6 +164,5 @@ It is very likely that you will need to do some exploratory analysis on this tab
   <a href="https://stealth.modeanalytics.com/tutorial/reports/58d5744f474b" target="_blank">See the Answer &raquo;</a>
 </div>
 
-<!--
+
 Check out the next lesson: [Full Join and UNION](/intermediate/full-join-union.html)
--->
