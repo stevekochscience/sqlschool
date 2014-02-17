@@ -80,6 +80,4 @@ For a bit more of a challenge:
   <a href="https://stealth.modeanalytics.com/tutorial/reports/e8ebd7cc9d23" target="_blank">See the Answer &raquo;</a>
 </div>
 
-<!--
 Check out the next lesson: [Join Tips and Tricks](/intermediate/full-join-union.html)
--->

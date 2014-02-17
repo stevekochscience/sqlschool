@@ -37,7 +37,7 @@ Once you've given a table an alias, you can refer to columns in that table in th
 ###JOIN and ON
 After the `FROM` statement, we have two new statements: `JOIN`, which is followed by a table name, and `ON`, which is followed a couple column names separated by an equals sign.
 
-Though the `ON` statement comes after `JOIN`, it's a bit easier to explain it first. `ON` indicates how the two tables (the one after the `FROM` and the one after the `JOIN`) relate to each other. In this case, the school a player went to is indicated by the `school_name` field in the `benn.college_football_players` table. This maps to the `school_name` field in the `benn.colllege_football_teams` table. This is written as a conditional statement:
+Though the `ON` statement comes after `JOIN`, it's a bit easier to explain it first. `ON` indicates how the two tables (the one after the `FROM` and the one after the `JOIN`) relate to each other. In this case, the school a player went to is indicated by the `school_name` field in the `benn.college_football_players` table. This maps to the `school_name` field in the `benn.colllege_football_teams` table. `teams.school_name` and `players.school_name` are referred to as "foreign keys" or "join keys" because they map to columns in other tables. Their mapping is written as a conditional statement:
 
     ON teams.school_name = players.school_name
 
