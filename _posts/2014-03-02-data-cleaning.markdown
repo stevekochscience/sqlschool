@@ -144,7 +144,7 @@ Sometimes, you just don't want your data to look like it's screaming at you. You
   <a href="https://stealth.modeanalytics.com/tutorial/reports/c96ee5c6516d" target="_blank">See the Answer &raquo;</a>
 </div>
 
-There are a number of variations of these functions, as well as several other string functions not covered here. Different databases use subtle variations on these functions, so be sure to look up [the appropriate database's syntax](LINK) if you're connected to a private database. If you're using Mode's public service as in this tutorial, the [Postgres literature](http://www.postgresql.org/docs/9.1/static/functions-string.html) contains the related functions.
+There are a number of variations of these functions, as well as several other string functions not covered here. Different databases use subtle variations on these functions, so be sure to look up [the appropriate database's syntax](/other-resources/sql-syntax-guide.html) if you're connected to a private database. If you're using Mode's public service as in this tutorial, the [Postgres literature](http://www.postgresql.org/docs/9.1/static/functions-string.html) contains the related functions.
 
 <!-- possibly split into 2 lessons right here -->
 
