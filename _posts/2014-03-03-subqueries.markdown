@@ -41,7 +41,7 @@ Subqueries are required to have names, which are added after parentheses [the sa
 A quit note on formatting: The important thing to remember when using subqueries is to provide some way to for the reader to easily determine which parts of the query will be executed together. Most people do this by indenting the subquery in some way. The examples in this tutorial are indented quite far &mdash; all the way to the parentheses. This isn't practical if you nest many subqueries, so it's fairly common to only indent two spaces or so.
 
 <div class="practice-prob">
-  Write a query that selects all Warrant Arrests from the `tutorial.sf_crime_incidents_2014_01` dataset, when wraps it in an outer query that filters out unresolved incidents.
+  Write a query that selects all Warrant Arrests from the <code>tutorial.sf_crime_incidents_2014_01</code> dataset, when wraps it in an outer query that filters out unresolved incidents.
 </div>
 <div class="practice-prob-answer">
   <a href="https://stealth.modeanalytics.com/tutorial/reports/3af88ef4ee7a" target="_blank">See the Answer &raquo;</a>
