@@ -99,6 +99,10 @@ Also, keep in mind as you review the results from the above query that a large p
 </div>
 -->
 
+<!--
+###Joining Multiple Tables
+-->
+
 ###Next Steps
 Congratulations, you've learned most of the technical stuff you need to know to analyze data using SQL. The advanced tutorial covers a few more necessities (in-depth lesson on data types, for example), as well as some more technical features that will greatly extend the tools you've already learned.
 
