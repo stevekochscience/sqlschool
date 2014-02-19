@@ -148,39 +148,112 @@ There are a number of variations of these functions, as well as several other st
 
 <!-- possibly split into 2 lessons right here -->
 
-<!--
 ###Turning Strings into Dates
-* most commonly screwed up (blame Excel)
-* SQL works well with dates, but need to be formatted properly (as in previous lesson)
-* example showing how to pull apart a shitty string into its parts
+Dates are some of the most commonly screwed-up formats in SQL. This can be the result of a few things:
 
-* practice problem: create a date field formatted properly (cast it as timestamp). add another field that is 1 year ahead using INTERVAL to prove it's a real timestamp.
+* The data was manipulated in Excel at some point, and the dates were changed to MM/DD/YYYY format or another format that is not compliant with SQL's strict standards.
+* The data was manually entered by someone who use whatever formatting convention he/she was most familiar with.
+* The date uses text (Jan, Feb, etc.) intsead of numbers to record months.
 
-###Turning Dates into More Useful Dates
-  extracting parts of a date from a date field
-    EXTRACT(DAY FROM fieldname)
-    
-    
-DATE_TRUNC('day', fieldname)
+In order to take advantage of all of the great date functionality (`INTERVAL`, as well as some others you will learn in the next secion), you need to have your date field formatted appropriately. This often involves some text manipulation, followed by a `CAST`. Let's revisit the answer to one of the practice problems above:
 
-options: day, decade, dow (day of week 0-6), doy (day of year 1-365/366), 
-hour, minute, month, quarter, second, week, year
+    SELECT incidnt_num,
+           date,
+           (SUBSTR(date, 7, 4) || '-' || LEFT(date, 2) ||
+            '-' || SUBSTR(date, 4, 2))::date AS cleaned_date
+      FROM tutorial.sf_crime_incidents_2014_01
 
-Timezone stuff
-AT TIME ZONE
-CURRENT & LOCAL STUFF (most of the way down this page: http://www.postgresql.org/docs/8.1/static/functions-datetime.html)
+This example is a little different from the answer above in that we've wrapped the entire set of concatenated substrings in parentheses and cast the result in the `date` format. We could also case it as  `timestamp`, which includes additional precision (hours, minutes, seconds). In this case, we're not pulling the hours out of the original field, so we'll just stick to `date`.
 
-###COALESCE
-* blah...
--->
-
-<!-- add nulls to dataset so that COALESCE does something
+<!-- example showing how to pull apart a shitty string with months spelled out into its parts-->
 
 <div class="practice-prob">
-  Write a query that returns the `category` field, but with the first letter capitalized and the rest of the letters in lower-case.
+  Write a query that creates an accurate timestamp using the <code>date</code> and <code>time</code> columns in <code>tutorial.sf_crime_incidents_2014_01</code>. Include a field that is exactly 1 week later as well.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/c96ee5c6516d" target="_blank">See the Answer &raquo;</a>
+  <a href="https://stealth.modeanalytics.com/tutorial/reports/4c908f47868a" target="_blank">See the Answer &raquo;</a>
+</div>
+
+###Turning Dates into More Useful Dates
+Once you've got a well-formatted date field, you can manipulate in all sorts of interesting ways. To make the lesson a little cleaner, we'll use a different version of the crime incidents dataset that already has a nicely-formatted date field:
+
+    SELECT *
+      FROM tutorial.sf_crime_incidents_cleandate
+
+You've learned how to construct a date field, but what if you want to deconstruct one? You can use `EXTRACT` to pull the pieces apart one-by-one:
+
+
+    SELECT cleaned_date,
+           EXTRACT('year'   FROM cleaned_date) AS year,
+           EXTRACT('month'  FROM cleaned_date) AS month,
+           EXTRACT('day'    FROM cleaned_date) AS day,
+           EXTRACT('hour'   FROM cleaned_date) AS hour,
+           EXTRACT('minute' FROM cleaned_date) AS minute,
+           EXTRACT('second' FROM cleaned_date) AS second,
+           EXTRACT('decade' FROM cleaned_date) AS decade,
+           EXTRACT('dow'    FROM cleaned_date) AS day_of_week
+      FROM tutorial.sf_crime_incidents_cleandate
+
+You can also round dates to the nearest unit of measurement. This is particularly useful if you don't care about an individual date, but do care about the week (or month, or quarter) that it occurred in. The `DATE_TRUNC` function rounds a date to whatever precision you specify. The value displayed is the first value in that period. So when you `DATE_TRUNC` by year, any value in that year will be listed as January 1st of that year:
+
+    SELECT cleaned_date,
+           DATE_TRUNC('year'   , cleaned_date) AS year,
+           DATE_TRUNC('month'  , cleaned_date) AS month,
+           DATE_TRUNC('week'   , cleaned_date) AS week,
+           DATE_TRUNC('day'    , cleaned_date) AS day,
+           DATE_TRUNC('hour'   , cleaned_date) AS hour,
+           DATE_TRUNC('minute' , cleaned_date) AS minute,
+           DATE_TRUNC('second' , cleaned_date) AS second,
+           DATE_TRUNC('decade' , cleaned_date) AS decade
+      FROM tutorial.sf_crime_incidents_cleandate
+
+<div class="practice-prob">
+  Write a query that counts the number of incidents reported by week. Cast the week as a date to get rid of the hours/minutes/seconds.
+</div>
+<div class="practice-prob-answer">
+  <a href="https://stealth.modeanalytics.com/tutorial/reports/0315a8aa1e4c" target="_blank">See the Answer &raquo;</a>
+</div>
+
+What if you want to include today's date or time? You can instruct your query to pull the local date and time at the time the query is run using any number of functions. Interestingly, you can run them without a `FROM` clause:
+
+    SELECT CURRENT_DATE AS date,
+           CURRENT_TIME AS time,
+           CURRENT_TIMESTAMP AS timestamp,
+           LOCALTIME AS localtime,
+           LOCALTIMESTAMP AS localtimestamp,
+           NOW() AS now
+
+As you can see, the different options vary in precision. You might notice that these times probably aren't actually your local time. Mode's database is set to [Coordinated Universal Time](http://en.wikipedia.org/wiki/Coordinated_Universal_Time) (UTC), which is basically the same as GMT. If you run a current time function against a connected database, you might get a result in a different time zone.
+
+You can make a time appear in a different time zone using `AT TIME ZONE`:
+
+    SELECT CURRENT_TIME AS time,
+           CURRENT_TIME AT TIME ZONE 'PST' AS time_pst
+
+For a complete list of timezones, [look here](http://www.postgresql.org/docs/7.2/static/timezones.html). This functionality is pretty complex because timestamps can be stored with or without timezone metadata. For a better understanding of the exact syntax, we recommend checking out the [Postgres documentation](http://www.postgresql.org/docs/9.2/static/functions-datetime.html#FUNCTIONS-DATETIME-ZONECONVERT).
+
+<div class="practice-prob">
+  Write a query that shows exactly how long ago each indicent was reported. Assume that the dataset is in Pacific Standard Time (UTC - 8).
+</div>
+<div class="practice-prob-answer">
+  <a href="https://stealth.modeanalytics.com/tutorial/reports/ebc77b3a1dd7" target="_blank">See the Answer &raquo;</a>
+</div>
+
+###COALESCE
+Occasionally, you will end up with a dataset that has some nulls that you'd prefer to contain actual values. This happens frequently in numerical data (displaying nulls as 0 is often preferable), and when performing outer joins that result in some unmatched rows. In cases like this, you can use `COALESCE` to replace the null values:
+
+    SELECT incidnt_num,
+           descript,
+           COALESCE(descript, 'No Description')
+      FROM tutorial.sf_crime_incidents_cleandate
+     ORDER BY descript DESC
+
+<!--
+<div class="practice-prob">
+  Something involving a join
+</div>
+<div class="practice-prob-answer">
+  <a href="" target="_blank">See the Answer &raquo;</a>
 </div>
 -->
 Move on to the next lesson: [Subqueries](/advanced/subqueries.html).

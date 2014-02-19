@@ -138,4 +138,4 @@ You can add the current time (at the time you run the query) into your code usin
 
 <!-- check books for other data type stuff to see what's important-->
 
-Move on to the next lesson: [Data Cleaning](/advanced/data-cleaning.html).
+Move on to the next lesson: [Wrangling Messy Data](/advanced/data-cleaning.html).
