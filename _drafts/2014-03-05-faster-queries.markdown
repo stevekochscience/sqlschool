@@ -9,5 +9,7 @@ date:   2014-03-01 00:00:55
 
 ###EXPLAIN
 
+###Why DISTINCT is so slow
+
 ###Indexes
 as referenced in [Join Tips & Tricks](/intermediate/join-tips-and-tricks.html)

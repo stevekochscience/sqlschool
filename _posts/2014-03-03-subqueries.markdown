@@ -241,6 +241,4 @@ This is pretty straight-forward. Try it for yourself:
   <a href="https://stealth.modeanalytics.com/tutorial/reports/019819a0608d" target="_blank">See the Answer &raquo;</a>
 </div>
 
-<!--
 Move on to the next lesson: [Window Functions](/advanced/window-functions.html).
--->
