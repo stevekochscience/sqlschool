@@ -2,7 +2,7 @@
 layout: sqlschool-lesson
 category: "advanced"
 title:  "Window Functions"
-date:   2014-03-04 00:00:56
+date:   2014-03-01 00:00:56
 ---
 
 This lesson uses data from Washington DC's [Capital Bikeshare Program](http://capitalbikeshare.com), who publishes detailed trip-level historical data [on their website](http://capitalbikeshare.com/trip-history-data). 
