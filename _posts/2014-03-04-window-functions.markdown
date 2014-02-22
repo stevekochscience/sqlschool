@@ -5,7 +5,7 @@ title:  "Window Functions"
 date:   2014-03-01 00:00:56
 ---
 
-This lesson uses data from Washington DC's [Capital Bikeshare Program](http://capitalbikeshare.com), who publishes detailed trip-level historical data [on their website](http://capitalbikeshare.com/trip-history-data). 
+This lesson uses data from Washington DC's [Capital Bikeshare Program](http://capitalbikeshare.com), who publishes detailed trip-level historical data [on their website](http://capitalbikeshare.com/trip-history-data). The data was downloaded in February, 2014, but is limited to data collected during the first quarter of 2012. 
 
 ###Intro to Window Functions
 PostgreSQL's documentation does an excellent job of [introducing the concept of Window Functions](http://www.postgresql.org/docs/9.1/static/tutorial-window.html):
@@ -27,7 +27,8 @@ If you'd like to narrow the window from the entire dataset to individual groups 
 
     SELECT start_terminal,
            duration_seconds,
-           SUM(duration_seconds) OVER (PARTITION BY start_terminal ORDER BY start_time) AS running_total
+           SUM(duration_seconds) OVER
+             (PARTITION BY start_terminal ORDER BY start_time) AS running_total
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
 
@@ -35,7 +36,8 @@ The above query groups and orders the query by `start_terminal`. Within each val
 
     SELECT start_terminal,
            duration_seconds,
-           SUM(duration_seconds) OVER (PARTITION BY start_terminal) AS start_terminal_total
+           SUM(duration_seconds) OVER
+             (PARTITION BY start_terminal) AS start_terminal_total
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
 
@@ -57,9 +59,12 @@ When using window functions, you can apply the same aggregates that you would un
 
     SELECT start_terminal,
            duration_seconds,
-           SUM(duration_seconds) OVER (PARTITION BY start_terminal) AS running_total,
-           COUNT(duration_seconds) OVER (PARTITION BY start_terminal) AS running_count,
-           AVG(duration_seconds) OVER (PARTITION BY start_terminal) AS running_avg
+           SUM(duration_seconds) OVER
+             (PARTITION BY start_terminal) AS running_total,
+           COUNT(duration_seconds) OVER
+             (PARTITION BY start_terminal) AS running_count,
+           AVG(duration_seconds) OVER
+             (PARTITION BY start_terminal) AS running_avg
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
 
@@ -67,9 +72,15 @@ Alternatively, the same fundtions with `ORDER BY`:
 
     SELECT start_terminal,
            duration_seconds,
-           SUM(duration_seconds) OVER (PARTITION BY start_terminal ORDER BY start_time) AS running_total,
-           COUNT(duration_seconds) OVER (PARTITION BY start_terminal ORDER BY start_time) AS running_count,
-           AVG(duration_seconds) OVER (PARTITION BY start_terminal ORDER BY start_time) AS running_avg
+           SUM(duration_seconds) OVER
+             (PARTITION BY start_terminal ORDER BY start_time)
+             AS running_total,
+           COUNT(duration_seconds) OVER
+             (PARTITION BY start_terminal ORDER BY start_time)
+             AS running_count,
+           AVG(duration_seconds) OVER
+             (PARTITION BY start_terminal ORDER BY start_time)
+             AS running_avg
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
 
@@ -94,7 +105,8 @@ Alternatively, the same fundtions with `ORDER BY`:
 
     SELECT start_terminal,
            duration_seconds,
-           RANK() OVER (PARTITION BY start_terminal ORDER BY start_time) AS rank
+           RANK() OVER
+             (PARTITION BY start_terminal ORDER BY start_time) AS rank
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
 
@@ -123,11 +135,14 @@ You can use window functions to identify what percentile (or quartile, or any ot
     SELECT start_terminal,
            duration_seconds,
            NTILE(4) OVER
-             (PARTITION BY start_terminal ORDER BY duration_seconds) AS quartile,
+             (PARTITION BY start_terminal ORDER BY duration_seconds)
+              AS quartile,
            NTILE(5) OVER
-             (PARTITION BY start_terminal ORDER BY duration_seconds) AS quintile,
+             (PARTITION BY start_terminal ORDER BY duration_seconds)
+             AS quintile,
            NTILE(100) OVER
-             (PARTITION BY start_terminal ORDER BY duration_seconds) AS percentile
+             (PARTITION BY start_terminal ORDER BY duration_seconds)
+             AS percentile
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
      ORDER BY start_terminal, duration_seconds
@@ -198,11 +213,14 @@ If you're planning to write several window functions in to the same query, using
     SELECT start_terminal,
            duration_seconds,
            NTILE(4) OVER
-             (PARTITION BY start_terminal ORDER BY duration_seconds) AS quartile,
+             (PARTITION BY start_terminal ORDER BY duration_seconds)
+             AS quartile,
            NTILE(5) OVER
-             (PARTITION BY start_terminal ORDER BY duration_seconds) AS quintile,
+             (PARTITION BY start_terminal ORDER BY duration_seconds)
+             AS quintile,
            NTILE(100) OVER
-             (PARTITION BY start_terminal ORDER BY duration_seconds) AS percentile
+             (PARTITION BY start_terminal ORDER BY duration_seconds)
+             AS percentile
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
      ORDER BY start_terminal, duration_seconds
