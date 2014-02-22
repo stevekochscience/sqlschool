@@ -122,9 +122,12 @@ You can use window functions to identify what percentile (or quartile, or any ot
 
     SELECT start_terminal,
            duration_seconds,
-           NTILE(4) OVER (PARTITION BY start_terminal ORDER BY duration_seconds) AS quartile,
-           NTILE(5) OVER (PARTITION BY start_terminal ORDER BY duration_seconds) AS quintile,
-           NTILE(100) OVER (PARTITION BY start_terminal ORDER BY duration_seconds) AS percentile
+           NTILE(4) OVER
+             (PARTITION BY start_terminal ORDER BY duration_seconds) AS quartile,
+           NTILE(5) OVER
+             (PARTITION BY start_terminal ORDER BY duration_seconds) AS quintile,
+           NTILE(100) OVER
+             (PARTITION BY start_terminal ORDER BY duration_seconds) AS percentile
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
      ORDER BY start_terminal, duration_seconds
@@ -146,8 +149,10 @@ It can often be useful to compare rows to preceding or following rows, especiall
 
     SELECT start_terminal,
            duration_seconds,
-           LAG(duration_seconds, 1) OVER (PARTITION BY start_terminal ORDER BY duration_seconds) AS lag,
-           LEAD(duration_seconds, 1) OVER (PARTITION BY start_terminal ORDER BY duration_seconds) AS lead
+           LAG(duration_seconds, 1) OVER
+             (PARTITION BY start_terminal ORDER BY duration_seconds) AS lag,
+           LEAD(duration_seconds, 1) OVER
+             (PARTITION BY start_terminal ORDER BY duration_seconds) AS lead
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
      ORDER BY start_terminal, duration_seconds
@@ -157,7 +162,8 @@ This is especially useful if you want to calculate differences between rows:
     SELECT start_terminal,
            duration_seconds,
            duration_seconds -LAG(duration_seconds, 1) OVER 
-             (PARTITION BY start_terminal ORDER BY duration_seconds) AS difference
+             (PARTITION BY start_terminal ORDER BY duration_seconds)
+             AS difference
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
      ORDER BY start_terminal, duration_seconds
@@ -169,7 +175,8 @@ The first row of the `difference` column is null because there is no previous ro
         SELECT start_terminal,
                duration_seconds,
                duration_seconds -LAG(duration_seconds, 1) OVER 
-                 (PARTITION BY start_terminal ORDER BY duration_seconds) AS difference
+                 (PARTITION BY start_terminal ORDER BY duration_seconds)
+                 AS difference
           FROM tutorial.dc_bikeshare_q1_2012
          WHERE start_time < '2012-01-08'
          ORDER BY start_terminal, duration_seconds
@@ -190,9 +197,12 @@ If you're planning to write several window functions in to the same query, using
 
     SELECT start_terminal,
            duration_seconds,
-           NTILE(4) OVER (PARTITION BY start_terminal ORDER BY duration_seconds) AS quartile,
-           NTILE(5) OVER (PARTITION BY start_terminal ORDER BY duration_seconds) AS quintile,
-           NTILE(100) OVER (PARTITION BY start_terminal ORDER BY duration_seconds) AS percentile
+           NTILE(4) OVER
+             (PARTITION BY start_terminal ORDER BY duration_seconds) AS quartile,
+           NTILE(5) OVER
+             (PARTITION BY start_terminal ORDER BY duration_seconds) AS quintile,
+           NTILE(100) OVER
+             (PARTITION BY start_terminal ORDER BY duration_seconds) AS percentile
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
      ORDER BY start_terminal, duration_seconds
@@ -206,7 +216,8 @@ This can be rewritten as:
            NTILE(100) OVER ntile_window AS percentile
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
-    WINDOW ntile_window AS (PARTITION BY start_terminal ORDER BY duration_seconds)
+    WINDOW ntile_window AS 
+             (PARTITION BY start_terminal ORDER BY duration_seconds)
      ORDER BY start_terminal, duration_seconds
 
 The `WINDOW`clause, if included, should always come after the `WHERE` clause.
