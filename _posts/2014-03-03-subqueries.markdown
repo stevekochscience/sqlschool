@@ -67,14 +67,13 @@ What if you wanted to figure out how many indicents get reported on each day of 
 
 If you're having trouble figuring out what's happening, try running the inner query individually to get a sense of what its results look like. In general, it's easiest to write inner queries first and revise them until the results make sense to you, then to move on to the outer query.
 
-<!--
 <div class="practice-prob">
-  Practice Problem - some aggregation, then a pivot
+  Write a query that displays the average number of incidents per month, by category. Hint: use <code>tutorial.sf_crime_incidents_cleandate</code> to make your life a little easier.
 </div>
 <div class="practice-prob-answer">
-  <a href="" target="_blank">See the Answer &raquo;</a>
+  <a href="https://stealth.modeanalytics.com/tutorial/reports/7a6b1f866394" target="_blank">See the Answer &raquo;</a>
 </div>
--->
+
 ###Subqueries in conditional logic
 You can use subqueries in conditional logic (in conjunction with `WHERE`, `JOIN`/`ON`, or `CASE`). The following query returns all of the entries from the earliest date in the dataset (theoretically &mdash; the poor formatting of the date column actually makes it return the value that sorts first alphabetically):
 
@@ -130,14 +129,12 @@ This can be particularly useful when combined with aggregations. When you join, 
         ON incidents.date = sub.date
      ORDER BY sub.incidents DESC, time
 
-<!--
 <div class="practice-prob">
-  Practice Problem
+  Write a query that displays all rows from the three categories with the fewest incidents reported.
 </div>
 <div class="practice-prob-answer">
-  <a href="" target="_blank">See the Answer &raquo;</a>
+  <a href="https://stealth.modeanalytics.com/tutorial/reports/1a6ee6229859" target="_blank">See the Answer &raquo;</a>
 </div>
--->
 
 Subqueries can be very helpful in improving the performance of your queries. Let's revisit the [Crunchbase Data](/intermediate/outer-joins.html) briefly. Imagine you'd like to aggregate all of the copmanies receiving investment and companies acquired each month. You could do that without subqueries if you wanted to, but **don't actually run this as it will take minutes to return**:
 
@@ -192,14 +189,12 @@ Of course, you could solve this much more efficiently by aggregating the two tab
 
 Note: We used a `FULL JOIN` above just in case one table had observations in a month that the other table didn't. We also used `COALESCE` to display months when the `acquisitions` subquery didn't have month entries (presumably no acquisitions occurred in those months). We strongly encourage you to re-run the query without some of these elements to better understand how they work. You can also run each of the subqueries independently to get a better understanding of them as well.
 
-<!--
 <div class="practice-prob">
-  Practice Problem - preaggregation, then join
+  Write a query that counts the number of companies founded and acquired by quarter starting in Q1 2012. Create the aggregations in two separate queries, then join them.
 </div>
 <div class="practice-prob-answer">
-  <a href="" target="_blank">See the Answer &raquo;</a>
+  <a href="https://stealth.modeanalytics.com/tutorial/reports/6ebd90cda35c" target="_blank">See the Answer &raquo;</a>
 </div>
--->
 
 ###Subqueries and UNIONs
 For this next section, we will borrow directly from the lesson on [UNIONs](/intermediate/full-join-union/html) &mdash; again using the Crunchbase data:
