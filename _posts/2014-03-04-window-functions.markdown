@@ -113,7 +113,7 @@ Alternatively, the same fundtions with `ORDER BY`:
 
 You may notice that rows with the exact same start time are given the same rank. See the 4th and 5th observations for `start_terminal` 31000 &mdash; they are both given a rank of 4, and the following result receives a rank of 6.
 
-<!--the other type of rank that alters results -->
+<!--piece about dense_rank. see if percent_rank is in Postgres8 -->
 
 <div class="practice-prob">
   Write a query that shows the 5 longest rides from each starting terminal, ordered by terminal, and longest to shortest rides within each terminal. Limit to rides that occurred before Jan. 8, 2012.
@@ -265,6 +265,15 @@ You can check out some more specific uses for window functions in the [solutions
 
 * [example](LINK)
 * [example](LINK)
+-->
+
+<!--
+<div class="practice-prob">
+  calculate a median
+</div>
+<div class="practice-prob-answer">
+  <a href="" target="_blank">See the Answer &raquo;</a>
+</div>
 -->
 
 <!--Move on to the next lesson: [Making Queries Run Faster](/advanced/faster-queries.html).
