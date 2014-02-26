@@ -6,9 +6,9 @@ date:   2014-02-01 00:00:56
 ---
 
 ###Intro to Joins - Relational Concepts
-Up to this point, we've only been working with one table at a time. The real power of SQL, however, comes from w with data from multiple tables at once. If you remember from the [basic concepts tutorial](/the-basics/basic-concepts.html), the tables you've been working with up to this point are all part of the same schema in a relational database. The term "relational database" refers to the fact that the tables within it "relate" to one another&mdash;they contain common identifiers that allow information from multiple tables to be combined easily.
+Up to this point, we've only been working with one table at a time. The real power of SQL, however, comes from working with data from multiple tables at once. If you remember from the [basic concepts tutorial](/the-basics/basic-concepts.html), the tables you've been working with up to this point are all part of the same schema in a relational database. The term "relational database" refers to the fact that the tables within it "relate" to one another&mdash;they contain common identifiers that allow information from multiple tables to be combined easily.
 
-To understand why joins are helpful, let's think about Twitter.
+To understand what joins are and why they are helpful, let's think about Twitter.
 
 Twitter has to store a lot of data. Twitter could (hypothetically, of course) store its data in one big table in which each row represents one tweet. There could be one column for the content of each tweet, one for the time of the tweet, one for the person who tweeted it, and so on. It turns out, though, that identifying the person who tweeted is a little tricky. There's a lot to a person's Twitter identity&mdash;a username, a bio, followers, followees, and more. Twitter could store all of that data in a table like this:
 

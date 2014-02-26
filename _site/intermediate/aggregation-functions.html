@@ -70,7 +70,7 @@
 <li>Run all of the code blocks in the lesson in Mode in the other window. You&#39;ll learn more if you really examine the results and understand what the code is doing.</li>
 </ul>
 
-<p>In the previous tutorial, many of the practice problems could only be solved in one or two ways with the skills you had learned. As you learn more skills and problems get harder, there will be many ways of producing the correct results. Keep in mind that the answers to practice problems should be used as a reference, but are by no means the only ways of answering the questions.</p>
+<p>In the previous tutorial, many of the practice problems could only be solved in one or two ways with the skills you had learned. As you learn more skills and problems get harder, there will be many ways of producing the correct results. Keep in mind that the answers to practice problems should be used as a reference, but are by no means the only ways of answering the questions.  </p>
 
 <h3>Today&#39;s dataset</h3>
 
@@ -79,11 +79,11 @@
 </code></pre></div>
 <h3>Aggregation Functions</h3>
 
-<p>As the <a href="/the-basics/basic-concepts.html">beginner tutorial</a> points out, SQL is excellent at aggregating data the way you might in a <a href="http://en.wikipedia.org/wiki/Pivot_table">pivot table</a> in Excel. You will use aggregation functions all the time, so it&#39;s important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: <code>COUNT</code>, <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>AVG</code>. The <a href="/the-basics/where-operators.html">beginner tutorial</a> also pointed out that arithmetic operators only perform operations across rows. Aggregation functions are used to perform operations across entire columns (could be millions of rows of data or more).</p>
+<p>As the <a href="/the-basics/basic-concepts.html">beginner tutorial</a> points out, SQL is excellent at aggregating data the way you might in a <a href="http://en.wikipedia.org/wiki/Pivot_table">pivot table</a> in Excel. You will use aggregation functions all the time, so it&#39;s important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: <code>COUNT</code>, <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>AVG</code>. The <a href="/the-basics/where-operators.html">beginner tutorial</a> also pointed out that arithmetic operators only perform operations across rows. Aggregation functions are used to perform operations across entire columns (which could include millions of rows of data or more).</p>
 
 <h3>COUNT</h3>
 
-<p>It&#39;s easiest to start with <code>COUNT</code> because verifying your results is extremely simple. The easiest way to get started is to use <code>*</code> to select all rows.</p>
+<p>It&#39;s easiest to start with <code>COUNT</code> because verifying your results is extremely simple. Let&#39;s begin by using <code>*</code> to select all rows.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(*)
   FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
@@ -100,7 +100,7 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 <p>You&#39;ll notice that this result is lower than what you got with <code>COUNT(*)</code>. That&#39;s because <code>high</code> has some nulls. In this case, we&#39;ve deleted some data to make the lesson interesting, but it might often be that case that you will run into naturally-occurring null rows. For example, imagine you&#39;ve got a table with one column showing email addresses for everyone you sent a marketing email to, and another column showing the date and time that each person opened the email. If someone didn&#39;t open the email, the date/time field would likely be null.</p>
 
 <div class="practice-prob">
-  Write a query to count the number of non-null rows in the `low` column.
+  Write a query to count the number of non-null rows in the <code>low</code> column.
 </div>
 
 <div class="practice-prob-answer">
@@ -133,7 +133,7 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 
 <h3>SUM</h3>
 
-<p>This works the same way as count, except that it can only be used on numerical columns. As you might expect, <code>SUM</code> totals all the values in a given column:</p>
+<p>As its name suggests, <code>SUM</code> totals all the values in a given column.  Unlike <code>COUNT</code>, you can only use <code>SUM</code> on columns containing numerical values.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT SUM(volume)
   FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
@@ -142,7 +142,7 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 <p>You don&#39;t need to worry as much about the presence of nulls with <code>SUM</code> as you would with <code>COUNT</code>, as <code>SUM</code> treats nulls as 0.</p>
 
 <div class="practice-prob">
-  Write a query to calculate the average opening price (hint: you will need to use both `COUNT` and `SUM`).
+  Write a query to calculate the average opening price (hint: you will need to use both <code>COUNT</code> and <code>SUM</code>, as well as some simple arithmetic.).
 </div>
 
 <div class="practice-prob-answer">
@@ -163,7 +163,7 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
  WHERE volume IS NOT NULL
 </code></pre></div>
 <div class="practice-prob">
-  What was Apple's highest stock price (at the time of this data collection)?
+  What was Apple's lowest stock price (at the time of this data collection)?
 </div>
 
 <div class="practice-prob-answer">
@@ -180,9 +180,7 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 
 <h3>AVG</h3>
 
-<p><code>AVG</code> does what you&#39;d think &mdash; it calculated the average of selected values. It is very useful, but has some limitations. First, it can only be used on numerical columns. Second, it ignores nulls completely. There are some cases in which you will want to treat null values as 0. For these cases, you&#39;ll want to write a statement that changes the nulls to 0 (covered in a <a href="/intermediate/case.html">later lesson</a>).</p>
-
-<p>You can see this by comparing these two queries:</p>
+<p><code>AVG</code> does what you&#39;d think &mdash; it calculates the average of selected values. It is very useful, but has some limitations. First, it can only be used on numerical columns. Second, it ignores nulls completely. You can see this by comparing these two queries:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(high)
   FROM tutorial.aapl_historical_stock_price
  WHERE volume IS NOT NULL
@@ -191,6 +189,8 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT AVG(high)
   FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
+<p>There are some cases in which you will want to treat null values as 0. For these cases, you&#39;ll want to write a statement that changes the nulls to 0 (covered in a <a href="/intermediate/case.html">later lesson</a>).</p>
+
 <div class="practice-prob">
   Write a query that calculates the average daily trade volume for Apple stock.
 </div>
@@ -201,7 +201,7 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 
 <h3>GROUP BY</h3>
 
-<p>All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count entries by month, for example. <code>GROUP BY</code> allows you to separate your aggregations into sub-groups. Here&#39;s an example:</p>
+<p>All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count the number of entries for each year, for example. <code>GROUP BY</code> allows you to separate data into groups which can be aggregated independent of one another. Here&#39;s an example:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year,
        COUNT(*) as count
   FROM tutorial.aapl_historical_stock_price
@@ -236,8 +236,8 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
        month,
        COUNT(*) as count
   FROM tutorial.aapl_historical_stock_price
- GROUP BY 1, 2
- ORDER BY 2, 1
+ GROUP BY year, month
+ ORDER BY month, year
 </code></pre></div>
 <p>There&#39;s one thing to be aware of as you group by multiple columns: SQL evaluates the aggregations before the <code>LIMIT</code> clause. If you don&#39;t group by any columns, you&#39;ll get a 1-row result &mdash; no problem there. If you group by a column with enough unique values that it exceeds the <code>LIMIT</code> number, what will happen is that aggregates will be calculated, and then some rows will simply be omitted from the results. This is actually a nice way to do things because you know you&#39;re going to get the correct aggregates. If SQL cut the table down to 100 rows, then performed the aggregations, your results would be substantially different. The above query&#39;s results exceed 100 rows, so it is a perfect example. Try removing the limit and running it again.</p>
 

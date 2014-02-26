@@ -62,7 +62,7 @@
   <div class="container">
     <h2>Using Conditional Logic to Define New Columns</h2>
     
-    <p>For the next few lessons, you&#39;ll work with data on College Football Players. This data was collected from ESPN on January 15, 2014 from the rosters listed on <a href="http://espn.go.com/college-football/teams">this page</a> using a Python scraper <a href="https://github.com/mode/blog/blob/master/2014-01-16-football-hometowns/espn_cfb_scraper.py">available here</a> In this particular lesson, you&#39;ll stick to roster information. This table is pretty self-explanatory &mdash; one row per player, with columns that describe attributes for that player. Run this query to check out the raw data:</p>
+    <p>For the next few lessons, you&#39;ll work with data on College Football Players. This data was collected from ESPN on January 15, 2014 from the rosters listed on <a href="http://espn.go.com/college-football/teams">this page</a> using a Python scraper <a href="https://github.com/mode/blog/blob/master/2014-01-16-football-hometowns/espn_cfb_scraper.py">available here.</a> In this particular lesson, you&#39;ll stick to roster information. This table is pretty self-explanatory &mdash; one row per player, with columns that describe attributes for that player. Run this query to check out the raw data:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM benn.college_football_players
 </code></pre></div>
 <h3>CASE</h3>
@@ -109,7 +109,7 @@
             ELSE &#39;under 175&#39; END AS weight_group
   FROM benn.college_football_players
 </code></pre></div>
-<p>In the above example, the <code>WHEN</code>/<code>THEN</code> statements will get evaluated in the order that they&#39;re written. So if the value in the <code>weight</code> column of a given row is 300, it will produce a result of &quot;over 250.&quot; Here&#39;s what happens if the value in the <code>weight</code> column is 180:</p>
+<p>In the above example, the <code>WHEN</code>/<code>THEN</code> statements will get evaluated in the order that they&#39;re written. So if the value in the <code>weight</code> column of a given row is 300, it will produce a result of &quot;over 250.&quot; Here&#39;s what happens if the value in the <code>weight</code> column is 180, SQL will do the following:</p>
 
 <ol>
 <li>Check to see if <code>weight</code> is greater than 250. 180 is not greater than 250, so move on to the next <code>WHEN</code>/<code>THEN</code></li>
@@ -173,7 +173,7 @@
   FROM benn.college_football_players
  WHERE year = &#39;FR&#39;
 </code></pre></div>
-<p>But what if you also wanted to count a couple other conditions? Limiting using the <code>WHERE</code> clause only allows you to count one condition. Here&#39;s an example of counting multiple conditions in one query:</p>
+<p>But what if you also wanted to count a couple other conditions? Using the <code>WHERE</code> clause only allows you to count one condition. Here&#39;s an example of counting multiple conditions in one query:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE WHEN year = &#39;FR&#39; THEN &#39;FR&#39;
             WHEN year = &#39;SO&#39; THEN &#39;SO&#39;
             WHEN year = &#39;JR&#39; THEN &#39;JR&#39;

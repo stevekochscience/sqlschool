@@ -11,7 +11,7 @@ Welcome to the Intermediate SQL Tutorial! If you skipped [The Basics](/the-basic
 * For each lesson, start by running `SELECT *` on the relevant dataset so you get a sense of what the raw data looks like. Do this in that window you just opened to Mode.
 * Run all of the code blocks in the lesson in Mode in the other window. You'll learn more if you really examine the results and understand what the code is doing.
 
-In the previous tutorial, many of the practice problems could only be solved in one or two ways with the skills you had learned. As you learn more skills and problems get harder, there will be many ways of producing the correct results. Keep in mind that the answers to practice problems should be used as a reference, but are by no means the only ways of answering the questions.
+In the previous tutorial, many of the practice problems could only be solved in one or two ways with the skills you had learned. As you learn more skills and problems get harder, there will be many ways of producing the correct results. Keep in mind that the answers to practice problems should be used as a reference, but are by no means the only ways of answering the questions.  
 
 ###Today's dataset
 
@@ -20,10 +20,10 @@ For this lesson and the next, you'll be working with [Apple](http://www.apple.co
     SELECT * FROM tutorial.aapl_historical_stock_price
 
 ###Aggregation Functions
-As the [beginner tutorial](/the-basics/basic-concepts.html) points out, SQL is excellent at aggregating data the way you might in a [pivot table](http://en.wikipedia.org/wiki/Pivot_table) in Excel. You will use aggregation functions all the time, so it's important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`. The [beginner tutorial](/the-basics/where-operators.html) also pointed out that arithmetic operators only perform operations across rows. Aggregation functions are used to perform operations across entire columns (could be millions of rows of data or more).
+As the [beginner tutorial](/the-basics/basic-concepts.html) points out, SQL is excellent at aggregating data the way you might in a [pivot table](http://en.wikipedia.org/wiki/Pivot_table) in Excel. You will use aggregation functions all the time, so it's important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`. The [beginner tutorial](/the-basics/where-operators.html) also pointed out that arithmetic operators only perform operations across rows. Aggregation functions are used to perform operations across entire columns (which could include millions of rows of data or more).
 
 ###COUNT
-It's easiest to start with `COUNT` because verifying your results is extremely simple. The easiest way to get started is to use `*` to select all rows.
+It's easiest to start with `COUNT` because verifying your results is extremely simple. Let's begin by using `*` to select all rows.
 
     SELECT COUNT(*)
       FROM tutorial.aapl_historical_stock_price
@@ -41,7 +41,7 @@ Things start to get a little bit tricky when you want to count individual column
 You'll notice that this result is lower than what you got with `COUNT(*)`. That's because `high` has some nulls. In this case, we've deleted some data to make the lesson interesting, but it might often be that case that you will run into naturally-occurring null rows. For example, imagine you've got a table with one column showing email addresses for everyone you sent a marketing email to, and another column showing the date and time that each person opened the email. If someone didn't open the email, the date/time field would likely be null.
 
 <div class="practice-prob">
-  Write a query to count the number of non-null rows in the `low` column.
+  Write a query to count the number of non-null rows in the <code>low</code> column.
 </div>
 <div class="practice-prob-answer">
   <a href="http://stealth.modeanalytics.com/tutorial/reports/ce67f767fd35" target="_blank">See the Answer &raquo;</a>
@@ -74,7 +74,7 @@ If you must use spaces, you will need to use double quotes.
 </div>
 
 ###SUM
-This works the same way as count, except that it can only be used on numerical columns. As you might expect, `SUM` totals all the values in a given column:
+As its name suggests, `SUM` totals all the values in a given column.  Unlike `COUNT`, you can only use `SUM` on columns containing numerical values.
 
     SELECT SUM(volume)
       FROM tutorial.aapl_historical_stock_price
@@ -84,7 +84,7 @@ An important thing to remember: aggregators only aggregate vertically. If you wa
 You don't need to worry as much about the presence of nulls with `SUM` as you would with `COUNT`, as `SUM` treats nulls as 0.
 
 <div class="practice-prob">
-  Write a query to calculate the average opening price (hint: you will need to use both `COUNT` and `SUM`).
+  Write a query to calculate the average opening price (hint: you will need to use both <code>COUNT</code> and <code>SUM</code>, as well as some simple arithmetic.).
 </div>
 <div class="practice-prob-answer">
   <a href="http://stealth.modeanalytics.com/tutorial/reports/4106c16551ac" target="_blank">See the Answer &raquo;</a>
@@ -105,7 +105,7 @@ Nulls are treated as lower than 0 or "a" so `MIN` will return a null value if th
      WHERE volume IS NOT NULL
 
 <div class="practice-prob">
-  What was Apple's highest stock price (at the time of this data collection)?
+  What was Apple's lowest stock price (at the time of this data collection)?
 </div>
 <div class="practice-prob-answer">
   <a href="http://stealth.modeanalytics.com/tutorial/reports/f374f60f4e9c" target="_blank">See the Answer &raquo;</a>
@@ -119,9 +119,7 @@ Nulls are treated as lower than 0 or "a" so `MIN` will return a null value if th
 </div>
 
 ###AVG
-`AVG` does what you'd think &mdash; it calculated the average of selected values. It is very useful, but has some limitations. First, it can only be used on numerical columns. Second, it ignores nulls completely. There are some cases in which you will want to treat null values as 0. For these cases, you'll want to write a statement that changes the nulls to 0 (covered in a [later lesson](/intermediate/case.html)).
-
-You can see this by comparing these two queries:
+`AVG` does what you'd think &mdash; it calculates the average of selected values. It is very useful, but has some limitations. First, it can only be used on numerical columns. Second, it ignores nulls completely. You can see this by comparing these two queries:
 
     SELECT AVG(high)
       FROM tutorial.aapl_historical_stock_price
@@ -132,6 +130,8 @@ Produces the same result as:
     SELECT AVG(high)
       FROM tutorial.aapl_historical_stock_price
 
+There are some cases in which you will want to treat null values as 0. For these cases, you'll want to write a statement that changes the nulls to 0 (covered in a [later lesson](/intermediate/case.html)).
+
 <div class="practice-prob">
   Write a query that calculates the average daily trade volume for Apple stock.
 </div>
@@ -140,7 +140,7 @@ Produces the same result as:
 </div>
 
 ###GROUP BY
-All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count entries by month, for example. `GROUP BY` allows you to separate your aggregations into sub-groups. Here's an example:
+All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count the number of entries for each year, for example. `GROUP BY` allows you to separate data into groups which can be aggregated independent of one another. Here's an example:
 
     SELECT year,
            COUNT(*) as count
@@ -178,8 +178,8 @@ The order of column names in your `GROUP BY` clause doesn't matter &mdash; the r
            month,
            COUNT(*) as count
       FROM tutorial.aapl_historical_stock_price
-     GROUP BY 1, 2
-     ORDER BY 2, 1
+     GROUP BY year, month
+     ORDER BY month, year
 
 There's one thing to be aware of as you group by multiple columns: SQL evaluates the aggregations before the `LIMIT` clause. If you don't group by any columns, you'll get a 1-row result &mdash; no problem there. If you group by a column with enough unique values that it exceeds the `LIMIT` number, what will happen is that aggregates will be calculated, and then some rows will simply be omitted from the results. This is actually a nice way to do things because you know you're going to get the correct aggregates. If SQL cut the table down to 100 rows, then performed the aggregations, your results would be substantially different. The above query's results exceed 100 rows, so it is a perfect example. Try removing the limit and running it again.
 

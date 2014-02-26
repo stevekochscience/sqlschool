@@ -5,7 +5,7 @@ title:  "Using Conditional Logic to Define New Columns"
 date:   2014-02-01 00:00:57
 ---
 
-For the next few lessons, you'll work with data on College Football Players. This data was collected from ESPN on January 15, 2014 from the rosters listed on [this page](http://espn.go.com/college-football/teams) using a Python scraper [available here](https://github.com/mode/blog/blob/master/2014-01-16-football-hometowns/espn_cfb_scraper.py) In this particular lesson, you'll stick to roster information. This table is pretty self-explanatory &mdash; one row per player, with columns that describe attributes for that player. Run this query to check out the raw data:
+For the next few lessons, you'll work with data on College Football Players. This data was collected from ESPN on January 15, 2014 from the rosters listed on [this page](http://espn.go.com/college-football/teams) using a Python scraper [available here.](https://github.com/mode/blog/blob/master/2014-01-16-football-hometowns/espn_cfb_scraper.py) In this particular lesson, you'll stick to roster information. This table is pretty self-explanatory &mdash; one row per player, with columns that describe attributes for that player. Run this query to check out the raw data:
 
     SELECT * FROM benn.college_football_players
 
@@ -52,7 +52,7 @@ You can also define a number of outcomes in a `CASE` statement by including as m
                 ELSE 'under 175' END AS weight_group
       FROM benn.college_football_players
 
-In the above example, the `WHEN`/`THEN` statements will get evaluated in the order that they're written. So if the value in the `weight` column of a given row is 300, it will produce a result of "over 250." Here's what happens if the value in the `weight` column is 180:
+In the above example, the `WHEN`/`THEN` statements will get evaluated in the order that they're written. So if the value in the `weight` column of a given row is 300, it will produce a result of "over 250." Here's what happens if the value in the `weight` column is 180, SQL will do the following:
 
 1. Check to see if `weight` is greater than 250. 180 is not greater than 250, so move on to the next `WHEN`/`THEN`
 2. Check to see if `weight` is greater than 200. 180 is not greater than 200, so move on to the next `WHEN`/`THEN`
@@ -113,7 +113,7 @@ Now, you might be thinking "why wouldn't I just use a `WHERE` clause to filter o
       FROM benn.college_football_players
      WHERE year = 'FR'
 
-But what if you also wanted to count a couple other conditions? Limiting using the `WHERE` clause only allows you to count one condition. Here's an example of counting multiple conditions in one query:
+But what if you also wanted to count a couple other conditions? Using the `WHERE` clause only allows you to count one condition. Here's an example of counting multiple conditions in one query:
 
     SELECT CASE WHEN year = 'FR' THEN 'FR'
                 WHEN year = 'SO' THEN 'SO'

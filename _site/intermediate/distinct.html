@@ -62,7 +62,7 @@
   <div class="container">
     <h2>Counting the Unique Values in a Column</h2>
     
-    <p>This lesson will use the same Apple stock price data from the <a href="/intermediate/aggregation-functions.html">previous lesson</a></p>
+    <p>This lesson will use the same Apple stock price data from the <a href="/intermediate/aggregation-functions.html">previous lesson.</a></p>
 
 <div class="tip">Start by running this code to remind yourself what's in the table that will be used in this tutorial. Remember to switch over to Mode and run any of the code you see in the grey boxes to get a sense of what the output will look like.</div>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT * FROM tutorial.aapl_historical_stock_price
@@ -89,11 +89,11 @@
 
 <h3>Using  DISTINCT in aggregations</h3>
 
-<p>You can use <code>DISTINCT</code> when performing an aggregation. You will probably use it most commonly with the <code>COUNT</code> function. It&#39;s pretty practical when exploring data to understand how many distinct values you&#39;re working with in a column. In this case, you should run the query below that counts the unique values in the <code>month</code> column.</p>
+<p>You can use <code>DISTINCT</code> when performing an aggregation. You will probably use it most commonly with the <code>COUNT</code> function. When exploring a new data set it can be very helpful to know how many distinct values you&#39;re working with in a column. In this case, you should run the query below that counts the unique values in the <code>month</code> column.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(DISTINCT month) AS unqiue_months
   FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
-<p>The results show that there are 12 unique value (other examples may be less obvious). That&#39;s a small enough number that you might be able to aggregate by month and be able to interpret the results fairly early. For example, you might follow this up by taking average trade volumes by month to get a sense of when Apple stock really moves:</p>
+<p>The results show that there are 12 unique values (other examples may be less obvious). That&#39;s a small enough number that you might be able to aggregate by month and be able to interpret the results fairly early. For example, you might follow this up by taking average trade volumes by month to get a sense of when Apple stock really moves:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT month,
        AVG(volume) AS avg_trade_volume
   FROM tutorial.aapl_historical_stock_price

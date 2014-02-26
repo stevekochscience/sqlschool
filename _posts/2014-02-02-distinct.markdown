@@ -5,7 +5,7 @@ title:  "Counting the Unique Values in a Column"
 date:   2014-02-01 00:00:58
 ---
 
-This lesson will use the same Apple stock price data from the [previous lesson](/intermediate/aggregation-functions.html)
+This lesson will use the same Apple stock price data from the [previous lesson.](/intermediate/aggregation-functions.html)
 
 <div class="tip">Start by running this code to remind yourself what's in the table that will be used in this tutorial. Remember to switch over to Mode and run any of the code you see in the grey boxes to get a sense of what the output will look like.</div>
 
@@ -32,12 +32,12 @@ If you include 2 (or more) columns in a `SELECT DISTINCT` clause, your results w
 </div>
 
 ###Using  DISTINCT in aggregations
-You can use `DISTINCT` when performing an aggregation. You will probably use it most commonly with the `COUNT` function. It's pretty practical when exploring data to understand how many distinct values you're working with in a column. In this case, you should run the query below that counts the unique values in the `month` column.
+You can use `DISTINCT` when performing an aggregation. You will probably use it most commonly with the `COUNT` function. When exploring a new data set it can be very helpful to know how many distinct values you're working with in a column. In this case, you should run the query below that counts the unique values in the `month` column.
 
     SELECT COUNT(DISTINCT month) AS unqiue_months
       FROM tutorial.aapl_historical_stock_price
 
-The results show that there are 12 unique value (other examples may be less obvious). That's a small enough number that you might be able to aggregate by month and be able to interpret the results fairly early. For example, you might follow this up by taking average trade volumes by month to get a sense of when Apple stock really moves:
+The results show that there are 12 unique values (other examples may be less obvious). That's a small enough number that you might be able to aggregate by month and be able to interpret the results fairly early. For example, you might follow this up by taking average trade volumes by month to get a sense of when Apple stock really moves:
 
     SELECT month,
            AVG(volume) AS avg_trade_volume
