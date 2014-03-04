@@ -152,7 +152,7 @@
 </ol>
 
 <div class="practice-prob">
-  Write a query that selects all columns from `benn.college_football_players` and adds an additional column that displays the player's name if that player is a junior or senior.
+  Write a query that selects all columns from <code>benn.college_football_players</code> and adds an additional column that displays the player's name if that player is a junior or senior.
 </div>
 
 <div class="practice-prob-answer">
@@ -161,7 +161,10 @@
 
 <h3>Using CASE with aggregations</h3>
 
-<p><code>CASE</code>&#39;s slightly more complicated and substnatially more useful functionality comes from pairing it with aggregators. For example, let&#39;s say you want to only count rows that fulfill a certain condition. Since <code>COUNT</code> ignores nulls, you could use a <code>CASE</code> statement to evaluate the condition and produce null or non-null values depending on the outcome:</p>
+<p><code>CASE</code>&#39;s slightly more complicated and substantially more useful functionality comes from pairing it with aggregators. For example, let&#39;s say you want to only count rows that fulfill a certain condition. Since <code>COUNT</code> ignores nulls, you could use a <code>CASE</code> statement to evaluate the condition and produce null or non-null values depending on the outcome:</p>
+
+<!-- This doesn't make sense.  Read above paragraph.  Why does it matter that COUNT ignores nulls?
+-->
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE WHEN year = &#39;FR&#39; THEN &#39;FR&#39;
             ELSE &#39;Not FR&#39; END AS year_group,
             COUNT(1) AS count
@@ -213,9 +216,14 @@
   <a href="http://stealth.modeanalytics.com/tutorial/reports/e86b592fe1e8" target="_blank">See the Answer &raquo;</a>
 </div>
 
+<!-- These two practice problems were very hard when I first attempted them.  Not entirely sure what to do about it, but maybe more explaination is needed.  Maybe an example using both a CASE and a WHERE clause to show how that would divide up the problem
+-->
+
 <h3>Using CASE Within Aggregations</h3>
 
 <p>The previous example is an excellent lead-in to a primary use-<code>CASE</code> for <code>CASE</code> (sorry for that): creating histograms. In the previous examples, data was displayed vertically, but in some instances, you might want to show data horizontally. This is known as &quot;Pivoting&quot; (like a Pivot Table). Let&#39;s take the following query:</p>
+
+<!-- You mention histograms, then you don't really expand upon it.  You should either go into a bit more depth about it here or cover it later and do a "this is covered in a later lesson" link -->
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE WHEN year = &#39;FR&#39; THEN &#39;FR&#39;
             WHEN year = &#39;SO&#39; THEN &#39;SO&#39;
             WHEN year = &#39;JR&#39; THEN &#39;JR&#39;
@@ -225,19 +233,19 @@
   FROM benn.college_football_players
  GROUP BY 1
 </code></pre></div>
-<p>And make re-orient it horizontally:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE COUNT(CASE WHEN year = &#39;FR&#39; THEN 1 ELSE NULL END) AS fr_count,
-            COUNT(CASE WHEN year = &#39;SO&#39; THEN 1 ELSE NULL END) AS so_count,
-            COUNT(CASE WHEN year = &#39;JR&#39; THEN 1 ELSE NULL END) AS jr_count,
-            COUNT(CASE WHEN year = &#39;SR&#39; THEN 1 ELSE NULL END) AS sr_count
+<p>And re-orient it horizontally:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(CASE WHEN year = &#39;FR&#39; THEN 1 ELSE NULL END) AS fr_count,
+       COUNT(CASE WHEN year = &#39;SO&#39; THEN 1 ELSE NULL END) AS so_count,
+       COUNT(CASE WHEN year = &#39;JR&#39; THEN 1 ELSE NULL END) AS jr_count,
+       COUNT(CASE WHEN year = &#39;SR&#39; THEN 1 ELSE NULL END) AS sr_count
   FROM benn.college_football_players
 </code></pre></div>
-<p>It&#39;s worth noting that going from horizontal to vertical orientation can be a substantially more difficult problem depending the circumstances, and is covered in greater depth in a <a href="/solutions-to-common-problems/pivoting-columns-to-rows.html">later lesson</a>.</p>
+<p>It&#39;s worth noting that going from horizontal to vertical orientation can be a substantially more difficult problem depending on the circumstances, and is covered in greater depth in a <a href="/solutions-to-common-problems/pivoting-columns-to-rows.html">later lesson</a>.</p>
 
 <h3>Practice Time</h3>
 
 <div class="practice-prob">
-  Write a query that displays the number of players in each state, with FR, SO, JR, and SR players in separate columns and another column for the total number of players. Order results such that states with the most players some first.
+  Write a query that displays the number of players in each state, with FR, SO, JR, and SR players in separate columns and another column for the total number of players. Order results such that states with the most players come first.
 </div>
 
 <div class="practice-prob-answer">

@@ -5,12 +5,14 @@ title:  "Outer Joins"
 date:   2014-02-01 00:00:54
 ---
 
-The data for this lesson was pulled from [Crunchbase](http://info.crunchbase.com/about/crunchbase-data-exports/), a crowdsourced index of startups, founders, investors, and the activities of all three. It was collected Feb. 5, 2014, and large portions of both tables were randomly dropped for the sake of this lesson. The first table lists a large portion of companies in the database; one row per company. The `permalink` field is a unique identifier for each row, and also shows the web address. For the 3rd company in the table, ".Club Domains," you can view its online Crunchbase profile by copy/pasting its permalink, "/company/club-domains" after Crunchbase's web domain: [http://www.crunchbase.com/company/club-domains](http://www.crunchbase.com/company/club-domains). The fields with "funding" in the name have to do with how much outside investment (in USD) each company has taken on. The rest of the fields are self-explanatory.
+The data for this lesson was pulled from [Crunchbase](http://info.crunchbase.com/about/crunchbase-data-exports/), a crowdsourced index of startups, founders, investors, and the activities of all three. It was collected Feb. 5, 2014, and large portions of both tables were randomly dropped for the sake of this lesson. The first table lists a large portion of companies in the database; one row per company. The `permalink` field is a unique identifier for each row, and also shows the web address.  For each company in the table, you can view its online Crunchbase profile by copying/pasting its permalink after Crunchbase’s web domain.  For example, the third company in the table, “.Club Domains,” has the permalink “/company/club-domains,” so its profile address would be [http://www.crunchbase.com/company/club-domains](http://www.crunchbase.com/company/club-domains). The fields with "funding" in the name have to do with how much outside investment (in USD) each company has taken on. The rest of the fields are self-explanatory.
 
     SELECT *
       FROM tutorial.crunchbase_companies
 
 The second table lists acquisitions &mdash; one row per acquisition. `company_permalink` in this table is what is called a "join key." It will allow you to append data about acquired companies onto all of the data about each company in `tutorial.crunchbase_companies`. You'll notice that there is a separate field called `acquirer_permalink` as well. This can also be mapped to `tutorial.crunchbase_companies` to get additional information about the acquiring company (if available).
+
+<!-- This entire paragraph should be written.  We have already learned about join keys in the last lesson.  The last few sentences are very confusingly worded, and require further explaination of what you're saying the user could do/why they would do it.  -->
 
     SELECT *
       FROM tutorial.crunchbase_acquisitions
@@ -51,15 +53,16 @@ You can see that the first two companies from the previous result set, #waywire 
 
 This is because the `LEFT JOIN` command tells the database to return all rows in the table in the `FROM` clause, regardless of whether or not they have matches in the table in the `LEFT JOIN` clause. You can explore the differences between a `LEFT JOIN` and a `JOIN` by solving these practice problems:
 
+
 <div class="practice-prob">
-  Write a query that performs an Inner Join between the `tutorial.crunchbase_acquisitions` table and the `tutorial.crunchbase_companies` table as in the above examples, but instead of listing individual rows, count the number of non-null rows in each table.
+  Write a query that performs an Inner Join between the <code>tutorial.crunchbase_acquisitions</code> table and the <code>tutorial.crunchbase_companies</code> table, but instead of listing individual rows, count the number of non-null rows in each table.
 </div>
 <div class="practice-prob-answer">
   <a href="https://stealth.modeanalytics.com/tutorial/reports/e6cde36b3e4a" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
-  Modify the query above to be a `LEFT JOIN`. Note the difference in results.
+  Modify the query above to be a <code>LEFT JOIN</code>. Note the difference in results.
 </div>
 <div class="practice-prob-answer">
   <a href="https://stealth.modeanalytics.com/tutorial/reports/0653d8834126" target="_blank">See the Answer &raquo;</a>
@@ -77,9 +80,11 @@ Now that you've got a sense of how Left Joins work, try this harder aggregation 
 ###RIGHT JOIN
 Right Joins are similar to Left Joins except they return all rows from the table in the `RIGHT JOIN` clause and only matching rows from the table in the `FROM` clause.
 
-![Right Joins}(http://www.w3schools.com/sql/img_rightjoin.gif)
+![Right Joins](http://www.w3schools.com/sql/img_rightjoin.gif)
 
 `RIGHT JOIN` is rarely used because you can achieve the results of a Right Join by simply switching the two joined table names in a Left Join. For example, this query produces the same results as the previous query:
+
+<!-- The previous example is too far up to compare.  Add a copy of it here.  Also, edit text to reflect this.  -->
 
     SELECT companies.permalink AS companies_permalink,
            companies.name AS companies_name,
@@ -89,10 +94,11 @@ Right Joins are similar to Left Joins except they return all rows from the table
      RIGHT JOIN tutorial.crunchbase_companies companies
         ON companies.permalink = acquisitions.company_permalink
 
+
 The convention of always using `LEFT JOIN` probably exists to make queries easier to read/audit, but beyond that there isn't necessarily a strong reason to avoid using Right Join.
 
 <div class="practice-prob">
-  Rewrite the previous practice query in which you counted total and acquired companies by state, but with a `RIGHT JOIN` instead of a `LEFT JOIN`. The goal is to produce the exact same results.
+  Rewrite the previous practice query in which you counted total and acquired companies by state, but with a <code>RIGHT JOIN</code> instead of a <code>LEFT JOIN</code>. The goal is to produce the exact same results.
 </div>
 <div class="practice-prob-answer">
   <a href="https://stealth.modeanalytics.com/tutorial/reports/f84c80c14c7a" target="_blank">See the Answer &raquo;</a>
@@ -101,7 +107,9 @@ The convention of always using `LEFT JOIN` probably exists to make queries easie
 It's worth noting that `LEFT JOIN` and `RIGHT JOIN` can be written as `LEFT OUTER JOIN` and `RIGHT OUTER JOIN`, respectively.
 
 ###Filtering in the ON clause
-Let's go back to the `LEFT JOIN` example (this time we will add an `ORDER BY` clause):
+Let's take another look at the `LEFT JOIN` example from earlier in this lesson (this time we will add an `ORDER BY` clause):
+
+<!-- This might be a bad example to use, becuase it's not easy to see from the results that it is working.  There are so many NULL values in the acquisitions table that if someone isn't paying complete attention they either won't get it or will at best have to check both queries multiple times.  Maybe you could pull columns from acquisitions that aren't predominantly NULL to give people a better sense that the change is doing something?  -->
 
     SELECT companies.permalink AS companies_permalink,
            companies.name AS companies_name,
@@ -124,7 +132,7 @@ Normally, filtering is processed in the `WHERE` clause once the two tables have 
        AND acquisitions.company_permalink != '/company/1000memories'
      ORDER BY 1
 
-What's happening above is that the conditional statement `AND...` is evaluated before the join occurs. You can think of it as a where clause that only applies to one of the tables. You can tell tha this is only happening in one of the tables because the 1000memories permalink is still displayed in the column that pulls from the other table:
+What's happening above is that the conditional statement `AND...` is evaluated before the join occurs. You can think of it as a where clause that only applies to one of the tables. You can tell that this is only happening in one of the tables because the 1000memories permalink is still displayed in the column that pulls from the other table:
 
 ![Left Join ON Clause Results](/images/intermediate/left-join-on-clause-results.png)
 
@@ -143,15 +151,19 @@ If you move the same filter to the `WHERE` clause, you will notice that the filt
 
 You can see that the 1000memories line is not returned (it would have been between the two highlighted lines below). Also note that filtering in the `WHERE` clause can also filter null values, so we added an extra line to make sure to include the nulls.
 
+<!-- This is unclear.  You say WHERE "can" filter NULLs.  If it's all the time, just say so.  -->
+
 ![Left Join ON Clause Results](/images/intermediate/left-join-on-clause-results.png)
 
 ###Practice Problems
-For this set of practice problems, we're going to introduce a new dataset: `tutorial.crunchbase_investments`. This table is also sourced from Crunchbase and contains much of the same information as the `tutorial.crunchbase_companies` data. It it structured differently, though: it contains one row per *investment*. There can be multiple investments per company &mdash; it's even possible that one investor could invest in the same company multiple times. The column names are pretty self-explanatory. What's important is that `company-permalink` in the `tutorial.crunchbase_investments` table maps to `permalink` in the `tutorial.crunchbase_companies` table. Keep in mind that some random data has been removed from this table for the sake of this lesson.
+For this set of practice problems, we're going to introduce a new dataset: `tutorial.crunchbase_investments`. This table is also sourced from Crunchbase and contains much of the same information as the `tutorial.crunchbase_companies` data. It it structured differently, though: it contains one row per *investment*. There can be multiple investments per company &mdash; it's even possible that one investor could invest in the same company multiple times. The column names are pretty self-explanatory. What's important is that `company_permalink` in the `tutorial.crunchbase_investments` table maps to `permalink` in the `tutorial.crunchbase_companies` table. Keep in mind that some random data has been removed from this table for the sake of this lesson.
 
 It is very likely that you will need to do some exploratory analysis on this table to understand how you might solve the following problems.
 
+<!-- Remove LIMIT from the following practice problem, since it isn't consistant other practice problem answers.  -->
+
 <div class="practice-prob">
-  Write a query that shows a company's name, "status" (found in the Companies table), and the number of unique investors in that company. Order by the number of investors from most to fewest. Limit to only companies in New York.
+  Write a query that shows a company's name, "status" (found in the Companies table), and the number of unique investors in that company. Order by the number of investors from most to fewest. Limit to only companies in the state of New York.
 </div>
 <div class="practice-prob-answer">
   <a href="https://stealth.modeanalytics.com/tutorial/reports/1cf1d38ba1fc" target="_blank">See the Answer &raquo;</a>

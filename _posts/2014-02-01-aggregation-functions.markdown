@@ -24,6 +24,7 @@ As the [beginner tutorial](/the-basics/basic-concepts.html) points out, SQL is e
 
 ###COUNT
 It's easiest to start with `COUNT` because verifying your results is extremely simple. Let's begin by using `*` to select all rows.
+<!-- Revisit the first sentence of this -->
 
     SELECT COUNT(*)
       FROM tutorial.aapl_historical_stock_price
@@ -65,6 +66,7 @@ If you must use spaces, you will need to use double quotes.
       FROM tutorial.aapl_historical_stock_price
 
 *Note: This is really the only place in which you'll ever want to use double quotes in SQL; single quotes for everything else.*
+<!-- Include something in this section about how COUNT(*) and COUNT(1) are equivelant and a matter of preference -->
 
 <div class="practice-prob">
   Write a query that determines counts of every single column. Which column has the most null values?
@@ -140,6 +142,7 @@ There are some cases in which you will want to treat null values as 0. For these
 </div>
 
 ###GROUP BY
+<!-- This section needs to be completely revisited. -->
 All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count the number of entries for each year, for example. `GROUP BY` allows you to separate data into groups which can be aggregated independent of one another. Here's an example:
 
     SELECT year,
@@ -191,6 +194,9 @@ As mentioned in prior tutorials, the order in which you write the clauses is imp
 3. `WHERE`
 4. `GROUP BY`
 5. `ORDER BY`
+
+<!-- So we just spent this whole page learning about aggregation functions.  Where do they fit into this?
+-->
 
 ###Aggregation Practice
 

@@ -23,7 +23,7 @@ Let's say we want to figure out which conference has the highest average weight.
 There's a lot of new stuff happening here, so we'll go step-by-step.
 
 ###Aliases
-When performing joins, it's easiest to give your table names aliases. `benn.college_football_players` is pretty long and annoying to type&mdash;`players` is much easier. You can give a table an alias by adding a space after the table name and typing the alias. As with column names, best practice here is to use all lowercase letters and underscores instead of spaces.
+When performing joins, it's easiest to give your table names aliases. `benn.college_football_players` is pretty long and annoying to type&mdash;`players` is much easier. You can give a table an alias by adding a space after the table name and typing the intended name of the alias. As with column names, best practice here is to use all lowercase letters and underscores instead of spaces.
 
 Once you've given a table an alias, you can refer to columns in that table in the `SELECT` clause using the alias name. For example, the first column selected in the above query is `teams.conference`. Because of the alias, this is equivalent to `benn.college_football_teams.conference`: we're selecting the `conference` column in the `college_football_teams` table in `benn`'s schema.
 
@@ -35,9 +35,11 @@ Once you've given a table an alias, you can refer to columns in that table in th
 </div>
 
 ###JOIN and ON
-After the `FROM` statement, we have two new statements: `JOIN`, which is followed by a table name, and `ON`, which is followed a couple column names separated by an equals sign.
+After the `FROM` statement, we have two new statements: `JOIN`, which is followed by a table name, and `ON`, which is followed by a couple column names separated by an equals sign.
 
 Though the `ON` statement comes after `JOIN`, it's a bit easier to explain it first. `ON` indicates how the two tables (the one after the `FROM` and the one after the `JOIN`) relate to each other. In this case, the school a player went to is indicated by the `school_name` field in the `benn.college_football_players` table. This maps to the `school_name` field in the `benn.colllege_football_teams` table. `teams.school_name` and `players.school_name` are referred to as "foreign keys" or "join keys" because they map to columns in other tables. Their mapping is written as a conditional statement:
+
+<!-- Is it important that you use the term 'map'?  It would be easier/make more sense to a beginner to describe this a bit more plainly.  Also, expand upon join keys is a more straightforward manner.  -->
 
     ON teams.school_name = players.school_name
 
@@ -46,6 +48,9 @@ In plain English, this means:
 > Join all rows from the `players` table on to rows in the `teams` table for which the `school_name` field in the `players` table is equal to the `school_name` field in the `teams` table.
 
 What does this actually do? Let's take a look at one row to see what happens. This is the row in the players table for Wake Forest wide receiver Michael Campanaro:
+
+<!-- These images need to be larger -->
+
 
 ![WF player](/images/intermediate/player-join-example.png)
 
@@ -74,7 +79,11 @@ If there are multiple schools in the `teams` table with the same name, each one 
 
 While SQL always handles this first case the same, how it handles the second case depends on the type of join in the query. In addition to identifying the table you want to join onto the table in the `FROM` clause, the `JOIN` identifies the type of join you want to perform. 
 
+<!-- It's pretty vague when you refer to 'this first case' vs the second case.  'This' makes it sound like what you were just talking about is the first case, although I don't think that's what you mean.  Just clarify this sentence.  -->
+
 The most common type of join &mdash; an *inner join* &mdash; can be written as either `JOIN benn.college_football_teams teams` or `INNER JOIN benn.college_football_teams teams`. Inner Joins eliminate rows from both tables that do not satisfy the join condition set forth in the `ON` statement. In mathematical terms, an Inner Join is the *intersection* of the two tables.
+
+<!-- Include something about how writing INNER is personal preference, and simply works to make your query easier to understand at a glance (if that is indeed the case). -->
 
 ![inner join](http://www.w3schools.com/sql/img_innerjoin.gif)
 
@@ -92,7 +101,7 @@ When you join two tables, it might be the case that both tables have columns wit
 The results can only support one column with a given name &mdash; when you include 2 columns of the same name, the results will simply show the exact same result set for both columns **even if the two columns should contain different data**. You can avoid this by naming the columns individually. It happens that these two columns will actually contain the same data because they are used for the join key, but the following query technically allows these columns to be independent:
 
     SELECT players.school_name AS players_school_name,
-           teams.school_name AS teams_school name
+           teams.school_name AS teams_school_name
       FROM benn.college_football_players players
       JOIN benn.college_football_teams teams
         ON teams.school_name = players.school_name
@@ -106,7 +115,7 @@ The results can only support one column with a given name &mdash; when you inclu
   <a href="https://stealth.modeanalytics.com/derek/reports/5524469aae3e" target="_blank">See the Answer &raquo;</a>
 </div>
 
-<!-->
+<!--
 <div class="practice-prob">
   Join practice 2
 </div>
@@ -115,4 +124,4 @@ The results can only support one column with a given name &mdash; when you inclu
 </div>
 -->
 
-If you want to keep the rows that aren't matched, you'll can use Outer Joins, which are covered in [next lesson](/intermediate/outer-joins.html).
+If you want to keep the rows that aren't matched, you can use Outer Joins, which are covered in the [next lesson](/intermediate/outer-joins.html).

@@ -83,7 +83,8 @@
 
 <h3>COUNT</h3>
 
-<p>It&#39;s easiest to start with <code>COUNT</code> because verifying your results is extremely simple. Let&#39;s begin by using <code>*</code> to select all rows.</p>
+<p>It&#39;s easiest to start with <code>COUNT</code> because verifying your results is extremely simple. Let&#39;s begin by using <code>*</code> to select all rows.
+&lt;!-- Revisit the first sentence of this --&gt;</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(*)
   FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
@@ -121,7 +122,8 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(date) AS &quot;Count Of Date&quot;
   FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
-<p><em>Note: This is really the only place in which you&#39;ll ever want to use double quotes in SQL; single quotes for everything else.</em></p>
+<p><em>Note: This is really the only place in which you&#39;ll ever want to use double quotes in SQL; single quotes for everything else.</em>
+&lt;!-- Include something in this section about how COUNT(*) and COUNT(1) are equivelant and a matter of preference --&gt;</p>
 
 <div class="practice-prob">
   Write a query that determines counts of every single column. Which column has the most null values?
@@ -201,6 +203,8 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 
 <h3>GROUP BY</h3>
 
+<!-- This section needs to be completely revisited. -->
+
 <p>All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count the number of entries for each year, for example. <code>GROUP BY</code> allows you to separate data into groups which can be aggregated independent of one another. Here&#39;s an example:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year,
        COUNT(*) as count
@@ -252,6 +256,9 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 <li><code>GROUP BY</code></li>
 <li><code>ORDER BY</code></li>
 </ol>
+
+<!-- So we just spent this whole page learning about aggregation functions.  Where do they fit into this?
+-->
 
 <h3>Aggregation Practice</h3>
 
