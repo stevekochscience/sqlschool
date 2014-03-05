@@ -6,7 +6,7 @@ date:   2014-02-01 00:00:53
 ---
 <!-- This introduction about using tutorial.crunchbase_investments was already given on the bottom of the page we just finished.  Are you sure you want it here again in such similar phrasing?  At the very least, you should remove "This time, however,".
 
-Also, reading a bit ahead you reference tutorial.crunchbase_investments in this intro paragraph when in actuality we will be using tutorial.crunchbase_investments_part1 in this tutorial.  If it's different data from the last lesson, why not say so from the beginning?  -->
+Also, reading a bit ahead you specifically reference tutorial.crunchbase_investments in this intro paragraph when in actuality we will be using tutorial.crunchbase_investments_part1 in this tutorial.  -->
 
 This lesson uses the same data from the previous lesson, which was pulled from [Crunchbase](http://info.crunchbase.com/about/crunchbase-data-exports/) on Feb. 5, 2014. This time, however, you will also use the `tutorial.crunchbase_investments` table, which contains one row per investor, per investment. So a particular investment in a company on a given date might show up in multiple rows if multiple investors participated. As in the previous lesson, large portions of both tables were randomly dropped for the sake of this lesson. For more complete notes on Crunchbase data, return to the [previous lesson](/intermediate/outer-joins.html). For now, you should acquaint yourself with the `tutorial.crunchbase_investments` table:
 

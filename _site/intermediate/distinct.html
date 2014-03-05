@@ -89,13 +89,15 @@
 
 <h3>Using  DISTINCT in aggregations</h3>
 
-<p>You can use <code>DISTINCT</code> when performing an aggregation. You will probably use it most commonly with the <code>COUNT</code> function. When exploring a new data set it can be very helpful to know how many distinct values you&#39;re working with in a column. In this case, you should run the query below that counts the unique values in the <code>month</code> column.
-&lt;!-- I think this section could use further explaination.  You could be a bit more explicit about how this applies to actual analysis scenarios.  Something like this:</p>
+<p>You can use <code>DISTINCT</code> when performing an aggregation. You will probably use it most commonly with the <code>COUNT</code> function. When exploring a new data set it can be very helpful to know how many distinct values you&#39;re working with in a column. </p>
 
-<p>&quot;Keep in mind that when working with data in a real-world scenario, you will generally write several queries which ultimately lead you to the information you need to answer a question or solve a problem.&quot;</p>
+<!-- DEREK: Use this if you like it, or add something equivelant that makes sense to you.
 
-<p>...except coming from someone who actually knows real-world scenarios.
---&gt;</p>
+"Keep in mind that when working with data in a real-world scenario, you will generally end up write several prelimenary queries in order to figure out the best approach to answering your initial question."
+
+-->
+
+<p>In this case, you should run the query below that counts the unique values in the <code>month</code> column.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(DISTINCT month) AS unqiue_months
   FROM tutorial.aapl_historical_stock_price
 </code></pre></div>

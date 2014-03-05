@@ -101,8 +101,6 @@ You can also string together multiple conditional statements with `AND` and `OR`
 ###Using CASE with aggregations
 `CASE`'s slightly more complicated and substantially more useful functionality comes from pairing it with aggregators. For example, let's say you want to only count rows that fulfill a certain condition. Since `COUNT` ignores nulls, you could use a `CASE` statement to evaluate the condition and produce null or non-null values depending on the outcome:
 
-<!-- This doesn't make sense.  Read above paragraph.  Why does it matter that COUNT ignores nulls?
--->
 
     SELECT CASE WHEN year = 'FR' THEN 'FR'
                 ELSE 'Not FR' END AS year_group,
@@ -156,12 +154,12 @@ The above query is an excellent place to use numbers instead of columns in the `
   <a href="http://stealth.modeanalytics.com/tutorial/reports/e86b592fe1e8" target="_blank">See the Answer &raquo;</a>
 </div>
 
-<!-- These two practice problems were very hard when I first attempted them.  Not entirely sure what to do about it, but maybe more explaination is needed.  Maybe an example using both a CASE and a WHERE clause to show how that would divide up the problem
+<!-- DEREK: These two practice problems were very hard when I first attempted them.  Not entirely sure what to do about it, but maybe more explaination is needed.  Maybe an example using both a CASE and a WHERE clause to show how that would divide up the problem
 -->
 ###Using CASE Within Aggregations
 The previous example is an excellent lead-in to a primary use-`CASE` for `CASE` (sorry for that): creating histograms. In the previous examples, data was displayed vertically, but in some instances, you might want to show data horizontally. This is known as "Pivoting" (like a Pivot Table). Let's take the following query:
 
-<!-- You mention histograms, then you don't really expand upon it.  You should either go into a bit more depth about it here or cover it later and do a "this is covered in a later lesson" link -->
+<!-- DEREK: You mention histograms, then you don't really expand upon it.  You should either go into a bit more depth about it here or cover it later and do a "this is covered in a later lesson" link -->
 
     SELECT CASE WHEN year = 'FR' THEN 'FR'
                 WHEN year = 'SO' THEN 'SO'

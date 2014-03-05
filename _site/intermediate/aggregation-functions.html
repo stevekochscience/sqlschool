@@ -83,15 +83,19 @@
 
 <h3>COUNT</h3>
 
-<p>It&#39;s easiest to start with <code>COUNT</code> because verifying your results is extremely simple. Let&#39;s begin by using <code>*</code> to select all rows.
-&lt;!-- Revisit the first sentence of this --&gt;</p>
+<p>It&#39;s easiest to start with <code>COUNT</code> because verifying your results is extremely simple. Let&#39;s begin by using <code>*</code> to select all rows.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(*)
   FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
+<p><em>Note: Typing</em> <code>COUNT(1)</code> <em>has the same effect as</em> <code>COUNT(*)</code><em>.  Which one you use is a matter of personal preference.</em></p>
+
 <!--
+DEREK: think this was your note.
+
 You can see that the result showed a count of all rows to be 3555. Turn the limit off and run the following query and note that Mode actually provides a row count, which should be the same as the result of the above query:
 
     SELECT * FROM tutorial.aapl_historical_stock_price
+
 -->
 
 <p>Things start to get a little bit tricky when you want to count individual columns. The following code will provide a count of all of rows in which the <code>high</code> column <strong>is not null</strong>.</p>
@@ -122,8 +126,7 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT COUNT(date) AS &quot;Count Of Date&quot;
   FROM tutorial.aapl_historical_stock_price
 </code></pre></div>
-<p><em>Note: This is really the only place in which you&#39;ll ever want to use double quotes in SQL; single quotes for everything else.</em>
-&lt;!-- Include something in this section about how COUNT(*) and COUNT(1) are equivelant and a matter of preference --&gt;</p>
+<p><em>Note: This is really the only place in which you&#39;ll ever want to use double quotes in SQL; single quotes for everything else.</em></p>
 
 <div class="practice-prob">
   Write a query that determines counts of every single column. Which column has the most null values?
@@ -203,18 +206,18 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 
 <h3>GROUP BY</h3>
 
-<!-- This section needs to be completely revisited. -->
+<!-- Not sure which one of us would be best suited to tackling this.  This whole section needs to be completely revisited. -->
 
 <p>All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count the number of entries for each year, for example. <code>GROUP BY</code> allows you to separate data into groups which can be aggregated independent of one another. Here&#39;s an example:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year,
-       COUNT(*) as count
+       COUNT(*) AS count
   FROM tutorial.aapl_historical_stock_price
  GROUP BY year
 </code></pre></div>
 <p>You can group by multiple columns, but you have to separate column names with commas &mdash; just as with <code>ORDER BY</code>:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year,
        month,
-       COUNT(*) as count
+       COUNT(*) AS count
   FROM tutorial.aapl_historical_stock_price
  GROUP BY year, month
 </code></pre></div>
@@ -229,7 +232,7 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 <p>As in <a href="/the-basics/order-by.html">ORDER BY</a>, you can substitute numbers for column names in the <code>GROUP BY</code> clause. It&#39;s generally recommended to do this only when you are grouping many columns, or if something else is causing the text in the <code>GROUP BY</code> clause to be excessively long:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year,
        month,
-       COUNT(*) as count
+       COUNT(*) AS count
   FROM tutorial.aapl_historical_stock_price
  GROUP BY 1, 2
 </code></pre></div>
@@ -238,7 +241,7 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 <p>The order of column names in your <code>GROUP BY</code> clause doesn&#39;t matter &mdash; the results will be the same regardless. If you want to control how the aggregations are grouped together, use <code>ORDER BY</code>. Try running the query below, then reverse the column names in the <code>ORDER BY</code> statement and see how it looks:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT year,
        month,
-       COUNT(*) as count
+       COUNT(*) AS count
   FROM tutorial.aapl_historical_stock_price
  GROUP BY year, month
  ORDER BY month, year
@@ -257,7 +260,7 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 <li><code>ORDER BY</code></li>
 </ol>
 
-<!-- So we just spent this whole page learning about aggregation functions.  Where do they fit into this?
+<!-- Maybe include something about where the things we are learning on this page fit in?  Otherwise this seems like an arbitrary location for this section.
 -->
 
 <h3>Aggregation Practice</h3>
