@@ -39,7 +39,7 @@ After the `FROM` statement, we have two new statements: `JOIN`, which is followe
 
 Though the `ON` statement comes after `JOIN`, it's a bit easier to explain it first. `ON` indicates how the two tables (the one after the `FROM` and the one after the `JOIN`) relate to each other. In this case, the school a player went to is indicated by the `school_name` field in the `benn.college_football_players` table. This maps to the `school_name` field in the `benn.colllege_football_teams` table. `teams.school_name` and `players.school_name` are referred to as "foreign keys" or "join keys" because they map to columns in other tables. Their mapping is written as a conditional statement:
 
-<!-- Is it important that you use the term 'map'?  It would be easier/make more sense to a beginner to describe this a bit more plainly.  Also, expand upon join keys is a more straightforward manner.  -->
+<!-- DEREK: Is it important that you use the term 'map'?  It would be easier/make more sense to a beginner to describe this a bit more plainly.  -->
 
     ON teams.school_name = players.school_name
 
@@ -49,7 +49,7 @@ In plain English, this means:
 
 What does this actually do? Let's take a look at one row to see what happens. This is the row in the players table for Wake Forest wide receiver Michael Campanaro:
 
-<!-- These images need to be larger -->
+<!-- DEREK: I think this section could better demonstrate join keys.  If you had images of both indivitual section first, then an image of them joined together with the key column highlighted in a different color/organized so it is the actual bridge point between the two tables, it would be easier for a reader to understand.  Text would of course need to be adjusted to reflect this.  Also, these small images are really hard to read.  I know the formatting is nice this way, but this is a pain in the ass for me, so I can only imagine what older users would think. -->
 
 
 ![WF player](/images/intermediate/player-join-example.png)
@@ -79,11 +79,9 @@ If there are multiple schools in the `teams` table with the same name, each one 
 
 While SQL always handles this first case the same, how it handles the second case depends on the type of join in the query. In addition to identifying the table you want to join onto the table in the `FROM` clause, the `JOIN` identifies the type of join you want to perform. 
 
-<!-- It's pretty vague when you refer to 'this first case' vs the second case.  'This' makes it sound like what you were just talking about is the first case, although I don't think that's what you mean.  Just clarify this sentence.  -->
+<!-- DEREK: It's pretty vague when you refer to 'this first case' vs the second case.  'This' makes it sound like what you were just talking about is the first case, although I don't think that's what you mean.  Just clarify this sentence.  -->
 
 The most common type of join &mdash; an *inner join* &mdash; can be written as either `JOIN benn.college_football_teams teams` or `INNER JOIN benn.college_football_teams teams`. Inner Joins eliminate rows from both tables that do not satisfy the join condition set forth in the `ON` statement. In mathematical terms, an Inner Join is the *intersection* of the two tables.
-
-<!-- Include something about how writing INNER is personal preference, and simply works to make your query easier to understand at a glance (if that is indeed the case). -->
 
 ![inner join](http://www.w3schools.com/sql/img_innerjoin.gif)
 

@@ -12,7 +12,7 @@ The data for this lesson was pulled from [Crunchbase](http://info.crunchbase.com
 
 The second table lists acquisitions &mdash; one row per acquisition. `company_permalink` in this table is what is called a "join key." It will allow you to append data about acquired companies onto all of the data about each company in `tutorial.crunchbase_companies`. You'll notice that there is a separate field called `acquirer_permalink` as well. This can also be mapped to `tutorial.crunchbase_companies` to get additional information about the acquiring company (if available).
 
-<!-- This entire paragraph should be written.  We have already learned about join keys in the last lesson.  The last few sentences are very confusingly worded, and require further explaination of what you're saying the user could do/why they would do it.  -->
+<!-- DEREK: This entire paragraph should be re-written.  We have already learned about join keys in the last lesson.  The last few sentences are very confusingly worded, and require further explaination of what you're saying the user could do/why they would do it.  -->
 
     SELECT *
       FROM tutorial.crunchbase_acquisitions
@@ -82,9 +82,17 @@ Right Joins are similar to Left Joins except they return all rows from the table
 
 ![Right Joins](http://www.w3schools.com/sql/img_rightjoin.gif)
 
-`RIGHT JOIN` is rarely used because you can achieve the results of a Right Join by simply switching the two joined table names in a Left Join. For example, this query produces the same results as the previous query:
+`RIGHT JOIN` is rarely used because you can achieve the results of a Right Join by simply switching the two joined table names in a Left Join. For example, this query from the Left Join section:
 
-<!-- The previous example is too far up to compare.  Add a copy of it here.  Also, edit text to reflect this.  -->
+    SELECT companies.permalink AS companies_permalink,
+           companies.name AS companies_name,
+           acquisitions.company_permalink AS acquisitions_permalink,
+           acquisitions.acquired_at AS acquired_date
+      FROM tutorial.crunchbase_companies companies
+      LEFT JOIN tutorial.crunchbase_acquisitions acquisitions
+        ON companies.permalink = acquisitions.company_permalink
+
+ produces the same results as this query:
 
     SELECT companies.permalink AS companies_permalink,
            companies.name AS companies_name,
@@ -109,7 +117,7 @@ It's worth noting that `LEFT JOIN` and `RIGHT JOIN` can be written as `LEFT OUTE
 ###Filtering in the ON clause
 Let's take another look at the `LEFT JOIN` example from earlier in this lesson (this time we will add an `ORDER BY` clause):
 
-<!-- This might be a bad example to use, becuase it's not easy to see from the results that it is working.  There are so many NULL values in the acquisitions table that if someone isn't paying complete attention they either won't get it or will at best have to check both queries multiple times.  Maybe you could pull columns from acquisitions that aren't predominantly NULL to give people a better sense that the change is doing something?  -->
+<!-- DEREK: This might be a bad example to use, becuase it's not easy to see from the results that it is working.  There are so many NULL values in the acquisitions table that if someone isn't paying complete attention they either won't get it or will at best have to check both queries multiple times.  Maybe you could pull columns from acquisitions that aren't predominantly NULL to give people a better sense that the change is doing something?  -->
 
     SELECT companies.permalink AS companies_permalink,
            companies.name AS companies_name,
@@ -150,8 +158,6 @@ If you move the same filter to the `WHERE` clause, you will notice that the filt
      ORDER BY 1
 
 You can see that the 1000memories line is not returned (it would have been between the two highlighted lines below). Also note that filtering in the `WHERE` clause can also filter null values, so we added an extra line to make sure to include the nulls.
-
-<!-- This is unclear.  You say WHERE "can" filter NULLs.  If it's all the time, just say so.  -->
 
 ![Left Join ON Clause Results](/images/intermediate/left-join-on-clause-results.png)
 

@@ -162,9 +162,6 @@
 <h3>Using CASE with aggregations</h3>
 
 <p><code>CASE</code>&#39;s slightly more complicated and substantially more useful functionality comes from pairing it with aggregators. For example, let&#39;s say you want to only count rows that fulfill a certain condition. Since <code>COUNT</code> ignores nulls, you could use a <code>CASE</code> statement to evaluate the condition and produce null or non-null values depending on the outcome:</p>
-
-<!-- This doesn't make sense.  Read above paragraph.  Why does it matter that COUNT ignores nulls?
--->
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE WHEN year = &#39;FR&#39; THEN &#39;FR&#39;
             ELSE &#39;Not FR&#39; END AS year_group,
             COUNT(1) AS count
@@ -216,14 +213,14 @@
   <a href="http://stealth.modeanalytics.com/tutorial/reports/e86b592fe1e8" target="_blank">See the Answer &raquo;</a>
 </div>
 
-<!-- These two practice problems were very hard when I first attempted them.  Not entirely sure what to do about it, but maybe more explaination is needed.  Maybe an example using both a CASE and a WHERE clause to show how that would divide up the problem
+<!-- DEREK: These two practice problems were very hard when I first attempted them.  Not entirely sure what to do about it, but maybe more explaination is needed.  Maybe an example using both a CASE and a WHERE clause to show how that would divide up the problem
 -->
 
 <h3>Using CASE Within Aggregations</h3>
 
 <p>The previous example is an excellent lead-in to a primary use-<code>CASE</code> for <code>CASE</code> (sorry for that): creating histograms. In the previous examples, data was displayed vertically, but in some instances, you might want to show data horizontally. This is known as &quot;Pivoting&quot; (like a Pivot Table). Let&#39;s take the following query:</p>
 
-<!-- You mention histograms, then you don't really expand upon it.  You should either go into a bit more depth about it here or cover it later and do a "this is covered in a later lesson" link -->
+<!-- DEREK: You mention histograms, then you don't really expand upon it.  You should either go into a bit more depth about it here or cover it later and do a "this is covered in a later lesson" link -->
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT CASE WHEN year = &#39;FR&#39; THEN &#39;FR&#39;
             WHEN year = &#39;SO&#39; THEN &#39;SO&#39;
             WHEN year = &#39;JR&#39; THEN &#39;JR&#39;

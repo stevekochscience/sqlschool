@@ -24,15 +24,20 @@ As the [beginner tutorial](/the-basics/basic-concepts.html) points out, SQL is e
 
 ###COUNT
 It's easiest to start with `COUNT` because verifying your results is extremely simple. Let's begin by using `*` to select all rows.
-<!-- Revisit the first sentence of this -->
+
 
     SELECT COUNT(*)
       FROM tutorial.aapl_historical_stock_price
 
+<em>Note: Typing</em> <code>COUNT(1)</code> <em>has the same effect as</em> <code>COUNT(\*)</code><em>.  Which one you use is a matter of personal preference.</em>
+
 <!--
+DEREK: think this was your note.
+
 You can see that the result showed a count of all rows to be 3555. Turn the limit off and run the following query and note that Mode actually provides a row count, which should be the same as the result of the above query:
 
     SELECT * FROM tutorial.aapl_historical_stock_price
+
 -->
 Things start to get a little bit tricky when you want to count individual columns. The following code will provide a count of all of rows in which the `high` column **is not null**.
 
@@ -66,7 +71,6 @@ If you must use spaces, you will need to use double quotes.
       FROM tutorial.aapl_historical_stock_price
 
 *Note: This is really the only place in which you'll ever want to use double quotes in SQL; single quotes for everything else.*
-<!-- Include something in this section about how COUNT(*) and COUNT(1) are equivelant and a matter of preference -->
 
 <div class="practice-prob">
   Write a query that determines counts of every single column. Which column has the most null values?
@@ -142,11 +146,11 @@ There are some cases in which you will want to treat null values as 0. For these
 </div>
 
 ###GROUP BY
-<!-- This section needs to be completely revisited. -->
+<!-- Not sure which one of us would be best suited to tackling this.  This whole section needs to be completely revisited. -->
 All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count the number of entries for each year, for example. `GROUP BY` allows you to separate data into groups which can be aggregated independent of one another. Here's an example:
 
     SELECT year,
-           COUNT(*) as count
+           COUNT(*) AS count
       FROM tutorial.aapl_historical_stock_price
      GROUP BY year
 
@@ -154,7 +158,7 @@ You can group by multiple columns, but you have to separate column names with co
 
     SELECT year,
            month,
-           COUNT(*) as count
+           COUNT(*) AS count
       FROM tutorial.aapl_historical_stock_price
      GROUP BY year, month
 
@@ -169,7 +173,7 @@ As in [ORDER BY](/the-basics/order-by.html), you can substitute numbers for colu
 
     SELECT year,
            month,
-           COUNT(*) as count
+           COUNT(*) AS count
       FROM tutorial.aapl_historical_stock_price
      GROUP BY 1, 2
 
@@ -179,7 +183,7 @@ The order of column names in your `GROUP BY` clause doesn't matter &mdash; the r
 
     SELECT year,
            month,
-           COUNT(*) as count
+           COUNT(*) AS count
       FROM tutorial.aapl_historical_stock_price
      GROUP BY year, month
      ORDER BY month, year
@@ -195,7 +199,7 @@ As mentioned in prior tutorials, the order in which you write the clauses is imp
 4. `GROUP BY`
 5. `ORDER BY`
 
-<!-- So we just spent this whole page learning about aggregation functions.  Where do they fit into this?
+<!-- Maybe include something about where the things we are learning on this page fit in?  Otherwise this seems like an arbitrary location for this section.
 -->
 
 ###Aggregation Practice
