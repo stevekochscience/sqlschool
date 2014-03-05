@@ -94,7 +94,6 @@ blockquote p {
 /* Top Nav */
 nav#header-nav {
   background-color:#D7DDDB;
-  height:50px;
 }
 
 div.container#header-container {
@@ -113,6 +112,10 @@ li#navbar-sqlschool, li#navbar-logo {
   font-family: Antenna;
   font-style: normal;
   font-weight: normal;
+}
+
+li#navbar-sqlschool {
+  margin-left:15px;
 }
 
 img#header-logo {
@@ -166,7 +169,7 @@ a.category {
   text-transform: capitalize;
 }
 
-li {
+.main li, .question li {
   color: black;
   margin-left: 12px;
   margin-bottom: 5px;
