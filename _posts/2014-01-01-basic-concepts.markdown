@@ -34,7 +34,7 @@ If you've used Excel, you should already be familiar with tables &mdash; they're
 
 ![Create a New Query](/images/the-basics/sample-table.png)
 
-Broadly, within databases, tables are organized in [schemas](http://en.wikipedia.org/wiki/Database_schema "Database Schemas"). At Mode, we organize tables around the users who upload them, so each person has his or her own schema. Schemas are defined by usernames, so if your username is databass3000, all of the tables you upload will be stored under the databass3000 schema. For example, if databass3000 uploads a table on fish food sales called `fish_food_sales`, that table would be referenced as `databass3000.fish&#95;food&#95;sales`. You'll notice that all of the tables used in this tutorial series are prefixed with "tutorial." That's because they were uploaded by an account with that username.
+Broadly, within databases, tables are organized in [schemas](http://en.wikipedia.org/wiki/Database_schema "Database Schemas"). At Mode, we organize tables around the users who upload them, so each person has his or her own schema. Schemas are defined by usernames, so if your username is databass3000, all of the tables you upload will be stored under the databass3000 schema. For example, if databass3000 uploads a table on fish food sales called `fish_food_sales`, that table would be referenced as `databass3000.fish_food_sales`. You'll notice that all of the tables used in this tutorial series are prefixed with "tutorial." That's because they were uploaded by an account with that username.
 
 ###You're on your way!
 Now that you're familiar with the basics, it's time to dive in and learn some SQL.
