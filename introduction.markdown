@@ -10,7 +10,7 @@ Learning SQL is the first step to contributing to the Mode community. It's not t
 
 The entire demo is meant to be completed using Mode, so you should <a href="http://stealth.modeanalytics.com" target="_blank">open up another browser window to Mode</a>. You'll retain the most information if you run the example queries and try to understand results, and complete the practice exercises.
 
-*Note: You will need to have a Mode user account in order to start the tutorial. If you do not already have one, follow the instructions on the Mode homepage to sign up for a free account.*
+*Note: You will need to have a Mode user account in order to start the tutorial. If you do not already have one, [drop us an email to be added to the private beta](mailto:info@modeanalytics.com)*
 
 It's also important to note that this tutorial focuses entirely on using SQL to read and analyze data&mdash;it is not a comprehensive resource for aspiring software developers (though it may be a good place to start).
 
