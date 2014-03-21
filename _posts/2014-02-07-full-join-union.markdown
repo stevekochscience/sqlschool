@@ -36,7 +36,7 @@ You might also notice that surprisingly few rows in the `crunchbase_acquisitions
   Write a query that joins <code>tutorial.crunchbase_companies</code> and <code>tutorial.crunchbase_investments_part1</code> using a <code>FULL JOIN</code>. Count up the number of rows that are matched/unmatched as in the example above.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/524108a9e0b0" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/524108a9e0b0" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###UNION
@@ -76,7 +76,7 @@ Since you are writing two separate `SELECT` statements, you can treat them diffe
   Write a query that appends the two crunchbase_investments datasets above (including duplicate values). Filter the first dataset to only companies with names that start with the letter "T", and filter the second to companies names starting with "M" (both not case-sensitive). Only include the <code>company_permalink</code>, <code>company_name</code>, and <code>investor_name</code> columns.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/46ac1e3a5886" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/46ac1e3a5886" target="_blank">See the Answer &raquo;</a>
 </div>
 
 For a bit more of a challenge:
@@ -87,7 +87,7 @@ For a bit more of a challenge:
   Write a query that shows 3 columns. The first indicates which dataset (part 1 or 2) the data comes from, the second shows company status, and the third is a count of the number of investors. Hint: you will have to use the <code>tutorial.crunchbase_companies</code> table as well as the investments tables.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/e8ebd7cc9d23" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/e8ebd7cc9d23" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <!-- This links back to the top of this page.  Should go back to index or wherever you want to send people finished with intermediate level. -->

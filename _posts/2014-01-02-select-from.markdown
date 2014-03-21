@@ -8,7 +8,7 @@ date:   2014-01-01 00:00:58
 ###Opening Mode and Getting Started
 If you're not yet signed up for Mode, [drop us an email to be added to the private beta](mailto:info@modeanalytics.com).
 
-If you haven't already, open a second browser window to <a href="http://stealth.modeanalytics.com" target="_blank">Mode</a> and log in. You'll arrive at your homepage. You can use the homepage to explore the community or to quickly access a project you were working on previously. Since you probably haven't used Mode yet, click "New Query" to get started.
+If you haven't already, open a second browser window to <a href="https://modeanalytics.com" target="_blank">Mode</a> and log in. You'll arrive at your homepage. You can use the homepage to explore the community or to quickly access a project you were working on previously. Since you probably haven't used Mode yet, click "New Query" to get started.
 
 ![Create a New Query](/images/the-basics/new-query.png)
 
@@ -58,7 +58,7 @@ Now try this practice problem for yourself:
   Write a query to select all of the columns in the <code>tutorial.us_housing_units_completed</code> table without using <code>*</code>.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/cc50612804ae" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/cc50612804ae" target="_blank">See the Answer &raquo;</a>
 </div>
 
 *Note: Practice problems will appear in white boxes as above throughout this tutorial.*
@@ -106,7 +106,7 @@ Without the double quotes, that query would read 'West' and 'Region' as separate
   Write a query to select all of the columns in <code>tutorial.us_housing_units_completed</code> and rename them so that their first letters are capitalized
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/740ad94d2ef9" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/740ad94d2ef9" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###LIMIT
@@ -135,7 +135,7 @@ The limiting functionality is built into Mode to prevent you from accidentally r
   Write a query that uses <code>LIMIT</code> manually (written into the query) to restrict the result set to only 15 rows
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/62f423b84e97" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/62f423b84e97" target="_blank">See the Answer &raquo;</a>
 </div>
 
 Congrats on learning the basics! Let's now move on to some commands that will allow you to filter the data.

@@ -64,7 +64,7 @@ You could replace `integer` with any other data type that would make sense for t
   Convert the <code>funding_total_usd</code> and <code>founded_at_clean</code> columns in the <code>tutorial.crunchbase_companies_clean_date</code> table to strings (varchar formar) using a different formatting function for each one.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/7387437bcb8c" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/7387437bcb8c" target="_blank">See the Answer &raquo;</a>
 </div>
 
 Mode's public service (the thing you're using to complete this tutorial) performs implicit conversion in [certain circumstances](http://docs.aws.amazon.com/redshift/latest/dg/r_Type_conversion.html), so data types are rarely likely to be problematic. However, if you're accessing an external database (your employer's, for example), you may need to be careful about managing data types for some functions.
@@ -125,7 +125,7 @@ If you're interested in digging deeper into all of the ways you can manipulate d
   Write a query that counts the number of companies acquired within 3 year, 5 years, and 10 years or founding (in 3 separate columns). Include a column for total companies acquired as well. Group by category and limit to only rows with a founding date.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/3043c5879728" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/3043c5879728" target="_blank">See the Answer &raquo;</a>
 </div>
 
 You can add the current time (at the time you run the query) into your code using the `NOW()`function:

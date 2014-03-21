@@ -58,14 +58,14 @@ This is because the `LEFT JOIN` command tells the database to return all rows in
   Write a query that performs an Inner Join between the <code>tutorial.crunchbase_acquisitions</code> table and the <code>tutorial.crunchbase_companies</code> table, but instead of listing individual rows, count the number of non-null rows in each table.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/e6cde36b3e4a" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/e6cde36b3e4a" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Modify the query above to be a <code>LEFT JOIN</code>. Note the difference in results.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/0653d8834126" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/0653d8834126" target="_blank">See the Answer &raquo;</a>
 </div>
 
 Now that you've got a sense of how Left Joins work, try this harder aggregation problem:
@@ -74,7 +74,7 @@ Now that you've got a sense of how Left Joins work, try this harder aggregation 
   Count the number of unique companies (don't double-count companies) and unique *acquired* companies by state. Do not include results for which there is no state data, and order by the number of acquired companies from highest to lowest.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/8805606278ee" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/8805606278ee" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###RIGHT JOIN
@@ -109,7 +109,7 @@ The convention of always using `LEFT JOIN` probably exists to make queries easie
   Rewrite the previous practice query in which you counted total and acquired companies by state, but with a <code>RIGHT JOIN</code> instead of a <code>LEFT JOIN</code>. The goal is to produce the exact same results.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/f84c80c14c7a" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/f84c80c14c7a" target="_blank">See the Answer &raquo;</a>
 </div>
 
 It's worth noting that `LEFT JOIN` and `RIGHT JOIN` can be written as `LEFT OUTER JOIN` and `RIGHT OUTER JOIN`, respectively.
@@ -172,14 +172,14 @@ It is very likely that you will need to do some exploratory analysis on this tab
   Write a query that shows a company's name, "status" (found in the Companies table), and the number of unique investors in that company. Order by the number of investors from most to fewest. Limit to only companies in the state of New York.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/1cf1d38ba1fc" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/1cf1d38ba1fc" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Write a query that lists investors based on the number of currently operating companies in which they are invested. Include a row for companies with no investor, and order from most companies to least.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/58d5744f474b" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/58d5744f474b" target="_blank">See the Answer &raquo;</a>
 </div>
 
 

@@ -38,7 +38,7 @@ If you'd like your results in the opposite order (referred to as descending orde
   Write a query that returns all rows from 2012, ordered by song title from Z to A.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/bb73b574f95a" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/bb73b574f95a" target="_blank">See the Answer &raquo;</a>
 </div>
 
 You can also order by mutiple columns. This is particularly useful if your data falls into categories and you'd like to organize rows by date, for example, but keep all of the results within a given category together. This example make the most recent years come first, but order top-ranks songs before lower-ranked songs:
@@ -70,7 +70,7 @@ When using `ORDER BY` with a row limit (either through the check box on the quer
   Write a query that returns all rows from 2010 ordered by rank, with artists ordered alphabetically for each song.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/1e40d45ef12f" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/1e40d45ef12f" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Using Comments
@@ -96,30 +96,30 @@ You can also leave comments across multiple lines using `/*` to begin the commen
   Write a query that shows all rows for which T-Pain was a group member, ordered by rank on the charts.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/e162590d4dd9" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/e162590d4dd9" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Write a query that returns songs that ranked between 10 and 20 (inclusive) in 1993, 2003, or 2013. Order the results by year and rank, and leave a comment on each line of the <code>WHERE</code> clause to indicate what that line does
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/34a457c9e468" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/34a457c9e468" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###What Others Have Done
 One of the defining features of Mode is that much of the work done using it is made public for others to view, copy, and improve upon. We strongly encourage you to check out some of the other work in Mode when you feel like taking a break from tutorials.
 
-Having just worked with Billboard's data, you might be interested in this piece of work: Mode's own [Benn Stancil](https://stealth.modeanalytics.com/benn) used this same dataset to explore One-Hit Wonders and [published his results on the Mode blog](http://blog.modeanalytics.com/one-hit-wonders/). You can view the queries that produced some of his charts here:
+Having just worked with Billboard's data, you might be interested in this piece of work: Mode's own [Benn Stancil](https://modeanalytics.com/benn) used this same dataset to explore One-Hit Wonders and [published his results on the Mode blog](http://blog.modeanalytics.com/one-hit-wonders/). You can view the queries that produced some of his charts here:
 
-* [Count of artists by number of years they appear in the top 100](https://stealth.modeanalytics.com/benn/reports/77722338413b/runs/b2b0ec93f18c)
-* [Count of songs by artists who appeared 5 or more times](https://stealth.modeanalytics.com/benn/reports/35e501d8a817/runs/2a21f3e6792d)
-* [Chance of returning to the charts by debut position](https://stealth.modeanalytics.com/benn/reports/196cc398735c/runs/c6619b9e4b0d)
-* [Chance of returning by number of songs in debut year](https://stealth.modeanalytics.com/benn/reports/df676f8e1c51/runs/bd46684795e1)
-* [Chance of returning by time since last hit and number of hits](https://stealth.modeanalytics.com/benn/reports/318c4eb50378/runs/36f848b3c923)
+* [Count of artists by number of years they appear in the top 100](https://modeanalytics.com/benn/reports/77722338413b/runs/b2b0ec93f18c)
+* [Count of songs by artists who appeared 5 or more times](https://modeanalytics.com/benn/reports/35e501d8a817/runs/2a21f3e6792d)
+* [Chance of returning to the charts by debut position](https://modeanalytics.com/benn/reports/196cc398735c/runs/c6619b9e4b0d)
+* [Chance of returning by number of songs in debut year](https://modeanalytics.com/benn/reports/df676f8e1c51/runs/bd46684795e1)
+* [Chance of returning by time since last hit and number of hits](https://modeanalytics.com/benn/reports/318c4eb50378/runs/36f848b3c923)
 
 These queries contain some advanced concepts that you may not yet understand. Don't worry &mdash; you'll be there after the Intermediate tutorial.
 
 ###What's Next?
-Congrats on completeing the Beginner SQL Tutorial! Now that you've got some skills, you can [explore some other data on Mode](http://stealth.modeanalytics.com/explore/tables) or [upload your own](http://stealth.modeanalytics.com)
+Congrats on completeing the Beginner SQL Tutorial! Now that you've got some skills, you can [explore some other data on Mode](https://modeanalytics.com/explore/tables) or [upload your own](https://modeanalytics.com)
 
 You may find that your skills are limiting, though. If you want to do things like aggregate data across entire columns or merge multiple datasets together, check out the [Intermediate Tutorial](/intermediate/aggregation-functions.html).

@@ -50,14 +50,14 @@ Try running that query with each of the operators in place of `>`. Try some valu
   Did the West Region ever produce <em>more than 50,000</em> housing units in one month? Remember, the units in the table are already in thousands.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/eb5326c39637" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/eb5326c39637" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Did the South Region ever produce <em>20,000 or fewer</em> housing units in one month?
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/00e816870a30" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/00e816870a30" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Comparisons on non-numerical data
@@ -87,14 +87,14 @@ The way SQL treats alphabetical ordering is a little bit tricky. You may have no
   Write a query that only shows rows for which the month name is February.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/1b0ec94376a6" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/1b0ec94376a6" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
  Write a query that only shows rows for which the <code>month_name</code> starts with the letter "M" or an earlier letter in the alphabet.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/122ce812e03f" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/122ce812e03f" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Arithmetic
@@ -124,7 +124,7 @@ The columns that contain the arithmetic functions are called "derived columns" b
   Write a query that calculates the sum of all four regions in a separate column.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/b83cefc05943" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/b83cefc05943" target="_blank">See the Answer &raquo;</a>
 </div>
 
 As in Excel, you can use parenthesis to manage the [order of operations](http://www.mathgoodies.com/lessons/vol7/order_operations.html). For example, if you wanted to average the `west` and `south` columns, you could write something like this:
@@ -145,14 +145,14 @@ Sharpen your skills by tackling these questions:
   Write a query that returns all rows for which more units were produced in the West region than in the Midwest and Northeast combined.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/bb17c0984edb" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/bb17c0984edb" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
  Write a query that calculates the percentage of all houses completed in the United States represented by each region. Only return results from the year 2000 and later. Hint: There should be four columns of percentages.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/bffb59fa65a0" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/bffb59fa65a0" target="_blank">See the Answer &raquo;</a>
 </div>
 
 Move on to the next lesson: [Logical Operators](/the-basics/logical-operators.html).

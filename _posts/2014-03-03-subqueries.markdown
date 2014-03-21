@@ -44,7 +44,7 @@ A quit note on formatting: The important thing to remember when using subqueries
   Write a query that selects all Warrant Arrests from the <code>tutorial.sf_crime_incidents_2014_01</code> dataset, when wraps it in an outer query that filters out unresolved incidents.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/3af88ef4ee7a" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/3af88ef4ee7a" target="_blank">See the Answer &raquo;</a>
 </div>
 
 The above examples, as well as the practice problem don't really require subqueries &mdash; they solve problems that could also be solved by adding multiple conditions to the `WHERE` clause. These next sections provide examples for which subqueries are the best or only way to solve their respective problems.
@@ -71,7 +71,7 @@ If you're having trouble figuring out what's happening, try running the inner qu
   Write a query that displays the average number of incidents per month, by category. Hint: use <code>tutorial.sf_crime_incidents_cleandate</code> to make your life a little easier.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/7a6b1f866394" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/7a6b1f866394" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Subqueries in conditional logic
@@ -133,7 +133,7 @@ This can be particularly useful when combined with aggregations. When you join, 
   Write a query that displays all rows from the three categories with the fewest incidents reported.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/1a6ee6229859" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/1a6ee6229859" target="_blank">See the Answer &raquo;</a>
 </div>
 
 Subqueries can be very helpful in improving the performance of your queries. Let's revisit the [Crunchbase Data](/intermediate/outer-joins.html) briefly. Imagine you'd like to aggregate all of the copmanies receiving investment and companies acquired each month. You could do that without subqueries if you wanted to, but **don't actually run this as it will take minutes to return**:
@@ -193,7 +193,7 @@ Note: We used a `FULL JOIN` above just in case one table had observations in a m
   Write a query that counts the number of companies founded and acquired by quarter starting in Q1 2012. Create the aggregations in two separate queries, then join them.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/6ebd90cda35c" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/6ebd90cda35c" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Subqueries and UNIONs
@@ -226,14 +226,14 @@ This is pretty straight-forward. Try it for yourself:
   Write a query that ranks investors from the combined dataset above by the total number of investments they have made.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/740b0e583576" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/740b0e583576" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Write a query that does the same thing as in the previous problem, except only for companies that are still operating. Hint: operating status is in <code>tutorial.crunchbase_companies</code>.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/019819a0608d" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/019819a0608d" target="_blank">See the Answer &raquo;</a>
 </div>
 
 Move on to the next lesson: [Window Functions](/advanced/window-functions.html).

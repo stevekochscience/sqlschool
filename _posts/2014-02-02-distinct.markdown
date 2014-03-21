@@ -28,7 +28,7 @@ If you include 2 (or more) columns in a `SELECT DISTINCT` clause, your results w
   Write a query that returns the unique values in the <code>year</code> column, in chronological order
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/2dde870b5811" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/2dde870b5811" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Using  DISTINCT in aggregations
@@ -61,14 +61,14 @@ Okay, back to `DISTINCT`. You'll notice that `DISTINCT` goes inside the aggregat
   Write a query that counts the number of unique values in the <code>month</code> column for each year.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/ad26c0db22c5" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/ad26c0db22c5" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Write a query that separately counts the number of unique values in the <code>month</code> column and the number of unique values in the `year` column.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/bb4e07760340" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/bb4e07760340" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###DISTINCT Performance

@@ -50,7 +50,7 @@ You'll notice that this result is lower than what you got with `COUNT(*)`. That'
   Write a query to count the number of non-null rows in the <code>low</code> column.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/ce67f767fd35" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/ce67f767fd35" target="_blank">See the Answer &raquo;</a>
 </div>
 
 One nice thing about `COUNT` is that you can use it on non-numerical columns:
@@ -76,7 +76,7 @@ If you must use spaces, you will need to use double quotes.
   Write a query that determines counts of every single column. Which column has the most null values?
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/4da53e30e228" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/4da53e30e228" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###SUM
@@ -93,7 +93,7 @@ You don't need to worry as much about the presence of nulls with `SUM` as you wo
   Write a query to calculate the average opening price (hint: you will need to use both <code>COUNT</code> and <code>SUM</code>, as well as some simple arithmetic.).
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/4106c16551ac" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/4106c16551ac" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###MIN/MAX
@@ -114,14 +114,14 @@ Nulls are treated as lower than 0 or "a" so `MIN` will return a null value if th
   What was Apple's lowest stock price (at the time of this data collection)?
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/f374f60f4e9c" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/f374f60f4e9c" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   What was the highest single-day increase in Apple's share value?
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/1ed0029e2c68">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/1ed0029e2c68">See the Answer &raquo;</a>
 </div>
 
 ###AVG
@@ -142,7 +142,7 @@ There are some cases in which you will want to treat null values as 0. For these
   Write a query that calculates the average daily trade volume for Apple stock.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/0328fbae6c07" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/0328fbae6c07" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###GROUP BY
@@ -166,7 +166,7 @@ You can group by multiple columns, but you have to separate column names with co
   Calculate the total number shares traded each month. Order your results chronologically.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/36b338ee7ec5" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/36b338ee7ec5" target="_blank">See the Answer &raquo;</a>
 </div>
 
 As in [ORDER BY](/the-basics/order-by.html), you can substitute numbers for column names in the `GROUP BY` clause. It's generally recommended to do this only when you are grouping many columns, or if something else is causing the text in the `GROUP BY` clause to be excessively long:
@@ -208,14 +208,14 @@ As mentioned in prior tutorials, the order in which you write the clauses is imp
   Write a query to calculate the average daily price change in Apple stock, grouped by year
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/c1881e6c354d" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/c1881e6c354d" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Write a query that calculates the lowest and highest prices that Apple stock achieved each month.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/9d9f9dcd83bb" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/9d9f9dcd83bb" target="_blank">See the Answer &raquo;</a>
 </div>
 
 Check out the next lesson: [Counting the unique values in a column](/intermediate/distinct.html)

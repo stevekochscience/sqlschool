@@ -39,7 +39,7 @@ But what if you don't want null values in the `is_a_senior` column? The followin
   Write a query that includes a column that is flagged "yes" when a player is from California, and sort the results with those players first.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/88e5eb7c9b80" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/88e5eb7c9b80" target="_blank">See the Answer &raquo;</a>
 </div>
 
 You can also define a number of outcomes in a `CASE` statement by including as many `WHEN`/`THEN` statements as you'd like:
@@ -74,7 +74,7 @@ While the above works, it's really best practice to create statements that don't
   Write a query that includes players' names and a column that classifies them into three categories based on height. Keep in mind the answer is only one possible answer.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/3374045ecce5" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/3374045ecce5" target="_blank">See the Answer &raquo;</a>
 </div>
 
 You can also string together multiple conditional statements with `AND` and `OR` the same way you might in a `WHERE` clause:
@@ -95,7 +95,7 @@ You can also string together multiple conditional statements with `AND` and `OR`
   Write a query that selects all columns from <code>benn.college_football_players</code> and adds an additional column that displays the player's name if that player is a junior or senior.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/d7358e7734a2" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/d7358e7734a2" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Using CASE with aggregations
@@ -144,14 +144,14 @@ The above query is an excellent place to use numbers instead of columns in the `
   Write a query that counts the number of 300lb+ players for each of the following regions: West Coast (CA, OR, WA), Texas, and Other (Everywhere else). 
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/7f631173fabb" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/7f631173fabb" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Write a query that calculates the combined weight of all underclass players (FR/SO) in California as well as the combined weight of all upperclass players (JR/SR) in California.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/e86b592fe1e8" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/e86b592fe1e8" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <!-- DEREK: These two practice problems were very hard when I first attempted them.  Not entirely sure what to do about it, but maybe more explaination is needed.  Maybe an example using both a CASE and a WHERE clause to show how that would divide up the problem
@@ -186,14 +186,14 @@ It's worth noting that going from horizontal to vertical orientation can be a su
   Write a query that displays the number of players in each state, with FR, SO, JR, and SR players in separate columns and another column for the total number of players. Order results such that states with the most players come first.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/15bc4804da7b" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/15bc4804da7b" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Write a query that shows the number of players at schools with names that start with A through M, and the number at schools with names starting with N - Z.
 </div>
 <div class="practice-prob-answer">
-  <a href="http://stealth.modeanalytics.com/tutorial/reports/3e2d489edbef" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/3e2d489edbef" target="_blank">See the Answer &raquo;</a>
 </div>
 
 Check out the next lesson: [Introduction to Joins](/intermediate/join-intro.html)

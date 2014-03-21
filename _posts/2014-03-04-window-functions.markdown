@@ -51,7 +51,7 @@ Note: You can't use window functions and standard aggregations in the same query
   Write a query modification of the above example query that shows the duration of each ride as a percentage of the total time accrued by riders from each start_terminal
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/74d998523ca4" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/74d998523ca4" target="_blank">See the Answer &raquo;</a>
 </div>
 
 
@@ -119,7 +119,7 @@ You may notice that rows with the exact same start time are given the same rank.
   Write a query that shows the 5 longest rides from each starting terminal, ordered by terminal, and longest to shortest rides within each terminal. Limit to rides that occurred before Jan. 8, 2012.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/bda54a3afc03" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/bda54a3afc03" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <!--

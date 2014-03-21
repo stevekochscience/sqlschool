@@ -31,7 +31,7 @@ Once you've given a table an alias, you can refer to columns in that table in th
   Write a query that selects the school name, player name, position, and weight for every player in Georgia, ordered by weight (heaviest to lightest). Be sure to make an alias for the table, and to reference all column names in relation to the alias.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/b4bc413f9399" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/b4bc413f9399" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###JOIN and ON
@@ -58,7 +58,7 @@ During the join, SQL looks up the `school_name`&mdash;in this case, "Wake Forest
 
 ![After join](/images/intermediate/player-after-join-example.png)
 
-*Two columns are cut off from the image, but you can see the full result [here](https://stealth.modeanalytics.com/tutorial/reports/12fac4065977/runs/51234e84bc0d)*
+*Two columns are cut off from the image, but you can see the full result [here](https://modeanalytics.com/tutorial/reports/12fac4065977/runs/51234e84bc0d)*
 
 When you run a query with a join, SQL performs the same operation as it did above to every row of the table after the `FROM` statement. To see the full table returned by the join, try running this query:
 
@@ -110,7 +110,7 @@ The results can only support one column with a given name &mdash; when you inclu
   Write a query that displays player names, school names and conferences for schools in the "FBS (Division I-A Teams)" division.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/derek/reports/5524469aae3e" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/derek/reports/5524469aae3e" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <!--

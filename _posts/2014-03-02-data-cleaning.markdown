@@ -87,7 +87,7 @@ You can also use the STRPOS function to achieve the same results &mdash; just re
   Write a query that separates the `location` field into separate fields for lattitude and longitude. You can compare your results against the actual `lat` and `lon` fields in the table.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/78d533ed005c" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/78d533ed005c" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ####Concatenation
@@ -103,7 +103,7 @@ You can combine strings from several columns together (and with hard-coded value
   Concate the <code>lat</code> and <code>lon</code> fields to form a field that is identical to the <code>location</code> field.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/3b594976c097" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/3b594976c097" target="_blank">See the Answer &raquo;</a>
 </div>
 
 Alternatively, you can use two pipe characters (`||`) to perform the same concatenation:
@@ -118,14 +118,14 @@ Alternatively, you can use two pipe characters (`||`) to perform the same concat
   Create the same concatenated <code>location</code> field, but using the <code>||</code> syntax instead of <code>CONCAT</code>.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/1dc767c9846d" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/1dc767c9846d" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <div class="practice-prob">
   Write a query that creates a date column formatted YYYY-MM-DD.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/c0d258cf7b6a" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/c0d258cf7b6a" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ####Changing Case with UPPER and LOWER
@@ -141,7 +141,7 @@ Sometimes, you just don't want your data to look like it's screaming at you. You
   Write a query that returns the `category` field, but with the first letter capitalized and the rest of the letters in lower-case.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/c96ee5c6516d" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/c96ee5c6516d" target="_blank">See the Answer &raquo;</a>
 </div>
 
 There are a number of variations of these functions, as well as several other string functions not covered here. Different databases use subtle variations on these functions, so be sure to look up [the appropriate database's syntax](/other-resources/sql-syntax-guide.html) if you're connected to a private database. If you're using Mode's public service as in this tutorial, the [Postgres literature](http://www.postgresql.org/docs/9.1/static/functions-string.html) contains the related functions.
@@ -171,7 +171,7 @@ This example is a little different from the answer above in that we've wrapped t
   Write a query that creates an accurate timestamp using the <code>date</code> and <code>time</code> columns in <code>tutorial.sf_crime_incidents_2014_01</code>. Include a field that is exactly 1 week later as well.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/4c908f47868a" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/4c908f47868a" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Turning Dates into More Useful Dates
@@ -211,7 +211,7 @@ You can also round dates to the nearest unit of measurement. This is particularl
   Write a query that counts the number of incidents reported by week. Cast the week as a date to get rid of the hours/minutes/seconds.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/0315a8aa1e4c" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/0315a8aa1e4c" target="_blank">See the Answer &raquo;</a>
 </div>
 
 What if you want to include today's date or time? You can instruct your query to pull the local date and time at the time the query is run using any number of functions. Interestingly, you can run them without a `FROM` clause:
@@ -236,7 +236,7 @@ For a complete list of timezones, [look here](http://www.postgresql.org/docs/7.2
   Write a query that shows exactly how long ago each indicent was reported. Assume that the dataset is in Pacific Standard Time (UTC - 8).
 </div>
 <div class="practice-prob-answer">
-  <a href="https://stealth.modeanalytics.com/tutorial/reports/ebc77b3a1dd7" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/ebc77b3a1dd7" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###COALESCE
