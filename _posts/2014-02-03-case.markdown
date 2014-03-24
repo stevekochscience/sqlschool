@@ -140,6 +140,18 @@ The above query is an excellent place to use numbers instead of columns in the `
                    WHEN year = 'SR' THEN 'SR'
                    ELSE 'No Year Data' END
 
+Combining `CASE` statements with aggregations can be tricky at first. It's often helpful to write a query containing the `CASE` statement first and run it on its own. Using the previous example, you might first write:
+
+    SELECT CASE WHEN year = 'FR' THEN 'FR'
+                WHEN year = 'SO' THEN 'SO'
+                WHEN year = 'JR' THEN 'JR'
+                WHEN year = 'SR' THEN 'SR'
+                ELSE 'No Year Data' END AS year_group,
+                *
+      FROM benn.college_football_players
+
+The above query will show all columns in the `benn.college_football_players` table, as well as a column showing the reasults of the `CASE` statement. From there, you can replace the `*` with an aggregation and add a `GROUP BY` clause. Try this process if you struggle with either of the following practice problems.
+
 <div class="practice-prob">
   Write a query that counts the number of 300lb+ players for each of the following regions: West Coast (CA, OR, WA), Texas, and Other (Everywhere else). 
 </div>
@@ -154,12 +166,8 @@ The above query is an excellent place to use numbers instead of columns in the `
   <a href="https://modeanalytics.com/tutorial/reports/e86b592fe1e8" target="_blank">See the Answer &raquo;</a>
 </div>
 
-<!-- DEREK: These two practice problems were very hard when I first attempted them.  Not entirely sure what to do about it, but maybe more explaination is needed.  Maybe an example using both a CASE and a WHERE clause to show how that would divide up the problem
--->
-###Using CASE Within Aggregations
-The previous example is an excellent lead-in to a primary use-`CASE` for `CASE` (sorry for that): creating histograms. In the previous examples, data was displayed vertically, but in some instances, you might want to show data horizontally. This is known as "Pivoting" (like a Pivot Table). Let's take the following query:
-
-<!-- DEREK: You mention histograms, then you don't really expand upon it.  You should either go into a bit more depth about it here or cover it later and do a "this is covered in a later lesson" link -->
+###Using CASE Inside of Aggregations
+In the previous examples, data was displayed vertically, but in some instances, you might want to show data horizontally. This is known as "Pivoting" (like a Pivot Table). Let's take the following query:
 
     SELECT CASE WHEN year = 'FR' THEN 'FR'
                 WHEN year = 'SO' THEN 'SO'
@@ -169,7 +177,7 @@ The previous example is an excellent lead-in to a primary use-`CASE` for `CASE` 
                 COUNT(1) AS count
       FROM benn.college_football_players
      GROUP BY 1
-	
+
 And re-orient it horizontally:
 
     SELECT COUNT(CASE WHEN year = 'FR' THEN 1 ELSE NULL END) AS fr_count,

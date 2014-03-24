@@ -10,12 +10,16 @@ The data for this lesson was pulled from [Crunchbase](http://info.crunchbase.com
     SELECT *
       FROM tutorial.crunchbase_companies
 
-The second table lists acquisitions &mdash; one row per acquisition. `company_permalink` in this table is what is called a "join key." It will allow you to append data about acquired companies onto all of the data about each company in `tutorial.crunchbase_companies`. You'll notice that there is a separate field called `acquirer_permalink` as well. This can also be mapped to `tutorial.crunchbase_companies` to get additional information about the acquiring company (if available).
+The second table lists acquisitions &mdash; one row per acquisition. `company_permalink` in this table maps to the `permalink` field in `tutorial.crunchbase_companies` as described in the previous lesson. Joining these two fields will add information about the company being acquired.
 
-<!-- DEREK: This entire paragraph should be re-written.  We have already learned about join keys in the last lesson.  The last few sentences are very confusingly worded, and require further explaination of what you're saying the user could do/why they would do it.  -->
+You'll notice that there is a separate field called `acquirer_permalink` as well. This can also be mapped to the `permalink` field `tutorial.crunchbase_companies` to add additional information about the acquiring company.
 
     SELECT *
       FROM tutorial.crunchbase_acquisitions
+
+The foreign key you use to join these two tables will depend entirely on whether you're looking to add information about the acquiring company or the company that was acquired.
+
+It's worth noting that this sort of structure is common. For example, a table showing a list of emails sent might include a `sender_email_address` and a `recipient_email_address`, both of which map to a table listing email addresses and the names of their owners.
 
 ###Outer Joins
 When performing an Inner Join, rows from either table that are unmatched in the other table are not returned. In an Outer Join, unmatched rows in one or both tables can be returned. There are a few types of outer joins. `LEFT JOIN` and `RIGHT JOIN` only return unmatched rows from one table, while `FULL OUTER JOIN` returns unmatched rows from both tables.
@@ -166,8 +170,6 @@ For this set of practice problems, we're going to introduce a new dataset: `tuto
 
 It is very likely that you will need to do some exploratory analysis on this table to understand how you might solve the following problems.
 
-<!-- Remove LIMIT from the following practice problem, since it isn't consistant other practice problem answers.  -->
-
 <div class="practice-prob">
   Write a query that shows a company's name, "status" (found in the Companies table), and the number of unique investors in that company. Order by the number of investors from most to fewest. Limit to only companies in the state of New York.
 </div>
@@ -181,6 +183,5 @@ It is very likely that you will need to do some exploratory analysis on this tab
 <div class="practice-prob-answer">
   <a href="https://modeanalytics.com/tutorial/reports/58d5744f474b" target="_blank">See the Answer &raquo;</a>
 </div>
-
 
 Check out the next lesson: [Full Join and UNION](/intermediate/full-join-union.html)

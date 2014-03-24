@@ -31,14 +31,12 @@ It's easiest to start with `COUNT` because verifying your results is extremely s
 
 <em>Note: Typing</em> <code>COUNT(1)</code> <em>has the same effect as</em> <code>COUNT(\*)</code><em>.  Which one you use is a matter of personal preference.</em>
 
-<!--
-DEREK: think this was your note.
-
 You can see that the result showed a count of all rows to be 3555. Turn the limit off and run the following query and note that Mode actually provides a row count, which should be the same as the result of the above query:
 
     SELECT * FROM tutorial.aapl_historical_stock_price
 
--->
+![Row Count](/images/intermediate/row-count.png)
+
 Things start to get a little bit tricky when you want to count individual columns. The following code will provide a count of all of rows in which the `high` column **is not null**.
 
     SELECT COUNT(high)

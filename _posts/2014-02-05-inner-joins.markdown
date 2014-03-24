@@ -37,9 +37,7 @@ Once you've given a table an alias, you can refer to columns in that table in th
 ###JOIN and ON
 After the `FROM` statement, we have two new statements: `JOIN`, which is followed by a table name, and `ON`, which is followed by a couple column names separated by an equals sign.
 
-Though the `ON` statement comes after `JOIN`, it's a bit easier to explain it first. `ON` indicates how the two tables (the one after the `FROM` and the one after the `JOIN`) relate to each other. In this case, the school a player went to is indicated by the `school_name` field in the `benn.college_football_players` table. This maps to the `school_name` field in the `benn.colllege_football_teams` table. `teams.school_name` and `players.school_name` are referred to as "foreign keys" or "join keys" because they map to columns in other tables. Their mapping is written as a conditional statement:
-
-<!-- DEREK: Is it important that you use the term 'map'?  It would be easier/make more sense to a beginner to describe this a bit more plainly.  -->
+Though the `ON` statement comes after `JOIN`, it's a bit easier to explain it first. `ON` indicates how the two tables (the one after the `FROM` and the one after the `JOIN`) relate to each other. You can see in the example about that both tables contain fields called `school_name`. Sometimes relational fields are slightly less obvious. For example, you might have a table called "schools" with a field called "id", which could be joined against "school_id" in any other table. These relationships are sometimes called "mappings." `teams.school_name` and `players.school_name`, the two columns that map to one another, are referred to as "foreign keys" or "join keys." Their mapping is written as a conditional statement:
 
     ON teams.school_name = players.school_name
 
@@ -75,13 +73,11 @@ Once you've generated this new table after the join, you can use the same aggreg
 
 In the example above, all of the players in the `players` table match to one school in the `teams` table. But what if the data isn't so clean? What if there are multiple schools in the `teams` table with the same name? Or if a player goes to a school that isn't in the `teams` table? 
 
-If there are multiple schools in the `teams` table with the same name, each one of those rows will get joined to matching rows in the `players` table. Returing to the previous example with Michael Campanaro, if there were three rows in the `teams` table where `school_name = "Wake Forest"`, the join query above would return three rows with Michael Campanaro. The first ten columns of these rows &mdash; the columns from the `players` table &mdash; would all be the same. The next five columns would match each of the three rows from the `teams` table.
+If there are multiple schools in the `teams` table with the same name, each one of those rows will get joined to matching rows in the `players` table. Returing to the previous example with Michael Campanaro, if there were three rows in the `teams` table where `school_name = 'Wake Forest'`, the join query above would return three rows with Michael Campanaro.
 
-While SQL always handles this first case the same, how it handles the second case depends on the type of join in the query. In addition to identifying the table you want to join onto the table in the `FROM` clause, the `JOIN` identifies the type of join you want to perform. 
+It is often the case that one or both tables being joined contain rows that don't have matches in the other table. The way this is handles depends on the type of query you're writing. More specifically, it depends on whether the join is an Inner or Outer join.
 
-<!-- DEREK: It's pretty vague when you refer to 'this first case' vs the second case.  'This' makes it sound like what you were just talking about is the first case, although I don't think that's what you mean.  Just clarify this sentence.  -->
-
-The most common type of join &mdash; an *inner join* &mdash; can be written as either `JOIN benn.college_football_teams teams` or `INNER JOIN benn.college_football_teams teams`. Inner Joins eliminate rows from both tables that do not satisfy the join condition set forth in the `ON` statement. In mathematical terms, an Inner Join is the *intersection* of the two tables.
+We'll start with Inner joins, which can be written as either `JOIN benn.college_football_teams teams` or `INNER JOIN benn.college_football_teams teams`. Inner Joins eliminate rows from both tables that do not satisfy the join condition set forth in the `ON` statement. In mathematical terms, an Inner Join is the *intersection* of the two tables.
 
 ![inner join](http://www.w3schools.com/sql/img_innerjoin.gif)
 

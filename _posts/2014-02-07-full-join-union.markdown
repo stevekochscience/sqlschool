@@ -4,11 +4,8 @@ category: "intermediate"
 title:  "Full Joins and Appending Data"
 date:   2014-02-01 00:00:53
 ---
-<!-- This introduction about using tutorial.crunchbase_investments was already given on the bottom of the page we just finished.  Are you sure you want it here again in such similar phrasing?  At the very least, you should remove "This time, however,".
 
-Also, reading a bit ahead you specifically reference tutorial.crunchbase_investments in this intro paragraph when in actuality we will be using tutorial.crunchbase_investments_part1 in this tutorial.  -->
-
-This lesson uses the same data from the previous lesson, which was pulled from [Crunchbase](http://info.crunchbase.com/about/crunchbase-data-exports/) on Feb. 5, 2014. This time, however, you will also use the `tutorial.crunchbase_investments` table, which contains one row per investor, per investment. So a particular investment in a company on a given date might show up in multiple rows if multiple investors participated. As in the previous lesson, large portions of both tables were randomly dropped for the sake of this lesson. For more complete notes on Crunchbase data, return to the [previous lesson](/intermediate/outer-joins.html). For now, you should acquaint yourself with the `tutorial.crunchbase_investments` table:
+This lesson uses the same data from the previous lesson, which was pulled from [Crunchbase](http://info.crunchbase.com/about/crunchbase-data-exports/) on Feb. 5, 2014. As in the previous lesson, large portions of both tables were randomly dropped for the sake of this lesson. The Crunchbase Investments table has also been split into two parts for the sake of this exercise. For more complete notes on Crunchbase data, return to the [previous lesson](/intermediate/outer-joins.html). For now, you should acquaint yourself with the `tutorial.crunchbase_investments_part1` table:
 
     SELECT *
       FROM tutorial.crunchbase_investments_part1
@@ -40,10 +37,7 @@ You might also notice that surprisingly few rows in the `crunchbase_acquisitions
 </div>
 
 ###UNION
-
-<!-- This doesn't do a good job of explaining what UNION is actually doing.  I've read it a few times and I still have no idea. -->
-
-Joins allow you to combine two datasets side-by-side, but `UNION` allows you to stack one dataset on top of the other. Put differently, `UNION` allows you to append everything in a dataset onto everything in another dataset. In order to specify the datasets you want to sandwich together, you'll need to actually write two separate `SELECT` statements:
+Joins allow you to combine two datasets side-by-side, but `UNION` allows you to stack one dataset on top of the other. Put differently, `UNION` allows you to write two separate `SELECT` statements, and to have the results of one statement display in the same table as the results from the other statement. The following query will display all results from the first portion of the query, then all results from the second portion in the same table:
 
     SELECT *
       FROM tutorial.crunchbase_investments_part1
@@ -81,8 +75,6 @@ Since you are writing two separate `SELECT` statements, you can treat them diffe
 
 For a bit more of a challenge:
 
-<!-- Take LIMIT out of the answer -->
-
 <div class="practice-prob">
   Write a query that shows 3 columns. The first indicates which dataset (part 1 or 2) the data comes from, the second shows company status, and the third is a count of the number of investors. Hint: you will have to use the <code>tutorial.crunchbase_companies</code> table as well as the investments tables.
 </div>
@@ -90,6 +82,4 @@ For a bit more of a challenge:
   <a href="https://modeanalytics.com/tutorial/reports/e8ebd7cc9d23" target="_blank">See the Answer &raquo;</a>
 </div>
 
-<!-- This links back to the top of this page.  Should go back to index or wherever you want to send people finished with intermediate level. -->
-
-Check out the next lesson: [Join Tips and Tricks](/intermediate/full-join-union.html)
+Check out the next lesson: [Join Tips and Tricks](/intermediate/join-tips-and-tricks.html)
