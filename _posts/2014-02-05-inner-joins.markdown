@@ -106,7 +106,7 @@ The results can only support one column with a given name &mdash; when you inclu
   Write a query that displays player names, school names and conferences for schools in the "FBS (Division I-A Teams)" division.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://modeanalytics.com/derek/reports/5524469aae3e" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/16915859fe4c" target="_blank">See the Answer &raquo;</a>
 </div>
 
 <!--

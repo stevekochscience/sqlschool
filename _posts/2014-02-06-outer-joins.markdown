@@ -24,6 +24,10 @@ It's worth noting that this sort of structure is common. For example, a table sh
 ###Outer Joins
 When performing an Inner Join, rows from either table that are unmatched in the other table are not returned. In an Outer Join, unmatched rows in one or both tables can be returned. There are a few types of outer joins. `LEFT JOIN` and `RIGHT JOIN` only return unmatched rows from one table, while `FULL OUTER JOIN` returns unmatched rows from both tables.
 
+As you work through this lesson, it might be helpful to refer to [this visual reference](http://joins.spathon.com/) by [Patrik Spathon](https://twitter.com/Spathon).
+
+<a href="http://joins.spathon.com/"><img src="/images/intermediate/visual-join.png"></a>
+
 ###LEFT JOIN
 ![Left Joins](http://www.w3schools.com/sql/img_leftjoin.gif)
 
