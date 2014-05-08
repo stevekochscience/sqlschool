@@ -14,7 +14,7 @@ If you haven't already, open a second browser window to <a href="https://modeana
 
 This will take you to the Query Builder. This is the bread and butter of Mode&mdash;it's where you'll be able to use all the skills you learn in this tutorial. From the Query Builder, you can run queries against all of the data in Mode. 
 
-For this tutorial, SQL queries will be shown in grey boxes like the one below. To run a query, simply copy the text from the box into the Query Builder and click the orange "Run Query" button.
+For this tutorial, SQL queries will be shown in grey boxes like the one below. To run a query, simply copy the text from the box into the Query Builder and click the orange "Run Query" button. Alternatively, you can run a query by pressing <code>&#8984;</code> + `return` on a Mac or `ctrl` + `return` on a PC.
 
     SELECT * 
       FROM tutorial.us_housing_units_completed
@@ -73,6 +73,10 @@ When you've completed the above practice problem, check your answer by following
 
 *Copy the URL in the share menu and send to all your friends!*
 
+You can share your work via URL at any state, but if you want to polish your work up a little by adding a title and description, click the "Save" button, complete the fields, and click "Save Report."
+
+![Saving your Work](/images/the-basics/saving-work.png)
+
 ###What actually happens when you run a query?
 When you run a query, what do you get back? As you can see from running the queries above, you get a table. But that table isn't stored permanently in the database. It also doesn't change any tables in the database&mdash;`tutorial.us_housing_units_completed` will contain the same data every time you query it, and the data will never change no matter how many times you query it. Mode does store all of your results for future access, but `SELECT` statements don't change anything in the underlying tables.
 
@@ -110,7 +114,7 @@ Without the double quotes, that query would read 'West' and 'Region' as separate
 </div>
 
 ###LIMIT
-You may have noticed that checkbox next to the "Run" button that says "Limit."
+You may have noticed that checkbox next in the upper-right portion of the editor that says "Limit."
 
 ![Limit](/images/the-basics/limit-box.png)
 
