@@ -2,7 +2,7 @@
 layout: sqlschool-lesson
 category: "solutions-to-common-problems"
 title:  "Pivoting From Columns to Rows"
-date:   2014-04-01 00:00:58
+date:   2014-04-01 00:00:57
 ---
 
 A lot of data you'll find out there on the internet is formatted for consumption, not analysis. Take, for example, [this table showing the number of earthquakes worldwide from 2000-2012](http://earthquake.usgs.gov/earthquakes/eqarchives/year/eqstats.php):
