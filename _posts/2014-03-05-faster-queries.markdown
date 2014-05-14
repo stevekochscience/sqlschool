@@ -17,7 +17,6 @@ A database is a piece of software that runs on a computer, and is subject to the
 Query runtime is also dependent on some things that you can't really control related to the database itself:
 
 * **Other users running queries:** The more queries running concurrently on a database, the more the database must process at a given time and the slower everything will run. It can be especially bad if others are running particularly resource-intensive queries that fulfill some of the above criteria.
-
 * **Database software and optimization:** This is something you probably can't control, but if you know the system you're using, you can work within its bounds to make your queries more efficient.
 
 For now, let's ignore the things you can't control and work on the things you can.
