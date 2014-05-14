@@ -25,7 +25,7 @@ For now, let's ignore the things you can't control and work on the things you ca
 ###Reducing table size
 Filtering the data to include only the observations you need can dramatically improve query speed. How you do this will depend entirely on the problem you're trying to solve. For example, if you've got time series data, limiting to a small time window can make your queries run much more quickly:
 
-<!-- time window example -->
+<!-- use benn's example event data -->
 
 Keep in mind that you can always perform exploratory analysis on a subset of data, refine your work into a final query, then remove the limitation and run your work across the entire dataset. The final query might take a long time to run, but at least you can run the intermediate steps quickly.
 
@@ -42,11 +42,9 @@ The following query applies the same limit to the outer query, and takes much lo
 <!-- limit in outer query -->
 
 ###Making joins less complicated
-In a way, this is an extension of the previous tip. In the same way that it's better to reduce data at a point in the query that is executed early, it's better to reduce table sizes before joining them. Take this example:
+In a way, this is an extension of the previous tip. In the same way that it's better to reduce data at a point in the query that is executed early, it's better to reduce table sizes before joining them. Take this example, which uses <!--BENN"S DATA" -->
 
-    SELECT *
-      FROM
-      JOIN
+<!-- example: joining events table onto users table. bad example uses COUNT(CASE) to do counts on huge dataset. good example limits the events table before joining -->
 
 
 ###Optimizing aggregations
@@ -76,3 +74,6 @@ Run the following query:
 
 ###Indexes
 as referenced in [Join Tips & Tricks](/intermediate/join-tips-and-tricks.html)
+
+###Conclusion
+Move on to the [last page of the SQL School Tutorial](/advanced/tutorial-conclusion.html).
