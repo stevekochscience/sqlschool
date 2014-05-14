@@ -85,22 +85,15 @@ Alternatively, the same fundtions with `ORDER BY`:
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
 
-<!-- blah -->
-<!--
-<div class="practice-prob">
-  a
-</div>
-<div class="practice-prob-answer">
-  <a href="" target="_blank">See the Answer &raquo;</a>
-</div>
+Make sure you plug those previous two queries into Mode and run them. This next practice problem is very similar to the examples, so try modifying the above code rather than starting from scratch.
 
 <div class="practice-prob">
-  a
+  Write a query that shows a running total of the duration of bike rides (similar to the last example), but grouped by <code>end_terminal</code>, and with ride duration sorted in descending order.
 </div>
 <div class="practice-prob-answer">
-  <a href="" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/7dd0f3bad4cc" target="_blank">See the Answer &raquo;</a>
 </div>
--->
+
 ###Rank
 `RANK()` does exactly what you might think &mdash; it numerically ranks rows within each partition according to the `ORDER BY` statement. Unlike the above window functions, `RANK()` does not require you to specify a variable within the parentheses:
 
@@ -113,7 +106,10 @@ Alternatively, the same fundtions with `ORDER BY`:
 
 You may notice that rows with the exact same start time are given the same rank. See the 4th and 5th observations for `start_terminal` 31000 &mdash; they are both given a rank of 4, and the following result receives a rank of 6.
 
-<!--piece about dense_rank. see if percent_rank is in Postgres8 -->
+You can also use `DENSE_RANK()` instead of `RANK()` depending on your application. Imagine a situation in which three entries have the same value. Using either command, they will all get the same rank. For the sake of this example, let's say it's "2." Here's how the two commands would evaluate the next results differently:
+
+* `RANK()` would give the identical rows a rank of 2, then skip ranks 3 and 4, so the next result would be 5
+* `DENSE_RANK()` would still give all the identical rows a rank of 2, but the following row would be 3 &mdash; no ranks would be skipped.
 
 <div class="practice-prob">
   Write a query that shows the 5 longest rides from each starting terminal, ordered by terminal, and longest to shortest rides within each terminal. Limit to rides that occurred before Jan. 8, 2012.
@@ -150,14 +146,13 @@ You can use window functions to identify what percentile (or quartile, or any ot
 
 Looking at the results from the query above, you can see that the `percentile` column doesn't calculate exactly as you might expect. If you only had two records and you were measuring percentiles, you'd expect one record to define the 1st percentile, and the other record to define the 100th percentile. Using the `NTILE` function, what you'd actually see is one record in the 1st percentile, and one in the 2nd percentile. You can see this in the results for `start_terminal` 31000 &mdash; the `percentile` column just looks like a numerical ranking. If you scroll down to `start_terminal` 31007, you can see that it properly calculates percentiles because there are more than 100 records for that `start_terminal`. If you're working with very small windows, keep this in mind and consider using quartiles or similarly small bands.
 
-<!--
 <div class="practice-prob">
-  a
+  Write a query that shows only the duration of the trip and the percentile into which that duration falls (across the entire dataset &mdash; not partitioned by terminal).
 </div>
 <div class="practice-prob-answer">
-  <a href="" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/68795b2e1763" target="_blank">See the Answer &raquo;</a>
 </div>
--->
+
 
 ###LAG and LEAD
 It can often be useful to compare rows to preceding or following rows, especially if you've got the data in an order that makes sense. You can use `LAG` or `LEAD` to create columns that pull values from other rows &mdash; all you need to do is enter which column to pull from and how many rows away you'd like to do the pull. `LAG` pulls from previous rows and `LEAD` pulls from following rows:
@@ -239,7 +234,7 @@ This can be rewritten as:
              (PARTITION BY start_terminal ORDER BY duration_seconds)
      ORDER BY start_terminal, duration_seconds
 
-The `WINDOW`clause, if included, should always come after the `WHERE` clause.
+The `WINDOW` clause, if included, should always come after the `WHERE` clause.
 
 <!--
 <div class="practice-prob">
@@ -267,14 +262,4 @@ You can check out some more specific uses for window functions in the [solutions
 * [example](LINK)
 -->
 
-<!--
-<div class="practice-prob">
-  calculate a median
-</div>
-<div class="practice-prob-answer">
-  <a href="" target="_blank">See the Answer &raquo;</a>
-</div>
--->
-
-<!--Move on to the next lesson: [Making Queries Run Faster](/advanced/faster-queries.html).
--->
+Move on to the next lesson: [Making Queries Run Faster](/advanced/faster-queries.html).
