@@ -98,7 +98,7 @@ The way SQL treats alphabetical ordering is a little bit tricky. You may have no
 </div>
 
 ###Arithmetic
-You can perform arithmetic in SQL using the same operators you would in Excel: `+`, `-`, `*`, `/`. SQL is a little tricky in that these only work in a given row. To clarify, you can only add values in multiple columns **from the same row** together using `+` &mdash; if you want to add values across multiple rows, you'll need to use [Aggregation Functions](/intermediate-sql/aggregation-functions.html), which are covered in the Intermediate Tutorial.
+You can perform arithmetic in SQL using the same operators you would in Excel: `+`, `-`, `*`, `/`. SQL is a little tricky in that these only work in a given row. To clarify, you can only add values in multiple columns **from the same row** together using `+` &mdash; if you want to add values across multiple rows, you'll need to use [Aggregation Functions](/intermediate/aggregation-functions.html), which are covered in the Intermediate Tutorial.
 
 The example below illustrates the use of `+`:
 
