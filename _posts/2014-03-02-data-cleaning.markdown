@@ -65,14 +65,14 @@ The `TRIM` function takes 3 arguments. First, you have to specify whether you wa
 
     SELECT incidnt_num,
            descript,
-           POSITION('a' IN descript) AS a_position
+           POSITION('A' IN descript) AS a_position
       FROM tutorial.sf_crime_incidents_2014_01
 
 You can also use the STRPOS function to achieve the same results &mdash; just replace "IN" with a comma and switch the order of the string and substring:
 
     SELECT incidnt_num,
            descript,
-           STRPOS(descript, 'a') AS a_position
+           STRPOS(descript, 'A') AS a_position
       FROM tutorial.sf_crime_incidents_2014_01
   
 ####SUBSTR
