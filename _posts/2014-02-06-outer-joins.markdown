@@ -182,7 +182,7 @@ It is very likely that you will need to do some exploratory analysis on this tab
 </div>
 
 <div class="practice-prob">
-  Write a query that lists investors based on the number of currently operating companies in which they are invested. Include a row for companies with no investor, and order from most companies to least.
+  Write a query that lists investors based on the number of companies in which they are invested. Include a row for companies with no investor, and order from most companies to least.
 </div>
 <div class="practice-prob-answer">
   <a href="https://modeanalytics.com/tutorial/reports/58d5744f474b" target="_blank">See the Answer &raquo;</a>
