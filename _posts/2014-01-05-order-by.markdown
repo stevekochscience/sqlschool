@@ -106,6 +106,7 @@ You can also leave comments across multiple lines using `/*` to begin the commen
   <a href="https://modeanalytics.com/tutorial/reports/34a457c9e468" target="_blank">See the Answer &raquo;</a>
 </div>
 
+<!--
 ###What Others Have Done
 One of the defining features of Mode is that much of the work done using it is made public for others to view, copy, and improve upon. We strongly encourage you to check out some of the other work in Mode when you feel like taking a break from tutorials.
 
@@ -118,6 +119,7 @@ Having just worked with Billboard's data, you might be interested in this piece 
 * [Chance of returning by time since last hit and number of hits](https://modeanalytics.com/benn/reports/318c4eb50378/runs/36f848b3c923)
 
 These queries contain some advanced concepts that you may not yet understand. Don't worry &mdash; you'll be there after the Intermediate tutorial.
+-->
 
 ###What's Next?
 Congrats on completeing the Beginner SQL Tutorial! Now that you've got some skills, you can [explore some other data on Mode](https://modeanalytics.com/explore/tables) or [upload your own](https://modeanalytics.com)
