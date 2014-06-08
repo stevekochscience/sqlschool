@@ -31,7 +31,9 @@ Now on to the lesson!
 In the [previous tutorial](/the-basics/where-operators.html), you played with some comparison opertors. There are a couple more that you're likely to find very useful. They're all special snowflakes, so we'll go through them individually:
 
 ###LIKE
-`LIKE` allows you to match on similar values rather than exact ones. Using wildcard characters, you can define what must be exactly matched and what can be different. In this example, the results will include rows for which `group_name` starts with "Snoop" and is followed by any number and selection of characters:
+`LIKE` allows you to match on similar values rather than exact ones. Using wildcard characters, you can define what must be exactly matched and what can be different. In this example, the results will include rows for which `"group"` starts with "Snoop" and is followed by any number and selection of characters.
+
+Note: "group" appears in quotations below because the word "group" is actually the [name of a function in SQL](/intermediate/aggregation-functions.html). The double quotes (as opposed to single: `'`) are a way of indicating that you are referring to the column name "group", not the SQL function. In general, putting double quotes around a word or phrase will always indicate that you are referring to that column name.
 
     SELECT *
       FROM tutorial.billboard_top_100_year_end
@@ -48,8 +50,6 @@ You can also use `_` (a single underscore) to substitute for an individual chara
     SELECT *
       FROM tutorial.billboard_top_100_year_end
      WHERE artist ILIKE 'dr_ke'
-
-Note that when you query the <code>group</code> column, you will need to put it in double quotes: <code>"group"</code>. This is because <code>GROUP</code> also happens to be a SQL command (which you will learn about later).
 
 <div class="practice-prob">
   Write a query that returns all rows for which Ludacris was a member of the group.
