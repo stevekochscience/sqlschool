@@ -1,5 +1,16 @@
 @import url("http://about.modeanalytics.com/stylesheets/style.css");
 
+/* Override text link color */
+
+body a:link, body a:visited {
+  color: #E6834E;
+  background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 79%, #E6EFF1 80%, #E6EFF1 100%);
+}
+
+body a:hover {
+  background: none;
+}
+
 /* CLEANED UP MENU AND HEADER */
 
 #header-small, #header {
@@ -15,14 +26,21 @@
   font-weight:600;
   text-transform:uppercase;
   padding: 0 1.5em;
+
 }
 
 #header-small .blog-header-link {
   margin: 23px 0px;
+  background: none;
 }
 
 #header .blog-header-link {
   margin: 39px 0px;
+  background: none;
+}
+
+a.no-underline {
+  background: none !important;
 }
 
 /* CONTENT AREA */
@@ -109,6 +127,7 @@ iframe.hn-share-iframe { margin-bottom:-1px; }
   text-align: left;
   float:left;
 	height: 40px;
+  padding: 22px 0;
 }
 
 #footer-container {
@@ -124,22 +143,25 @@ iframe.hn-share-iframe { margin-bottom:-1px; }
   margin-top: 5px;
 }
 
-a.social-icon {
+.social-links a.social-icon {
   width: 20px;
   height: 20px;
-  font-size: 1em;
-  margin-left: 3px;
-  margin-right: 3px;
-  color: inherit;
+  font-size: 1.3em;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #87BFC2;
   border-bottom: none;
+  background: none;
 }
 
-a.social-icon:hover {
+.social-links a.social-icon:hover {
   background: transparent;
-  color: #E6834E;
+  color: #E6EFF1;
   border-bottom: none;
   text-decoration: none;
   cursor: pointer;
+  border-bottom: none;
+  background: none;
 }
 
 /* SQL SCHOOL */
@@ -239,6 +261,8 @@ td.right, th.right {
   float: left;
 }
 .mode-copyright {
+  color: #87BFC2;
+  margin-top: 5px;
   float:right;
 }
 

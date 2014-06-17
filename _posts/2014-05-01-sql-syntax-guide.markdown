@@ -6,7 +6,7 @@ date:   2014-05-01 00:00:59
 ---
 
 ###Mode public SQL reference
-Mode's public service runs on [Amazon Redshift](http://http://aws.amazon.com/redshift/ "Redshift"). The SQL syntax is based on PostgreSQL, so example code for PostgreSQL on other websites should work most of the time.
+Mode's public service runs on [Amazon Redshift](http://aws.amazon.com/redshift/ "Redshift"). The SQL syntax is based on PostgreSQL, so example code for PostgreSQL on other websites should work most of the time.
 
 For security reasons, Mode's public service is read-only, so you can't use `CREATE TABLE`, `ALTER TABLE`, `DELETE`, or any other commands that might alter the underlying database. This narrows down your options to `SELECT` statements and a few others like `EXPLAIN`. This means that large parts of Amazon's documentation are irrelevant.
 
