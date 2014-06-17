@@ -6,9 +6,7 @@ date:   2014-01-01 00:00:58
 ---
 
 ###Opening Mode and Getting Started
-If you're not yet signed up for Mode, [drop us an email to be added to the private beta](mailto:info@modeanalytics.com).
-
-If you haven't already, open a second browser window to <a href="https://modeanalytics.com" target="_blank">Mode</a> and log in. You'll arrive at your homepage. You can use the homepage to explore the community or to quickly access a project you were working on previously. Since you probably haven't used Mode yet, click "New Query" to get started.
+Open a second browser window to <a href="https://modeanalytics.com" target="_blank">Mode</a> and log in. If you don't already have a Mode account, <a href="http://modeanalytics.com/signup" target="_blank">create one here</a> You'll arrive at your homepage. You can use the homepage to explore the community or to quickly access a project you were working on previously. Since you probably haven't used Mode yet, click "New Query" to get started.
 
 ![Create a New Query](/images/the-basics/new-query.png)
 
