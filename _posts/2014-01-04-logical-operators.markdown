@@ -28,7 +28,7 @@ You'll notice that Macklemore does a lot of collaborations. Since his songs are 
 Now on to the lesson!
 
 ###Comparison Operators &mdash; the Weird Ones
-In the [previous tutorial](/the-basics/where-operators.html), you played with some comparison opertors. There are a couple more that you're likely to find very useful. They're all special snowflakes, so we'll go through them individually:
+In the [previous tutorial](/the-basics/where-operators.html), you played with some comparison operators. There are a couple more that you're likely to find very useful. They're all special snowflakes, so we'll go through them individually:
 
 ###LIKE
 `LIKE` allows you to match on similar values rather than exact ones. Using wildcard characters, you can define what must be exactly matched and what can be different. In this example, the results will include rows for which `"group"` starts with "Snoop" and is followed by any number and selection of characters.
