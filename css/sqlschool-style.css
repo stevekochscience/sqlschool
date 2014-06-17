@@ -6,7 +6,6 @@
 
 body a:link, body a:visited {
   color: #E4753A;
-  background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 79%, #E6EFF1 80%, #E6EFF1 100%);
 }
 
 body a:hover {
