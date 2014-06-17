@@ -2,7 +2,7 @@
 layout: sqlschool-lesson
 category: "solutions-to-common-problems"
 title:  "Working with Timezones"
-date:   2014-04-01 00:00:56
+date:   2014-04-01 00:00:55
 ---
 
 Depending on where you live timezones can really mess up your analysis. Let's start by figuring out what time zone your database thinks it's in by running this:
