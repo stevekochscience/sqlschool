@@ -7,7 +7,7 @@ date:   2014-02-01 00:00:58
 
 This lesson will use the same Apple stock price data from the [previous lesson.](/intermediate/aggregation-functions.html)
 
-<div class="tip">Start by running this code to remind yourself what's in the table that will be used in this tutorial. Remember to switch over to Mode and run any of the code you see in the grey boxes to get a sense of what the output will look like.</div>
+Start by running this code to remind yourself what's in the table that will be used in this tutorial. Remember to switch over to Mode and run any of the code you see in the grey boxes to get a sense of what the output will look like.
 
     SELECT * FROM tutorial.aapl_historical_stock_price
 

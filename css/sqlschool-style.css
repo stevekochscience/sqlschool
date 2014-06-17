@@ -1,0 +1,302 @@
+@import url("http://about.modeanalytics.com/stylesheets/style.css");
+
+/* CLEANED UP MENU AND HEADER */
+
+#header-small, #header {
+  border-bottom: 1px solid #DDD;
+}
+
+.blog-header-link {
+  float:left;
+  line-height:16px;
+  font-size: 14px;
+  letter-spacing: 0.0625em;
+  color: #396D6C;
+  font-weight:600;
+  text-transform:uppercase;
+  padding: 0 1.5em;
+}
+
+#header-small .blog-header-link {
+  margin: 23px 0px;
+}
+
+#header .blog-header-link {
+  margin: 39px 0px;
+}
+
+/* CONTENT AREA */
+
+.columns-container {
+  max-width: 800px;
+  margin: 50px auto 0px auto;
+}
+
+#blog-content, #archive-content {
+  margin-bottom: .5em;
+  text-align: left;
+  float:left;
+  padding: 30px 20px;
+}
+
+.post-header {
+  margin-bottom: 25px;
+}
+
+.title, .post-footer h1 a, #archive-content h1 {
+  font-size: 30px;
+  letter-spacing: 0px;
+  color: #4a4a4a;
+	font-family: 'ProximaNova', sans-serif;
+	font-weight: 300;
+  font-style: light;
+  margin-bottom: 13px;
+}
+.byline, .byline a {
+  font-size: 18px;
+  letter-spacing: 0px;
+	font-family: 'ProximaNova', sans-serif;
+  font-weight:500;
+  font-style: normal;
+  margin-top: 13px;
+}
+
+.byline a {
+  color: #3c8e8e;
+}
+
+.dateline, #blog-sidebar h3, .post-footer h3 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #999;
+	font-family: 'ProximaNova', sans-serif;
+	font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+ul.archive-posts {
+  margin-top: 30px;
+}
+
+.archive-posts li {
+  margin-bottom: 15px;
+}
+.post-body {
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 30px;
+	font-family: 'ProximaNova', sans-serif;
+	font-weight: 500;
+  font-style: normal;
+  color: #4a4a4a;
+}
+
+.post-body p {
+  margin-bottom: 20px;
+}
+
+.post-body h3 {
+  font-size: 22px;
+  margin-top:40px;
+}
+
+.post-body img {
+  max-width: 100%;
+  margin: 35px auto;
+  display:block;
+}
+
+.post-body li {
+  list-style: disc;
+  margin-left: 40px;
+  padding-right: 40px;
+}
+
+.post-footer {
+  text-align: left;
+  border-top: 1px solid #DDD;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+/* Social Button Spacing */
+div.fb-like {
+  width:77px; 
+  vertical-align:top !important;
+}
+iframe.twitter-share-button{ margin-right:-23px; }
+iframe.hn-share-iframe { margin-bottom:-1px; }
+
+
+/* SIDEBAR AND FOOTER */
+#blog-sidebar {
+  display: none;
+}
+
+#blog-footer {
+  background-color: #396D6C;
+  width:100%;
+  text-align: left;
+  float:left;
+	height: 40px;
+}
+
+#footer-container {
+	width: 100%px;
+	max-width: 650px;
+  padding: 0px;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 10px auto 0px auto;
+}
+
+.footer-column h3 {
+  color: #b3b3b3;
+}
+
+#email-footer { margin-top: 15px;
+}
+
+.footer-column {
+  width: 100%;
+  float:left;
+  color: #F1F1F1;
+  margin-bottom:15px;
+}
+
+.social-links {
+  margin-top: 5px;
+}
+
+a.social-icon {
+  width: 20px;
+  height: 20px;
+  font-size: 1em;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: inherit;
+  border-bottom: none;
+}
+
+a.social-icon:hover {
+  background: transparent;
+  color: #E6834E;
+  border-bottom: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* EMAIL SUB SIGNUP FORM */
+.form-wrapper {
+  margin-top: 5px;
+  margin-bottom:15px;
+}
+
+.form-wrapper input {
+  float: left;
+  width: 100%;
+  max-width: 222px;
+  height: 22px;
+  padding-left: 10px;
+  border: 0;
+  background: #eee;
+  color: #999;
+  -webkit-appearance: none;
+  border-radius: 0;
+  margin-bottom: 10px;
+}
+
+.form-wrapper input:focus {
+  outline: 0;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+/* Form submit button */
+.form-wrapper button {
+  overflow: visible;
+  position: relative;
+  border: 0;
+  border-radius:0;
+  height: 24px;
+  cursor: pointer;
+  width: 75px;
+  color: #fff;
+  background: #E6834E;
+  font-size:0.8em;
+}   
+
+.form-wrapper button:hover{     
+  background: #879A83;
+}   
+
+.form-wrapper button:active,
+.form-wrapper button:focus{   
+  background: #879A83;
+  outline: 0;   
+}
+
+.form-wrapper button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
+  border: 0;
+  padding: 0;
+}
+
+ul.recent-posts li {
+  margin-bottom:3px;
+}
+
+.footer-column ul.recent-posts li a, div#view-more a {
+  color: #F1F1F1;
+}
+
+.footer-column ul.recent-posts li a:hover, div#view-more a:hover {
+  color: #E6834E;
+}
+
+div#view-more {
+  margin-top:22px;
+}
+
+/* RESPONSIVE STUFF FOR NON-MOBILE */
+@media screen and (min-width: 800px ) {
+  .post-body p,.post-body h1,.post-body h2,.post-body h3,
+  .post-body h4,.post-body h5,.post-body ul, .post-body ol,
+  .post-header, .post-social, .breadcrumbs, .highlight {
+    padding:0px 75px;
+  }
+  
+  .post-body li p {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  
+  #blog-content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  
+  #archive-content {
+    width: 650px;
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+  
+  .post-body p iframe {
+    margin: 20px -75px;
+    width: 800px !important;
+  }
+  
+  .post-footer {
+    width: 650px;
+    margin: 20px auto;
+  }
+}
+
+@media screen and (min-width: 1025px ) {
+  
+  .columns-container {
+    margin-top: 0px;
+  }
+}
