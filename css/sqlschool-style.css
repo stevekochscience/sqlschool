@@ -1,9 +1,11 @@
 @import url("http://about.modeanalytics.com/stylesheets/style.css");
 
+
+
 /* Override text link color */
 
 body a:link, body a:visited {
-  color: #E6834E;
+  color: #E4753A;
   background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 79%, #E6EFF1 80%, #E6EFF1 100%);
 }
 
@@ -22,7 +24,7 @@ body a:hover {
   line-height:16px;
   font-size: 14px;
   letter-spacing: 0.0625em;
-  color: #396D6C;
+  color: #396D6C !important;
   font-weight:600;
   text-transform:uppercase;
   padding: 0 1.5em;
@@ -121,13 +123,18 @@ iframe.hn-share-iframe { margin-bottom:-1px; }
 
 
 /* FOOTER */
+.footer-push {
+  height: 88px;
+}
+
 #sqlschool-footer {
   background-color: #396D6C;
   width:100%;
   text-align: left;
-  float:left;
-	height: 40px;
+	height: 44px;
   padding: 22px 0;
+  position: relative;
+  z-index: 10;
 }
 
 #footer-container {
@@ -165,6 +172,11 @@ iframe.hn-share-iframe { margin-bottom:-1px; }
 }
 
 /* SQL SCHOOL */
+
+html, body {
+  height: 100%;
+}
+
 .sqlschool-content {
   text-align: left;
   padding: 30px 0px;
@@ -175,7 +187,11 @@ iframe.hn-share-iframe { margin-bottom:-1px; }
 }
 
 #container {
-  background-color: white;
+  background-color: transparent !important;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -88px; /* the bottom margin is the negative value of the footer's height */
 }
 
 .breadcrumbs {
