@@ -186,7 +186,6 @@ html, body {
 }
 
 #container {
-  background-color: transparent !important;
   min-height: 100%;
   height: auto !important;
   height: 100%;
