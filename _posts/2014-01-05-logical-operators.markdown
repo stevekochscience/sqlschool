@@ -27,6 +27,7 @@ You'll notice that Macklemore does a lot of collaborations. Since his songs are 
 
 Now on to the lesson!
 
+<div id="like"></div>
 ###Comparison Operators &mdash; the Weird Ones
 In the [previous tutorial](/the-basics/where-operators.html), you played with some comparison operators. There are a couple more that you're likely to find very useful. They're all special snowflakes, so we'll go through them individually:
 
@@ -58,6 +59,7 @@ You can also use `_` (a single underscore) to substitute for an individual chara
   <a href="https://modeanalytics.com/tutorial/reports/67228a008c9d" target="_blank">See the Answer &raquo;</a>
 </div>
 
+<div id="in"></div>
 <div class="practice-prob">
   Write a query that returns all rows for which the first artist listed in the group has a name that begins with "DJ"
 </div>
@@ -78,6 +80,7 @@ As in the previous tutorial, you can use non-numerical values, but they need to 
       FROM tutorial.billboard_top_100_year_end
      WHERE artist IN ('Taylor Swift', 'Usher', 'Ludacris')
 
+<div id="between"></div>
 <div class="practice-prob">
   Write a query that shows all of the entries for Elvis and M.C. Hammer. Hint: M.C. Hammer is actually on the list under multiple names, so you may need to first write a query to figure out exactly how M.C. Hammer is listed. You're likely to face similar problems that require some exploration in many real-life scenarios.
 </div>
@@ -100,6 +103,7 @@ This allows you to specify a range and select only rows within a certain range. 
 
 Some people prefer the latter example because it more explicitly shows what the query is doing (t's easy to forget whether or not BETWEEN includes the range bounds).
 
+<div id="is-null"></div>
 <div class="practice-prob">
   Write a query that shows all top 100 songs from January 1, 1985 through December 31, 1990.
 </div>
@@ -125,6 +129,7 @@ You can select rows that contain no data in a given column by using the `IS NULL
   <a href="https://modeanalytics.com/tutorial/reports/c97c1d0b0fba" target="_blank">See the Answer &raquo;</a>
 </div>
 
+<div id="and"></div>
 ###Logical Operators
 You'll likely want to filter using several conditions &mdash; possibly more often than you filter by only one condition. Logical operators allow you to use multiple comparison operators in one query.
 
@@ -152,6 +157,7 @@ You can see that this example is spaced out onto multiple lines &mdash; a good w
   <a href="https://modeanalytics.com/tutorial/reports/e1731ac0419f" target="_blank">See the Answer &raquo;</a>
 </div>
 
+<div id="or"></div>
 <div class="practice-prob">
   Write a query that surfaces the top-ranked records in 1990, 2000, and 2010
 </div>
@@ -186,6 +192,7 @@ You will notice that the conditional statement `year = 2013` will be fulfilled f
   <a href="https://modeanalytics.com/tutorial/reports/aa5a19da7f2e" target="_blank">See the Answer &raquo;</a>
 </div>
 
+<div id="not"></div>
 <div class="practice-prob">
   Write a query that returns all songs with titles that contain the word "California" in either the 1970s or 1990s.
 </div>

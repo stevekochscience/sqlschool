@@ -8,6 +8,7 @@ date:   2014-01-01 00:00:56
 This lesson will use the same housing development data from the [previous lesson](/the-basics/select-from.html).
 
 Start by running this code to remind yourself what's in the table that will be used in this tutorial. Remember to switch over to Mode and run any of the code you see in the grey boxes to get a sense of what the output will look like.
+<div id="where"></div>
 
     SELECT * FROM tutorial.us_housing_units_completed
 

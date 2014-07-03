@@ -16,20 +16,22 @@ title: "MODE: SQL School"
       <p style="float:right">Sort by: <a href="index.html">Lesson Order</a> | SQL Commands</p>
       <div style="clear: both;"></div>
 
-      {% for category in site.category-list %}
-        <h4 class="category" id="{{ category }}">
-          {{ category | replace:'-', ' ' }}
-        </h4>
-        <ul class="table-of-contents">
-          {% for post in site.posts %}
-              {% for cat in post.category %}
-                {% if cat == category %}
-                  <li class="list-question"><a href="{{ post.url }}"> {{ post.title }}</a></li>
-                {% endif %}
-              {% endfor %}
-          {% endfor %}
-        </ul>
-      {% endfor %}
+      <h4 class="category">SQL Commands</h4>
+      <ul class="table-of-contents">
+        <li class="list-question"><a href="/the-basics/select-from.html">SELECT</a></li>
+        <li class="list-question"><a href="/the-basics/select-from.html">FROM</a></li>
+        <li class="list-question"><a href="/the-basics/select-from.html#limit">LIMIT</a></li>
+        <li class="list-question"><a href="/the-basics/where-operators.html#where">WHERE</a></li>
+        <li class="list-question"><a href="/the-basics/logical-operators.html#like">LIKE</a></li>
+        <li class="list-question"><a href="/the-basics/logical-operators.html#in">IN</a></li>
+        <li class="list-question"><a href="/the-basics/logical-operators.html#between">BETWEEN</a></li>
+        <li class="list-question"><a href="/the-basics/logical-operators.html#is-null">IS NULL</a></li>
+        <li class="list-question"><a href="/the-basics/logical-operators.html#and">AND</a></li>
+        <li class="list-question"><a href="/the-basics/logical-operators.html#or">OR</a></li>
+        <li class="list-question"><a href="/the-basics/logical-operators.html#not">NOT</a></li>
+        <li class="list-question"><a href="/the-basics/order-by.html">ORDER BY</a></li>
+        
+      </ul>
 
     </div>
   

@@ -104,12 +104,14 @@ Without the double quotes, that query would read 'West' and 'Region' as separate
            south AS South_Region
       FROM tutorial.us_housing_units_completed
 
+<div id="limit"></div>
 <div class="practice-prob">
   Write a query to select all of the columns in <code>tutorial.us_housing_units_completed</code> and rename them so that their first letters are capitalized
 </div>
 <div class="practice-prob-answer">
   <a href="https://modeanalytics.com/tutorial/reports/740ad94d2ef9" target="_blank">See the Answer &raquo;</a>
 </div>
+
 
 ###LIMIT
 You may have noticed that checkbox next in the upper-right portion of the editor that says "Limit."

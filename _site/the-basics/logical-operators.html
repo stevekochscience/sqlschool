@@ -87,6 +87,8 @@
 
 <p>Now on to the lesson!</p>
 
+<div id="like"></div>
+
 <h3>Comparison Operators &mdash; the Weird Ones</h3>
 
 <p>In the <a href="/the-basics/where-operators.html">previous tutorial</a>, you played with some comparison operators. There are a couple more that you&#39;re likely to find very useful. They&#39;re all special snowflakes, so we&#39;ll go through them individually:</p>
@@ -118,6 +120,8 @@
   <a href="https://modeanalytics.com/tutorial/reports/67228a008c9d" target="_blank">See the Answer &raquo;</a>
 </div>
 
+<div id="in"></div>
+
 <div class="practice-prob">
   Write a query that returns all rows for which the first artist listed in the group has a name that begins with "DJ"
 </div>
@@ -138,6 +142,8 @@
   FROM tutorial.billboard_top_100_year_end
  WHERE artist IN (&#39;Taylor Swift&#39;, &#39;Usher&#39;, &#39;Ludacris&#39;)
 </code></pre></div>
+<div id="between"></div>
+
 <div class="practice-prob">
   Write a query that shows all of the entries for Elvis and M.C. Hammer. Hint: M.C. Hammer is actually on the list under multiple names, so you may need to first write a query to figure out exactly how M.C. Hammer is listed. You're likely to face similar problems that require some exploration in many real-life scenarios.
 </div>
@@ -159,6 +165,8 @@
  WHERE year_rank &gt;= 5 AND year_rank &lt;= 10
 </code></pre></div>
 <p>Some people prefer the latter example because it more explicitly shows what the query is doing (t&#39;s easy to forget whether or not BETWEEN includes the range bounds).</p>
+
+<div id="is-null"></div>
 
 <div class="practice-prob">
   Write a query that shows all top 100 songs from January 1, 1985 through December 31, 1990.
@@ -187,6 +195,8 @@
   <a href="https://modeanalytics.com/tutorial/reports/c97c1d0b0fba" target="_blank">See the Answer &raquo;</a>
 </div>
 
+<div id="and"></div>
+
 <h3>Logical Operators</h3>
 
 <p>You&#39;ll likely want to filter using several conditions &mdash; possibly more often than you filter by only one condition. Logical operators allow you to use multiple comparison operators in one query.</p>
@@ -214,6 +224,8 @@
 <div class="practice-prob-answer">
   <a href="https://modeanalytics.com/tutorial/reports/e1731ac0419f" target="_blank">See the Answer &raquo;</a>
 </div>
+
+<div id="or"></div>
 
 <div class="practice-prob">
   Write a query that surfaces the top-ranked records in 1990, 2000, and 2010
@@ -251,6 +263,8 @@
 <div class="practice-prob-answer">
   <a href="https://modeanalytics.com/tutorial/reports/aa5a19da7f2e" target="_blank">See the Answer &raquo;</a>
 </div>
+
+<div id="not"></div>
 
 <div class="practice-prob">
   Write a query that returns all songs with titles that contain the word "California" in either the 1970s or 1990s.
