@@ -71,9 +71,9 @@ When you've completed the above practice problem, check your answer by following
 
 *Copy the URL in the share menu and send to all your friends!*
 
-You can share your work via URL at any state, but if you want to polish your work up a little by adding a title and description, click the "Save" button, complete the fields, and click "Save Report."
+You can share your work via URL at any state, but if you want to polish your work up a little by adding a title and description, click the "Publish" button, complete the fields, and click "Publish Report." This will also make your report searchable by other Mode users.
 
-![Saving your Work](/images/the-basics/saving-work.png)
+![Publishing your Work](/images/the-basics/publishing-work.png)
 
 ###What actually happens when you run a query?
 When you run a query, what do you get back? As you can see from running the queries above, you get a table. But that table isn't stored permanently in the database. It also doesn't change any tables in the database&mdash;`tutorial.us_housing_units_completed` will contain the same data every time you query it, and the data will never change no matter how many times you query it. Mode does store all of your results for future access, but `SELECT` statements don't change anything in the underlying tables.
