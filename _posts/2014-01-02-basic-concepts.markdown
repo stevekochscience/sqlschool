@@ -2,7 +2,7 @@
 layout: sqlschool-lesson
 category: "the-basics"
 title:  "Basic Concepts"
-date:   2014-01-01 00:00:59
+date:   2014-01-01 00:00:58
 ---
 
 ###Who is this tutorial for?

@@ -225,6 +225,101 @@ code {
   padding: 2px;
 }
 
+/* ACCORDION */
+.accordion {
+  position: relative;
+  margin: 60px auto;
+	order-radius: 3px 3px 0 0;
+  width: 100%;
+	max-width:570px;
+}
+
+[id*="open-accordion"], [id*="close-accordion"] {
+  background: #EAEAEA;
+  border-bottom: 1px solid #CACACA;
+  line-height: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+[id*="close-accordion"] {
+  display: none;
+}
+
+.accordion a {
+  color: #666;
+  font-size: 1.25em;
+  font-weight: normal;
+  padding-left: 10px;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+.accordion a:hover {
+  background-color: #EAEAEA;
+}
+
+[id*="open-accordion"]:after, [id*="close-accordion"]:after {
+  content: "";
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #666;
+  position: absolute;
+  right: 5px;
+  top: 15px;
+  z-index: 999;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+}
+
+.target-fix {
+  display: block;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.accordion-content {
+  background: #fff;
+  height: 0;
+  margin: -1px auto 0;
+  padding: 0 10px;
+	border: 1px solid #C7CCCB;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+}
+.accordion-content p {
+	padding: 0px !important;
+}
+
+.accordion span:target ~ .accordion-content {
+  display: block;
+  height: auto;
+  padding-bottom: 25px;
+  padding-top: 10px;
+}
+
+.accordion span:target ~ [id*="close-accordion"] {
+  display: block;
+}
+
+.accordion span:target ~ [id*="open-accordion"] {
+  display: none;
+}
+
+.accordion span:target ~ [id*="close-accordion"]:after {
+  border-top: 10px solid #666;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+}
+
+/* PRACTICE PROBLEMS */
+
 div.practice-prob, div.practice-prob-answer {
   background-color: #FFF;
   border: 1px solid #C7CCCB;

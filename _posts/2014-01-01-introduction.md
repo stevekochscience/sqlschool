@@ -1,7 +1,7 @@
 ---
 layout: sqlschool-lesson
 category: "the-basics"
-title:  "SQL School: Introduction"
+title:  "Introduction"
 date:   2014-01-01 00:00:59
 ---
 ###Welcome to SQL School!

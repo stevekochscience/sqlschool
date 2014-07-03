@@ -2,7 +2,7 @@
 layout: sqlschool-lesson
 category: "the-basics"
 title:  "Using Multiple Filters at Once"
-date:   2014-01-01 00:00:56
+date:   2014-01-01 00:00:55
 ---
 
 The data in this lesson is from [Billboard Music Charts](http://www.billboard.com/charts). It was collected in January 2014 and contains data from 1956 through 2013. The results in this table are the *year-end* results &mdash; the top 100 songs at the end of each year. Some of the data has been intentionally removed for the sake of this lesson. You can see the full dataset at:
