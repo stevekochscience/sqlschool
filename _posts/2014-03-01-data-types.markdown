@@ -53,6 +53,7 @@ The `INTEGER` data type, for example, only stores whole numbers &mdash; no decim
 ###Changing a Column's Data Type
 It's certainly best for data to be stored in its optimal format from the beginning, but if it isn't, you can always change it in your query. It's particularly common for dates or numbers, for example, to be stored as strings. This becomes problematic when you want to sum a column and you get an error because SQL is reading numbers as strings. When this happens, you can use `CAST` or `CONVERT` to change the data type to a numeric one that will allow you to perform the sum.
 
+<div id="cast"></div>
 You can actually achieve this with two different type of syntax. The following examples all produce the same result:
 
 * `CAST(column_name AS integer)`

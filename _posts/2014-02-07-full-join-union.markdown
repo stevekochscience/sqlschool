@@ -7,6 +7,8 @@ date:   2014-02-01 00:00:53
 
 This lesson uses the same data from the previous lesson, which was pulled from [Crunchbase](http://info.crunchbase.com/about/crunchbase-data-exports/) on Feb. 5, 2014. As in the previous lesson, large portions of both tables were randomly dropped for the sake of this lesson. The Crunchbase Investments table has also been split into two parts for the sake of this exercise. For more complete notes on Crunchbase data, return to the [previous lesson](/intermediate/outer-joins.html). For now, you should acquaint yourself with the `tutorial.crunchbase_investments_part1` table:
 
+<div id="full-join"></div>
+
     SELECT *
       FROM tutorial.crunchbase_investments_part1
 
@@ -29,6 +31,7 @@ You might also notice that surprisingly few rows in the `crunchbase_acquisitions
 
 <!-- The way I read this problem I ended up with a query that gave me a 'matched' and an 'unmatched' column.  The way it stands now this practice problem is either confusingly worded or just requiring us to copy/paste the example above and change one table name, or maybe both.  -->
 
+<div id="union"></div>
 <div class="practice-prob">
   Write a query that joins <code>tutorial.crunchbase_companies</code> and <code>tutorial.crunchbase_investments_part1</code> using a <code>FULL JOIN</code>. Count up the number of rows that are matched/unmatched as in the example above.
 </div>

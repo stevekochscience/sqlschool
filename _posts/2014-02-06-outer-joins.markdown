@@ -26,6 +26,7 @@ When performing an Inner Join, rows from either table that are unmatched in the 
 
 As you work through this lesson, it might be helpful to refer to [this visual reference](http://joins.spathon.com/) by [Patrik Spathon](https://twitter.com/Spathon).
 
+<div id="left-join"></div>
 <a href="http://joins.spathon.com/"><img src="/images/intermediate/visual-join.png"></a>
 
 ###LEFT JOIN
@@ -78,6 +79,7 @@ This is because the `LEFT JOIN` command tells the database to return all rows in
 
 Now that you've got a sense of how Left Joins work, try this harder aggregation problem:
 
+<div id="right-join"></div>
 <div class="practice-prob">
   Count the number of unique companies (don't double-count companies) and unique *acquired* companies by state. Do not include results for which there is no state data, and order by the number of acquired companies from highest to lowest.
 </div>
@@ -86,7 +88,7 @@ Now that you've got a sense of how Left Joins work, try this harder aggregation 
 </div>
 
 ###RIGHT JOIN
-Right Joins are similar to Left Joins except they return all rows from the table in the `RIGHT JOIN` clause and only matching rows from the table in the `FROM` clause.
+Right Joins are similar to Left Joins outlined above except they return all rows from the table in the `RIGHT JOIN` clause and only matching rows from the table in the `FROM` clause.
 
 ![Right Joins](http://www.w3schools.com/sql/img_rightjoin.gif)
 

@@ -20,6 +20,7 @@ In other words, data wrangling (or munging) is the process of programmatically t
 
 If you work with SQL regularly, you'll need to become really comfortable with these skills, as they are what will allow you to get to the fun stuff.
 
+<div id="string-cleaning"></div>
 ###Cleaning Strings
 Most of the functions presented in this lesson are specific to certain data types. However, using a particular function will, in many cases, change the data to the appropriate type. `LEFT`, `RIGHT`, and `TRIM` are all used to select only certain elements of strings, but using them to select elements of a number or date will turn treat them as strings for the purpose of the function.
 
@@ -49,6 +50,7 @@ As a practical example, we can see that the `date` field in this dataset begins 
            RIGHT(date, LENGTH(date) - 11) AS cleaned_time
       FROM tutorial.sf_crime_incidents_2014_01
 
+<div id="trim"></div>
 When using functions within other functions, it's important to remember that the innermost functions will be evaluated first, followed by the functions that encapsulate them.
 
 ####TRIM
@@ -58,6 +60,7 @@ The `TRIM` function is used to remove characters from the beginning and end of a
            TRIM(both '()' FROM location)
       FROM tutorial.sf_crime_incidents_2014_01
 
+<div id="strpos"></div>
 The `TRIM` function takes 3 arguments. First, you have to specify whether you want to remove characters from the beginning ('leading'), the end ('trailing'), or both ('both', as used above). Next you must specify all characters to be trimmed. Any characters included in the single quotes will be removed from both the beginning and end of the string. Finally, you must specify the text you want to trim using `FROM`.
 
 ####POSITION and STRPOS
@@ -69,6 +72,8 @@ The `TRIM` function takes 3 arguments. First, you have to specify whether you wa
       FROM tutorial.sf_crime_incidents_2014_01
 
 You can also use the STRPOS function to achieve the same results &mdash; just replace "IN" with a comma and switch the order of the string and substring:
+
+<div id="substr"></div>
 
     SELECT incidnt_num,
            descript,
@@ -83,6 +88,7 @@ You can also use the STRPOS function to achieve the same results &mdash; just re
            SUBSTR(date, 4, 2) AS day
       FROM tutorial.sf_crime_incidents_2014_01
 
+<div id="concat"></div>
 <div class="practice-prob">
   Write a query that separates the `location` field into separate fields for lattitude and longitude. You can compare your results against the actual `lat` and `lon` fields in the table.
 </div>
@@ -121,6 +127,7 @@ Alternatively, you can use two pipe characters (`||`) to perform the same concat
   <a href="https://modeanalytics.com/tutorial/reports/1dc767c9846d" target="_blank">See the Answer &raquo;</a>
 </div>
 
+<div id="upper-lower"></div>
 <div class="practice-prob">
   Write a query that creates a date column formatted YYYY-MM-DD.
 </div>
@@ -180,6 +187,7 @@ Once you've got a well-formatted date field, you can manipulate in all sorts of 
     SELECT *
       FROM tutorial.sf_crime_incidents_cleandate
 
+<div id="extract"></div>
 You've learned how to construct a date field, but what if you want to deconstruct one? You can use `EXTRACT` to pull the pieces apart one-by-one:
 
 
@@ -232,6 +240,7 @@ You can make a time appear in a different time zone using `AT TIME ZONE`:
 
 For a complete list of timezones, [look here](http://www.postgresql.org/docs/7.2/static/timezones.html). This functionality is pretty complex because timestamps can be stored with or without timezone metadata. For a better understanding of the exact syntax, we recommend checking out the [Postgres documentation](http://www.postgresql.org/docs/9.2/static/functions-datetime.html#FUNCTIONS-DATETIME-ZONECONVERT).
 
+<div id="coalesce"></div>
 <div class="practice-prob">
   Write a query that shows exactly how long ago each indicent was reported. Assume that the dataset is in Pacific Standard Time (UTC - 8).
 </div>

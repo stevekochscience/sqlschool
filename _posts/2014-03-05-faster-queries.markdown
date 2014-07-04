@@ -83,6 +83,7 @@ The above query returns 252 results. So dropping that in a subquery and then joi
              GROUP BY 1
            ) sub
 
+<div id="explain"></div>
 In this particular case, you won't notice a huge difference because 30,000 rows isn't too hard for the database to process. But if you were talking about hundreds of thousands of rows or more, you'd see a noticeable improvement by aggregating before joining. When you do this, make sure that what you're doing is logically consistent &mdash; you should worry about the accuracy of your work before worrying about run speed.
 
 <!--

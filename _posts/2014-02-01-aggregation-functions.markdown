@@ -19,6 +19,7 @@ For this lesson and the next, you'll be working with [Apple](http://www.apple.co
 
     SELECT * FROM tutorial.aapl_historical_stock_price
 
+<div id="count"></div>
 ###Aggregation Functions
 As the [beginner tutorial](/the-basics/basic-concepts.html) points out, SQL is excellent at aggregating data the way you might in a [pivot table](http://en.wikipedia.org/wiki/Pivot_table) in Excel. You will use aggregation functions all the time, so it's important to get comfortable with them. The functions themselves are the same ones you will find in Excel or any other analytics program: `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`. The [beginner tutorial](/the-basics/where-operators.html) also pointed out that arithmetic operators only perform operations across rows. Aggregation functions are used to perform operations across entire columns (which could include millions of rows of data or more).
 
@@ -70,6 +71,7 @@ If you must use spaces, you will need to use double quotes.
 
 *Note: This is really the only place in which you'll ever want to use double quotes in SQL; single quotes for everything else.*
 
+<div id="sum"></div>
 <div class="practice-prob">
   Write a query that determines counts of every single column. Which column has the most null values?
 </div>
@@ -87,6 +89,7 @@ An important thing to remember: aggregators only aggregate vertically. If you wa
 
 You don't need to worry as much about the presence of nulls with `SUM` as you would with `COUNT`, as `SUM` treats nulls as 0.
 
+<div id="min-max"></div>
 <div class="practice-prob">
   Write a query to calculate the average opening price (hint: you will need to use both <code>COUNT</code> and <code>SUM</code>, as well as some simple arithmetic.).
 </div>
@@ -115,6 +118,7 @@ Nulls are treated as lower than 0 or "a" so `MIN` will return a null value if th
   <a href="https://modeanalytics.com/tutorial/reports/f374f60f4e9c" target="_blank">See the Answer &raquo;</a>
 </div>
 
+<div id="avg"></div>
 <div class="practice-prob">
   What was the highest single-day increase in Apple's share value?
 </div>
@@ -136,6 +140,7 @@ Produces the same result as:
 
 There are some cases in which you will want to treat null values as 0. For these cases, you'll want to write a statement that changes the nulls to 0 (covered in a [later lesson](/intermediate/case.html)).
 
+<div id="group-by"></div>
 <div class="practice-prob">
   Write a query that calculates the average daily trade volume for Apple stock.
 </div>

@@ -87,6 +87,7 @@ Alternatively, the same fundtions with `ORDER BY`:
 
 Make sure you plug those previous two queries into Mode and run them. This next practice problem is very similar to the examples, so try modifying the above code rather than starting from scratch.
 
+<div id="rank"></div>
 <div class="practice-prob">
   Write a query that shows a running total of the duration of bike rides (similar to the last example), but grouped by <code>end_terminal</code>, and with ride duration sorted in descending order.
 </div>
@@ -111,13 +112,6 @@ You can also use `DENSE_RANK()` instead of `RANK()` depending on your applicatio
 * `RANK()` would give the identical rows a rank of 2, then skip ranks 3 and 4, so the next result would be 5
 * `DENSE_RANK()` would still give all the identical rows a rank of 2, but the following row would be 3 &mdash; no ranks would be skipped.
 
-<div class="practice-prob">
-  Write a query that shows the 5 longest rides from each starting terminal, ordered by terminal, and longest to shortest rides within each terminal. Limit to rides that occurred before Jan. 8, 2012.
-</div>
-<div class="practice-prob-answer">
-  <a href="https://modeanalytics.com/tutorial/reports/bda54a3afc03" target="_blank">See the Answer &raquo;</a>
-</div>
-
 <!--
 <div class="practice-prob">
   a
@@ -126,6 +120,15 @@ You can also use `DENSE_RANK()` instead of `RANK()` depending on your applicatio
   <a href="" target="_blank">See the Answer &raquo;</a>
 </div>
 -->
+
+<div id="ntile"></div>
+<div class="practice-prob">
+  Write a query that shows the 5 longest rides from each starting terminal, ordered by terminal, and longest to shortest rides within each terminal. Limit to rides that occurred before Jan. 8, 2012.
+</div>
+<div class="practice-prob-answer">
+  <a href="https://modeanalytics.com/tutorial/reports/bda54a3afc03" target="_blank">See the Answer &raquo;</a>
+</div>
+
 ###NTILE
 You can use window functions to identify what percentile (or quartile, or any other subdivision) a given row falls into. The syntax is `NTILE(*# of buckets*)`. In this case, `ORDER BY` determines which column to use to determine the quartiles (or whatever number of 'tiles you specify). For example:
 
@@ -146,6 +149,7 @@ You can use window functions to identify what percentile (or quartile, or any ot
 
 Looking at the results from the query above, you can see that the `percentile` column doesn't calculate exactly as you might expect. If you only had two records and you were measuring percentiles, you'd expect one record to define the 1st percentile, and the other record to define the 100th percentile. Using the `NTILE` function, what you'd actually see is one record in the 1st percentile, and one in the 2nd percentile. You can see this in the results for `start_terminal` 31000 &mdash; the `percentile` column just looks like a numerical ranking. If you scroll down to `start_terminal` 31007, you can see that it properly calculates percentiles because there are more than 100 records for that `start_terminal`. If you're working with very small windows, keep this in mind and consider using quartiles or similarly small bands.
 
+<div id="lag-lead"></div>
 <div class="practice-prob">
   Write a query that shows only the duration of the trip and the percentile into which that duration falls (across the entire dataset &mdash; not partitioned by terminal).
 </div>
