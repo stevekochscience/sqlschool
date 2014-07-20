@@ -206,16 +206,32 @@ You can add `NOT` before any conditional statement if you'd like to select the r
     SELECT *
       FROM tutorial.billboard_top_100_year_end
      WHERE year = 2013 
-       AND year_rank NOT 1
+       AND year_rank NOT BETWEEN 2 AND 3
 
-Using `NOT` with `<` and `>` usually doesn't make sense because you can simply use the opposite comparative operator instead. `NOT` is more commonly used with `LIKE`. Run this query and check out how Macklemore magically disappears!
+In the above case, you can see that results for which `year_rank` is equal to 1 or 3 are not included.
+
+Using `NOT` with `<` and `>` usually doesn't make sense because you can simply use the opposite comparative operator instead. For example, this query will return an error:
+
+    SELECT *
+      FROM tutorial.billboard_top_100_year_end
+     WHERE year = 2013 
+       AND year_rank NOT > 3
+
+Instead, you would just write that as:
+
+    SELECT *
+      FROM tutorial.billboard_top_100_year_end
+     WHERE year = 2013 
+       AND year_rank <= 3
+
+`NOT` is commonly used with `LIKE`. Run this query and check out how Macklemore magically disappears!
 
     SELECT *
       FROM tutorial.billboard_top_100_year_end
      WHERE year = 2013 
        AND "group" NOT ILIKE '%macklemore%'
 
-`NOT` is mostly commonly used to identify non-null rows, but the syntax is somewhat special &mdash; you need to include `IS` beforehand. Here's how that looks:
+`NOT` is also frequently used to identify non-null rows, but the syntax is somewhat special &mdash; you need to include `IS` beforehand. Here's how that looks:
 
     SELECT *
       FROM tutorial.billboard_top_100_year_end
