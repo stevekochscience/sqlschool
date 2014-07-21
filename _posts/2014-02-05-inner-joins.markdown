@@ -53,7 +53,7 @@ What does this actually do? Let's take a look at one row to see what happens. Th
 
 ![WF player](/images/intermediate/player-join-example.png)
 
-During the join, SQL looks up the `school_name`&mdash;in this case, "Wake Forest"&mdash;in the `school_name` field of the `teams` table. If there's a match, SQL takes all five columns from the `teams` table and joins them to ten columns of the `players` table. The new result is a fifteen row table, and the row with Michael Campanaro looks like this:
+During the join, SQL looks up the `school_name`&mdash;in this case, "Wake Forest"&mdash;in the `school_name` field of the `teams` table. If there's a match, SQL takes all five columns from the `teams` table and joins them to ten columns of the `players` table. The new result is a fifteen column table, and the row with Michael Campanaro looks like this:
 
 ![After join](/images/intermediate/player-after-join-example.png)
 
