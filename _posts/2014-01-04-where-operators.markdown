@@ -23,7 +23,7 @@ So you know how to view some data using `SELECT` and `FROM`. The next step is fi
 
 The `WHERE` clause works in a plain-English way: the above query does the same thing as `SELECT * FROM tutorial.us_housing_units_completed`, except that the results will only include rows where the `month` column contains the value **1**.
 
-**This part is really important: SQL deals with filtering an entire row at a time. In Excel, you can sort or filter one column at a time. In SQL, if you filter something in one column, entire rows will be omitted.** The idea is that each row is one *data point* or *observation*, and all the information contained in that row belongs together.
+In Excel, it is possible to sort data in such a way that one column can be reordered without reordering any of the other columns&mdash;though that could badly scramble your data. When using SQL, entire rows of data are preserved together. If you write a `WHERE` clause that filters based on values in one column, you will limit the results *in all columns* to rows that satisfy the condition. The idea is that each row is one data point or observation, and all the information contained in that row belongs together.
 
 You can filter your results in a number of ways using comparison and logical operators.
 
