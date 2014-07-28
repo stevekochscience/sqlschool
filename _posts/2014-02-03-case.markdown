@@ -71,7 +71,7 @@ While the above works, it's really best practice to create statements that don't
       FROM benn.college_football_players
 
 <div class="practice-prob">
-  Write a query that includes players' names and a column that classifies them into three categories based on height. Keep in mind the answer is only one possible answer.
+  Write a query that includes players' names and a column that classifies them into four categories based on height. Keep in mind the answer is only one possible answer.
 </div>
 <div class="practice-prob-answer">
   <a href="https://modeanalytics.com/tutorial/reports/3374045ecce5" target="_blank">See the Answer &raquo;</a>
