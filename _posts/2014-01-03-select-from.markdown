@@ -142,8 +142,9 @@ The limiting functionality is built into Mode to prevent you from accidentally r
   <a href="https://modeanalytics.com/tutorial/reports/62f423b84e97" target="_blank">See the Answer &raquo;</a>
 </div>
 
-Congrats on learning the basics! If you're enjoying SQL School so far, we'd appreciate it if you <a href="https://twitter.com/share?url=http://sqlschool.modeanalytics.com&lang=en&text=Learn SQL with @ModeAnalytics plain-English tutorial. It's free!&conturl=http://sqlschool.modeanalytics.com&count=vertical" target="_blank">spread the love on Twitter</a>.
+###Congrats on learning the basics!
 
-Let's now move on to some commands that will allow you to filter the data.
+If you're enjoying SQL School so far, we'd appreciate it if you'd<br>
+<a href="https://twitter.com/share?url=http://sqlschool.modeanalytics.com&lang=en&text=Learn SQL with @ModeAnalytics plain-English tutorial. It's free!&conturl=http://sqlschool.modeanalytics.com&count=vertical" target="_blank">spread the love on Twitter</a>.
 
 Next: [Filtering Data and Making Simple Calculations](/the-basics/where-operators.html).

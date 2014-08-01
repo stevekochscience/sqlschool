@@ -281,15 +281,29 @@
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
   FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013 
-   AND year_rank NOT 1
+   AND year_rank NOT BETWEEN 2 AND 3
 </code></pre></div>
-<p>Using <code>NOT</code> with <code>&lt;</code> and <code>&gt;</code> usually doesn&#39;t make sense because you can simply use the opposite comparative operator instead. <code>NOT</code> is more commonly used with <code>LIKE</code>. Run this query and check out how Macklemore magically disappears!</p>
+<p>In the above case, you can see that results for which <code>year_rank</code> is equal to 1 or 3 are not included.</p>
+
+<p>Using <code>NOT</code> with <code>&lt;</code> and <code>&gt;</code> usually doesn&#39;t make sense because you can simply use the opposite comparative operator instead. For example, this query will return an error:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2013 
+   AND year_rank NOT &gt; 3
+</code></pre></div>
+<p>Instead, you would just write that as:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2013 
+   AND year_rank &lt;= 3
+</code></pre></div>
+<p><code>NOT</code> is commonly used with <code>LIKE</code>. Run this query and check out how Macklemore magically disappears!</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
   FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013 
    AND &quot;group&quot; NOT ILIKE &#39;%macklemore%&#39;
 </code></pre></div>
-<p><code>NOT</code> is mostly commonly used to identify non-null rows, but the syntax is somewhat special &mdash; you need to include <code>IS</code> beforehand. Here&#39;s how that looks:</p>
+<p><code>NOT</code> is also frequently used to identify non-null rows, but the syntax is somewhat special &mdash; you need to include <code>IS</code> beforehand. Here&#39;s how that looks:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *
   FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013 

@@ -83,7 +83,7 @@
 
 <p>The <code>WHERE</code> clause works in a plain-English way: the above query does the same thing as <code>SELECT * FROM tutorial.us_housing_units_completed</code>, except that the results will only include rows where the <code>month</code> column contains the value <strong>1</strong>.</p>
 
-<p><strong>This part is really important: SQL deals with filtering an entire row at a time. In Excel, you can sort or filter one column at a time. In SQL, if you filter something in one column, entire rows will be omitted.</strong> The idea is that each row is one <em>data point</em> or <em>observation</em>, and all the information contained in that row belongs together.</p>
+<p>In Excel, it is possible to sort data in such a way that one column can be reordered without reordering any of the other columns&mdash;though that could badly scramble your data. When using SQL, entire rows of data are preserved together. If you write a <code>WHERE</code> clause that filters based on values in one column, you will limit the results <em>in all columns</em> to rows that satisfy the condition. The idea is that each row is one data point or observation, and all the information contained in that row belongs together.</p>
 
 <p>You can filter your results in a number of ways using comparison and logical operators.</p>
 
