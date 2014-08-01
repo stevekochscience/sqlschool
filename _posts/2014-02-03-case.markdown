@@ -106,7 +106,8 @@ You can also string together multiple conditional statements with `AND` and `OR`
                 ELSE 'Not FR' END AS year_group,
                 COUNT(1) AS count
       FROM benn.college_football_players
-     GROUP BY 1
+     GROUP BY CASE WHEN year = 'FR' THEN 'FR'
+                   ELSE 'Not FR' END
 
 Now, you might be thinking "why wouldn't I just use a `WHERE` clause to filter out the rows I don't want to count?" You could do that -- it would look like this:
 
@@ -125,7 +126,18 @@ But what if you also wanted to count a couple other conditions? Using the `WHERE
       FROM benn.college_football_players
      GROUP BY 1
 
-The above query is an excellent place to use numbers instead of columns in the `GROUP BY ` clause because repeating the `CASE` statement in the `GROUP BY` clause would make the query obnoxiously long. Note that if you do choose to repeat the entire `CASE` statement, you should remove the `AS year_group` column naming:
+The above query is an excellent place to use numbers instead of columns in the `GROUP BY ` clause because repeating the `CASE` statement in the `GROUP BY` clause would make the query obnoxiously long. Alternatively, you can use the column's alias in the `GROUP BY` clause like this:
+
+    SELECT CASE WHEN year = 'FR' THEN 'FR'
+                WHEN year = 'SO' THEN 'SO'
+                WHEN year = 'JR' THEN 'JR'
+                WHEN year = 'SR' THEN 'SR'
+                ELSE 'No Year Data' END AS year_group,
+                COUNT(1) AS count
+      FROM benn.college_football_players
+     GROUP BY year_group
+
+Note that if you do choose to repeat the entire `CASE` statement, you should remove the `AS year_group` column naming when you copy/paste into the `WHERE` clause:
 
     SELECT CASE WHEN year = 'FR' THEN 'FR'
                 WHEN year = 'SO' THEN 'SO'
