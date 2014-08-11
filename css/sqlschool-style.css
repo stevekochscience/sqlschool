@@ -88,6 +88,12 @@ a.no-underline {
   margin-bottom: 20px;
 }
 
+.post-body h2 {
+  font-size: 26px;
+  margin-top:40px;
+  margin-bottom: 40px;
+}
+
 .post-body h3 {
   font-size: 22px;
   margin-top:40px;

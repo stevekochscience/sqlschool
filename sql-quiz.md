@@ -10,14 +10,14 @@ If you're using [SQL School](/) to prep for an interview on an Analytics team, y
 
 As most interviewers are looking for deep understanding and problem-solving ability, a mastery of the skills in the [basic](/the-basics/basic-concepts.html) and [intermediate](/intermediate/aggregation-functions.html) tutorials is recommended before attempting this quiz. Some questions also draw from the lessons on [Subqueries](/advanced/subqueries.html) and [Window Functions](/advanced/window-functions.html).
 
-###Part 1: Conecpts
+##Part 1: Conecpts
 These questions are meant to assess your understanding of how SQL manipulates data. You don't need to actually write any code &mdash; just write clear answers.
 
 Explain the difference between an inner join and an outer join.
 
 Let's say you have to tables: one with *n* rows and one with *m* rows. What are the minimum and maximum numbers of rows that could be generated as results by joining the two of them (one join of any type)?
 
-###Part 2: Technical Questions
+##Part 2: Technical Questions
 
 ###Quiz data
 The next set of questions will require you to actually write some SQL. The data for these problems are meant to simulate what you might find at a company building a web application.
@@ -57,7 +57,7 @@ something about unions?
 ###Have a great question to add?
 Much of the material for this quiz was created based on feedback from people using SQL School. We're excited to add more questions that help prepare people to become data analysts. If you have suggestions on how to improve the existing questions or have a question you think we should add, please email us at [sqlschool@modeanalytics.com](mailto:sqlschool@modeanalytics.com).
 
-If you found this quiz helpful, please <a href="https://twitter.com/share?url=http://sqlschool.modeanalytics.com&lang=en&text=Prep for an #analytics interview with these great sample quiz questions from @ModeAnalytics http://bit.ly/1uHbeYl&conturl=http://sqlschool.modeanalytics.com&count=vertical" target="_blank">share it on Twitter</a>.
+If you found this quiz helpful, please <a href="https://twitter.com/share?url=http://bit.ly/1uHbeYl&lang=en&text=Prep for an analytics interview with these great sample quiz questions from @ModeAnalytics&conturl=http://bit.ly/1uHbeYl&count=vertical" target="_blank">share it on Twitter</a>.
 
 <!--
 Need to study more?
