@@ -5,9 +5,10 @@ title:  "THE SQL QUIZ"
 date:   2014-04-01 00:00:57
 ---
 
-We heard that a lot of people have been using [SQL School](/) to prep for Analytics interviews. We don't believe in teaching to the test &mdash; you'll find a lot of information in SQL School that will be helpful on the job but likely won't come up in an onsite interview. That said, some test prep is helpful, too. This quiz includes questions similar to those that we at Mode have personally heard in interviews or that SQL School students have relayed to us.
+If you're using [SQL School](/) to prep for an interview on an Analytics team, you're not alone &mdash; we've received many questions and comments from folks hoping to land a sweet job analyzing data. We don't believe in teaching to a test &mdash; SQL School is designed to arm you with skills that will be helpful on the job but likely won't come up in an onsite interview. That said, some test prep is helpful, too. This quiz includes questions similar to those that we've personally heard (and asked) in interviews or that SQL School students have shared with us.
 
-You probably shouldn't even bother with this quiz until you've completed SQL School's [basic tutorial](/the-basics/basic-concepts.html) and most of the [intermediate tutorial](/intermediate/aggregation-functions.html). Some questions also draw from the lessons on [Subqueries](/advanced/subqueries.html) and [Window Functions](/advanced/window-functions.html).
+
+As most interviewers are looking for deep understanding and problem-solving ability, a mastery of the skills in the [basic](/the-basics/basic-concepts.html) and [intermediate](/intermediate/aggregation-functions.html) tutorials is recommended before attempting this quiz. Some questions also draw from the lessons on [Subqueries](/advanced/subqueries.html) and [Window Functions](/advanced/window-functions.html).
 
 ###Part 1: Conecpts
 These questions are meant to assess your understanding of how SQL manipulates data. You don't need to actually write any code &mdash; just write clear answers.
@@ -19,7 +20,7 @@ Let's say you have to tables: one with *n* rows and one with *m* rows. What are 
 ###Part 2: Technical Questions
 
 ###Quiz data
-The next set of questions will require you to actually write some SQL. The data for these problems are... ok, they're fake. They're meant to simulate the data you might find at a company whose product is a web application.
+The next set of questions will require you to actually write some SQL. The data for these problems are meant to simulate what you might find at a company building a web application.
 
 The first table is a list of all the users of that web application. Each user has a unqiue `user_id`, though many users may be associated with any given `company_id`. In the `state` column, "pending" means that the person has been invited to the app but has not actually completed the signup process, while "active" means that the user has completed the signup process. Start by taking a look:
 
@@ -53,10 +54,10 @@ something about unions?
 -->
 
 
-###Help us help you
-Since we at Mode aren't out there interviewing for jobs, much of the material in this quiz came from SQL School students. We'd really appreciate your help in continuing to develop this quiz so that future students can get the best possible experience. If you have suggestions on how to improve the existing questions or you come up with a question that you think we should add, please email us at [sqlschool@modeanalytics.com](mailto:sqlschool@modeanalytics.com).
+###Have a great question to add?
+Much of the material for this quiz was created based on feedback from people using SQL School. We're excited to add more questions that help prepare people to become data analysts. If you have suggestions on how to improve the existing questions or have a question you think we should add, please email us at [sqlschool@modeanalytics.com](mailto:sqlschool@modeanalytics.com).
 
-If you found this quiz helpful, please <a href="https://twitter.com/share?url=http://sqlschool.modeanalytics.com&lang=en&text=Learn SQL with @ModeAnalytics plain-English tutorial. It's free!&conturl=http://sqlschool.modeanalytics.com&count=vertical" target="_blank">share it on Twitter</a>.
+If you found this quiz helpful, please <a href="https://twitter.com/share?url=http://sqlschool.modeanalytics.com&lang=en&text=Prep for an #analytics interview with these great sample quiz questions from @ModeAnalytics http://bit.ly/1uHbeYl&conturl=http://sqlschool.modeanalytics.com&count=vertical" target="_blank">share it on Twitter</a>.
 
 <!--
 Need to study more?
