@@ -2,7 +2,7 @@
 layout: sqlschool-lesson
 category: "intermediate"
 title:  "Using Conditional Logic to Define New Columns"
-date:   2014-02-01 00:00:57
+date:   2014-02-01 00:00:56
 ---
 
 For the next few lessons, you'll work with data on College Football Players. This data was collected from ESPN on January 15, 2014 from the rosters listed on [this page](http://espn.go.com/college-football/teams) using a Python scraper [available here.](https://github.com/mode/blog/blob/master/2014-01-16-football-hometowns/espn_cfb_scraper.py) In this particular lesson, you'll stick to roster information. This table is pretty self-explanatory &mdash; one row per player, with columns that describe attributes for that player. Run this query to check out the raw data:

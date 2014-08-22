@@ -2,7 +2,7 @@
 layout: sqlschool-lesson
 category: "intermediate"
 title:  "Inner Joins"
-date:   2014-02-01 00:00:55
+date:   2014-02-01 00:00:54
 ---
 
 ###First, an Example

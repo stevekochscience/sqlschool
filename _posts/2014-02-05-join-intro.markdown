@@ -2,7 +2,7 @@
 layout: sqlschool-lesson
 category: "intermediate"
 title:  "Introduction to Joins"
-date:   2014-02-01 00:00:56
+date:   2014-02-01 00:00:55
 ---
 
 ###Intro to Joins - Relational Concepts

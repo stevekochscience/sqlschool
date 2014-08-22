@@ -140,7 +140,6 @@ Produces the same result as:
 
 There are some cases in which you will want to treat null values as 0. For these cases, you'll want to write a statement that changes the nulls to 0 (covered in a [later lesson](/intermediate/case.html)).
 
-<div id="group-by"></div>
 <div class="practice-prob">
   Write a query that calculates the average daily trade volume for Apple stock.
 </div>
@@ -148,77 +147,21 @@ There are some cases in which you will want to treat null values as 0. For these
   <a href="https://modeanalytics.com/tutorial/reports/0328fbae6c07" target="_blank">See the Answer &raquo;</a>
 </div>
 
-###GROUP BY
-<!-- Not sure which one of us would be best suited to tackling this.  This whole section needs to be completely revisited. -->
-All of the queries above have something in common: they all aggregate across the entire table. What if you want to aggregate only part of the table &mdash; you want to count the number of entries for each year, for example. `GROUP BY` allows you to separate data into groups which can be aggregated independent of one another. Here's an example:
-
-    SELECT year,
-           COUNT(*) AS count
-      FROM tutorial.aapl_historical_stock_price
-     GROUP BY year
-
-You can group by multiple columns, but you have to separate column names with commas &mdash; just as with `ORDER BY`:
-
-    SELECT year,
-           month,
-           COUNT(*) AS count
-      FROM tutorial.aapl_historical_stock_price
-     GROUP BY year, month
+<!--
+###Practice Time
 
 <div class="practice-prob">
-  Calculate the total number shares traded each month. Order your results chronologically.
+  Write a query that displays the number of players in each state, with FR, SO, JR, and SR players in separate columns and another column for the total number of players. Order results such that states with the most players come first.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://modeanalytics.com/tutorial/reports/36b338ee7ec5" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/tutorial/reports/15bc4804da7b" target="_blank">See the Answer &raquo;</a>
 </div>
 
-As in [ORDER BY](/the-basics/order-by.html), you can substitute numbers for column names in the `GROUP BY` clause. It's generally recommended to do this only when you are grouping many columns, or if something else is causing the text in the `GROUP BY` clause to be excessively long:
-
-    SELECT year,
-           month,
-           COUNT(*) AS count
-      FROM tutorial.aapl_historical_stock_price
-     GROUP BY 1, 2
-
-*Note: this functionality (numbering columns instead of using names) is supported by Mode, but not by every flavor of SQL, so if you're using another system or connected to certain types of databases, it may not work.*
-
-The order of column names in your `GROUP BY` clause doesn't matter &mdash; the results will be the same regardless. If you want to control how the aggregations are grouped together, use `ORDER BY`. Try running the query below, then reverse the column names in the `ORDER BY` statement and see how it looks:
-
-    SELECT year,
-           month,
-           COUNT(*) AS count
-      FROM tutorial.aapl_historical_stock_price
-     GROUP BY year, month
-     ORDER BY month, year
-
-There's one thing to be aware of as you group by multiple columns: SQL evaluates the aggregations before the `LIMIT` clause. If you don't group by any columns, you'll get a 1-row result &mdash; no problem there. If you group by a column with enough unique values that it exceeds the `LIMIT` number, what will happen is that aggregates will be calculated, and then some rows will simply be omitted from the results. This is actually a nice way to do things because you know you're going to get the correct aggregates. If SQL cut the table down to 100 rows, then performed the aggregations, your results would be substantially different. The above query's results exceed 100 rows, so it is a perfect example. Try removing the limit and running it again.
-
-###Query Clause Order
-As mentioned in prior tutorials, the order in which you write the clauses is important. Here's the order for everything you've learned so far:
-
-1. `SELECT`
-2. `FROM`
-3. `WHERE`
-4. `GROUP BY`
-5. `ORDER BY`
-
-<!-- Maybe include something about where the things we are learning on this page fit in?  Otherwise this seems like an arbitrary location for this section.
+<div class="practice-prob">
+  Write a query that shows the number of players at schools with names that start with A through M, and the number at schools with names starting with N - Z.
+</div>
+<div class="practice-prob-answer">
+  <a href="https://modeanalytics.com/tutorial/reports/3e2d489edbef" target="_blank">See the Answer &raquo;</a>
+</div>
 -->
-
-###Aggregation Practice
-
-<div class="practice-prob">
-  Write a query to calculate the average daily price change in Apple stock, grouped by year
-</div>
-<div class="practice-prob-answer">
-  <a href="https://modeanalytics.com/tutorial/reports/c1881e6c354d" target="_blank">See the Answer &raquo;</a>
-</div>
-
-<div class="practice-prob">
-  Write a query that calculates the lowest and highest prices that Apple stock achieved each month.
-</div>
-<div class="practice-prob-answer">
-  <a href="https://modeanalytics.com/tutorial/reports/9d9f9dcd83bb" target="_blank">See the Answer &raquo;</a>
-</div>
-
-Check out the next lesson: [Counting the unique values in a column](/intermediate/distinct.html)
+Check out the next lesson: [Aggregating Within Categories](/intermediate/grouped-aggregations.html)

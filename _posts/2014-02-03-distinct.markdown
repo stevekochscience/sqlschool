@@ -2,7 +2,7 @@
 layout: sqlschool-lesson
 category: "intermediate"
 title:  "Counting the Unique Values in a Column"
-date:   2014-02-01 00:00:58
+date:   2014-02-01 00:00:57
 ---
 
 This lesson will use the same Apple stock price data from the [previous lesson.](/intermediate/aggregation-functions.html)

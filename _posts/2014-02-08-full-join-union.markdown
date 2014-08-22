@@ -2,7 +2,7 @@
 layout: sqlschool-lesson
 category: "intermediate"
 title:  "Full Joins and Appending Data"
-date:   2014-02-01 00:00:53
+date:   2014-02-01 00:00:52
 ---
 
 This lesson uses the same data from the previous lesson, which was pulled from [Crunchbase](http://info.crunchbase.com/about/crunchbase-data-exports/) on Feb. 5, 2014. As in the previous lesson, large portions of both tables were randomly dropped for the sake of this lesson. The Crunchbase Investments table has also been split into two parts for the sake of this exercise. For more complete notes on Crunchbase data, return to the [previous lesson](/intermediate/outer-joins.html). For now, you should acquaint yourself with the `tutorial.crunchbase_investments_part1` table:

@@ -120,8 +120,9 @@ You can introduce intervals using the `INTERVAL` function as well:
 
 The interval is defined using plain-English terms like '10 seconds' or '5 months'. Also note that adding or subtracting a `date` column and an `interval` column results in another `date` column as in the above query.
 
+<!--
 If you're interested in digging deeper into all of the ways you can manipulate dates, this is covered in greater detail [here](/solutions-to-common-problems/working-with-dates-times.html). You can also check out the [Postgres syntax guide](http://www.tutorialspoint.com/postgresql/postgresql_date_time.htm).
-
+-->
 <div class="practice-prob">
   Write a query that counts the number of companies acquired within 3 year, 5 years, and 10 years or founding (in 3 separate columns). Include a column for total companies acquired as well. Group by category and limit to only rows with a founding date.
 </div>
