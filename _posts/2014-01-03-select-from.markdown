@@ -123,9 +123,9 @@ As you might expect, the limit restricts how many rows the SQL query returns. Th
     SELECT * 
       FROM tutorial.us_housing_units
 
-You'll notice many more rows get returned. You can tell by the `id` field in the table, which increases by 1 for each row.
+You'll notice many more rows get returned. You can tell by checking the header of the results table:
 
-![ID Field](/images/the-basics/id-field.png)
+![Rows Returned](/images/the-basics/rows-returned.png)
 
 Many analysts use limits as a simple way to keep their queries from taking too long to return. You'll probably find that the aim of many of your queries will simply be to see what a particular table looks like&mdash;you'll want to scan the first few rows of data to get an idea of which fields you care about and how you want to manipulate them. If you query a very large table (such as one with hundreds of thousands or millions of rows) and don't use a limit, you could end up waiting a long time for all of your results to be displayed, which doesn't make sense if you only care about the first few. 
 
