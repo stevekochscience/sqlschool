@@ -15,7 +15,7 @@ This will take you to the Query Builder. This is the bread and butter of Mode&md
 For this tutorial, SQL queries will be shown in grey boxes like the one below. To run a query, simply copy the text from the box into the Query Builder and click the orange "Run Query" button. Alternatively, you can run a query by pressing <code>&#8984;</code> + `return` on a Mac or `ctrl` + `return` on a PC.
 
     SELECT * 
-      FROM tutorial.us_housing_units_completed
+      FROM tutorial.us_housing_units
 
 Give this a shot, then keep reading to learn what the query is doing.
 
@@ -23,7 +23,7 @@ Give this a shot, then keep reading to learn what the query is doing.
 
 It takes a few seconds for the query to run. When it's done, you'll see the results show up in a table below the query window.
 
-In this first lesson, you'll work with real data from the U.S. Census. This dataset shows the number of completed housing units in major regions of the United States. The table we'll be working with has a column for each region. The values in each row represent the number of housing units completed in thousands during the corresponding month. The data was collected on Jan. 31, 2014 and can be accessed at [the U.S. Census website](http://www.census.gov/econ/currentdata/).
+In this first lesson, you'll work with real data from the U.S. Census. This dataset shows the number of completed housing units in major regions of the United States. The table we'll be working with has a column for each region. The values in each row represent the number of housing units completed in thousands during the corresponding month. The data was collected in August 2014 and can be accessed at [the U.S. Census website](http://www.census.gov/econ/currentdata/).
 
 ###Basic Syntax
 There are two required ingredients in any SQL query: a `SELECT` statement and a `FROM` statement&mdash;and they have to be in that order. `SELECT` indicates which columns you'd like to view, and `FROM` identifies the table that they live in. Let's start by looking at a couple columns from the housing unit table:
@@ -31,7 +31,7 @@ There are two required ingredients in any SQL query: a `SELECT` statement and a 
     SELECT year, 
            month, 
            west 
-      FROM tutorial.us_housing_units_completed
+      FROM tutorial.us_housing_units
 
 To see the results yourself, copy and paste this query into a Query Builder and click run! If you ran the previous query, or if you already have text in Mode's query window, you'll need to paste over or delete the query that was there previously. If you simply copy and paste this query below the previous one, you'll get an error &mdash; you can only run one `SELECT` statement at a time.
 
@@ -46,7 +46,7 @@ Note that the three column names were separated by a comma in the query. Wheneve
 If you want to select every column in a table, you can use `*` instead of the column names:
 
     SELECT * 
-      FROM tutorial.us_housing_units_completed
+      FROM tutorial.us_housing_units
 
 ![Query Results](/images/the-basics/results.png)
 
@@ -81,12 +81,12 @@ When you run a query, what do you get back? As you can see from running the quer
 ###Formatting convention
 You might have noticed that the `SELECT` and `FROM' commands are capitalized. This isn't actually necessary&mdash;SQL will understand these commands if you type them in lowercase. Capitalizing commands is simply a convention that makes queries easier to read. Similarly, SQL treats one space, multiple spaces, or a line break as being the same thing. For example, SQL treats this the same way it does the previous query:
 
-    SELECT *        FROM tutorial.us_housing_units_completed
+    SELECT *        FROM tutorial.us_housing_units
 
 It also treats this the same way:
 
     SELECT *
-      FROM tutorial.us_housing_units_completed
+      FROM tutorial.us_housing_units
 
 While most capitalization conventions are the same, there are several conventions for formatting line breaks. You'll pick up on several of these in this tutorial and in other people's work on Mode. It's up to you to determine what formatting method is easiest for you to read and understand.
 
@@ -96,13 +96,13 @@ While we're on the topic of formatting, it's worth noting the format of column n
 If you'd like your results to look a bit more presentable, you can rename columns to include spaces. For example, if you want the `west` column to appear as `West Region` in the results, you would have to type:
 
     SELECT west AS "West Region" 
-      FROM tutorial.us_housing_units_completed
+      FROM tutorial.us_housing_units
 
 Without the double quotes, that query would read 'West' and 'Region' as separate objects and would return an error. Note that the results will only return capital letters if you put column names in double quotes. The following query, for example, will return results with lower-case column names.
 
     SELECT west AS West_Region,
            south AS South_Region
-      FROM tutorial.us_housing_units_completed
+      FROM tutorial.us_housing_units
 
 <div id="limit"></div>
 <div class="practice-prob">
@@ -121,7 +121,7 @@ You may have noticed that checkbox next in the upper-right portion of the editor
 As you might expect, the limit restricts how many rows the SQL query returns. The default value is 100; when this box is checked, it's telling the database to only return the first 100 rows of the query. Because `tutorial.us_housing_units_completed` has more than 100 rows, the queries thus far haven't been returning the full result sets. Try turning the `LIMIT` off (by clicking the check mark next to it) and running this query. 
 
     SELECT * 
-      FROM tutorial.us_housing_units_completed
+      FROM tutorial.us_housing_units
 
 You'll notice many more rows get returned. You can tell by the `id` field in the table, which increases by 1 for each row.
 
@@ -132,7 +132,7 @@ Many analysts use limits as a simple way to keep their queries from taking too l
 The limiting functionality is built into Mode to prevent you from accidentally returning millions of rows without meaning to (we've all done it). If you're ever using SQL in another context, however, you can add a limit with a SQL command. The following syntax does the same thing as having the box checked with a value of 100:
 
     SELECT * 
-      FROM tutorial.us_housing_units_completed 
+      FROM tutorial.us_housing_units
      LIMIT 100
 
 <div class="practice-prob">
