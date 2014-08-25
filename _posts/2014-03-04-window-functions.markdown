@@ -87,7 +87,7 @@ Alternatively, the same fundtions with `ORDER BY`:
 
 Make sure you plug those previous two queries into Mode and run them. This next practice problem is very similar to the examples, so try modifying the above code rather than starting from scratch.
 
-<div id="rank"></div>
+
 <div class="practice-prob">
   Write a query that shows a running total of the duration of bike rides (similar to the last example), but grouped by <code>end_terminal</code>, and with ride duration sorted in descending order.
 </div>
@@ -95,17 +95,49 @@ Make sure you plug those previous two queries into Mode and run them. This next 
   <a href="https://modeanalytics.com/tutorial/reports/7dd0f3bad4cc" target="_blank">See the Answer &raquo;</a>
 </div>
 
-###Rank
-`RANK()` does exactly what you might think &mdash; it numerically ranks rows within each partition according to the `ORDER BY` statement. Unlike the above window functions, `RANK()` does not require you to specify a variable within the parentheses:
+<div id="row-number"></div>
+###ROW\_NUMBER()
+`ROW_NUMBER()` does just what it sounds like &mdash; displays the number of a given row. It starts are 1 and numbers the rows according to the `ORDER BY` part of the window statement. `ROW_NUMBER()` does not require you to specify a variable within the parentheses:
 
     SELECT start_terminal,
+           start_time,
            duration_seconds,
-           RANK() OVER
-             (PARTITION BY start_terminal ORDER BY start_time) AS rank
+           ROW_NUMBER() OVER (ORDER BY start_time)
+                        AS row_number
       FROM tutorial.dc_bikeshare_q1_2012
      WHERE start_time < '2012-01-08'
 
-You may notice that rows with the exact same start time are given the same rank. See the 4th and 5th observations for `start_terminal` 31000 &mdash; they are both given a rank of 4, and the following result receives a rank of 6.
+Using the `PARTITION BY` clause will allow you to begin counting 1 again in each partition. The following query starts the count over again for each terminal:
+
+    SELECT start_terminal,
+           start_time,
+           duration_seconds,
+           ROW_NUMBER() OVER (PARTITION BY start_terminal
+                              ORDER BY start_time)
+                        AS row_number
+      FROM tutorial.dc_bikeshare_q1_2012
+     WHERE start_time < '2012-01-08'
+
+<!--
+<div class="practice-prob">
+  a
+</div>
+<div class="practice-prob-answer">
+  <a href="" target="_blank">See the Answer &raquo;</a>
+</div>
+-->
+
+<div id="rank"></div>
+###RANK() and DENSE_RANK()
+`RANK()` is slightly different from `ROW_NUMBER()`. If you order by start_time, for example, it might be the case that some terminals have rides with two identical start times. In this case, they are given the same rank, whereas `ROW_NUMBER` gives them different numbers. In the following query, you notice the 4th and 5th observations for `start_terminal` 31000 &mdash; they are both given a rank of 4, and the following result receives a rank of 6:
+
+    SELECT start_terminal,
+           duration_seconds,
+           RANK() OVER (PARTITION BY start_terminal
+                        ORDER BY start_time)
+                  AS rank
+      FROM tutorial.dc_bikeshare_q1_2012
+     WHERE start_time < '2012-01-08'
 
 You can also use `DENSE_RANK()` instead of `RANK()` depending on your application. Imagine a situation in which three entries have the same value. Using either command, they will all get the same rank. For the sake of this example, let's say it's "2." Here's how the two commands would evaluate the next results differently:
 
