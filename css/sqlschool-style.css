@@ -430,6 +430,11 @@ ul.table-of-contents, nav ul {
     margin: 20px -75px;
     width: 800px !important;
   }
+  
+  .post-footer {
+    margin: 20px 75px;
+  }
+  
 }
 
 @media screen and (min-width: 1025px ) {
