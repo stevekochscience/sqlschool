@@ -118,5 +118,3 @@ For more detail, check out the [Postgres Documentation](http://www.postgresql.or
 ###Indexes
 as referenced in [Join Tips & Tricks](/intermediate/join-tips-and-tricks.html)
 -->
-
-Move on to the [last page of the SQL School Tutorial](/advanced/tutorial-conclusion.html).

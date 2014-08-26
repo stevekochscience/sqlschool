@@ -118,5 +118,3 @@ The results can only support one column with a given name &mdash; when you inclu
   <a href="http://" target="_blank">See the Answer &raquo;</a>
 </div>
 -->
-
-If you want to keep the rows that aren't matched, you can use Outer Joins, which are covered in the [next lesson](/intermediate/outer-joins.html).

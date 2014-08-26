@@ -146,5 +146,3 @@ The limiting functionality is built into Mode to prevent you from accidentally r
 
 If you're enjoying SQL School so far, we'd appreciate it if you'd<br>
 <a href="https://twitter.com/share?url=http://sqlschool.modeanalytics.com&lang=en&text=Learn SQL with @ModeAnalytics plain-English tutorial. It's free!&conturl=http://sqlschool.modeanalytics.com&count=vertical" target="_blank">spread the love on Twitter</a>.
-
-Next: [Filtering Data and Making Simple Calculations](/the-basics/where-operators.html).

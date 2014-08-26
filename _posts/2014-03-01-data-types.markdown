@@ -137,5 +137,3 @@ You can add the current time (at the time you run the query) into your code usin
            NOW() - companies.founded_at_clean::timestamp AS founded_time_ago
       FROM tutorial.crunchbase_companies_clean_date companies
      WHERE founded_at_clean IS NOT NULL
-
-Move on to the next lesson: [Wrangling Messy Data](/advanced/data-cleaning.html).

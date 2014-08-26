@@ -19,7 +19,7 @@ layout: sqlschool-master
       <!-- check to see if it's an actual lesson or the quiz or something else -->
       {% if page.previous.url %}
         <div class="lesson-footer">
-          {% if page.previous.category == page.category %}
+          {% if page.previous.category == page.category and page.category != 'solutions-to-common-problems' %}
             Move on to the next lesson: <a href="{{page.previous.url}}" title="next Post: 
               {{page.previous.title}}">{{page.previous.title}} &raquo; </a>
           {% else %}

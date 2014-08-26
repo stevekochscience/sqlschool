@@ -67,5 +67,3 @@ Okay, back to `DISTINCT`. You'll notice that `DISTINCT` goes inside the aggregat
 
 ###DISTINCT Performance
 It is worth noting that using `DISTINCT`, particularly in aggregations, can slow your queries down quite a bit. We'll cover this in greater depth in the [advanced tutorial](/advanced/faster-queries.html), and provide an excellent workaround in a [pre-built recipe](/solutions-to-common-problems/fast-count-distinct.html).
-
-Check out the next tutorial: [Using Conditional Logic to Define New Columns](/intermediate/case.html)

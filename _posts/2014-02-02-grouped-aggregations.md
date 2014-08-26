@@ -113,5 +113,3 @@ As mentioned in prior tutorials, the order in which you write the clauses is imp
 <div class="practice-prob-answer">
   <a href="https://modeanalytics.com/tutorial/reports/9d9f9dcd83bb" target="_blank">See the Answer &raquo;</a>
 </div>
-
-Check out the next lesson: [Counting the unique values in a column](/intermediate/distinct.html)

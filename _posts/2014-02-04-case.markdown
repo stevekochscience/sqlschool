@@ -215,5 +215,3 @@ It's worth noting that going from horizontal to vertical orientation can be a su
 <div class="practice-prob-answer">
   <a href="https://modeanalytics.com/tutorial/reports/3e2d489edbef" target="_blank">See the Answer &raquo;</a>
 </div>
-
-Check out the next lesson: [Introduction to Joins](/intermediate/join-intro.html)

@@ -297,5 +297,3 @@ You can check out some more specific uses for window functions in the [solutions
 * [example](LINK)
 * [example](LINK)
 -->
-
-Move on to the next lesson: [Making Queries Run Faster](/advanced/faster-queries.html).

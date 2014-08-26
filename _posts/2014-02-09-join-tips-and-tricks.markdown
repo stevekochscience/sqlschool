@@ -108,4 +108,4 @@ Congratulations, you've learned most of the technical stuff you need to know to 
 
 <!-- some sort of inspiration, datasets, ways to apply what is learned.-->
 
-Click here to move on to the first advanced lesson: [Data Types](/advanced/data-types.html)
+Click here to move on to the the Advanced tutorial: [Data Types](/advanced/data-types.html)

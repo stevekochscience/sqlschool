@@ -265,4 +265,3 @@ Occasionally, you will end up with a dataset that has some nulls that you'd pref
   <a href="" target="_blank">See the Answer &raquo;</a>
 </div>
 -->
-Move on to the next lesson: [Subqueries](/advanced/subqueries.html).

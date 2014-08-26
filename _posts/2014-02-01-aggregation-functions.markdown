@@ -164,4 +164,3 @@ There are some cases in which you will want to treat null values as 0. For these
   <a href="https://modeanalytics.com/tutorial/reports/3e2d489edbef" target="_blank">See the Answer &raquo;</a>
 </div>
 -->
-Check out the next lesson: [Aggregating Within Categories](/intermediate/grouped-aggregations.html)

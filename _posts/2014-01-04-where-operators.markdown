@@ -155,5 +155,3 @@ Sharpen your skills by tackling these questions:
 <div class="practice-prob-answer">
   <a href="https://modeanalytics.com/tutorial/reports/bffb59fa65a0" target="_blank">See the Answer &raquo;</a>
 </div>
-
-Move on to the next lesson: [Logical Operators](/the-basics/logical-operators.html).

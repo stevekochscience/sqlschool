@@ -260,5 +260,3 @@ Instead, you would just write that as:
 <div class="practice-prob-answer">
   <a href="https://modeanalytics.com/tutorial/reports/11c78511873a" target="_blank">See the Answer &raquo;</a>
 </div>
-
-Move on to the next segment: [Ordering Your Results](/the-basics/order-by.html).

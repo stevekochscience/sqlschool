@@ -19,5 +19,3 @@ If you're planning to use your SQL skills at work, you should start by learning 
 
 If your company doesn't use Mode, you can set it up pretty easily &mdash; just follow these directions to [create an Organization and connect to data]().
 -->
-
-[Back to SQL School Index](/)
