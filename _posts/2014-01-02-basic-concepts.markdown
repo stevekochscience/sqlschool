@@ -5,11 +5,6 @@ title:  "Basic Concepts"
 date:   2014-01-01 00:00:58
 ---
 
-###Who is this tutorial for?
-This tutorial is designed for people who want to answer complex questions with data. Though some of the lessons may be useful for software developers using SQL in their applications, this tutorial doesn't cover how to set up SQL databases or how to use them in software applications.
-
-In this beginner tutorial, we'll assume that you have used Excel a little bit, but have no SQL experience. If you're already somewhat familiar with SQL, check out the [table of contents](/) and start in the place that's right for you.
-
 ###What is SQL and why should I care?
 SQL (Structured Query Language) is a programming language designed for managing data in a relational database. It's been around since the 1970s and is the most common method of accessing data in databases today. SQL has a variety of functions that allows its users to read, manipulate, and change data. Though SQL is commonly used by engineers in software development, it's also popular with data analysts for a few reasons:
 
