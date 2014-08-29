@@ -3,11 +3,13 @@ layout: sqlschool-lesson
 category: "solutions-to-common-problems"
 title:  "Pivoting From Columns to Rows"
 date:   2014-04-01 00:00:57
+seo-title: "Pivot Columns to Rows"
+description: "Advanced SQL lesson: learn to pivot columns to rows. Free, interactive SQL tutorials with real-world examples to develop your data analysis skills."
 ---
 
 A lot of data you'll find out there on the internet is formatted for consumption, not analysis. Take, for example, [this table showing the number of earthquakes worldwide from 2000-2012](http://earthquake.usgs.gov/earthquakes/eqarchives/year/eqstats.php):
 
-![Earthquake Table](/images/common-problems/earthquake-table.png)
+<img src="/images/common-problems/earthquake-table.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
 <!-- another example http://www.imf.org/external/pubs/ft/weo/2014/01/weodata/weorept.aspx?pr.x=57&pr.y=10&sy=2004&ey=2019&scsm=1&ssd=1&sort=country&ds=.&br=1&c=122%2C136%2C124%2C941%2C423%2C137%2C939%2C181%2C172%2C138%2C132%2C182%2C134%2C936%2C174%2C961%2C178%2C184&s=NGDP_R&grp=0&a=-->
 

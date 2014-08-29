@@ -3,15 +3,17 @@ layout: sqlschool-lesson
 category: "solutions-to-common-problems"
 title:  "Pivoting From Rows to Columns"
 date:   2014-04-01 00:00:58
+seo-title: "Pivot Rows to Columns"
+description: "Advanced SQL lesson: learn to pivot rows to columns. Free, interactive SQL tutorials with real-world examples to develop your data analysis skills."
 ---
 
 This lesson will teach you how to take data that is formatted for analysis and pivot it for presentation or charting. We'll take a dataset that looks like this:
 
-![The Raw Data](/images/common-problems/pivot-step-one.png)
+<img src="/images/common-problems/pivot-step-one.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
 And make it look like this:
 
-![The Pivoted Table](/images/common-problems/finished-pivot.png)
+<img src="/images/common-problems/finished-pivot.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
 For this example, we'll use the same dataset of College Football players used in the [CASE lesson](/intermediate/case,html). You can view the data directly [here](https://modeanalytics.com/benn/tables/college_football_players).
 

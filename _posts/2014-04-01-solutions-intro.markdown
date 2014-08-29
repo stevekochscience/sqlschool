@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "solutions-to-common-problems"
 title:  "What This Section is All About"
 date:   2014-04-01 00:00:59
+seo-title: "Applying SQL Skills to Data Analysis"
+description: "Turn SQL syntax knowledge into problem-solving skills. Free, interactive SQL tutorials with real-world examples to develop your data analysis skills."
 ---
 
 Once you've got the basics of SQL down, the challenge lies in combining them in clever ways that lead you to the answers to your questions. In many ways, that's harder than learning syntax. Fortunately, though, you're not totally on your own.
