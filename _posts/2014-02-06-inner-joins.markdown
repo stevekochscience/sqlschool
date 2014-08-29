@@ -52,12 +52,11 @@ What does this actually do? Let's take a look at one row to see what happens. Th
 
 <!-- DEREK: I think this section could better demonstrate join keys.  If you had images of both indivitual section first, then an image of them joined together with the key column highlighted in a different color/organized so it is the actual bridge point between the two tables, it would be easier for a reader to understand.  Text would of course need to be adjusted to reflect this.  Also, these small images are really hard to read.  I know the formatting is nice this way, but this is a pain in the ass for me, so I can only imagine what older users would think. -->
 
-
-![WF player](/images/intermediate/player-join-example.png)
+<img src="/images/intermediate/player-join-example.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
 During the join, SQL looks up the `school_name`&mdash;in this case, "Wake Forest"&mdash;in the `school_name` field of the `teams` table. If there's a match, SQL takes all five columns from the `teams` table and joins them to ten columns of the `players` table. The new result is a fifteen column table, and the row with Michael Campanaro looks like this:
 
-![After join](/images/intermediate/player-after-join-example.png)
+<img src="/images/intermediate/player-after-join-example.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
 *Two columns are cut off from the image, but you can see the full result [here](https://modeanalytics.com/tutorial/reports/12fac4065977/runs/51234e84bc0d)*
 
@@ -82,7 +81,7 @@ It is often the case that one or both tables being joined contain rows that don'
 
 We'll start with Inner joins, which can be written as either `JOIN benn.college_football_teams teams` or `INNER JOIN benn.college_football_teams teams`. Inner Joins eliminate rows from both tables that do not satisfy the join condition set forth in the `ON` statement. In mathematical terms, an Inner Join is the *intersection* of the two tables.
 
-![inner join](http://www.w3schools.com/sql/img_innerjoin.gif)
+<img src="http://www.w3schools.com/sql/img_innerjoin.gif" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
 Therefore, if a player goes to a school that isn't in the `teams` table, that player won't be included in the result from an Inner Join. Similarly, if there are schools in the `teams` table that don't match to any schools in the `players` table, those rows won't be inlcuded in the results either.
 

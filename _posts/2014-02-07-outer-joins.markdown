@@ -32,7 +32,7 @@ As you work through this lesson, it might be helpful to refer to [this visual re
 <a href="http://joins.spathon.com/"><img src="/images/intermediate/visual-join.png"></a>
 
 ###LEFT JOIN
-![Left Joins](http://www.w3schools.com/sql/img_leftjoin.gif)
+<img src="http://www.w3schools.com/sql/img_leftjoin.gif" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
 Let's start by running an `INNER JOIN` and taking a look at the results. We'll just look at `company-permalink` in each table, as well as a couple other fields, to get a sense of what's actually being joined.
 
@@ -46,7 +46,7 @@ Let's start by running an `INNER JOIN` and taking a look at the results. We'll j
 
 You may notice that "280 North" appears twice in this list. That is because is has two entried in the `tutorial.crunchbase_acquisitions` table, both of which are being joined onto the `tutorial.crunchbase_companies` table.
 
-![Inner Join Results](/images/intermediate/inner-join-results.png)
+<img src="/images/intermediate/inner-join-results.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
 Now try running that query as a `LEFT JOIN`:
 
@@ -60,7 +60,7 @@ Now try running that query as a `LEFT JOIN`:
 
 You can see that the first two companies from the previous result set, #waywire and 1000memories, are pushed down the page by a number of results that contain null values in the `acquisitions_permalink` and `acquired_date` fields.
 
-![Left Join Results](/images/intermediate/left-join-results.png)
+<img src="/images/intermediate/left-join-results.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
 This is because the `LEFT JOIN` command tells the database to return all rows in the table in the `FROM` clause, regardless of whether or not they have matches in the table in the `LEFT JOIN` clause. You can explore the differences between a `LEFT JOIN` and a `JOIN` by solving these practice problems:
 
@@ -92,7 +92,7 @@ Now that you've got a sense of how Left Joins work, try this harder aggregation 
 ###RIGHT JOIN
 Right Joins are similar to Left Joins outlined above except they return all rows from the table in the `RIGHT JOIN` clause and only matching rows from the table in the `FROM` clause.
 
-![Right Joins](http://www.w3schools.com/sql/img_rightjoin.gif)
+<img src="http://www.w3schools.com/sql/img_rightjoin.gif" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
 `RIGHT JOIN` is rarely used because you can achieve the results of a Right Join by simply switching the two joined table names in a Left Join. For example, this query from the Left Join section:
 
@@ -154,7 +154,7 @@ Normally, filtering is processed in the `WHERE` clause once the two tables have 
 
 What's happening above is that the conditional statement `AND...` is evaluated before the join occurs. You can think of it as a where clause that only applies to one of the tables. You can tell that this is only happening in one of the tables because the 1000memories permalink is still displayed in the column that pulls from the other table:
 
-![Left Join ON Clause Results](/images/intermediate/left-join-on-clause-results.png)
+<img src="/images/intermediate/left-join-on-clause-results.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
 If you move the same filter to the `WHERE` clause, you will notice that the filter happens after the tables are joined. The result is that the 1000memories row is joined onto the original table, but then it is filtered out entirely (in both tables) in the `WHERE` clause before displaying results.
 
@@ -171,7 +171,7 @@ If you move the same filter to the `WHERE` clause, you will notice that the filt
 
 You can see that the 1000memories line is not returned (it would have been between the two highlighted lines below). Also note that filtering in the `WHERE` clause can also filter null values, so we added an extra line to make sure to include the nulls.
 
-![Left Join ON Clause Results](/images/intermediate/left-join-on-clause-results.png)
+<img src="/images/intermediate/left-join-on-clause-results.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
 ###Practice Problems
 For this set of practice problems, we're going to introduce a new dataset: `tutorial.crunchbase_investments`. This table is also sourced from Crunchbase and contains much of the same information as the `tutorial.crunchbase_companies` data. It it structured differently, though: it contains one row per *investment*. There can be multiple investments per company &mdash; it's even possible that one investor could invest in the same company multiple times. The column names are pretty self-explanatory. What's important is that `company_permalink` in the `tutorial.crunchbase_investments` table maps to `permalink` in the `tutorial.crunchbase_companies` table. Keep in mind that some random data has been removed from this table for the sake of this lesson.

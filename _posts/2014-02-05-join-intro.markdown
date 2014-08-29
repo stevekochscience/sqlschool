@@ -14,7 +14,7 @@ To understand what joins are and why they are helpful, let's think about Twitter
 
 Twitter has to store a lot of data. Twitter could (hypothetically, of course) store its data in one big table in which each row represents one tweet. There could be one column for the content of each tweet, one for the time of the tweet, one for the person who tweeted it, and so on. It turns out, though, that identifying the person who tweeted is a little tricky. There's a lot to a person's Twitter identity&mdash;a username, a bio, followers, followees, and more. Twitter could store all of that data in a table like this:
 
-![sample Twitter table](/images/intermediate/tweet-table.png)
+<img src="/images/intermediate/tweet-table.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
 Let's say, for the sake of argument, that Twitter did structure their data this way. Every time you tweet, Twitter creates a new row in its database, with information about you and the tweet. 
 
