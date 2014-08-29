@@ -1,2 +1,3 @@
 User-Agent: *
 Disallow:
+Sitemap: sqlschool.modeanalytics.com/sitemap.xml
