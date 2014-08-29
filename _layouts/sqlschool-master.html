@@ -2,7 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>SQL School {% if page.title %}- {{ page.title }}{% endif %}</title>
+    <title>
+      {% if page.seo-title %}
+        SQL - {{ page.seo-title }} | Interactive Tutorial - SQL School
+      {% else %}
+        SQL School {% if page.title %}- {{ page.title }}{% endif %}
+      {% endif %}
+    </title>
     
     <!-- external CSS link -->
     <link rel="stylesheet" href="http://about.modeanalytics.com/stylesheets/reset.css">
@@ -19,8 +25,10 @@
 
     <meta name="robots" content="index, follow" />
     <meta name="google-site-verification" content="IBG3eleFA9562xuyu46bQ-bnxEBla4yVjAQCfPsgPM0" />
-    {% if page.description %} <meta name="description" content="{{ page.description }}" />{% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0;">
+    
+    <!-- Meta -->
+    {% if page.description %} <meta name="description" content="{{ page.description }}" />{% endif %}
 
   </head>
   <body>
