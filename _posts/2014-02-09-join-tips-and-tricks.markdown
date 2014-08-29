@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "intermediate"
 title:  "Join Tips and Tricks"
 date:   2014-02-01 00:00:51
+seo-title: "Join Tips and Tricks"
+description: "SQL JOIN tips and tricks with real-world examples. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 This lesson uses the same data from the previous two lessons, which was pulled from [Crunchbase](http://info.crunchbase.com/about/crunchbase-data-exports/) on Feb. 5, 2014. For more information about the lesson data, read the opening paragraph of the [Outer Joins lesson](/intermediate/outer-joins.html).

@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "advanced"
 title:  "Wrangling Messy Data"
 date:   2014-03-01 00:00:58
+seo-title: "Data Wrangling and Munging"
+description: "Learn SQL functions to clean data strings and fix date formats. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 This lesson features data on San Francisco Crime Incidents for the 3-month period beginning November 1, 2013 and ending January 31, 2014. It was collected from the [SF Data website](https://data.sfgov.org/Public-Safety/Map-Crime-Incidents-Previous-Three-Months/gxxq-x39z) on February 16, 2014. There is one row for each indicent reported. Some field definitions: `location` is the GPS location of the incident, listed in [decimal degrees](http://en.wikipedia.org/wiki/Decimal_degrees), lattitude first, longitude second. The two coordinates are also broken out into the `lat` and `lon` fields, respectively. 
 

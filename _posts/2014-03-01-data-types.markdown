@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "advanced"
 title:  "Data Types"
 date:   2014-03-01 00:00:59
+seo-title: "Dealing with Data Types"
+description: "Learn about SQL data types and how to convert between them with real-world examples. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 Welcome to the Advanced SQL Tutorial! If you skipped [The Basics](/the-basics/basic-concepts), you should take a quick peek [at this page](/the-basics/select-from.html) to get an idea of how to get the most out of this tutorial. For convenience, here's the gist:

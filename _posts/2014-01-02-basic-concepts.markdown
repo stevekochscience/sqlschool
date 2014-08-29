@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "the-basics"
 title:  "Basic Concepts"
 date:   2014-01-01 00:00:58
+seo-title: "Introduction"
+description: "Ready to answer questions with data? This SQL tutorial is for you."
 ---
 
 ###What is SQL and why should I care?

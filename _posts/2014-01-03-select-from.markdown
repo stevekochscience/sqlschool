@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "the-basics"
 title:  "Retrieving Data From the Database"
 date:   2014-01-01 00:00:57
+seo-title: "SELECT & FROM"
+description: "Learn to use the SQL SELECT & FROM clauses with real-world examples. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 ###Opening Mode and Getting Started

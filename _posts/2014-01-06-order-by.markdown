@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "the-basics"
 title:  "Ordering Your Results"
 date:   2014-01-01 00:00:54
+seo-title: "ORDER BY"
+description: "Learn to use the SQL ORDER BY clause using real-world examples. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 This lesson uses the same data from the [Billboard Music Charts](http://www.billboard.com/charts) as the [previous lesson](/the-basics/logical-operators.html). If you're skipping directly to this lesson, read the description in the previous lesson first.

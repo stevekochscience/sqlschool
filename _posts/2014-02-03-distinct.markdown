@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "intermediate"
 title:  "Counting the Unique Values in a Column"
 date:   2014-02-01 00:00:57
+seo-title: "DISTINCT"
+description: "Learn to find unique values within a dataset using the SQL DISTINCT clause. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 This lesson will use the same Apple stock price data from the [previous lesson.](/intermediate/aggregation-functions.html)

@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "intermediate"
 title:  "Introduction to Joins"
 date:   2014-02-01 00:00:55
+seo-title: "Introduction to Joins"
+description: "First of five lessons on SQL JOIN conditions using real-world examples. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 ###Intro to Joins - Relational Concepts

@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "intermediate"
 title:  "Outer Joins"
 date:   2014-02-01 00:00:53
+seo-title: "Outer Joins"
+description: "Learn when to use OUTER JOIN, LEFT JOIN, and RIGHT JOIN with real-world examples. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 The data for this lesson was pulled from [Crunchbase](http://info.crunchbase.com/about/crunchbase-data-exports/), a crowdsourced index of startups, founders, investors, and the activities of all three. It was collected Feb. 5, 2014, and large portions of both tables were randomly dropped for the sake of this lesson. The first table lists a large portion of companies in the database; one row per company. The `permalink` field is a unique identifier for each row, and also shows the web address.  For each company in the table, you can view its online Crunchbase profile by copying/pasting its permalink after Crunchbase’s web domain.  For example, the third company in the table, “.Club Domains,” has the permalink “/company/club-domains,” so its profile address would be [http://www.crunchbase.com/company/club-domains](http://www.crunchbase.com/company/club-domains). The fields with "funding" in the name have to do with how much outside investment (in USD) each company has taken on. The rest of the fields are self-explanatory.

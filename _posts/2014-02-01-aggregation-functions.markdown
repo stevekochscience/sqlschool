@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "intermediate"
 title:  "Summary Statistics: Using SQL to Replace Pivot Tables"
 date:   2014-02-01 00:00:59
+seo-title: "Summary Statistics"
+description: "Learn to aggregate data with SQL using the COUNT, SUM, MIN, MAX, and AVG functions. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 Welcome to the Intermediate SQL Tutorial! If you skipped [The Basics](/the-basics/basic-concepts.html), you should take a quick peek [at this page](/the-basics/select-from.html) to get an idea of how to get the most out of this tutorial. For convenience, here's the gist:

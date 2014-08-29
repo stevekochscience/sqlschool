@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "intermediate"
 title:  "Aggregating Within Categories"
 date:   2014-02-01 00:00:58
+seo-title: "GROUP BY and Aggregations"
+description: "Learn to use the SQL GROUP BY clause with real-world examples. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 This lesson uses the same data as the [previous lesson](/intermediate/aggregation-functions.html), [Apple](http://www.apple.com) stock price data. The data was pulled from [Google Finance](http://finance.google.com) in January 2014. There is one row for each day (indicated in the `date` field). `open` and `close` are the opening and closing prices of the stock on that day. `high` and `low` are the high and low prices for that day. `volume` is the number of shares traded on that day. Some data has been intentionally removed for the sake of this lesson.

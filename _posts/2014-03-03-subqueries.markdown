@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "advanced"
 title:  "Subqueries"
 date:   2014-03-01 00:00:57
+seo-title: "Subqueries"
+description: "Learn to perform SQL query operations in multiple steps with subqueries. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 In this lesson, you will continue to work with the same [San Francisco Crime data](https://data.sfgov.org/Public-Safety/Map-Crime-Incidents-Previous-Three-Months/gxxq-x39z) used in the [previous lesson](/advanced/data-cleaning.html).

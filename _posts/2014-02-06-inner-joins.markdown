@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "intermediate"
 title:  "Inner Joins"
 date:   2014-02-01 00:00:54
+seo-title: "JOIN"
+description: "Learn to use the SQL JOIN clause with real-world examples. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 ###First, an Example

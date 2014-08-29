@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "the-basics"
 title:  "Filtering Data and Making Simple Calculations"
 date:   2014-01-01 00:00:56
+seo-title: "WHERE"
+description: "Learn to use the SQL WHERE clause using real-world examples. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 This lesson will use the same housing development data from the [previous lesson](/the-basics/select-from.html).

@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "advanced"
 title:  "Window Functions"
 date:   2014-03-01 00:00:56
+seo-title: "Window Functions"
+description: "Learn to use window functions when writing SQL queries. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 This lesson uses data from Washington DC's [Capital Bikeshare Program](http://capitalbikeshare.com), who publishes detailed trip-level historical data [on their website](http://capitalbikeshare.com/trip-history-data). The data was downloaded in February, 2014, but is limited to data collected during the first quarter of 2012. Each row represents one ride. Most fields are self-explanatory, except `rider_type`: "Registered" indicates a monthly membership to the rideshare program, "Casual" incidates that the rider bought a 3-day pass. The `start_time` and `end_time` fields were cleaned up from their original forms to suit SQL date formatting &mdash; they are stored in this table as timestamps. 

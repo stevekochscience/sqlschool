@@ -3,6 +3,8 @@ layout: sqlschool-lesson
 category: "advanced"
 title:  "Making Queries Run Faster"
 date:   2014-03-01 00:00:55
+seo-title: "Optimizing Queries"
+description: "Make your SQL queries run faster with tips and tricks from real-world examples. Free, interactive SQL tutorials to develop your data analysis skills."
 ---
 
 The lesson on [subqueries](/advanced/subqueries.html) introduced the idea that you can sometimes create the same desired result set with a faster-running query. In this lesson, you'll learn to identify when your queries can be improved, and how to improve them.
