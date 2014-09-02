@@ -6,7 +6,7 @@
       {% if page.seo-title %}
         SQL - {{ page.seo-title }} | Interactive Tutorial - SQL School
       {% else %}
-        SQL School {% if page.title %}- {{ page.title }}{% endif %}
+        {% if page.title %}{{ page.title }} - {% endif %}SQL School 
       {% endif %}
     </title>
     
