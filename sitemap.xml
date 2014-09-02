@@ -1,17 +1,3 @@
 ---
 layout: sitemap
 ---
-
-<!--
-
-from http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/
-Goog webmaster tools: https://www.google.com/webmasters/tools/home?hl=en&pli=1
-sitemap protocol: http://www.sitemaps.org/protocol.html
-
-Optional params:
-
-sitemap:
-  lastmod: 2014-01-23
-  priority: 0.7     (0 to 1, 1 is highest)
-  changefreq: monthly
-  exclude: 'yes'
