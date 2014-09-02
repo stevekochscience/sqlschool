@@ -12,9 +12,9 @@ Open a second browser window to <a href="https://modeanalytics.com" target="_bla
 
 <img src="/images/the-basics/new-query.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
-This will take you to the Query Builder. This is the bread and butter of Mode&mdash;it's where you'll be able to use all the skills you learn in this tutorial. From the Query Builder, you can run queries against all of the data in Mode. 
+This will take you to the Query Editor. This is the bread and butter of Mode&mdash;it's where you'll be able to use all the skills you learn in this tutorial. From the Query Editor, you can run queries against all of the data in Mode. 
 
-For this tutorial, SQL queries will be shown in grey boxes like the one below. To run a query, simply copy the text from the box into the Query Builder and click the orange "Run Query" button. Alternatively, you can run a query by pressing <code>&#8984;</code> + `return` on a Mac or `ctrl` + `return` on a PC.
+For this tutorial, SQL queries will be shown in grey boxes like the one below. To run a query, simply copy the text from the box into the Query Editor and click the orange "Run Query" button. Alternatively, you can run a query by pressing <code>&#8984;</code> + `return` on a Mac or `ctrl` + `return` on a PC.
 
     SELECT * 
       FROM tutorial.us_housing_units
@@ -35,7 +35,7 @@ There are two required ingredients in any SQL query: a `SELECT` statement and a 
            west 
       FROM tutorial.us_housing_units
 
-To see the results yourself, copy and paste this query into a Query Builder and click run! If you ran the previous query, or if you already have text in Mode's query window, you'll need to paste over or delete the query that was there previously. If you simply copy and paste this query below the previous one, you'll get an error &mdash; you can only run one `SELECT` statement at a time.
+To see the results yourself, copy and paste this query into a Query Editor and click run! If you ran the previous query, or if you already have text in Mode's query window, you'll need to paste over or delete the query that was there previously. If you simply copy and paste this query below the previous one, you'll get an error &mdash; you can only run one `SELECT` statement at a time.
 
 <!--image "do this, not this"-->
 
