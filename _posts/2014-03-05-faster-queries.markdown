@@ -13,7 +13,7 @@ The lesson on [subqueries](/advanced/subqueries.html) introduced the idea that y
 A database is a piece of software that runs on a computer, and is subject to the same limitations as all software &mdash; it can only process as much information as its hardware is capable of handling. The way to make a query run faster is to reduce the number of caluclations that the software (and therefore hardware) must perform. To do this, you'll need some understanding of how SQL actually makes calculations. First, let's address some of the high-level things that will affect the number of calculations you need to make, and therefore your querys runtime:
 
 * **Table size:** If your query hits one or more tables with millions of rows or more, it could affect performance.
-* **Joins:** If your query joins two tables in a way that substantially increases the row count of the result set, your query is likely to be slow. There's an example of this in the section on Joining Subqueries in the [Subqueries lesson](/advanced/suqueries.html).
+* **Joins:** If your query joins two tables in a way that substantially increases the row count of the result set, your query is likely to be slow. There's an example of this in the section on Joining Subqueries in the [Subqueries lesson](/advanced/subqueries.html).
 * **Aggregations:** Combining multiple rows to produce a result requires more computation than simply retrieving those rows.
 
 Query runtime is also dependent on some things that you can't really control related to the database itself:
@@ -54,7 +54,7 @@ If you want to limit the dataset before performing the count (to speed things up
 
 Note: Using `LIMIT` this will dramatically alter your results, so you should use it to test query logic, but not to get actual results.
 
-In general, when working with [subqueries](advanced/subqueries.html), you should make sure to limit the amount of data you're working with in the place where it will be executed first. This means putting the `LIMIT` in the subquery, not the outer query. Again, this is for making the query run fast so that you can test &mdash; *NOT* for producing good results.
+In general, when working with [subqueries](/advanced/subqueries.html), you should make sure to limit the amount of data you're working with in the place where it will be executed first. This means putting the `LIMIT` in the subquery, not the outer query. Again, this is for making the query run fast so that you can test &mdash; *NOT* for producing good results.
 
 ###Making joins less complicated
 In a way, this is an extension of the previous tip. In the same way that it's better to reduce data at a point in the query that is executed early, it's better to reduce table sizes before joining them. Take this example, which joins information about college sports teams onto a list of players at various colleges:
