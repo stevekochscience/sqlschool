@@ -73,6 +73,15 @@ a.no-underline {
 	margin-left: 19px;
 }
 
+h4.title {
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+}
+
 .post-body {
   font-size: 18px;
   letter-spacing: 0px;
