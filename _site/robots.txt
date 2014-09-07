@@ -1,4 +1,3 @@
 User-Agent: *
-Disallow: /cases/
 Disallow: /cases.html
 Sitemap: sqlschool.modeanalytics.com/sitemap.xml

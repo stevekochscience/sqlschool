@@ -1,0 +1,35 @@
+---
+layout: sqlschool-master
+---
+
+<div class="columns-container">
+
+  <div class="sqlschool-content">
+    <div class="breadcrumbs">
+      <a href="/#{{ page.category }}">&laquo; Back to Index</a>
+    </div>
+    
+    <div class="post-header">
+      <h1 class="title">{{ page.title }}<h1>
+    </div>
+    
+    <div class="post-body">
+      {{ content }}
+      
+      <!-- check to see if it's an actual lesson or the quiz or something else -->
+        <div class="lesson-footer">
+          {% if page.previous.category == page.category and page.category != 'solutions-to-common-problems' %}
+            Move on to the next lesson: <a href="{{page.previous.url}}" title="next Post: 
+              {{page.previous.title}}">{{page.previous.title}} &raquo; </a>
+          {% else %}
+            <a href="/#table-of-contents">Back to SQL School Index</a>
+          {% endif %}
+        </div>
+    </div>
+  
+   
+  
+  
+  </div>
+      
+</div>
