@@ -1,7 +1,7 @@
 ---
 layout: sqlschool-case
 categories: cases yammer
-title:  "Yammer Case Study: A Drop In Retention"
+title:  "A Drop In Retention"
 date:   2014-06-01 00:00:58
 seo-title: 
 description: 
