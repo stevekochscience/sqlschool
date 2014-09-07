@@ -3,3 +3,4 @@ markdown: redcarpet
 pygments: true
 permalink: none
 category-list: ["the-basics", "intermediate", "advanced", "solutions-to-common-problems", "other-resources"]
+case-list: ["yammer"]
