@@ -199,7 +199,7 @@ Note: We used a `FULL JOIN` above just in case one table had observations in a m
 </div>
 
 ###Subqueries and UNIONs
-For this next section, we will borrow directly from the lesson on [UNIONs](/intermediate/full-join-union/html) &mdash; again using the Crunchbase data:
+For this next section, we will borrow directly from the lesson on [UNIONs](/intermediate/full-join-union.html) &mdash; again using the Crunchbase data:
 
     SELECT *
       FROM tutorial.crunchbase_investments_part1
