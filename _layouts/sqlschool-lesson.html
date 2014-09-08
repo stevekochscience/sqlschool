@@ -6,7 +6,7 @@ layout: sqlschool-master
 
   <div class="sqlschool-content">
     <div class="breadcrumbs">
-      <a href="/#{{ page.category }}">&laquo; Back to Index</a>
+      <a href="/#{{ page.category }}">&laquo; Back to Tutorial Index</a>
     </div>
     
     <div class="post-header">
@@ -19,10 +19,10 @@ layout: sqlschool-master
       <!-- check to see if it's an actual lesson or the quiz or something else -->
         <div class="lesson-footer">
           {% if page.previous.category == page.category and page.category != 'solutions-to-common-problems' %}
-            Move on to the next lesson: <a href="{{page.previous.url}}" title="next Post: 
+            Move on to the next tutorial: <a href="{{page.previous.url}}" title="next Post: 
               {{page.previous.title}}">{{page.previous.title}} &raquo; </a>
           {% else %}
-            <a href="/#table-of-contents">Back to SQL School Index</a>
+            <a href="/#table-of-contents">Back to Tutorial Index</a>
           {% endif %}
         </div>
     </div>
