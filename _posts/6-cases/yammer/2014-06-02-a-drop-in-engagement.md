@@ -62,14 +62,14 @@ The third table shows events specific to email. It contains three columns:
 
 The table can be found here: [https://modeanalytics.com/tutorial/tables/yammer_emails](https://modeanalytics.com/tutorial/tables/yammer_emails)
 
-The final table is a lookup table that is used to create rolling time periods. Though you could use the `INTERVAL()` function, creating rolling time periods is often easiest with a table like this. It contains six columns:
+The final table is a lookup table that is used to create rolling time periods. Though you could use the `INTERVAL()` function, creating rolling time periods is often easiest with a table like this. You won't necessarily need to use this table in queries that you write, but the column descriptions are provided here so that you can understand the query that creates the chart shown above:
 
-* period\_id: This identifies the 
-* time\_id:
-* pst\_start:
-* pst\_end:
-* utc\_start:
-* utc\_end:
+* period\_id: This identifies the type of rollup period. The above dashboard uses period 1007, which is rolling 7-day periods.
+* time\_id: This is the identifier for any given data point &mdash; it's what you would put on a chart axis. If time\_id is 2014-08-01, that means that is represents the rolling 7-day period leading up to 2014-08-01.
+* pst\_start: The start time of the period in PST. For 2014-08-01, you'll notice that this is 2014-07-25 &mdash; one week prior. Use this to join events to the table.
+* pst\_end: The start time of the period in PST. For 2014-08-01, the end time is 2014-08-01. You can see how this is used in conjunction with pst\_start to join events to this table in the [query that produces the above chart](https://staging.modeanalytics.com/tutorial/reports/f7aeca4599b7/runs/5e08a9650c91/query).
+* utc\_start: The same as pst\_start, but in UTC time.
+* utc\_end: The same as pst\_end, but in UTC time.
 
 The table can be found here: [https://staging.modeanalytics.com/benn/tables/dimension\_rollup\_periods](https://staging.modeanalytics.com/benn/tables/dimension_rollup_periods)
 
