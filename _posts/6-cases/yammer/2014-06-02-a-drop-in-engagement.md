@@ -32,7 +32,8 @@ Once you have an ordered list of possible problems, it's time to investigate.
 
 For this problem, you will need to use four tables. *Note: this data is fake and was generated for the purpose of this case study. It is similar instructure to Yammer's actual data, but for privacy and security reasons it is not real.*
 
-The first table lists Yammer users. This table includes one row per user. Each row has six columns:
+**Table 1: [Users](https://modeanalytics.com/tutorial/tables/yammer_users)**
+This table includes one row per user. Each row has six columns:
 
 * user\_id: A unique ID per user. Can be joined to user\_id in either of the other tables.
 * created_at: The time the user was created (first signed up).
@@ -41,9 +42,8 @@ The first table lists Yammer users. This table includes one row per user. Each r
 * company_id: The ID of the user's company.
 * language: The chosen language of the user.
 
-The users table can be found here: [https://modeanalytics.com/tutorial/tables/yammer_users](https://modeanalytics.com/tutorial/tables/yammer_users)
-
-The second table is an events table. This table includes one row per event, where an event is an action that a user has taken on Yammer. These events include login events, messaging events, search events, events logged as users progress through a signup funnel, events around received emails. Each row of the table has four columns:
+**Table 2: [Events](https://modeanalytics.com/tutorial/tables/yammer_events)**
+This table includes one row per event, where an event is an action that a user has taken on Yammer. These events include login events, messaging events, search events, events logged as users progress through a signup funnel, events around received emails. Each row of the table has four columns:
 
 * user\_id: The ID of the user logging the event. Can be joined to user\_id in either of the other tables.
 * occurred_at: The time the event occurred.
@@ -52,16 +52,14 @@ The second table is an events table. This table includes one row per event, wher
 * location: The country from which the event was logged (collected through IP address).
 * device: The type of device used to log the event.
 
-The table can be found here: [https://modeanalytics.com/tutorial/tables/yammer_events](https://modeanalytics.com/tutorial/tables/yammer_events)
-
-The third table shows events specific to email. It contains three columns:
+**Table 3: [Email Events](https://modeanalytics.com/tutorial/tables/yammer_emails)**
+This table contains three columns:
 
 * user\_id: The ID of the user to whom the event relates. Can be joined to user\_id in either of the other tables.
 * occurred_at: The time the event occurred.
 * action: The name of the event that occurred. "sent\_weekly\_digest" means that the user was delivered a digest email showing relevant conversations from the previous day. "email\_open" means that the user opened the email. "email\_clickthrough" means that the user clicked a link in the email.
 
-The table can be found here: [https://modeanalytics.com/tutorial/tables/yammer_emails](https://modeanalytics.com/tutorial/tables/yammer_emails)
-
+**Table 4: [Rollup Periods](https://staging.modeanalytics.com/benn/tables/dimension_rollup_periods)
 The final table is a lookup table that is used to create rolling time periods. Though you could use the `INTERVAL()` function, creating rolling time periods is often easiest with a table like this. You won't necessarily need to use this table in queries that you write, but the column descriptions are provided here so that you can understand the query that creates the chart shown above:
 
 * period\_id: This identifies the type of rollup period. The above dashboard uses period 1007, which is rolling 7-day periods.
@@ -70,8 +68,6 @@ The final table is a lookup table that is used to create rolling time periods. T
 * pst\_end: The start time of the period in PST. For 2014-08-01, the end time is 2014-08-01. You can see how this is used in conjunction with pst\_start to join events to this table in the [query that produces the above chart](https://staging.modeanalytics.com/tutorial/reports/f7aeca4599b7/runs/5e08a9650c91/query).
 * utc\_start: The same as pst\_start, but in UTC time.
 * utc\_end: The same as pst\_end, but in UTC time.
-
-The table can be found here: [https://staging.modeanalytics.com/benn/tables/dimension\_rollup\_periods](https://staging.modeanalytics.com/benn/tables/dimension_rollup_periods)
 
 ###Making a Recommendation
 
