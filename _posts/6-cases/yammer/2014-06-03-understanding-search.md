@@ -22,11 +22,21 @@ Before tackling search, the product team wants to make sure that the engineering
 
 Before looking at the data, develop some hypotheses about how users might interact with search. What is the purpose of search? How would you know if it is fulfilling that purpose? How might you (quantitatively) understand the general quality of an individual user's search experience?
 
-If you want to check your list of possible causes against ours, read the [first part of the answer key](answers/understanding-search-answers.html).
+If you're looking for some hints, check out the [first part of the answer key](answers/understanding-search-answers.html).
 
 ###The Data
+There are two tables that are relevant to this problem. Most critically, there are certain events that you will want to look into in the events table below:
 
---data dictionary
+* search\_autocomplete: This is logged when a user clicks on a search option from autocomplete
+* search\_run: This is logged when a user runs a search and sees the search results page.
+* search\_click\_X: This is logged when a user clicks on a search result. X, which ranges from 1 to 10, describes which search result was clicked.
+
+<div class="accordion">
+  <ul>
+    {% include case-data/yammer-users.html %}
+    {% include case-data/yammer-events.html %}
+  </ul>
+</div>
 
 ###Making a Recommendation
 

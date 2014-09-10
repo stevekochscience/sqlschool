@@ -1,0 +1,32 @@
+<li>
+  <input type="checkbox" checked>
+  <i></i>
+  <h4>Table 2: Events</h4>
+  <table>
+    <tr>
+      <th colspan="2">This table includes one row per event, where an event is an action that a user has taken on Yammer. These events include login events, messaging events, search events, events logged as users progress through a signup funnel, events around received emails.
+        <!--<a href="https://modeanalytics.com/tutorial/tables/yammer_events">View this table in Mode</a>-->
+      </th>
+    </tr>
+    <tr>
+      <td>user_id:</td>
+      <td class="right">The ID of the user logging the event. Can be joined to user\_id in either of the other tables.</td>
+    </tr>
+    <tr>
+      <td>occurred_at:</td>
+      <td class="right">The time the event occurred.</td>
+    </tr>
+    <tr>
+      <td>event_type:</td>
+      <td class="right">The general event type. These include signup events, email events, and engagement events. Yammer considers any user who logs an engagement event to be engaged.
+        <!--**MORE HERE ON DIFFERENT EVENT TYPES AND NAMES**-->
+      </td>
+    </tr>
+    <tr><td>event_name:</td>
+      <td class="right">The specific action the user took. This includes the step of the signup flow, the action taken around the email, or action taken in the product.</td></tr>
+    <tr>
+      <td>location:</td><td class="right">The country from which the event was logged (collected through IP address).</td></tr>
+    <tr>
+      <td>device:</td><td class="right">The type of device used to log the event.</td></tr>
+  </table>
+</li>

@@ -1,0 +1,26 @@
+<li>
+  <input type="checkbox" checked>
+  <i></i>
+  <h4>Table 3: Email Events</h4>
+  <table>
+    <tr>
+      <th colspan="2">This table contains events specific to the sending of emails. It is similar in structure to the events table above.
+        <!--<a href="https://modeanalytics.com/tutorial/tables/yammer_emails">View this table in Mode</a>-->
+      </th>
+    </tr>
+    <tr>
+      <td>user_id:</td>
+      <td class="right">The ID of the user to whom the event relates. Can be joined to user\_id in either of the other tables.</td>
+    </tr>
+    <tr>
+      <td>occurred_at:</td>
+      <td class="right">The time the event occurred.</td>
+    </tr>
+    <tr>
+      <td>action:</td>
+      <td class="right">The name of the event that occurred. "sent\_weekly\_digest" means that the user was delivered a digest email showing relevant conversations from the previous day. "email\_open" means that the user opened the email. "email\_clickthrough" means that the user clicked a link in the email.
+        <!--**MORE HERE ON DIFFERENT EVENT TYPES AND NAMES**-->
+      </td>
+    </tr>
+  </table>
+</li>
