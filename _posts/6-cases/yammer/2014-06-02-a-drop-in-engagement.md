@@ -34,7 +34,7 @@ For this problem, you will need to use four tables. *Note: this data is fake and
 
 
 <style>
- .transition, p, ul li i:before, ul li i:after {
+ .transition, p, table, ul li i:before, ul li i:after {
   transition: all 0.25s ease-in-out;
 }
 
@@ -70,7 +70,16 @@ For this problem, you will need to use four tables. *Note: this data is fake and
   opacity: 1;
   transform: translate(0, 0);
   margin-top: 14px;
-  z-index: 2;
+  
+}
+
+.accordion table {
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
+  transform: translate(0, 0);
+  margin-top: 14px;
+  max-height:800px;
 }
 
  .accordion ul {
@@ -132,6 +141,13 @@ For this problem, you will need to use four tables. *Note: this data is fake and
   opacity: 0;
   transform: translate(0, 50%);
 }
+ .accordion ul li input[type=checkbox]:checked ~ table {
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  display: none;
+  transform: translate(0, 50%);
+}
  .accordion ul li input[type=checkbox]:checked ~ i:before {
   transform: translate(2px, 0) rotate(45deg);
 }
@@ -169,14 +185,28 @@ For this problem, you will need to use four tables. *Note: this data is fake and
       <input type="checkbox" checked>
       <i></i>
       <h4>Table 1: Users</h4>
-      <p><a href="https://modeanalytics.com/tutorial/tables/yammer_users">View in Mode</a></p>
-      <p>This table includes one row per user. Each row has six columns:
-           user\_id: A unique ID per user. Can be joined to user\_id in either of the other tables.
-           created_at: The time the user was created (first signed up).
-           state: The state of the user (active or pending).
-           activated_at: The time the user was activated, if they are active.
-           company_id: The ID of the user's company.
-           language: The chosen language of the user.</p>
+      <table>
+        <tr><td colspan="2">This table includes one row per user. Each row has six columns:</td></tr>
+        <tr><td colspan="2"><a href="https://modeanalytics.com/tutorial/tables/yammer_users">View table in Mode</a></td></tr>
+        <tr>
+          <td>user_id:</td>
+          <td class="right">A unique ID per user. Can be joined to user_id in either of the other tables.</td>
+        </tr>
+        <tr>
+          <td>created_at:</td>
+          <td class="right">The time the user was created (first signed up)</td>
+        </tr>
+        <tr>
+          <td>state:</td>
+          <td class="right">The state of the user (active or pending)</td>
+        </tr>
+        <tr><td>activated_at:</td>
+          <td class="right">The time the user was activated, if they are active</td></tr>
+        <tr>
+          <td>company_id:</td><td class="right">The ID of the user's company</td></tr>
+        <tr>
+          <td>language:</td><td class="right">The chosen language of the user</td></tr>
+      </table>
     </li>
     <li>
       <input type="checkbox" checked>
