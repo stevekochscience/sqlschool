@@ -246,20 +246,29 @@ code {
   padding-left: 0px !important;
   cursor: pointer;
 }
+
 .accordion table {
   position: relative;
   overflow: hidden;
   opacity: 1;
   transform: translate(0, 0);
-  margin-top: 14px;
+  margin-top: 0px;
   max-height:800px;
   font-size: 12px;
   width:100%;
+  border:none;
+  box-shadow:none;
+  line-height:14px;
+}
+
+.accordion th {
+  border:none;
 }
 
 .accordion td {
   text-align:right;
   font-weight:bold;
+  border:none;
 }
 
 .accordion td.right {
