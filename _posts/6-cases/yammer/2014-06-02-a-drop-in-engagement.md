@@ -32,42 +32,192 @@ Once you have an ordered list of possible problems, it's time to investigate.
 
 For this problem, you will need to use four tables. *Note: this data is fake and was generated for the purpose of this case study. It is similar instructure to Yammer's actual data, but for privacy and security reasons it is not real.*
 
-**Table 1: [Users](https://modeanalytics.com/tutorial/tables/yammer_users)**
-This table includes one row per user. Each row has six columns:
 
-* user\_id: A unique ID per user. Can be joined to user\_id in either of the other tables.
-* created_at: The time the user was created (first signed up).
-* state: The state of the user (active or pending).
-* activated_at: The time the user was activated, if they are active.
-* company_id: The ID of the user's company.
-* language: The chosen language of the user.
+<style>
+ .transition, p, ul li i:before, ul li i:after {
+  transition: all 0.25s ease-in-out;
+}
 
-**Table 2: [Events](https://modeanalytics.com/tutorial/tables/yammer_events)**
-This table includes one row per event, where an event is an action that a user has taken on Yammer. These events include login events, messaging events, search events, events logged as users progress through a signup funnel, events around received emails. Each row of the table has four columns:
+ .flipIn, h1, ul li {
+  animation: flipdown 0.5s ease both;
+}
 
-* user\_id: The ID of the user logging the event. Can be joined to user\_id in either of the other tables.
-* occurred_at: The time the event occurred.
-* event_type: The general event type. These include signup events, email events, and engagement events. Yammer considers any user who logs an engagement event to be engaged. **MORE HERE ON DIFFERENT EVENT TYPES AND NAMES**
-* event_name: The specific action the user took. This includes the step of the signup flow, the action taken around the email, or action taken in the product.
-* location: The country from which the event was logged (collected through IP address).
-* device: The type of device used to log the event.
+ .no-select {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-**Table 3: [Email Events](https://modeanalytics.com/tutorial/tables/yammer_emails)**
-This table contains three columns:
+ .accordion h4 {
+  display: block;
+  margin: 0;
+  padding-left: 0px;
+  cursor: pointer;
+}
 
-* user\_id: The ID of the user to whom the event relates. Can be joined to user\_id in either of the other tables.
-* occurred_at: The time the event occurred.
-* action: The name of the event that occurred. "sent\_weekly\_digest" means that the user was delivered a digest email showing relevant conversations from the previous day. "email\_open" means that the user opened the email. "email\_clickthrough" means that the user clicked a link in the email.
+ .accordion p {
+  color: rgba(48, 69, 92, 0.8);
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  max-height: 800px;
+  opacity: 1;
+  transform: translate(0, 0);
+  margin-top: 14px;
+  z-index: 2;
+}
 
-**Table 4: [Rollup Periods](https://staging.modeanalytics.com/benn/tables/dimension_rollup_periods)
-The final table is a lookup table that is used to create rolling time periods. Though you could use the `INTERVAL()` function, creating rolling time periods is often easiest with a table like this. You won't necessarily need to use this table in queries that you write, but the column descriptions are provided here so that you can understand the query that creates the chart shown above:
+ .accordion ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ .accordion ul li {
+  list-style: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 4px;
+  padding-top: 18px;
+  border-top: 1px dotted #dce7eb;
+}
+ .accordion ul li:nth-of-type(1) {
+  animation-delay: 0.5s;
+}
+ .accordion ul li:nth-of-type(2) {
+  animation-delay: 0.75s;
+}
+ .accordion ul li:nth-of-type(3) {
+  animation-delay: 1s;
+}
+ .accordion ul li:last-of-type {
+  padding-bottom: 0;
+}
+ .accordion ul li i {
+  position: absolute;
+  transform: translate(-6px, 0);
+  margin-top: 16px;
+  right: 0;
+}
+ .accordion ul li i:before, ul li i:after {
+  content: "";
+  position: absolute;
+  background-color: #ff6873;
+  width: 3px;
+  height: 9px;
+}
+ .accordion ul li i:before {
+  transform: translate(-2px, 0) rotate(45deg);
+}
+ .accordion ul li i:after {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+ .accordion ul li input[type=checkbox] {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+ .accordion ul li input[type=checkbox]:checked ~ p {
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  transform: translate(0, 50%);
+}
+ .accordion ul li input[type=checkbox]:checked ~ i:before {
+  transform: translate(2px, 0) rotate(45deg);
+}
+ .accordion ul li input[type=checkbox]:checked ~ i:after {
+  transform: translate(-2px, 0) rotate(-45deg);
+}
 
-* period\_id: This identifies the type of rollup period. The above dashboard uses period 1007, which is rolling 7-day periods.
-* time\_id: This is the identifier for any given data point &mdash; it's what you would put on a chart axis. If time\_id is 2014-08-01, that means that is represents the rolling 7-day period leading up to 2014-08-01.
-* pst\_start: The start time of the period in PST. For 2014-08-01, you'll notice that this is 2014-07-25 &mdash; one week prior. Use this to join events to the table.
-* pst\_end: The start time of the period in PST. For 2014-08-01, the end time is 2014-08-01. You can see how this is used in conjunction with pst\_start to join events to this table in the [query that produces the above chart](https://staging.modeanalytics.com/tutorial/reports/f7aeca4599b7/runs/5e08a9650c91/query).
-* utc\_start: The same as pst\_start, but in UTC time.
-* utc\_end: The same as pst\_end, but in UTC time.
+@keyframes flipdown {
+  0% {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg);
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
+    transform: rotateX(8deg);
+  }
+  83% {
+    transform: rotateX(6deg);
+  }
+  92% {
+    transform: rotateX(-3deg);
+  }
+  100% {
+    transform-origin: top center;
+    transform: rotateX(0deg);
+  }
+}
+</style>
+<div class="accordion">
+  <ul>
+    <li>
+      <input type="checkbox" checked>
+      <i></i>
+      <h4>Table 1: Users</h4>
+      <p><a href="https://modeanalytics.com/tutorial/tables/yammer_users">View in Mode</a></p>
+      <p>This table includes one row per user. Each row has six columns:
+           user\_id: A unique ID per user. Can be joined to user\_id in either of the other tables.
+           created_at: The time the user was created (first signed up).
+           state: The state of the user (active or pending).
+           activated_at: The time the user was activated, if they are active.
+           company_id: The ID of the user's company.
+           language: The chosen language of the user.</p>
+    </li>
+    <li>
+      <input type="checkbox" checked>
+      <i></i>
+      <h4>Table 2: Events</h4>
+      <p><a href="https://modeanalytics.com/tutorial/tables/yammer_events">View in Mode</a></p>
+      <p>This table includes one row per event, where an event is an action that a user has taken on Yammer. These events include login events, messaging events, search events, events logged as users progress through a signup funnel, events around received emails. Each row of the table has four columns:
+      user\_id: The ID of the user logging the event. Can be joined to user\_id in either of the other tables.
+      occurred_at: The time the event occurred.
+      event_type: The general event type. These include signup events, email events, and engagement events. Yammer considers any user who logs an engagement event to be engaged. **MORE HERE ON DIFFERENT EVENT TYPES AND NAMES**
+      event_name: The specific action the user took. This includes the step of the signup flow, the action taken around the email, or action taken in the product.
+      location: The country from which the event was logged (collected through IP address).
+      device: The type of device used to log the event.</p>
+    </li>
+    <li>
+      <input type="checkbox" checked>
+      <i></i>
+      <h4>Table 3: Email Events</h4>
+      <p><a href="https://modeanalytics.com/tutorial/tables/yammer_emails">View in Mode</a></p>
+      <p>This table contains three columns:
+        user\_id: The ID of the user to whom the event relates. Can be joined to user\_id in either of the other tables.
+        occurred_at: The time the event occurred.
+        action: The name of the event that occurred. "sent\_weekly\_digest" means that the user was delivered a digest email showing relevant conversations from the previous day. "email\_open" means that the user opened the email. "email\_clickthrough" means that the user clicked a link in the email.</p>
+    </li>
+    <li>
+      <input type="checkbox" checked>
+      <i></i>
+      <h4>Table 4: Rollup Periods</h4>
+      <p><a href="https://modeanalytics.com/tutorial/tables/dimension_rollup_periods">View in Mode</a></p>
+      <p>The final table is a lookup table that is used to create rolling time periods. Though you could use the `INTERVAL()` function, creating rolling time periods is often easiest with a table like this. You won't necessarily need to use this table in queries that you write, but the column descriptions are provided here so that you can understand the query that creates the chart shown above:
+      period\_id: This identifies the type of rollup period. The above dashboard uses period 1007, which is rolling 7-day periods.
+      time\_id: This is the identifier for any given data point &mdash; it's what you would put on a chart axis. If time\_id is 2014-08-01, that means that is represents the rolling 7-day period leading up to 2014-08-01.
+      pst\_start: The start time of the period in PST. For 2014-08-01, you'll notice that this is 2014-07-25 &mdash; one week prior. Use this to join events to the table.
+      pst\_end: The start time of the period in PST. For 2014-08-01, the end time is 2014-08-01. You can see how this is used in conjunction with pst\_start to join events to this table in the <a href="https://staging.modeanalytics.com/tutorial/reports/f7aeca4599b7/runs/5e08a9650c91/query">query that produces the above chart</a>.
+      utc\_start: The same as pst\_start, but in UTC time.
+      utc\_end: The same as pst\_end, but in UTC time.</p>
+    </li>
+  </ul>
+</div>
+
+
 
 ###Making a Recommendation
 
