@@ -25,7 +25,17 @@ description: "Learn data analysis skills with this free, interactive SQL tutoria
          <ul class="table-of-contents">
            {% for post in site.posts %}
              {% if post.categories contains case and post.categories contains "cases" %}
-               <li class="list-question"><a href="{{ post.url }}"> {{ post.title }}</a></li>
+               
+               {% assign answer = false %}
+               {% if post.categories contains "answers" %}
+                 {% assign answer = true %}
+               {% endif %}
+                 
+               {% if answer ==  false %}
+                 <li class="list-question">
+                   <a href="{{ post.url }}"> {{ post.title }}</a>
+                 </li>
+               {% endif %}
              {% endif %}
            {% endfor %}
          </ul>
