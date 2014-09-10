@@ -32,153 +32,6 @@ Once you have an ordered list of possible problems, it's time to investigate.
 
 For this problem, you will need to use four tables. *Note: this data is fake and was generated for the purpose of this case study. It is similar in structure to Yammer's actual data, but for privacy and security reasons it is not real.*
 
-
-<style>
- .transition, p, table, ul li i:before, ul li i:after {
-  transition: all 0.25s ease-in-out;
-}
-
- .flipIn, h1, ul li {
-  animation: flipdown 0.5s ease both;
-}
-
- .no-select {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
- .accordion h4 {
-  display: block;
-  margin: 0;
-  padding-left: 0px;
-  cursor: pointer;
-}
-
- .accordion p {
-  color: rgba(48, 69, 92, 0.8);
-  font-size: 17px;
-  line-height: 26px;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-  max-height: 800px;
-  opacity: 1;
-  transform: translate(0, 0);
-  margin-top: 14px;
-  
-}
-
-.accordion table {
-  position: relative;
-  overflow: hidden;
-  opacity: 1;
-  transform: translate(0, 0);
-  margin-top: 14px;
-  max-height:800px;
-}
-
- .accordion ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
- .accordion ul li {
-  list-style: none;
-  position: relative;
-  padding: 0;
-  margin: 0;
-  padding-bottom: 4px;
-  padding-top: 18px;
-  border-top: 1px dotted #dce7eb;
-}
- .accordion ul li:nth-of-type(1) {
-  animation-delay: 0.5s;
-}
- .accordion ul li:nth-of-type(2) {
-  animation-delay: 0.75s;
-}
- .accordion ul li:nth-of-type(3) {
-  animation-delay: 1s;
-}
- .accordion ul li:last-of-type {
-  padding-bottom: 0;
-}
- .accordion ul li i {
-  position: absolute;
-  transform: translate(-6px, 0);
-  margin-top: 16px;
-  right: 0;
-}
- .accordion ul li i:before, ul li i:after {
-  content: "";
-  position: absolute;
-  background-color: #ff6873;
-  width: 3px;
-  height: 9px;
-}
- .accordion ul li i:before {
-  transform: translate(-2px, 0) rotate(45deg);
-}
- .accordion ul li i:after {
-  transform: translate(2px, 0) rotate(-45deg);
-}
- .accordion ul li input[type=checkbox] {
-  position: absolute;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  opacity: 0;
-}
- .accordion ul li input[type=checkbox]:checked ~ p {
-  margin-top: 0;
-  max-height: 0;
-  opacity: 0;
-  transform: translate(0, 50%);
-}
- .accordion ul li input[type=checkbox]:checked ~ table {
-  margin-top: 0;
-  max-height: 0;
-  opacity: 0;
-  display: none;
-  transform: translate(0, 50%);
-}
- .accordion ul li input[type=checkbox]:checked ~ i:before {
-  transform: translate(2px, 0) rotate(45deg);
-}
- .accordion ul li input[type=checkbox]:checked ~ i:after {
-  transform: translate(-2px, 0) rotate(-45deg);
-}
-
-@keyframes flipdown {
-  0% {
-    opacity: 0;
-    transform-origin: top center;
-    transform: rotateX(-90deg);
-  }
-  5% {
-    opacity: 1;
-  }
-  80% {
-    transform: rotateX(8deg);
-  }
-  83% {
-    transform: rotateX(6deg);
-  }
-  92% {
-    transform: rotateX(-3deg);
-  }
-  100% {
-    transform-origin: top center;
-    transform: rotateX(0deg);
-  }
-}
-</style>
 <div class="accordion">
   <ul>
     <li>
@@ -186,8 +39,10 @@ For this problem, you will need to use four tables. *Note: this data is fake and
       <i></i>
       <h4>Table 1: Users</h4>
       <table>
-        <tr><td colspan="2">This table includes one row per user. Each row has six columns:</td></tr>
-        <tr><td colspan="2"><a href="https://modeanalytics.com/tutorial/tables/yammer_users">View table in Mode</a></td></tr>
+        <tr>
+          <th colspan="2">This table includes one row per user. <a href="https://modeanalytics.com/tutorial/tables/yammer_users">View table in Mode</a>
+          </th>
+        </tr>
         <tr>
           <td>user_id:</td>
           <td class="right">A unique ID per user. Can be joined to user_id in either of the other tables.</td>
@@ -213,8 +68,10 @@ For this problem, you will need to use four tables. *Note: this data is fake and
       <i></i>
       <h4>Table 2: Events</h4>
       <table>
-        <tr><td colspan="2">This table includes one row per event, where an event is an action that a user has taken on Yammer. These events include login events, messaging events, search events, events logged as users progress through a signup funnel, events around received emails. Each row of the table has four columns:</td></tr>
-        <tr><td colspan="2"><a href="https://modeanalytics.com/tutorial/tables/yammer_events">View in Mode</a></td></tr>
+        <tr>
+          <th colspan="2">This table includes one row per event, where an event is an action that a user has taken on Yammer. These events include login events, messaging events, search events, events logged as users progress through a signup funnel, events around received emails. <a href="https://modeanalytics.com/tutorial/tables/yammer_events">View this table in Mode</a>
+          </th>
+        </tr>
         <tr>
           <td>user_id:</td>
           <td class="right">The ID of the user logging the event. Can be joined to user\_id in either of the other tables.</td>
@@ -240,8 +97,10 @@ For this problem, you will need to use four tables. *Note: this data is fake and
       <i></i>
       <h4>Table 3: Email Events</h4>
       <table>
-        <tr><td colspan="2">This table contains three columns:</td></tr>
-        <tr><td colspan="2"><a href="https://modeanalytics.com/tutorial/tables/yammer_emails">View in Mode</a></td></tr>
+        <tr>
+          <th colspan="2">This table contains events specific to the sending of emails. It is similar in structure to the events table above. <a href="https://modeanalytics.com/tutorial/tables/yammer_emails">View this table in Mode</a>
+          </th>
+        </tr>
         <tr>
           <td>user_id:</td>
           <td class="right">The ID of the user to whom the event relates. Can be joined to user\_id in either of the other tables.</td>
@@ -261,8 +120,10 @@ For this problem, you will need to use four tables. *Note: this data is fake and
       <i></i>
       <h4>Table 4: Rollup Periods</h4>
       <table>
-        <tr><td colspan="2">The final table is a lookup table that is used to create rolling time periods. Though you could use the `INTERVAL()` function, creating rolling time periods is often easiest with a table like this. You won't necessarily need to use this table in queries that you write, but the column descriptions are provided here so that you can understand the query that creates the chart shown above:</td></tr>
-        <tr><td colspan="2"><a href="https://modeanalytics.com/tutorial/tables/dimension_rollup_periods">View in Mode</a></td></tr>
+        <tr>
+          <th colspan="2">The final table is a lookup table that is used to create rolling time periods. Though you could use the `INTERVAL()` function, creating rolling time periods is often easiest with a table like this. You won't necessarily need to use this table in queries that you write, but the column descriptions are provided here so that you can understand the query that creates the chart shown above. <a href="https://modeanalytics.com/tutorial/tables/dimension_rollup_periods">View this table in Mode</a>
+          </th>
+        </tr>
         <tr>
           <td>period_id:</td>
           <td class="right">This identifies the type of rollup period. The above dashboard uses period 1007, which is rolling 7-day periods.</td>
