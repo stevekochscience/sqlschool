@@ -17,7 +17,7 @@ You show up to work Tuesday morning, September 2, 2014. The head of the Product 
 
 The above chart shows engagement on a rolling 7-day basis. Yammer defines engagement as having made some type of server call by interacting with the product (shown in the data as events of type "engagement"). Any point in this chart can be interpreted as "the number of users who logged at least one engagement event over the 7 days prior."
 
-You will notice that the point on August 1, 2014 shows 1,241 engaged users — that's the total number of people who engaged between midnight July 25 and midnight August 1.
+You will notice that the point on August 1, 2014 shows 1,368 engaged users — that's the total number of people who engaged between midnight July 25 and midnight August 1.
 
 You are responsible for determining what caused the dip shown above and, if appropriate, recommending solutions for the problem.
 
