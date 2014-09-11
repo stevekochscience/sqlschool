@@ -49,9 +49,9 @@ You can also define a number of outcomes in a `CASE` statement by including as m
     SELECT player_name,
            weight,
            CASE WHEN weight > 250 THEN 'over 250'
-                WHEN weight > 200 THEN '200-250'
-                WHEN weight > 175 THEN '175-200'
-                ELSE 'under 175' END AS weight_group
+                WHEN weight > 200 THEN '201-250'
+                WHEN weight > 175 THEN '176-200'
+                ELSE '175 or under' END AS weight_group
       FROM benn.college_football_players
 
 In the above example, the `WHEN`/`THEN` statements will get evaluated in the order that they're written. So if the value in the `weight` column of a given row is 300, it will produce a result of "over 250." Here's what happens if the value in the `weight` column is 180, SQL will do the following:
@@ -67,9 +67,9 @@ While the above works, it's really best practice to create statements that don't
     SELECT player_name,
            weight,
            CASE WHEN weight > 250 THEN 'over 250'
-                WHEN weight > 200 AND weight <= 250 THEN '200-250'
-                WHEN weight > 175 AND weight <= 200 THEN '175-200'
-                ELSE 'under 175' END AS weight_group
+                WHEN weight > 200 AND weight <= 250 THEN '201-250'
+                WHEN weight > 175 AND weight <= 200 THEN '176-200'
+                ELSE '175 or under' END AS weight_group
       FROM benn.college_football_players
 
 <div class="practice-prob">
