@@ -38,7 +38,7 @@ Each step is linked, below, but if you want to follow along with all of the char
 
 <a href="https://modeanalytics.com/benn/reports/bae848ef66b9/runs/b404fb0cb24e/embed" class="mode-embed">Mode Analysis</a><script src="https://modeanalytics.com/embed/embed.js"></script>
 
-**2.**Since growth is normal, it's possible that the dip in engagement is coming from existing users. One of the most effective ways to look at this is to cohort users based on when they signed up for the product. This chart shows a decrease in engagement among users who signed up more than 10 weeks prior:
+**2.**Since growth is normal, it's possible that the dip in engagement is coming from existing users as opposed to new ones. One of the most effective ways to look at this is to cohort users based on when they signed up for the product. This chart shows a decrease in engagement among users who signed up more than 10 weeks prior:
 
 <a href="https://modeanalytics.com/benn/reports/26c4bbb533cf/runs/650252353750/embed" class="mode-embed">Mode Analysis</a><script src="https://modeanalytics.com/embed/embed.js"></script>
 
