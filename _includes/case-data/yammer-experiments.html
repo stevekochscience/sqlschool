@@ -1,0 +1,37 @@
+<li>
+  <input type="checkbox" checked>
+  <i></i>
+  <h4>Table 3: Experiments</h4>
+  <table>
+    <tr>
+      <th colspan="2">This table shows which groups users are sorted into for experiments. There should be one row per user, per experiment (a user should not be in both the test and control groups in a given experiment). 
+        <!--<a href="https://modeanalytics.com/tutorial/tables/yammer_events">View this table in Mode</a>-->
+      </th>
+    </tr>
+    <tr>
+      <td>user_id:</td>
+      <td class="right">The ID of the user logging the event. Can be joined to user\_id in either of the other tables.</td>
+    </tr>
+    <tr>
+      <td>occurred_at:</td>
+      <td class="right">The time the user was treated in that particular group.</td>
+    </tr>
+    <tr>
+      <td>experiment:</td>
+      <td class="right">The name of the experiment. This indicates what actually changed in the product during the experiment.
+      </td>
+    </tr>
+    <tr><td>experiment_group:</td>
+      <td class="right">The group into which the user was sorted. "test_group" is the new version of the feature; "control_group" is the old version.
+      </td>
+    </tr>
+    <tr>
+      <td>location:</td><td class="right">The country in which the user was located when sorted into a group (collected through IP address).</td></tr>
+    <tr>
+      <td>device:</td><td class="right">The type of device used to log the event.</td></tr>
+    <tr>
+      <td>user_type:</td>
+      <td class="right">**I HAVE NO IDEA**</td>
+    </tr>
+  </table>
+</li>
