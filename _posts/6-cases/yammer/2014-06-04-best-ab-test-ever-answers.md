@@ -8,6 +8,8 @@ description:
 ---
 
 ###Preparation and Prioritizing
+
+
 * This metric is incorrect or irrelevant - usage vs value metrics
 * The users were treated incorrectly
 * The test was calculated incorrectly
@@ -34,11 +36,10 @@ Logins are up as well, so it looks there isn't a problem with cherry-picking a m
 
 **4.** we should make sure the change didn't have a disproportionate affect on different devices.
 
---SHOW TEST BY DEVICE TYPE
+<!--SHOW TEST BY DEVICE TYPE -->
 
-**5.** Finally, the test was run incorrectly. All new users were treated in the control group. Because these users, on average, post less than existing users given their shorter exposure to Yammer, including all of them in the control group lowers that group's overall posting rate. Because of this error, we should throw out new users from this test.
+**5.** Finally, the test was run incorrectly. All new users were treated in the control group. Because these users, on average, post less than existing users given their shorter exposure to Yammer, including all of them in the control group lowers that group's overall posting rate. Because of this error, we may want to re-run this test in a way that ignroes new users, or test the entirely separately.
 
-treatments by activation month
 <a href="https://modeanalytics.com/benn/reports/4a83b254000f/runs/637790980c2e/embed" class="mode-embed">Mode Analysis</a><script src="https://modeanalytics.com/embed/embed.js"></script>
 
 ###Follow Through

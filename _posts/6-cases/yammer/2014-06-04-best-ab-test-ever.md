@@ -18,10 +18,18 @@ On July 1, you check the results and notice that message posting is 50% higher i
 * **users:** the total number of users given that version of the publisher.
 * **treatment_percent**: the number of users in that group as a percentage of the total number of users.
 * **total:** 
+* **average:**
+* **rate_difference:** 
+* **rate_lift:** 
+* **stdev:** 
+* **t_stat:**
+* **p_value:**
 
 <a href="https://modeanalytics.com/benn/reports/4194f44b1866/runs/dfb63bac58ab/embed" class="mode-embed">Mode Analysis</a><script src="https://modeanalytics.com/embed/embed.js"></script>
 
-If you're a little confused by all of this, you might want to read a bit more about [the math behind AB testing](LINK).
+A note on the math behind AB testing: The above test is measuring the average message posting among the test and control groups. For testing on averages, t-tests (like the one above) are common. It's possible that the test group could perform either better or worse than the control group, so a two-tailed t-test (as opposed to one-tailed) is necessary. You can read more about the differences between one- and two-tailed t-tests [here](http://www.ats.ucla.edu/stat/mult_pkg/faq/general/tail_tests.htm).
+
+<!-- BENN to add some more color on AB tests-->
 
 Once you're comfortable with AB testing, your job will be to determine whether this feature is the real deal or too good to be true.
 
