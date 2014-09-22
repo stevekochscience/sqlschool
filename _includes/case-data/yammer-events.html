@@ -18,12 +18,25 @@
     </tr>
     <tr>
       <td>event_type:</td>
-      <td class="right">The general event type. These include signup events, email events, and engagement events. Yammer considers any user who logs an engagement event to be engaged.
-        <!--**MORE HERE ON DIFFERENT EVENT TYPES AND NAMES**-->
+      <td class="right">The general event type. There are two values in this dataset: "signup_flow", which refers to anything occuring during the process of a user's authentication, and "engagement", which refers to general product usage after the user has signed up for the first time.
       </td>
     </tr>
     <tr><td>event_name:</td>
-      <td class="right">The specific action the user took. This includes the step of the signup flow, the action taken around the email, or action taken in the product.</td></tr>
+      <td class="right">The specific action the user took. Possible values include:
+        <p><strong>create_user:</strong> User is added to Yammer's database during signup process
+        <p><strong>enter_email:</strong> User begins the signup process by entering her email address
+        <p><strong>enter_info:</strong> User enters her name and personal information during signup process
+        <p><strong>complete_signup:</strong> User completes the entire signup/authentication process
+        <p><strong>home_page:</strong> User loads the home page
+        <p><strong>like_message:</strong> User likes another user's message
+        <p><strong>login:</strong> User logs into Yammer
+        <p><strong>search_autocomplete:</strong> User selects a search result from the autocomplete list
+        <p><strong>search_run:</strong> User runs a search query and is taken to the search results page
+        <p><strong>search_click_result_X:</strong> User clicks search result X on the results page, where X is a number from 1 through 10.
+        <p><strong>send_message:</strong> User posts a message
+        <p><strong>view_inbox:</strong> User views messages in her inbox
+      </td>
+    </tr>
     <tr>
       <td>location:</td><td class="right">The country from which the event was logged (collected through IP address).</td></tr>
     <tr>

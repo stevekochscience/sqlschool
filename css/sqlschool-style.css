@@ -422,6 +422,8 @@ ul.table-of-contents, nav ul {
   .post-body li p {
     padding-left: 0px;
     padding-right: 0px;
+    margin-top: 6px;
+    margin-bottom: 6px;
   }
   
 	div.practice-prob, div.practice-prob-answer {
