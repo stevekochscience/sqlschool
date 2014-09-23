@@ -15,7 +15,7 @@ body,html,.row-offcanvas {
 }
 
 body {
-  padding-top: 50px;
+  /*padding-top: 50px;*/
   text-align: left;
   font-family: 'ProximaNova', sans-serif !important;
 }
@@ -32,7 +32,24 @@ body {
   overflow-x:hidden;
 }
 
-.list-group.panel , .list-group.panel > .list-group-item, .collapse > .list-group-item, .collapsing > .list-group-item {
+.sidebar-header {
+  background-color:#396d6c;
+  height:60px;
+  padding: 13px 15px;
+  border: 0px;
+  font-size: 20px;
+  font-weight:300;
+  font-style: light;
+  color: white; 
+}
+
+.sidebar-header img {
+  height:32px;
+  width:32px;
+  margin-right: 12px;
+}
+
+.list-group.panel > .list-group-item, .collapse > .list-group-item, .collapsing > .list-group-item {
   border: none;
   background-color:transparent;
   text-transform: capitalize;
@@ -40,13 +57,14 @@ body {
 }
 
 .list-group.panel > .list-group-item {
-  padding: 0px 0px 3px 0px;
+  padding: 8px 0px 8px 15px;
+  border-top: 1px solid #dce7eb;
 }
 
 .collapse > .list-group-item, .collapsing > .list-group-item {
   padding-top:5px;
   padding-bottom:5px;
-  padding-left:5px;
+  padding-left:25px;
 }
 
 .collapse > a.list-group-item:hover {
@@ -54,24 +72,47 @@ body {
   text-decoration: underline;
 }
 
+.list-group-item:first-child {
+  border-top:0px !important;
+}
+
 a.list-group-item.heading {
   color:#999;
-  text-transform:uppercase;
+  text-transform: uppercase !important;
   font-weight:500;
   font-style:normal;
-  font-size:14px;
+  font-size:12px;
   letter-spacing:1px;
-  margin-top: 10px;
+}
+
+a.list-group-item.heading:hover {
+  background-color:#dce7eb;
+}
+
+.collapse > a.list-group-item, .collapsing > a.list-group-item {
+  color:#555 !important;
+}
+
+.collapse > a.list-group-item:hover, .collapsing > a.list-group-item:hover {
+  color:#E4753A !important;
+}
+
+.current:before {
+   font-family: FontAwesome;
+   content: "\f0da";
+   margin-left: -8px;
+   margin-right:3px;
+}
+
+.list-group-submenu {
+  margin-left:20px;
 }
 
 /* MAIN CONTENT AREA */
 #main {
   height:100%;
   overflow:auto;
-}
-
-.breadcrumbs {
-  margin-top: 30px;
+  padding:0px 10px;
 }
 
 h2 {
