@@ -34,7 +34,7 @@ The chart shows the average number of messages posted per user by treatment grou
 
 The test above, which compares average posting rates between groups, uses a simple [Student's t-test](http://en.wikipedia.org/wiki/Student's_t-test) for deterimining statistical signficance. For testing on averages, t-tests are common, though other, more advanced statistical techniques are sometimes used. Furthermore, the test above uses a two-tailed test because the treatment group could perform either better or worse than the control group. ([Some argue](https://help.optimizely.com/hc/en-us/articles/200133789-How-long-to-run-a-test#calculating_significance) that one-tailed tests are better, however.) You can read more about the differences between one- and two-tailed t-tests [here](http://www.ats.ucla.edu/stat/mult_pkg/faq/general/tail_tests.htm).
 
-Once you're comfortable with AB testing, your job will be to determine whether this feature is the real deal or too good to be true.
+Once you're comfortable with A/B testing, your job is to determine whether this feature is the real deal or too good to be true. The product team is looking to you for advice about this test, and you should try to provide as much information about what happened as you can.
 
 ###Getting Oriented
 
@@ -60,8 +60,8 @@ For this problem, you will need to use four tables. *Note: This data is fake and
 Work through your list of hypotheses to determine whether the test results are valid. We suggest following the steps (and answer the questions) below:
 
 * Check to make sure that this test was run correctly. Is the query that calculates lift and p-value correct? It may be helpful to start with the code that produces the above query, which you can find by clicking the link in the footer of the chart and navigating to the "query" tab.
-* Check other metrics to make sure that this outsized result is not isolated to this one metric. What metrics are important? Do they show similar improvements? This will require writing additional SQL queries to test other metrics.
-* Check that the data is correct. Are there problems with the way the test results were recorded or the way users were sorted into test and control groups? If something is incorrect, determine the steps necessary to correct the problem.
+* Check other metrics to make sure that this outsized result is not isolated to this one metric. What other metrics are important? Do they show similar improvements? This will require writing additional SQL queries to test other metrics.
+* Check that the data is correct. Are there problems with the way the test results were recorded or the way users were treated into test and control groups? If something is incorrect, determine the steps necessary to correct the problem.
 * Make a final recommendation based on your conclusions. Should the new publisher be rolled out to everyone? Should it be re-tested? If so, what should be different? Should it be abandoned entirely?
 
 ###Answers
