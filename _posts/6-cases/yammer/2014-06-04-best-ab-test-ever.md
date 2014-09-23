@@ -1,47 +1,50 @@
 ---
 layout: sqlschool-case
 categories: cases yammer
-title:  "The Best AB Test Ever"
+title:  "The Best A/B Test Ever"
 date:   2014-06-01 00:00:56
 seo-title: 
 description: 
 ---
 
-Yammer develops new features, but they also spend a lot of time improving the product's core functionality. This case focuses on an improvement to the “publisher” — the module into which users type their messages. The product team ran an AB test from June 1 through June 30, during which some Yammer users (“control group”) were shown the old version of the publisher every time they used the product. All other users (“treatment group”) were shown a different version.
+Yammer not only develops new features, but is continuously looking for ways to improving existing ones. Like many software companies, Yammer frequently tests these features before releasing them to all of thier customers. These [A/B tests](http://en.wikipedia.org/wiki/A/B_testing) help analysts and product managers better understand a feature's effect on user behavior and the overall user experience.
 
-**<images of the two publishers>**
+This case focuses on an improvement to Yammer's core “publisher”&mdash;the module at the top of a Yammer feed where users type their messages. To test this feature, the product team ran an A/B test from June 1 through June 30. During this period, some users who logged into Yammer were shown the old version of the publisher (the “control group”), while other other users were shown the new version (the “treatment group”). 
+
+![Yammer Publisher Example](/images/cases/yammer-publisher.png)
 
 ###The Problem
 
-On July 1, you check the results and notice that message posting is 50% higher in the treatment group. Here's how to read the table below:
-
-* **users:** the total number of users given that version of the publisher.
-* **treatment_percent**: the number of users in that group as a percentage of the total number of users.
-* **total:** 
-* **average:**
-* **rate_difference:** 
-* **rate_lift:** 
-* **stdev:** 
-* **t_stat:**
-* **p_value:**
+On July 1, you check the results of the A/B test. You notice that message posting is 50% higher in the treatment group&mdash;a hunge increase in posting. The table below summarizes the results:
 
 <a href="https://modeanalytics.com/benn/reports/4194f44b1866/runs/dfb63bac58ab/embed" class="mode-embed">Mode Analysis</a><script src="https://modeanalytics.com/embed/embed.js"></script>
 
-A note on the math behind AB testing: The above test is measuring the average message posting among the test and control groups. For testing on averages, t-tests (like the one above) are common. It's possible that the test group could perform either better or worse than the control group, so a two-tailed t-test (as opposed to one-tailed) is necessary. You can read more about the differences between one- and two-tailed t-tests [here](http://www.ats.ucla.edu/stat/mult_pkg/faq/general/tail_tests.htm).
+The chart shows the average number of messages posted per user by treatment group. The table below provides additional test result details:
 
-<!-- BENN to add some more color on AB tests-->
+* **users:** The total number of users shown that version of the publisher.
+* **total\_treated\_users**: The number of users who were treated in either group.
+* **treatment_percent**: The number of users in that group as a percentage of the total number of treated users.
+* **total:** The total number of messages posted by that treatment group.
+* **average:** The average number of messages per user in that treatment group (total/users).
+* **rate_difference:** The difference in posting rates between treatment groups (group average - control group average).
+* **rate_lift:** The percent difference in posting rates between treatment groups ((group average / control group average) - 1).
+* **stdev:** The standard deviation of messages posted per user for users in the treatment group. For example, if there were three people in the control group and they posted 1, 4, and 8 messages, this value would be the standard deviation of 1, 4, and 8 (which is 2.9).
+* **t_stat:** A [test statistic](http://en.wikipedia.org/wiki/Student's_t-test) for calculating if average of the treatment group is statistically different from the average of the control group. It is calculated using the averages and standard deviations of the treatment and control groups.
+* **p_value:** Used to determine the test's statistical significance.
+
+The test above, which compares average posting rates between groups, uses a simple [Student's t-test](http://en.wikipedia.org/wiki/Student's_t-test) for deterimining statistical signficance. For testing on averages, t-tests are common, though other, more advanced statistical techniques are sometimes used. Furthermore, the test above uses a two-tailed test because the treatment group could perform either better or worse than the control group. ([Some argue](https://help.optimizely.com/hc/en-us/articles/200133789-How-long-to-run-a-test#calculating_significance) that one-tailed tests are better, however.) You can read more about the differences between one- and two-tailed t-tests [here](http://www.ats.ucla.edu/stat/mult_pkg/faq/general/tail_tests.htm).
 
 Once you're comfortable with AB testing, your job will be to determine whether this feature is the real deal or too good to be true.
 
 ###Getting Oriented
 
-Before doing anything with the data, develop some hypotheses about why the result might look the way it does, as well as methods for testing those hypotheses. As a point of reference, a single-digit percentage increase in message posting would be considered very strong, and 50% is basically unheard of.
+Before doing anything with the data, develop some hypotheses about why the result might look the way it does, as well as methods for testing those hypotheses. As a point of reference, such dramatic changes in user behavior&mash;like the 50% increase in posting&mdash;are extremely uncommon.
 
 If you want to check your list of possible causes against ours, read the [first part of the answer key](answers/best-ab-test-ever-answers.html).
 
 ###The Data
 
-For this problem, you will need to use four tables. *Note: this data is fake and was generated for the purpose of this case study. It is similar in structure to Yammer's actual data, but for privacy and security reasons it is not real.*
+For this problem, you will need to use four tables. *Note: This data is fake and was generated for the purpose of this case study. It is similar in structure to Yammer's actual data, but for privacy and security reasons, it is not real.*
 
 <div class="accordion">
   <ul>
