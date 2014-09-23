@@ -2,7 +2,7 @@
 layout: sqlschool-case
 categories: cases yammer answers
 title:  "Understanding Search: Answers"
-date:   2014-06-01 00:00:57
+date:   2014-07-01 00:00:57
 seo-title: 
 description: 
 ---

@@ -2,7 +2,7 @@
 layout: sqlschool-case
 categories: cases yammer answers
 title:  "A Drop In Engagement: Answers"
-date:   2014-06-01 00:00:58
+date:   2014-07-01 00:00:58
 seo-title: 
 description: 
 ---
