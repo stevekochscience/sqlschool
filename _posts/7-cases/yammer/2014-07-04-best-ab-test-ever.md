@@ -1,7 +1,7 @@
 ---
 layout: sqlschool-case
 categories: cases yammer
-title:  "The Best AB Test Ever"
+title:  "The Best A/B Test Ever"
 date:   2014-07-01 00:00:56
 seo-title: 
 description: 
