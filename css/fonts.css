@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "ProximaNova";
+  font-weight: 300;
+  font-style: italic;
+  src: url(" fonts/29B240_20_0.eot");
+  src: url(" fonts/29B240_20_0.eot?#iefix") format("embedded-opentype"), url(" fonts/29B240_20_0.woff") format("woff"), url(" fonts/29B240_20_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "ProximaNova";
+  font-weight: 300;
+  src: url(" fonts/29B240_21_0.eot");
+  src: url(" fonts/29B240_21_0.eot?#iefix") format("embedded-opentype"), url(" fonts/29B240_21_0.woff") format("woff"), url(" fonts/29B240_21_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "ProximaNova";
+  font-weight: 500;
+  font-style: italic;
+  src: url(" fonts/29B240_22_0.eot");
+  src: url(" fonts/29B240_22_0.eot?#iefix") format("embedded-opentype"), url(" fonts/29B240_22_0.woff") format("woff"), url(" fonts/29B240_22_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "ProximaNova";
+  font-weight: 500;
+  src: url(" fonts/29B240_28_0.eot");
+  src: url(" fonts/29B240_28_0.eot?#iefix") format("embedded-opentype"), url(" fonts/29B240_28_0.woff") format("woff"), url(" fonts/29B240_28_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "ProximaNova";
+  font-weight: 600;
+  font-style: italic;
+  src: url(" fonts/29B240_23_0.eot");
+  src: url(" fonts/29B240_23_0.eot?#iefix") format("embedded-opentype"), url(" fonts/29B240_23_0.woff") format("woff"), url(" fonts/29B240_23_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "ProximaNova";
+  font-weight: 600;
+  src: url(" fonts/29B240_25_0.eot");
+  src: url(" fonts/29B240_25_0.eot?#iefix") format("embedded-opentype"), url(" fonts/29B240_25_0.woff") format("woff"), url(" fonts/29B240_25_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "ProximaNova";
+  font-weight: 700;
+  font-style: italic;
+  src: url(" fonts/29B240_27_0.eot");
+  src: url(" fonts/29B240_27_0.eot?#iefix") format("embedded-opentype"), url(" fonts/29B240_27_0.woff") format("woff"), url(" fonts/29B240_27_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "ProximaNova";
+  font-weight: 700;
+  src: url(" fonts/29B240_29_0.eot");
+  src: url(" fonts/29B240_29_0.eot?#iefix") format("embedded-opentype"), url(" fonts/29B240_29_0.woff") format("woff"), url(" fonts/29B240_29_0.ttf") format("truetype"); }
