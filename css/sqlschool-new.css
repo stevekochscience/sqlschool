@@ -89,6 +89,16 @@ a.list-group-item.heading:hover {
   background-color:#dce7eb;
 }
 
+a.list-group-item.heading i {
+  display:none;
+  float:right;
+  margin-right:15px;
+}
+
+a.list-group-item.heading:hover i {
+  display:inline;
+}
+
 .collapse > a.list-group-item, .collapsing > a.list-group-item {
   color:#555 !important;
 }

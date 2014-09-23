@@ -14,7 +14,7 @@
 <!-- SQL Lessons -->    
       {% for category in site.category-list %}
         <a href="#{{ category }}" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#{{ category }}">
-          {{ category | replace:'-', ' ' }}
+          {{ category | replace:'-', ' ' }}<i class="fa fa-chevron-down"></i>
         </a>
         {% if category == page.category %}
           <div class="collapse in" id="{{ category }}">
@@ -40,14 +40,22 @@
       
 <!-- Cases-->      
       <a href="#cases" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#cases">
-        Cases
+        Cases<i class="fa fa-chevron-down"></i>
       </a>
-      <div class="collapse" id="cases">  
+      {% if page.categories contains "cases" %}
+        <div class="collapse in" id="cases">
+      {% else %}
+        <div class="collapse" id="cases">
+      {% endif %}
         {% for case in site.case-list %}
           <a href="#{{ case }}" class="list-group-item" data-toggle="collapse" data-parent="#{{ case }}">
             {{ case | replace:'-', ' ' }} <i class="fa fa-caret-down"></i>
           </a>
-          <div class="collapse list-group-submenu" id="{{ case }}">
+          {% if page.categories contains case %}
+            <div class="collapse in list-group-submenu" id="{{ case }}">
+          {% else %}
+            <div class="collapse list-group-submenu" id="{{ case }}">
+          {% endif %}
             {% for post in site.posts %}
               {% if post.categories contains case and post.categories contains "cases" %}
       
@@ -57,9 +65,16 @@
                 {% endif %}
         
                 {% if answer ==  false %}
-                  <a href="{{ post.url }}" class="list-group-item" data-parent="#{{ case }}">
-                    {{ post.title }}
-                  </a>
+                  {% if post.url == page.url %}
+                    <p class="list-group-item current">{{ post.title }}</p>
+                  {% else %}
+                    <a href="{{ post.url }}" class="list-group-item" data-parent="#{{ case }}">
+                      {{ post.title }}
+                    </a>
+                  {% endif %}
+                  
+                  
+                  
                 {% endif %}
               {% endif %}
             {% endfor %}
