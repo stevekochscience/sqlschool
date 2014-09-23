@@ -59,7 +59,7 @@
       
 <!-- MAIN CONTENT AREA -->      
       <div id="main">
-          <div class="col-md-10 col-sm-12">
+          <div class="col-sm-12 col-md-10 col-lg-8">
           	  <p class="visible-xs">
                 <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">
                   <i class="glyphicon glyphicon-chevron-left"></i>Table of Contents
@@ -79,7 +79,10 @@
               </div>
               
               <div class="row">
-                  <div class="col-md-12"><div class="post-footer">
+                {% if page.categories contains "quiz" %}
+                  {% include quiz-questions.html %}
+                {% else %}
+                  <div class="col-md-12"><div class="lesson-footer">
                     {% if page.previous.category == page.category and page.category != 'solutions-to-common-problems' %}
                       Move on to the next tutorial: <a href="{{page.previous.url}}" title="next Post: 
                         {{page.previous.title}}">{{page.previous.title}} &raquo; </a>
@@ -87,6 +90,7 @@
                       <a href="/#table-of-contents">Back to Tutorial Index</a>
                     {% endif %}
                   </div></div>
+                {% endif %}
               </div>
   
           </div>

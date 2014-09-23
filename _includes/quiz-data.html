@@ -1,0 +1,39 @@
+
+<div class="accordion">
+  <ul>
+    <li>
+      <input type="checkbox" checked>
+      <i></i>
+      <h4>Examine the Data</h4>
+      <table>
+      <tr><td>
+      The next set of questions will require you to actually write some SQL. The data for these problems are meant to simulate what you might find at a company building a web application.
+
+      The first table is a list of all the users of that web application. Each user has a unqiue `user_id`, though many users may be associated with any given `company_id`. In the `state` column, "pending" means that the person has been invited to the app but has not actually completed the signup process, while "active" means that the user has completed the signup process. Start by taking a look:
+
+          <pre><code>SELECT * FROM benn.fake_dimension_users</pre></code>
+
+      The second table is a log of actions performed by users of the service (typically referred to as an event log). Each row is a new event, and individual users can log an unlimited number of events. Most of the events are named sensibly &mdash; "login" indicates that the user logged into the web app at whatever time is indicated in the `occurred_at` column. `event_type` is pretty straightforward as well, except for "test_treatment," which you can ignore because it isn't relevant to any of these problems.
+
+          <pre><code>SELECT * FROM benn.fake_fact_events</pre></code>
+     <!-- 
+      <table>
+        <tr>
+          <th colspan="2">This table is purely a lookup table, similar to what you might find in the back of a statistics textbook. It is equivalent to using the leftmost column <a href="https://www.stat.tamu.edu/~lzhou/stat302/standardnormaltable.pdf">in this table</a>, though it omits negative Z-Scores.
+          </th>
+        </tr>
+        <tr>
+          <td>score:</td>
+          <td class="right">Z-score. Note that this table only contains values >= 0, so you will need to join the absolute value of the Z-score against it.</td>
+        </tr>
+        <tr>
+          <td>value:</td>
+          <td class="right">The area on a normal distribution below the Z-Score.</td>
+        </tr>
+      </table>
+      -->
+      </tr></td>
+      </table>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,26 @@
+<div>
+  Conceptual Questions:
+  {% assign question = 1 %}
+  {% for post in site.posts %} 
+    {% if post.categories contains "quiz" and post.categories contains "concepts" %}
+      {% if post.url == page.url %}
+        {{ question }}
+      {% else %}
+        <a href="{{ post.url }}"> {{ question }}</a>
+      {% endif %}
+      {% capture question %}{{ question | plus:1 }}{% endcapture %}
+    {% endif %}
+  {% endfor %}
+
+  Technical Questions:
+  {% for post in site.posts %} 
+    {% if post.categories contains "quiz" and post.categories contains "technical" %}
+      {% if post.url == page.url %}
+        {{ question }}
+      {% else %}
+        <a href="{{ post.url }}"> {{ question }}</a>
+      {% endif %}
+      {% capture question %}{{ question | plus:1 }}{% endcapture %}
+    {% endif %}
+  {% endfor %}
+</div>
