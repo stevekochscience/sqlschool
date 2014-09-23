@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!-- http://www.bootply.com/mL7j0aOINa -->
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,13 +10,14 @@
     </title>
     
     <!-- external CSS link -->
-    <link rel="stylesheet" href="http://about.modeanalytics.com/stylesheets/reset.css">
-    <link rel="stylesheet" href="/css/sqlschool-style.css">
-    <link rel="stylesheet" href="http://about.modeanalytics.com/stylesheets/fonts.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>    
+    <link rel="stylesheet" href="/css/sqlschool-new.css">
     
-    <script src="http://about.modeanalytics.com/javascripts/all.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> 
+    
+    <!-- Bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <!-- Image Links -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -30,49 +32,926 @@
 
   </head>
   <body>
-    <div id="page-wrap">
-      <div id="header-small">
-        <div class="wrap">
-          <a href="http://modeanalytics.com">
-            <div class="logo"></div>
-          </a>
-          <a href="http://sqlschool.modeanalytics.com" class="blog-header-link">SQL School</a>
-          <nav>
-            <ul>
-              <li><a href="http://modeanalytics.com" class="no-underline">Back To Mode</a></li>
-            </ul>
-          </nav>
+    <!--
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="http://sqlschool.modeanalytics.com" class="navbar-brand">SQL School</a>
         </div>
-      </div>
-      <div id="container">
-        <div class="bg">
-          <div id="header">
-            <div class="wrap">
-              <a href="http://modeanalytics.com">
-                <div class="logo"></div>
-              </a>
-              <a href="http://sqlschool.modeanalytics.com" class="blog-header-link">SQL School</a>
-              <nav>
-                <ul>
-                  <li><a href="http://modeanalytics.com/" class="no-underline">Back To Mode</a></li>
-                </ul>
-              </nav>
-            </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+    </div>/.navbar -->
+    
+<!-- LEFT NAV -->
+    <div class="row-offcanvas row-offcanvas-left">
+    <!-- from http://www.bootply.com/uBoT3zP1P2 -->
+    
+<div id="sidebar" class="sidebar-offcanvas">
+  
+    
+    <div class="sidebar-header">
+      <img src="/images/icons/sm_mode.svg">SQL School
+    </div>
+    
+    <div class="list-group panel">
+      
+      <a href="/" class="list-group-item list-group-item-success heading">About</a>
+      
+<!-- SQL Lessons -->    
+      
+        <a href="#the-basics" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#the-basics">
+          the basics
+        </a>
+        
+          <div class="collapse in" id="the-basics">
+        
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+                  
+                    <a href="/the-basics/introduction.html" class="list-group-item"> Introduction</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/the-basics/basic-concepts.html" class="list-group-item"> Basic Concepts</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/the-basics/select-from.html" class="list-group-item"> Retrieving Data From the Database</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <p class="list-group-item current">Filtering Data and Making Simple Calculations</p>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/the-basics/logical-operators.html" class="list-group-item"> Using Multiple Filters at Once</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/the-basics/order-by.html" class="list-group-item"> Ordering Your Results</a>
+                  
+                
+              
+          
+        </div>
+      
+        <a href="#intermediate" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#intermediate">
+          intermediate
+        </a>
+        
+          <div class="collapse" id="intermediate">
+        
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+                  
+                    <a href="/intermediate/aggregation-functions.html" class="list-group-item"> Summary Statistics: Using SQL to Replace Pivot Tables</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/intermediate/grouped-aggregations.html" class="list-group-item"> Aggregating Within Categories</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/intermediate/distinct.html" class="list-group-item"> Counting the Unique Values in a Column</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/intermediate/case.html" class="list-group-item"> Using Conditional Logic to Define New Columns</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/intermediate/join-intro.html" class="list-group-item"> Introduction to Joins</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/intermediate/inner-joins.html" class="list-group-item"> Inner Joins</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/intermediate/outer-joins.html" class="list-group-item"> Outer Joins</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/intermediate/full-join-union.html" class="list-group-item"> Full Joins and Appending Data</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/intermediate/join-tips-and-tricks.html" class="list-group-item"> Join Tips and Tricks</a>
+                  
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+        </div>
+      
+        <a href="#advanced" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#advanced">
+          advanced
+        </a>
+        
+          <div class="collapse" id="advanced">
+        
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+                  
+                    <a href="/advanced/data-types.html" class="list-group-item"> Data Types</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/advanced/data-cleaning.html" class="list-group-item"> Wrangling Messy Data</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/advanced/subqueries.html" class="list-group-item"> Subqueries</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/advanced/window-functions.html" class="list-group-item"> Window Functions</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/advanced/faster-queries.html" class="list-group-item"> Making Queries Run Faster</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/advanced/tutorial-conclusion.html" class="list-group-item"> Tutorial Conclusion</a>
+                  
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+        </div>
+      
+        <a href="#common-problems" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#common-problems">
+          common problems
+        </a>
+        
+          <div class="collapse" id="common-problems">
+        
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                
+              
+          
+              
+                
+                  
+                    <a href="/common-problems/solutions-intro.html" class="list-group-item"> What This Section is All About</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/common-problems/pivoting-rows-to-columns.html" class="list-group-item"> Pivoting From Rows to Columns</a>
+                  
+                
+              
+          
+              
+                
+                  
+                    <a href="/common-problems/pivoting-columns-to-rows.html" class="list-group-item"> Pivoting From Columns to Rows</a>
+                  
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+        </div>
+      
+        <a href="#other-resources" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#other-resources">
+          other resources
+        </a>
+        
+          <div class="collapse" id="other-resources">
+        
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                
+                  
+                    <a href="/other-resources/sql-syntax-guide.html" class="list-group-item"> SQL Syntax Guide</a>
+                  
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+              
+                
+              
+          
+        </div>
+      
+        
+<!-- SQL Quiz-->
+      <a href="/sql-quiz.html" class="list-group-item list-group-item-success heading">SQL Quiz</a>
+      
+<!-- Cases-->      
+      <a href="#cases" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#cases">
+        Cases
+      </a>
+      <div class="collapse" id="cases">  
+        
+          <a href="#yammer" class="list-group-item" data-toggle="collapse" data-parent="#yammer">
+            yammer <i class="fa fa-caret-down"></i>
+          </a>
+          <div class="collapse list-group-submenu" id="yammer">
+            
+              
+      
+                
+                
+        
+                
+                  <a href="/cases/yammer/yammer.html" class="list-group-item" data-parent="#yammer">
+                    Overview
+                  </a>
+                
+              
+            
+              
+      
+                
+                
+                  
+                
+        
+                
+              
+            
+              
+      
+                
+                
+        
+                
+                  <a href="/cases/yammer/a-drop-in-engagement.html" class="list-group-item" data-parent="#yammer">
+                    A Drop In Engagement
+                  </a>
+                
+              
+            
+              
+      
+                
+                
+                  
+                
+        
+                
+              
+            
+              
+      
+                
+                
+        
+                
+                  <a href="/cases/yammer/understanding-search.html" class="list-group-item" data-parent="#yammer">
+                    Understanding Search
+                  </a>
+                
+              
+            
+              
+      
+                
+                
+                  
+                
+        
+                
+              
+            
+              
+      
+                
+                
+        
+                
+                  <a href="/cases/yammer/best-ab-test-ever.html" class="list-group-item" data-parent="#yammer">
+                    The Best AB Test Ever
+                  </a>
+                
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
           </div>
-
-          <div class="columns-container">
-
-  <div class="sqlschool-content">
-    <div class="breadcrumbs">
-      <a href="/#the-basics">&laquo; Back to Tutorial Index</a>
+        
+      </div>
+      
     </div>
-    
-    <div class="post-header">
-      <h1 class="title">Filtering Data and Making Simple Calculations<h1>
-    </div>
-    
-    <div class="post-body">
-      <p>This lesson will use the same housing development data from the <a href="/the-basics/select-from.html">previous lesson</a>.</p>
+  
+</div>
+      
+<!-- MAIN CONTENT AREA -->      
+      <div id="main">
+          <div class="col-md-10 col-sm-12">
+          	  <p class="visible-xs">
+                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">
+                  <i class="glyphicon glyphicon-chevron-left"></i>Table of Contents
+                </button>
+              </p>
+              
+              <div class="row">
+                  <div class="col-md-12"><div class="post-title">
+                    <h2>Filtering Data and Making Simple Calculations<h2>
+                  </div></div>
+              </div>
+              
+              <div class="row">
+                  <div class="col-md-12"><div class="post-body">
+                    <p>This lesson will use the same housing development data from the <a href="/the-basics/select-from.html">previous lesson</a>.</p>
 
 <p>Start by running this code to remind yourself what&#39;s in the table that will be used in this tutorial. Remember to switch over to Mode and run any of the code you see in the grey boxes to get a sense of what the output will look like.
 <div id="where"></div></p>
@@ -226,55 +1105,32 @@
   <a href="https://modeanalytics.com/tutorial/reports/bffb59fa65a0" target="_blank">See the Answer &raquo;</a>
 </div>
 
-      
-      <!-- check to see if it's an actual lesson or the quiz or something else -->
-        <div class="lesson-footer">
-          
-            Move on to the next tutorial: <a href="/the-basics/logical-operators.html" title="next Post: 
-              Using Multiple Filters at Once">Using Multiple Filters at Once &raquo; </a>
-          
-        </div>
-    </div>
+                  </div></div>
+              </div>
+              
+              <div class="row">
+                  <div class="col-md-12"><div class="post-footer">
+                    
+                      Move on to the next tutorial: <a href="/the-basics/logical-operators.html" title="next Post: 
+                        Using Multiple Filters at Once">Using Multiple Filters at Once &raquo; </a>
+                    
+                  </div></div>
+              </div>
   
-   
-  
-  
-  </div>
-      
-</div>
-
-
-          <div class="footer-push"></div>
-        </div>
-      </div> <!-- End #container -->
-
-      <!-- Begin footer -->
-      <div id="sqlschool-footer">
-        <div id="footer-container">
-          <div class="social-links"> <!-- put these icons into spans-->
-            <a href="https://twitter.com/modeanalytics" class="social-icon" id="twitter" target="_blank">
-              <i class="icon-twitter"></i></a>
-            <a href = "https://www.facebook.com/ModeAnalytics" class="social-icon" id="facebook" target="_blank">
-              <i class="icon-facebook"></i></a>
-            <a href="http://www.linkedin.com/company/mode-analytics" class="social-icon" id="linkedin" target="_blank">
-              <i class="icon-linkedin"></i></a>
-            <a href="mailto:info@modeanalytics.com" class="social-icon" id="mail" target="_blank">
-              <i class="icon-envelope"></i></a>
           </div>
-          <div class = "mode-copyright">
-            &copy; Mode Analytics 2014
-          </div>   
-        </div>
       </div>
-    </div>
-    <!-- Segment EYE OH -->
-    <script type="text/javascript"> window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
-    window.analytics.load("dhfb493gnn");
-    window.analytics.page();
-    window.analytics.ready(function(){
-      ga('create', 'UA-43615902-8', 'auto', {'name': 'secondTracker'});
-      ga('secondTracker.send', 'pageview');
-    });
+    
+    </div><!--/row-offcanvas -->
+      
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('[data-toggle=offcanvas]').click(function() {
+          $('.row-offcanvas').toggleClass('active');
+        });
+        
+      });
+    
     </script>
+
   </body>
 </html>

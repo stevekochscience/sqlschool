@@ -1,6 +1,6 @@
 ---
 layout: sqlschool-lesson
-category: "solutions-to-common-problems"
+category: "common-problems"
 title:  "What This Section is All About"
 date:   2014-04-01 00:00:59
 seo-title: "Applying SQL Skills to Data Analysis"
