@@ -10,11 +10,9 @@ If you're using [SQL School](/) to prep for an interview on an Analytics team, y
 
 As most interviewers are looking for deep understanding and problem-solving ability, a mastery of the skills in the [basic](/the-basics/basic-concepts.html) and [intermediate](/intermediate/aggregation-functions.html) tutorials is recommended before attempting this quiz. Some questions also draw from the lessons on [Subqueries](/advanced/subqueries.html) and [Window Functions](/advanced/window-functions.html).
 
-Conceptual questions are meant to assess your understanding of how SQL manipulates data. You don't need to actually write any code &mdash; just answer clearly. For technical questions, you will actually write SQL.
+This quiz begins with conceptual questions, which are meant to assess your understanding of how SQL manipulates data. You don't need to actually write any code &mdash; just answer clearly. The later portion consists of technical questions, for which you will actually write SQL.
 
 {% include quiz-questions.html %}
 
 ###Have a great question to add?
 Much of the material for this quiz was created based on feedback from people using SQL School. We're excited to add more questions that help prepare people to become data analysts. If you have suggestions on how to improve the existing questions or have a question you think we should add, please email us at [sqlschool@modeanalytics.com](mailto:sqlschool@modeanalytics.com).
-
-If you found this quiz helpful, please <a href="https://twitter.com/share?url=http://bit.ly/1uHbeYl&lang=en&text=Prep for an analytics interview with these great sample quiz questions from @ModeAnalytics&conturl=http://bit.ly/1uHbeYl&count=vertical" target="_blank">share it on Twitter</a>.

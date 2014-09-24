@@ -435,6 +435,29 @@ td.right, th.right {
   text-align:right;
 }
 
+/* SQL QUIZ */
+
+.quiz-question {
+  margin-top:20px;
+  margin-bottom:20px;
+  font-weight:700;
+  color:#555;
+  font-size:22px;
+}
+
+.quiz-answer-button {
+  width:200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quiz-answer {
+  margin-top:10px;
+  padding: 30px 0px;
+  background-color:#F7F7F7;
+  
+}
+
 /* OFF CANVAS SIDEBAR */
 @media screen and (max-width: 768px) {
   .row-offcanvas {
