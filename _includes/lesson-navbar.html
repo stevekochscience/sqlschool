@@ -3,83 +3,99 @@
 <div id="sidebar" class="sidebar-offcanvas">
   
     
-    <div class="sidebar-header">
-      <img src="/images/icons/sm_mode.svg">SQL School
-    </div>
+  <div class="sidebar-header">
+    <img src="/images/icons/logo_large.png">SQL School
+  </div>
+  
+  <div class="list-group panel">
     
-    <div class="list-group panel">
-      
-      <a href="/" class="list-group-item list-group-item-success heading">About</a>
-      
+    <a href="/" class="list-group-item list-group-item-success heading">About</a>
+    
 <!-- SQL Lessons -->    
-      {% for category in site.category-list %}
-        <a href="#{{ category }}" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#{{ category }}">
-          {{ category | replace:'-', ' ' }}<i class="fa fa-chevron-down"></i>
-        </a>
-        {% if category == page.category %}
-          <div class="collapse in" id="{{ category }}">
-        {% else %}
-          <div class="collapse" id="{{ category }}">
-        {% endif %}
-          {% for post in site.posts %}
-              {% for cat in post.category %}
-                {% if cat == category %}
-                  {% if post.url == page.url %}
-                    <p class="list-group-item current">{{ post.title }}</p>
-                  {% else %}
-                    <a href="{{ post.url }}" class="list-group-item"> {{ post.title }}</a>
-                  {% endif %}
-                {% endif %}
-              {% endfor %}
-          {% endfor %}
-        </div>
-      {% endfor %}
-        
-<!-- SQL Quiz-->
-      <a href="/quiz/quiz-intro.html" class="list-group-item list-group-item-success heading">SQL Quiz</a>
-      
-<!-- Cases-->      
-      <a href="#cases" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#cases">
-        Cases<i class="fa fa-chevron-down"></i>
+    {% for category in site.category-list %}
+      <a href="#{{ category }}" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#{{ category }}">
+        {{ category | replace:'-', ' ' }}<i class="fa fa-chevron-down"></i>
       </a>
-      {% if page.categories contains "cases" %}
-        <div class="collapse in" id="cases">
+      {% if category == page.category %}
+        <div class="collapse in" id="{{ category }}">
       {% else %}
-        <div class="collapse" id="cases">
+        <div class="collapse" id="{{ category }}">
       {% endif %}
-        {% for case in site.case-list %}
-          <a href="#{{ case }}" class="list-group-item" data-toggle="collapse" data-parent="#{{ case }}">
-            {{ case | replace:'-', ' ' }} <i class="fa fa-caret-down"></i>
-          </a>
-          {% if page.categories contains case %}
-            <div class="collapse in list-group-submenu" id="{{ case }}">
-          {% else %}
-            <div class="collapse list-group-submenu" id="{{ case }}">
-          {% endif %}
-            {% for post in site.posts %}
-              {% if post.categories contains case and post.categories contains "cases" %}
-      
-                {% assign answer = false %}
-                {% if post.categories contains "answers" %}
-                  {% assign answer = true %}
-                {% endif %}
-        
-                {% if answer ==  false %}
-                  {% if post.url == page.url %}
-                    <p class="list-group-item current">{{ post.title }}</p>
-                  {% else %}
-                    <a href="{{ post.url }}" class="list-group-item" data-parent="#{{ case }}">
-                      {{ post.title }}
-                    </a>
-                  {% endif %}
-                  
+        {% for post in site.posts %}
+            {% for cat in post.category %}
+              {% if cat == category %}
+                {% if post.url == page.url %}
+                  <p class="list-group-item current">{{ post.title }}</p>
+                {% else %}
+                  <a href="{{ post.url }}" class="list-group-item"> {{ post.title }}</a>
                 {% endif %}
               {% endif %}
             {% endfor %}
-          </div>
         {% endfor %}
       </div>
+    {% endfor %}
       
+<!-- SQL Quiz-->
+    <a href="/quiz/quiz-intro.html" class="list-group-item list-group-item-success heading">SQL Quiz</a>
+    
+<!-- Cases-->      
+    <a href="#cases" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#cases">
+      Cases<i class="fa fa-chevron-down"></i>
+    </a>
+    {% if page.categories contains "cases" %}
+      <div class="collapse in" id="cases">
+    {% else %}
+      <div class="collapse" id="cases">
+    {% endif %}
+      {% for case in site.case-list %}
+        <a href="#{{ case }}" class="list-group-item" data-toggle="collapse" data-parent="#{{ case }}">
+          {{ case | replace:'-', ' ' }} <i class="fa fa-caret-down"></i>
+        </a>
+        {% if page.categories contains case %}
+          <div class="collapse in list-group-submenu" id="{{ case }}">
+        {% else %}
+          <div class="collapse list-group-submenu" id="{{ case }}">
+        {% endif %}
+          {% for post in site.posts %}
+            {% if post.categories contains case and post.categories contains "cases" %}
+    
+              {% assign answer = false %}
+              {% if post.categories contains "answers" %}
+                {% assign answer = true %}
+              {% endif %}
+      
+              {% if answer ==  false %}
+                {% if post.url == page.url %}
+                  <p class="list-group-item current">{{ post.title }}</p>
+                {% else %}
+                  <a href="{{ post.url }}" class="list-group-item" data-parent="#{{ case }}">
+                    {{ post.title }}
+                  </a>
+                {% endif %}
+                
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endfor %}
     </div>
+    
+  </div>
+
+<!-- Social links and Copyright 
+  <div class="social-links">
+    <a href="https://twitter.com/modeanalytics" class="social-icon" id="twitter" target="_blank">
+      <i class="icon-twitter"></i></a>
+    <a href = "https://www.facebook.com/ModeAnalytics" class="social-icon" id="facebook" target="_blank">
+      <i class="icon-facebook"></i></a>
+    <a href="http://www.linkedin.com/company/mode-analytics" class="social-icon" id="linkedin" target="_blank">
+      <i class="icon-linkedin"></i></a>
+    <a href="mailto:info@modeanalytics.com" class="social-icon" id="mail" target="_blank">
+      <i class="icon-envelope"></i></a>
+  </div>
+  <div class = "mode-copyright">
+    &copy; Mode Analytics 2014
+  </div>
+-->
   
 </div>
