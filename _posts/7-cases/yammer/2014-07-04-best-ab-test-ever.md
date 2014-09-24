@@ -15,7 +15,7 @@ This case focuses on an improvement to Yammer's core “publisher”&mdash;the m
 
 ###The Problem
 
-On July 1, you check the results of the A/B test. You notice that message posting is 50% higher in the treatment group&mdash;a hunge increase in posting. The table below summarizes the results:
+On July 1, you check the results of the A/B test. You notice that message posting is 50% higher in the treatment group&mdash;a huge increase in posting. The table below summarizes the results:
 
 <a href="https://modeanalytics.com/benn/reports/4194f44b1866/runs/dfb63bac58ab/embed" class="mode-embed">Mode Analysis</a><script src="https://modeanalytics.com/embed/embed.js"></script>
 
