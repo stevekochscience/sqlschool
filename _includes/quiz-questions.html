@@ -1,7 +1,26 @@
+<style>
+.quiz-questions, .quiz-questions td {
+  border:none;
+  box-shadow:none;
+  padding:5px 0px 0px 0px !important;
+}
+
+.quiz-question-numbers {
+  letter-spacing:6px;
+  border-bottom: 1px solid #C7CCCB !important;
+}
+
+.quiz-questions .spacer {
+  border:none;
+  padding:5px !important;
+}
+
+</style>
+
 <div>
-  <table>
+  <table class="quiz-questions">
     <tr>
-      <td>
+      <td class="quiz-question-numbers">
         {% assign question = 1 %}
         {% for post in site.posts %} 
           {% if post.categories contains "quiz" and post.categories contains "concepts" %}
@@ -14,7 +33,8 @@
           {% endif %}
         {% endfor %}
       </td>
-      <td>
+      <td class="spacer"></td>
+      <td class="quiz-question-numbers">
         {% for post in site.posts %} 
           {% if post.categories contains "quiz" and post.categories contains "technical" %}
             {% if post.url == page.url %}
@@ -29,6 +49,7 @@
     </tr>
     <tr>
       <td>Conceptual</td>
+      <td class="spacer"></td>
       <td>Technical</td>
     </tr>
   </table>

@@ -37,13 +37,12 @@ layout: template-new
               </p>
               
               <div class="row">
-                  <div class="col-md-12"><div class="post-title">
-                    <h2>{{ page.title }}<h2>
-                  </div></div>
-              </div>
-              
-              <div class="row">
                   <div class="col-md-12"><div class="post-body">
+                    {% if page.categories contains "quiz" %}
+                    {% else %}
+                      <h1>{{ page.title }}</h1>
+                    {% endif %}
+                    
                     {{ content }}
                   </div></div>
               </div>
@@ -51,6 +50,8 @@ layout: template-new
               <div class="row">
                 {% if page.categories contains "quiz" %}
                   {% include quiz-questions.html %}
+                {% elsif page.categories contains "cases" %}
+                  <!-- drop something here that sends you back to the case overview -->
                 {% else %}
                   <div class="col-md-12"><div class="lesson-footer">
                     {% if page.previous.category == page.category and page.category != 'solutions-to-common-problems' %}

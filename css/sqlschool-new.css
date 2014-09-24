@@ -425,7 +425,7 @@ table {
 }
 
 td, th {
-  padding: 7px;
+  padding: 7px !important;
   border: 1px solid #C7CCCB;
   border-left: none;
   border-right: none;
