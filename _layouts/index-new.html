@@ -2,28 +2,33 @@
 layout: template-new
 ---
 
-
-<style>
-.index-header {
-  padding: 13px 15px;
-}
-
-.index-body {
-  padding: 13px 30px;
-}
-
-</style>
+<!-- LEFT NAV -->
+    <div class="row-offcanvas row-offcanvas-left">
+      <div id="sidebar" class="sidebar-offcanvas">
+      
+        <div class="sidebar-header">
+          <img src="/images/icons/logo_large.png">SQL School
+        </div>
+      
+      </div>
+      
+<!-- MAIN CONTENT AREA -->      
+      <div id="main">
+          <div class="col-sm-12 col-md-10 col-lg-8">
+              
+              <div class="row">
+                  <div class="col-md-12"><div class="post-title">
+                    <h2>Welcome to SQL School<h2>
+                  </div></div>
+              </div>
+              
+              <div class="row">
+                  <div class="col-md-12"><div class="post-body">
+                    {{ content }}
+                  </div></div>
+              </div>
   
-<div class="row">
-  <div class="col-md-12 index-header">
-    <div class="sidebar-header">
-      <img src="/images/icons/logo_large.png">SQL School
-    </div>
-  </div>
-</div>
-<div class="row">
-  
-  {{ content }}
-  
-</div>
-
+          </div>
+      </div>
+    
+    </div><!--/row-offcanvas -->
