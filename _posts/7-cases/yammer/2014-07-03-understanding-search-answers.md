@@ -1,5 +1,5 @@
 ---
-layout: sqlschool-case
+layout: lesson-new
 categories: cases yammer answers
 title:  "Understanding Search: Answers"
 date:   2014-07-01 00:00:57

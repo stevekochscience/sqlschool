@@ -1,5 +1,5 @@
 ---
-layout: sqlschool-case
+layout: lesson-new
 categories: cases yammer answers
 title:  "A Drop In Engagement: Answers"
 date:   2014-07-01 00:00:58
