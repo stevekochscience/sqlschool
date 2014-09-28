@@ -11,7 +11,9 @@ Yammer not only develops new features, but is continuously looking for ways to i
 
 This case focuses on an improvement to Yammer's core “publisher”&mdash;the module at the top of a Yammer feed where users type their messages. To test this feature, the product team ran an A/B test from June 1 through June 30. During this period, some users who logged into Yammer were shown the old version of the publisher (the “control group”), while other other users were shown the new version (the “treatment group”). 
 
-![Yammer Publisher Example](/images/cases/yammer-publisher.png)
+<a href="/images/cases/yammer-publisher.png" class="with-caption image-link" title="Caption text">
+  <img src="/images/cases/yammer-publisher.png" />  
+</a>
 
 ###The Problem
 
