@@ -22,7 +22,9 @@ You might run into this, for example, if you have a column that appears to be en
 
 The `INTEGER` data type, for example, only stores whole numbers &mdash; no decimals. The `DOUBLE PRECISION` data type, on the other hand, can store [between 15 and 17 significant decimal digits](http://en.wikipedia.org/wiki/Double-precision_floating-point_format) (almost certainly more than you need unless you're a physicist). There are a lot of data types, so it doesn't make sense to list them all here. For the complete list, [click here](http://www.w3schools.com/sql/sql_datatypes_general.asp). Here is the list of exact data types stored in Mode. "Imported as" refers to the types that is selected in the import flow (see image below), "Stored as" refers to the official SQL data type, and the third column explains the rules associated with the SQL data type:
 
-<img src="/images/advanced/import_data_types.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/advanced/import_data_types.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Mode keeps things simple by only using a few data types. Other databases are likely to have more variety.">
+  <img src="/images/advanced/import_data_types.png" />  
+</a>
 
 <table>
   <tr>

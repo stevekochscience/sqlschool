@@ -27,6 +27,10 @@
     <meta name="google-site-verification" content="IBG3eleFA9562xuyu46bQ-bnxEBla4yVjAQCfPsgPM0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0;">
     
+    <!-- Magnific Popup -->
+    <script src="/script/magnific-popup.js"></script> 
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    
     <!-- Meta -->
     {% if page.description %} <meta name="description" content="{{ page.description }}" />{% endif %}
 
@@ -96,5 +100,21 @@
       ga('secondTracker.send', 'pageview');
     });
     </script>
+    <!-- Magnific Popup-->
+    <script type="text/javascript">
+    $('a.image-link').magnificPopup({
+    		type: 'image',
+    		closeBtnInside: false,
+        closeOnContentClick: true,
+  
+        image: {
+    			verticalFit: true,
+    			titleSrc: function(item) {
+    				return item.el.attr('title');
+    			}
+    		}
+  
+    	});
+      </script>
   </body>
 </html>

@@ -25,6 +25,10 @@
     <meta name="google-site-verification" content="IBG3eleFA9562xuyu46bQ-bnxEBla4yVjAQCfPsgPM0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0;">
     
+    <!-- Magnific Popup -->
+    <script src="/script/magnific-popup.js"></script> 
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    
     <!-- Meta -->
      <meta name="description" content="Learn to use the SQL ORDER BY clause using real-world examples. Free, interactive SQL tutorials to develop your data analysis skills." />
 
@@ -241,5 +245,21 @@ These queries contain some advanced concepts that you may not yet understand. Do
       ga('secondTracker.send', 'pageview');
     });
     </script>
+    <!-- Magnific Popup-->
+    <script type="text/javascript">
+    $('a.image-link').magnificPopup({
+    		type: 'image',
+    		closeBtnInside: false,
+        closeOnContentClick: true,
+  
+        image: {
+    			verticalFit: true,
+    			titleSrc: function(item) {
+    				return item.el.attr('title');
+    			}
+    		}
+  
+    	});
+      </script>
   </body>
 </html>

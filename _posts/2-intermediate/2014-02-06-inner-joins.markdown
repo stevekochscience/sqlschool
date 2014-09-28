@@ -52,11 +52,15 @@ What does this actually do? Let's take a look at one row to see what happens. Th
 
 <!-- DEREK: I think this section could better demonstrate join keys.  If you had images of both indivitual section first, then an image of them joined together with the key column highlighted in a different color/organized so it is the actual bridge point between the two tables, it would be easier for a reader to understand.  Text would of course need to be adjusted to reflect this.  Also, these small images are really hard to read.  I know the formatting is nice this way, but this is a pain in the ass for me, so I can only imagine what older users would think. -->
 
-<img src="/images/intermediate/player-join-example.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/intermediate/player-join-example.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="A sample row from the players table">
+  <img src="/images/intermediate/player-join-example.png" />  
+</a>
 
 During the join, SQL looks up the `school_name`&mdash;in this case, "Wake Forest"&mdash;in the `school_name` field of the `teams` table. If there's a match, SQL takes all five columns from the `teams` table and joins them to ten columns of the `players` table. The new result is a fifteen column table, and the row with Michael Campanaro looks like this:
 
-<img src="/images/intermediate/player-after-join-example.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/intermediate/player-after-join-example.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="The same sample row, but with school info joined on">
+  <img src="/images/intermediate/player-after-join-example.png" />  
+</a>
 
 *Two columns are cut off from the image, but you can see the full result [here](https://modeanalytics.com/tutorial/reports/12fac4065977/runs/51234e84bc0d)*
 

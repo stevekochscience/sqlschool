@@ -38,7 +38,9 @@ You can see that the result showed a count of all rows to be 3555. Turn the limi
 
     SELECT * FROM tutorial.aapl_historical_stock_price
 
-<img src="/images/intermediate/row-count.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/intermediate/row-count.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="You can use the row count feature in Mode to verify the results of your COUNT function">
+  <img src="/images/intermediate/row-count.png" />  
+</a>
 
 Things start to get a little bit tricky when you want to count individual columns. The following code will provide a count of all of rows in which the `high` column **is not null**.
 

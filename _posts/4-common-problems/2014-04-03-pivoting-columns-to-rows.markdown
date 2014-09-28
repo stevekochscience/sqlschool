@@ -9,7 +9,9 @@ description: "Advanced SQL lesson: learn to pivot columns to rows. Free, interac
 
 A lot of data you'll find out there on the internet is formatted for consumption, not analysis. Take, for example, [this table showing the number of earthquakes worldwide from 2000-2012](http://earthquake.usgs.gov/earthquakes/eqarchives/year/eqstats.php):
 
-<img src="/images/common-problems/earthquake-table.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/common-problems/earthquake-table.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Data that looks good in a presentation isn't always easy to work with">
+  <img src="/images/common-problems/earthquake-table.png" />  
+</a>
 
 <!-- another example http://www.imf.org/external/pubs/ft/weo/2014/01/weodata/weorept.aspx?pr.x=57&pr.y=10&sy=2004&ey=2019&scsm=1&ssd=1&sort=country&ds=.&br=1&c=122%2C136%2C124%2C941%2C423%2C137%2C939%2C181%2C172%2C138%2C132%2C182%2C134%2C936%2C174%2C961%2C178%2C184&s=NGDP_R&grp=0&a=-->
 

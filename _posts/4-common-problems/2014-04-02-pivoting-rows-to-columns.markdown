@@ -9,11 +9,15 @@ description: "Advanced SQL lesson: learn to pivot rows to columns. Free, interac
 
 This lesson will teach you how to take data that is formatted for analysis and pivot it for presentation or charting. We'll take a dataset that looks like this:
 
-<img src="/images/common-problems/pivot-step-one.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/common-problems/pivot-step-one.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Data stored with one row per observation">
+  <img src="/images/common-problems/pivot-step-one.png" />  
+</a>
 
 And make it look like this:
 
-<img src="/images/common-problems/finished-pivot.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/common-problems/finished-pivot.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Data stored with categories broken into separate columns">
+  <img src="/images/common-problems/finished-pivot.png" />  
+</a>
 
 For this example, we'll use the same dataset of College Football players used in the [CASE lesson](/intermediate/case,html). You can view the data directly [here](https://modeanalytics.com/benn/tables/college_football_players).
 

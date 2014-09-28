@@ -10,7 +10,9 @@ description: "Learn to use the SQL SELECT & FROM clauses with real-world example
 ###Opening Mode and Getting Started
 Open a second browser window to <a href="https://modeanalytics.com" target="_blank">Mode</a> and log in. If you don't already have a Mode account, <a href="http://modeanalytics.com/signup" target="_blank">create one here</a> You'll arrive at your homepage. You can use the homepage to explore the community or to quickly access a project you were working on previously. Since you probably haven't used Mode yet, click "New Query" to get started.
 
-<img src="/images/the-basics/new-query.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/the-basics/new-query.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Start a session by creating a new query">
+  <img src="/images/the-basics/new-query.png" />  
+</a>
 
 This will take you to the Query Editor. This is the bread and butter of Mode&mdash;it's where you'll be able to use all the skills you learn in this tutorial. From the Query Editor, you can run queries against all of the data in Mode. 
 
@@ -21,7 +23,9 @@ For this tutorial, SQL queries will be shown in grey boxes like the one below. T
 
 Give this a shot, then keep reading to learn what the query is doing.
 
-<img src="/images/the-basics/run-button.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/the-basics/run-button.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Run your first query">
+  <img src="/images/the-basics/run-button.png" />  
+</a>
 
 It takes a few seconds for the query to run. When it's done, you'll see the results show up in a table below the query window.
 
@@ -41,7 +45,9 @@ To see the results yourself, copy and paste this query into a Query Editor and c
 
 So what's happening in the above query? In this case, the query is telling the database to return the `year`, `month`, and `west` columns from the table `tutorial.us_housing_units_completed`. (Remember that when referencing tables, the table names have to be preceded by [the name of user who uploaded it](/the-basics/basic-concepts.html).) When you run this query, you'll get back a set of results that shows values in each of these columns.
 
-<img src="/images/the-basics/prelim-results.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/the-basics/prelim-results.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="The results of your first query">
+  <img src="/images/the-basics/prelim-results.png" />  
+</a>
 
 Note that the three column names were separated by a comma in the query. Whenever you select multiple columns, they must be separated by commas, but you should **not** include a comma after the last column name.
 
@@ -50,7 +56,9 @@ If you want to select every column in a table, you can use `*` instead of the co
     SELECT * 
       FROM tutorial.us_housing_units
 
-<img src="/images/the-basics/results.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/the-basics/results.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="The results of a query using SELECT *">
+  <img src="/images/the-basics/results.png" />  
+</a>
 
 Now try this practice problem for yourself:
 
@@ -69,13 +77,17 @@ When you've completed the above practice problem, check your answer by following
 2. If your results don't match (or even if they do), you can check out the answer query by clicking the "Query" tab in the Report View.
 3. If you're feeling particularly proud of your work, you can create this report view to share with anyone by clicking the "Share" icon in the query builder window (see screenshot below).
 
-<img src="/images/the-basics/how-to-share.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/the-basics/how-to-share.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Sharing in Mode">
+  <img src="/images/the-basics/how-to-share.png" />  
+</a>
 
 *Copy the URL in the share menu and send to all your friends!*
 
 You can share your work via URL at any state, but if you want to polish your work up a little by adding a title and description, click the "Publish" button, complete the fields, and click "Publish Report." This will also make your report searchable by other Mode users.
 
-<img src="/images/the-basics/publishing-work.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/the-basics/publishing-work.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="How to publish your work">
+  <img src="/images/the-basics/publishing-work.png" />  
+</a>
 
 ###What actually happens when you run a query?
 When you run a query, what do you get back? As you can see from running the queries above, you get a table. But that table isn't stored permanently in the database. It also doesn't change any tables in the database&mdash;`tutorial.us_housing_units_completed` will contain the same data every time you query it, and the data will never change no matter how many times you query it. Mode does store all of your results for future access, but `SELECT` statements don't change anything in the underlying tables.
@@ -118,7 +130,9 @@ Without the double quotes, that query would read 'West' and 'Region' as separate
 ###LIMIT
 You may have noticed that checkbox next in the upper-right portion of the editor that says "Limit."
 
-<img src="/images/the-basics/limit-box.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/the-basics/limit-box.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Be sure to un-check the Limit box if you want to return more than 100 rows">
+  <img src="/images/the-basics/limit-box.png" />  
+</a>
 
 As you might expect, the limit restricts how many rows the SQL query returns. The default value is 100; when this box is checked, it's telling the database to only return the first 100 rows of the query. Because `tutorial.us_housing_units_completed` has more than 100 rows, the queries thus far haven't been returning the full result sets. Try turning the `LIMIT` off (by clicking the check mark next to it) and running this query. 
 
@@ -127,7 +141,9 @@ As you might expect, the limit restricts how many rows the SQL query returns. Th
 
 You'll notice many more rows get returned. You can tell by checking the header of the results table:
 
-<img src="/images/the-basics/rows-returned.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/the-basics/rows-returned.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Checking the number of rows returned can help you get a sense of whether or not the query you wrote is correct">
+  <img src="/images/the-basics/rows-returned.png" />  
+</a>
 
 Many analysts use limits as a simple way to keep their queries from taking too long to return. You'll probably find that the aim of many of your queries will simply be to see what a particular table looks like&mdash;you'll want to scan the first few rows of data to get an idea of which fields you care about and how you want to manipulate them. If you query a very large table (such as one with hundreds of thousands or millions of rows) and don't use a limit, you could end up waiting a long time for all of your results to be displayed, which doesn't make sense if you only care about the first few. 
 

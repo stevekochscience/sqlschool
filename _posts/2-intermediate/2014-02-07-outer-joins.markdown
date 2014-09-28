@@ -46,7 +46,9 @@ Let's start by running an `INNER JOIN` and taking a look at the results. We'll j
 
 You may notice that "280 North" appears twice in this list. That is because is has two entried in the `tutorial.crunchbase_acquisitions` table, both of which are being joined onto the `tutorial.crunchbase_companies` table.
 
-<img src="/images/intermediate/inner-join-results.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/intermediate/inner-join-results.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Query results when using an inner join">
+  <img src="/images/intermediate/inner-join-results.png" />  
+</a>
 
 Now try running that query as a `LEFT JOIN`:
 
@@ -60,7 +62,9 @@ Now try running that query as a `LEFT JOIN`:
 
 You can see that the first two companies from the previous result set, #waywire and 1000memories, are pushed down the page by a number of results that contain null values in the `acquisitions_permalink` and `acquired_date` fields.
 
-<img src="/images/intermediate/left-join-results.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/intermediate/left-join-results.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Null values illustrate the difference between inner and outer joins">
+  <img src="/images/intermediate/left-join-results.png" />  
+</a>
 
 This is because the `LEFT JOIN` command tells the database to return all rows in the table in the `FROM` clause, regardless of whether or not they have matches in the table in the `LEFT JOIN` clause. You can explore the differences between a `LEFT JOIN` and a `JOIN` by solving these practice problems:
 
@@ -154,7 +158,9 @@ Normally, filtering is processed in the `WHERE` clause once the two tables have 
 
 What's happening above is that the conditional statement `AND...` is evaluated before the join occurs. You can think of it as a where clause that only applies to one of the tables. You can tell that this is only happening in one of the tables because the 1000memories permalink is still displayed in the column that pulls from the other table:
 
-<img src="/images/intermediate/left-join-on-clause-results.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/intermediate/left-join-on-clause-results.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Filtering using the ON clause allows you to join only a portion of a table">
+  <img src="/images/intermediate/left-join-on-clause-results.png" />  
+</a>
 
 If you move the same filter to the `WHERE` clause, you will notice that the filter happens after the tables are joined. The result is that the 1000memories row is joined onto the original table, but then it is filtered out entirely (in both tables) in the `WHERE` clause before displaying results.
 
@@ -171,7 +177,9 @@ If you move the same filter to the `WHERE` clause, you will notice that the filt
 
 You can see that the 1000memories line is not returned (it would have been between the two highlighted lines below). Also note that filtering in the `WHERE` clause can also filter null values, so we added an extra line to make sure to include the nulls.
 
-<img src="/images/intermediate/left-join-on-clause-results.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/intermediate/left-join-where-clause.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Filtering using the WHERE clause is evaluated after the join is completed">
+  <img src="/images/intermediate/left-join-where-clause.png" />  
+</a>
 
 ###Practice Problems
 For this set of practice problems, we're going to introduce a new dataset: `tutorial.crunchbase_investments`. This table is also sourced from Crunchbase and contains much of the same information as the `tutorial.crunchbase_companies` data. It it structured differently, though: it contains one row per *investment*. There can be multiple investments per company &mdash; it's even possible that one investor could invest in the same company multiple times. The column names are pretty self-explanatory. What's important is that `company_permalink` in the `tutorial.crunchbase_investments` table maps to `permalink` in the `tutorial.crunchbase_companies` table. Keep in mind that some random data has been removed from this table for the sake of this lesson.

@@ -215,6 +215,10 @@ html, body {
   text-transform: capitalize;
 }
 
+a.image-link {
+  cursor: zoom-in;
+}
+
 pre, code {
   color:black;
   background-color:#E5ECEC;

@@ -35,7 +35,9 @@ Keep in mind that you can always perform exploratory analysis on a subset of dat
 
 This is why Mode enforces a `LIMIT` clause by default &mdash; 100 rows is often more than you need to determine the next step in your analysis, and it's a small enough dataset that it will return quickly.
 
-<img src="/images/the-basics/limit-box.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/the-basics/limit-box.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Mode uses the Limit box to keep things running quickly">
+  <img src="/images/the-basics/limit-box.png" />  
+</a>
 
 It's worth noting that `LIMIT` doesn't quite work the same way with aggregations &mdash; the aggregation is performed, then the results are limited to the specified number of rows. So if you're aggregating into one row as below, `LIMIT 100` will do nothing to speed up your query:
 

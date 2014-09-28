@@ -29,7 +29,9 @@ There are many ways to organize a database and many different types of databases
 
 If you've used Excel, you should already be familiar with tables &mdash; they're similar to spreadsheets. Tables have rows and columns just like Excel, but are a little more rigid. Database tables, for instance, are always organized by column, and each column must have a unique name. To get a sense of this organization, the image below shows a sample table containing data from the 2010 Academy Awards:
 
-<img src="/images/the-basics/sample-table.png" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
+<a href="/images/the-basics/sample-table.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Data from the 2010 Academy Awards">
+  <img src="/images/the-basics/sample-table.png" />  
+</a>
 
 Broadly, within databases, tables are organized in [schemas](http://en.wikipedia.org/wiki/Database_schema "Database Schemas"). At Mode, we organize tables around the users who upload them, so each person has his or her own schema. Schemas are defined by usernames, so if your username is databass3000, all of the tables you upload will be stored under the databass3000 schema. For example, if databass3000 uploads a table on fish food sales called `fish_food_sales`, that table would be referenced as `databass3000.fish_food_sales`. You'll notice that all of the tables used in this tutorial series are prefixed with "tutorial." That's because they were uploaded by an account with that username.
 
