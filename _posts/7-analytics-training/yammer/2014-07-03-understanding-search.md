@@ -9,9 +9,24 @@ description:
 
 The product team is determining priorities for the next development cycle and they are considering improving the site's search functionality. It currently works as follows:
 
-* There is a search box in the header the persists on every page of the website. It prompts users to search for people, groups, and conversations. ![Yammer Search Example](/images/cases/yammer-search.png)
-* When a user begins to type in the search box, a dropdown list with the most relevant results appears. The results are separated by category (people, conversations, files, etc.). There is also an option to view all results. ![Yammer Search Autocomplete](/images/cases/yammer-search-autocomplete.png)
-* When the user hits enter or selects “view all results” from the dropdown, she is taken to a results page, with results separated by tabs for different categories (people, conversations, etc.). Each tab is order by relevance and chronology (more recent posts surface higher). ![Yammer Search Results](/images/cases/yammer-search-results.png)
+* There is a search box in the header the persists on every page of the website. It prompts users to search for people, groups, and conversations.
+
+<a href="/images/cases/yammer-search.png" class="with-caption image-link" title="Yammer's search bar">
+  <img src="/images/cases/yammer-search.png" />  
+</a>
+
+* When a user begins to type in the search box, a dropdown list with the most relevant results appears. The results are separated by category (people, conversations, files, etc.). There is also an option to view all results.
+
+<a href="/images/cases/yammer-search-autocomplete.png" class="with-caption image-link" title="Yammer's search auto-complete">
+  <img src="/images/cases/yammer-search-autocomplete.png" />  
+</a>
+
+* When the user hits enter or selects “view all results” from the dropdown, she is taken to a results page, with results separated by tabs for different categories (people, conversations, etc.). Each tab is order by relevance and chronology (more recent posts surface higher).
+
+<a href="/images/cases/yammer-search-results.png" class="with-caption image-link" title="Yammer's detailed search results">
+  <img src="/images/cases/yammer-search-results.png" />  
+</a>
+
 * The search results page also has an “advanced search” box that allows the user to search again within a specific Yammer group or date range.
 
 ###The Problem
