@@ -204,6 +204,10 @@ a.image-link {
   padding-top: 20px;
 }
 
+.lesson-social-footer {
+  margin-bottom:40px;
+}
+
 /* Social Button Spacing */
 div.fb-like {
   width:77px; 

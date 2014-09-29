@@ -29,46 +29,68 @@ layout: sqlschool-template
       
 <!-- MAIN CONTENT AREA -->      
       <div id="main">
-          <div class="col-sm-12 col-md-10 col-lg-8">
-          	  <p class="visible-xs">
-                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">
-                  <i class="glyphicon glyphicon-chevron-left"></i>Table of Contents
-                </button>
-              </p>
-              
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="post-body">
-                    {% if page.categories contains "quiz" %}
-                    {% else %}
-                      <h1>{{ page.title }}</h1>
-                    {% endif %}
-                    
-                    {{ content }}
-                  </div>
-                </div>
-              </div>
-              
-              <div class="row">
-                {% if page.categories == nil %}
-                  <!-- do nothing -->
-                {% elsif page.categories contains "quiz" %}
-                  {% include quiz-questions.html %}
-                {% elsif page.categories contains "analytics-training" %}
-                  <!-- drop something here that sends you back to the case overview -->
+        <div class="col-sm-12 col-md-10 col-lg-8">
+        	
+          <p class="visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">
+              <i class="glyphicon glyphicon-chevron-left"></i>Table of Contents
+            </button>
+          </p>
+          
+          <div class="row">
+            <div class="col-md-12">
+              <div class="post-body">
+                {% if page.categories contains "quiz" %}
                 {% else %}
-                  <div class="col-md-12"><div class="lesson-footer">
-                    {% if page.previous.category == page.category and page.category != 'solutions-to-common-problems' %}
-                      Move on to the next tutorial: <a href="{{page.previous.url}}" title="next Post: 
-                        {{page.previous.title}}">{{page.previous.title}} &raquo; </a>
-                    {% else %}
-                      <a href="/#table-of-contents">Back to Tutorial Index</a>
-                    {% endif %}
-                  </div></div>
+                  <h1>{{ page.title }}</h1>
                 {% endif %}
+                
+                {{ content }}
               </div>
-  
+            </div>
           </div>
+          
+          <div class="row">
+            {% if page.categories == nil %}
+              <!-- do nothing -->
+            {% elsif page.categories contains "quiz" %}
+              {% include quiz-questions.html %}
+            {% elsif page.categories contains "analytics-training" %}
+              <!-- drop something here that sends you back to the case overview -->
+            {% else %}
+              <div class="col-md-12"><div class="lesson-footer">
+                {% if page.previous.category == page.category and page.category != 'solutions-to-common-problems' %}
+                  Move on to the next tutorial: <a href="{{page.previous.url}}" title="next Post: 
+                    {{page.previous.title}}">{{page.previous.title}} &raquo; </a>
+                {% else %}
+                  <a href="/#table-of-contents">Back to Tutorial Index</a>
+                {% endif %}
+              
+              </div></div>
+            {% endif %}
+            
+          </div>
+          
+          <div class="row">
+            <div class="col-xs-12"><div class="lesson-social-footer">
+              
+              <div style="float:left">Brought to you by <a href="http://modeanalytics.com">Mode</a></div>
+              <div class="social-links" style="float:right;">
+                <a href="https://twitter.com/modeanalytics" class="social-icon" id="twitter" target="_blank">
+                  <i class="fa fa-twitter"></i></a>
+                <a href = "https://www.facebook.com/ModeAnalytics" class="social-icon" id="facebook" target="_blank">
+                  <i class="fa fa-facebook"></i></a>
+                <a href="http://www.linkedin.com/company/mode-analytics" class="social-icon" id="linkedin" target="_blank">
+                  <i class="fa fa-linkedin"></i></a>
+                <a href="mailto:info@modeanalytics.com" class="social-icon" id="mail" target="_blank">
+                  <i class="fa fa-envelope"></i></a>
+              </div>
+              
+            </div></div>
+          </div>
+  
+  
+        </div>
       </div>
     
     </div><!--/row-offcanvas -->
