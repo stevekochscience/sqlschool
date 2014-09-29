@@ -17,36 +17,70 @@ description: "Learn data analysis skills with this free, interactive SQL tutoria
 }
 
 #index-main {
-  background-color:#CCC;
+  background-color:#e9eeee;
+}
+
+.post-title h3 {
+  font-size:28px;
+  color:#515556;
+}
+
+.index-card-left, .index-card-right {
+  height:190px;
+  box-shadow: 0 2px 0 0 #cccccb;
 }
 
 .index-card-left {
-  height:220px;
   border-radius:5px 0px 0px 5px;
-}
-
-.index-card-right {
-  height:220px;
-  background-color:white;
-  border-radius:0px 5px 5px 0px;
+  color: #FFF;
+  padding: 15px;
 }
 
 .index-card-left#section1 {
-  background-color:green;
+  background-color:#5c7b91;
 }
 
 .index-card-left#section2 {
-  background-color:blue;
+  background-color:#e6824d;
 }
 
-.index-card-left#section2 {
-  background-color:red;
+.index-card-left#section3 {
+  background-color:#3c8e8d;
+}
+
+.index-card-left h4 {
+  font-size: 15px;
+  letter-spacing:1;
+  font-weight:300 !important;
+  font-style:light !important;
+}
+
+.index-card-left h2 {
+  font-size: 32px;
+  font-weight:300 !important;
+  font-style:light !important;
 }
 
 .index-card-left hr {
-  width:15px;
+  width:50px;
   margin-left:0;
   margin-right:auto;
+}
+
+.index-card-right {
+  background-color:white;
+  color:#727777;
+  border-radius:0px 5px 5px 0px;
+}
+
+.index-card-right h3 {
+  font-size: 24px;
+}
+
+.index-footer {
+  margin-top:20px;
+  background-color:white;
+  color:515556;
 }
 
 </style>
@@ -55,7 +89,7 @@ description: "Learn data analysis skills with this free, interactive SQL tutoria
     
 <div class="row">
   <div class="post-title">
-    <h2>Welcome to Analytics School</h2>
+    <h3>Welcome to SQL School</h3>
     <p>Data analysts training data analysts. Brought to you by <a href="http://modeanalytics.com">Mode</a></p>
   </div>
 </div>
@@ -70,13 +104,13 @@ description: "Learn data analysis skills with this free, interactive SQL tutoria
 <div class="row">
   <a href="/the-basics/introduction.html">
     <div class="index-card">
-      <div class="col-xs-4 index-card-left" id="section1">
-        <p>Section 1</p>
+      <div class="col-xs-3 index-card-left" id="section1">
+        <h4>SECTION 1</h4>
         <hr />
-        <p>Skill Building</p>
+        <h2>Skill Building</h2>
       </div>
-      <div class="col-xs-8 index-card-right">
-        <h2>Build your skills: Learn SQL</h2>
+      <div class="col-xs-9 index-card-right">
+        <h3>Build your skills: Learn SQL</h3>
         <p>A plain-English guide to SQL data analysis using real data and interactive tutorials. It's written for people who have spent time with Excel or other analytics tools, but aren't familiar with SQL.
         </p>
       </div>
@@ -85,11 +119,18 @@ description: "Learn data analysis skills with this free, interactive SQL tutoria
 </div>
 
 <div class="row">
-  <a href="/quiz/quiz-intro.html">
+  <a href="/the-basics/introduction.html">
     <div class="index-card">
-      <h2>Test your SQL knowledge</h2>
-      <p>Prep for data analyst interviews by answering questions heard by SQL School students during real interviews. Test your conceptual understanding of SQL and databases as well as your ability to write queries.
-      </p>
+      <div class="col-xs-3 index-card-left" id="section2">
+        <h4>SECTION 2</h4>
+        <hr />
+        <h2>Skill Testing</h2>
+      </div>
+      <div class="col-xs-9 index-card-right">
+        <h3>Test your SQL knowledge</h3>
+        <p>Prep for data analyst interviews by answering questions heard by SQL School students during real interviews. Test your conceptual understanding of SQL and databases as well as your ability to write queries.
+        </p>
+      </div>
     </div>
   </a>
 </div>
@@ -97,8 +138,16 @@ description: "Learn data analysis skills with this free, interactive SQL tutoria
 <div class="row">
   <a href="/the-basics/introduction.html">
     <div class="index-card">
-      <h2>Learn to think like an analyst</h2>
-      <p>Once you've got a handle on SQL, the next step is to hone your analytical process. We've built fake datasets to mimic real-world situations. Approach this section like on-the-job training...before you get the job!</p>
+      <div class="col-xs-3 index-card-left" id="section3">
+        <h4>SECTION 3</h4>
+        <hr />
+        <h2>Analytics Training</h2>
+      </div>
+      <div class="col-xs-9 index-card-right">
+        <h3>Learn to think like an analyst</h3>
+        <p>Once you've got a handle on SQL, the next step is to hone your analytical process. We've built fake datasets to mimic real-world situations. Approach this section like on-the-job training...before you get the job!
+        </p>
+      </div>
     </div>
   </a>
 </div>
