@@ -1,42 +1,74 @@
 ---
-layout: sqlschool-master-old
+layout: sqlschool-index
 title: "Interactive SQL Tutorial"
 description: "Learn data analysis skills with this free, interactive SQL tutorial, written in plain English. Practice in real-time with online access to a live database."
 ---
 
-<div class="columns-container">
-
-  <div class="sqlschool-content">
-    
-    <div class="post-header">
-      <h1 class="title">Welcome to SQL School</h1>
-    </div>
-    
-    <div class="post-body">
-
-      <p>A plain-English guide to SQL data analysis using real data and interactive examples.<p>
-
-      <p style="float:right">Table of Contents: In Lesson Order | <a href="index-by-syntax.html">By SQL Commands</a></p>
-
-      <div style="clear: both;"></div>
-      
-      {% for category in site.category-list %}
-        <h4 class="category" id="{{ category }}">
-          {{ category | replace:'-', ' ' }}
-        </h4>
-        <ul class="table-of-contents">
-          {% for post in site.posts %}
-              {% for cat in post.category %}
-                {% if cat == category %}
-                  <li class="list-question"><a href="{{ post.url }}"> {{ post.title }}</a></li>
-                {% endif %}
-              {% endfor %}
-          {% endfor %}
-        </ul>
-      {% endfor %}
-
-    </div>
-  
+<link rel="stylesheet" href="/css/sqlschool-index.css">
+ 
+<div class="row">
+  <div class="post-title">
+    <h1>Welcome to SQL School</h1>
+    <p>Data analysts training data analysts. Brought to you by <a href="http://modeanalytics.com">Mode</a></p>
+    <hr />
   </div>
-      
+</div>
+
+<div class="row">
+  <div class="index-lede">
+    <p>Mode is a collaborative analytics platform that makes it easy to analyze data and share Results. These lessons, quizzes, and deep-dives are designed to train anyone to work with data.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <a href="/the-basics/introduction.html">
+    <div class="index-card">
+      <div class="col-xs-3 index-card-left" id="section1">
+        <h4>SECTION 1</h4>
+        <hr />
+        <h2>Skill Building</h2>
+      </div>
+      <div class="col-xs-9 index-card-right">
+        <h3>Build your skills: Learn SQL</h3>
+        <p>A plain-English guide to SQL data analysis using real data and interactive tutorials. It's written for people who have spent time with Excel or other analytics tools, but aren't familiar with SQL.
+        </p>
+      </div>
+    </div>
+  </a>
+</div>
+
+<!--
+<div class="row">
+  <a href="/quiz/quiz-intro.html">
+    <div class="index-card">
+      <div class="col-xs-3 index-card-left" id="section2">
+        <h4>SECTION 2</h4>
+        <hr />
+        <h2>Skill Testing</h2>
+      </div>
+      <div class="col-xs-9 index-card-right">
+        <h3>Test your SQL knowledge</h3>
+        <p>Prep for data analyst interviews by answering questions heard by SQL School students during real interviews. Test your conceptual understanding of SQL and databases as well as your ability to write queries.
+        </p>
+      </div>
+    </div>
+  </a>
+</div>
+-->
+<div class="row">
+  <a href="/cases/about-analytics-training.html">
+    <div class="index-card">
+      <div class="col-xs-3 index-card-left" id="section2">
+        <h4>SECTION 2</h4>
+        <hr />
+        <h2>Analytics Training</h2>
+      </div>
+      <div class="col-xs-9 index-card-right">
+        <h3>Learn to think like an analyst</h3>
+        <p>Once you've got a handle on SQL, the next step is to hone your analytical process. We've built fake datasets to mimic real-world situations. Approach this section like on-the-job training...before you get the job!
+        </p>
+      </div>
+    </div>
+  </a>
 </div>
