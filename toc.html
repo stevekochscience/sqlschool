@@ -1,0 +1,24 @@
+---
+layout: sqlschool-lesson
+title: "SQL School Table of Contents"
+description: "Learn data analysis skills with this free, interactive SQL tutorial, written in plain English. Practice in real-time with online access to a live database."
+---
+
+<p>Table of Contents: In Lesson Order | <a href="toc-by-syntax.html">By SQL Commands</a></p>
+
+<div style="clear: both;"></div>
+
+{% for category in site.category-list %}
+  <h4 class="category" id="{{ category }}">
+    {{ category | replace:'-', ' ' }}
+  </h4>
+  <ul class="table-of-contents">
+    {% for post in site.posts %}
+        {% for cat in post.category %}
+          {% if cat == category %}
+            <li class="list-question"><a href="{{ post.url }}"> {{ post.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+    {% endfor %}
+  </ul>
+{% endfor %}

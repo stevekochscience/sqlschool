@@ -7,7 +7,7 @@ date:   2014-01-01 00:00:59
 ###Welcome to SQL School
 This tutorial is designed for people who want to answer questions with data. For many, SQL is the "meat and potatoes" of data analysis &mdash;it is used for accessing, cleaning, and analyzing data that is stored in databases. It's very easy to learn, but is employed by the world's largest companies to solve incredibly challenging problems.
 
-SQL School is designed for aspiring analysts who have used Excel a little bit, but have no SQL experience. If you're already somewhat familiar with SQL or find the lessons to be a bit slow, check out the [table of contents](/) and start in the place that's right for you.
+SQL School is designed for aspiring analysts who have used Excel a little bit, but have no SQL experience. If you're already somewhat familiar with SQL or find the lessons to be a bit slow, check out the [table of contents](/toc.html) and start in the place that's right for you.
 
 Though some of the lessons may be useful for software developers using SQL in their applications, this tutorial doesn't cover how to set up SQL databases or how to use them in software applications&mdash;it is not a comprehensive resource for aspiring software developers.
 

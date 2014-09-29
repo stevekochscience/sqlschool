@@ -50,7 +50,9 @@ layout: sqlschool-template
               </div>
               
               <div class="row">
-                {% if page.categories contains "quiz" %}
+                {% if page.categories == nil %}
+                  <!-- do nothing -->
+                {% elsif page.categories contains "quiz" %}
                   {% include quiz-questions.html %}
                 {% elsif page.categories contains "analytics-training" %}
                   <!-- drop something here that sends you back to the case overview -->
