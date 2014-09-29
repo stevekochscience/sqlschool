@@ -168,7 +168,7 @@ h4.title {
 }
 
 .post-body img {
-  max-width: 100%;
+  max-width:90%;
   margin: 35px auto;
   display:block;
 }
@@ -202,40 +202,18 @@ iframe.hn-share-iframe { margin-bottom:-1px; }
 
 
 /* FOOTER */
-.footer-push {
-  height: 88px;
+.index-footer {
+  padding: 15px 0px 20px;
 }
 
-#footer-container {
-  color: #F1F1F1;
-}
 
 .social-links {
   float: left;
 }
 .mode-copyright {
-  color: #87BFC2;
+  color: #515556;
   margin-top: 5px;
   float:right;
-}
-
-#sqlschool-footer {
-  background-color: #396D6C;
-  width:100%;
-  text-align: left;
-	height: 44px;
-  padding: 22px 0;
-  position: relative;
-  z-index: 10;
-}
-
-#footer-container {
-	width: 100%px;
-	max-width: 650px;
-  padding: 0px;
-  font-size: 14px;
-  line-height: 18px;
-  margin: 10px auto 0px auto;
 }
 
 .social-links {
@@ -248,14 +226,14 @@ iframe.hn-share-iframe { margin-bottom:-1px; }
   font-size: 1.3em;
   margin-left: 5px;
   margin-right: 5px;
-  color: #87BFC2;
+  color: #515556;
   border-bottom: none;
   background: none;
 }
 
 .social-links a.social-icon:hover {
   background: transparent;
-  color: #E6EFF1;
+  color: #e6824d;
   border-bottom: none;
   text-decoration: none;
   cursor: pointer;
@@ -279,11 +257,11 @@ ul.table-of-contents, nav ul {
 }
 
 pre, code {
-  color:black;
-  background-color:#E5ECEC;
+  color:black !important;
+  background-color:#E5ECEC !important;
   border: 1px solid #C7CCCB;
-  border-radius: 3px;
-  font-size: 15px;
+  border-radius: 3px !important;
+  font-size: 15px !important;
   line-height: 18px;
 }
 
@@ -294,8 +272,9 @@ pre code {
 }
 
 pre {
+  max-width:90%;
   padding:10px;
-  margin: 20px 19px !important;
+  margin: 20px auto !important;
   overflow: auto;
 }
 code {
@@ -403,7 +382,8 @@ div.practice-prob, div.practice-prob-answer {
   border: 1px solid #C7CCCB;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   text-shadow: 0 1px 0 rgba(255,255,255,0.8);
-  margin: 0px 19px;
+  margin: 0px auto;
+  max-width:90%;
 }
 
 div.practice-prob {
