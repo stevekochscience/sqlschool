@@ -1,5 +1,5 @@
 ---
-layout: lesson-new
+layout: sqlschool-lesson
 categories: cases yammer answers
 title:  "The Best A/B Test Ever"
 date:   2014-07-01 00:00:56
