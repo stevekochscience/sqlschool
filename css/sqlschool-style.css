@@ -47,6 +47,10 @@ body {
   margin-right: 12px;
 }
 
+.sidebar-header a {
+  color:#333 !important;
+}
+
 .list-group.panel > .list-group-item, .collapse > .list-group-item, .collapsing > .list-group-item {
   border: none;
   background-color:transparent;

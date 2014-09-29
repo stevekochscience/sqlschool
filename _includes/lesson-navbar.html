@@ -4,13 +4,17 @@
   
     
   <div class="sidebar-header">
-    <img src="/images/icons/logo_large.png">SQL School
+    <a href="/">
+      <img src="/images/icons/logo_large.png">SQL School
+    </a>
   </div>
   
   <div class="list-group panel">
     
+    <!--
     <a href="/" class="list-group-item list-group-item-success heading">Home</a>
-    
+    -->
+      
 <!-- SQL Lessons -->    
     {% for category in site.category-list %}
       <a href="#{{ category }}" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#{{ category }}">
