@@ -38,18 +38,26 @@
 <!-- SQL Quiz
     <a href="/quiz/quiz-intro.html" class="list-group-item list-group-item-success heading">SQL Quiz</a>
     
-<!-- Cases      
+<!-- Cases   -->   
     <a href="#cases" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#cases">
-      Cases<i class="fa fa-chevron-down"></i>
+      Analytics Training<i class="fa fa-chevron-down"></i>
     </a>
+    
     {% if page.categories contains "cases" %}
       <div class="collapse in" id="cases">
     {% else %}
       <div class="collapse" id="cases">
     {% endif %}
+      
+      {% if page.url == '/cases/about-analytics-training.html' %}
+        <p class="list-group-item current">About This Section</p>
+      {% else %}
+        <a href="/cases/about-analytics-training.html" class="list-group-item">About This Section</a>
+      {% endif %}
+    
       {% for case in site.case-list %}
-        <a href="#{{ case }}" class="list-group-item" data-toggle="collapse" data-parent="#{{ case }}">
-          {{ case | replace:'-', ' ' }} <i class="fa fa-caret-down"></i>
+        <a href="#{{ case }}" class="list-group-item case-name" data-toggle="collapse" data-parent="#{{ case }}">
+          {{ case | replace:'-', ' ' }} <i class="fa fa-chevron-down"></i>
         </a>
         {% if page.categories contains case %}
           <div class="collapse in list-group-submenu" id="{{ case }}">
@@ -79,7 +87,7 @@
         </div>
       {% endfor %}
     </div>
-    -->
+  
   </div>
     
 
