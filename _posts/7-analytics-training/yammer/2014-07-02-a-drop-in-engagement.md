@@ -1,6 +1,6 @@
 ---
 layout: sqlschool-lesson
-categories: cases yammer
+categories: analytics-training yammer
 title:  "A Drop In Engagement"
 date:   2014-07-01 00:00:58
 seo-title: 

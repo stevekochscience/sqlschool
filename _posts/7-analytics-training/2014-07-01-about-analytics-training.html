@@ -1,6 +1,6 @@
 ---
 layout: sqlschool-lesson
-categories: cases
+categories: analytics-training
 title: "About Analytics Training"
 date: 2014-07-02 00:00:59
 seo-title: 
@@ -15,7 +15,7 @@ Real-world problems to help sharpen your critical thinking skills. Intended for 
   </h4>
   <ul class="table-of-contents">
     {% for post in site.posts %}
-      {% if post.categories contains case and post.categories contains "cases" %}
+      {% if post.categories contains case and post.categories contains "analytics-training" %}
         
         {% assign answer = false %}
         {% if post.categories contains "answers" %}

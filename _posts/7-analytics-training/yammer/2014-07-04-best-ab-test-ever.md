@@ -1,6 +1,6 @@
 ---
 layout: sqlschool-lesson
-categories: cases yammer
+categories: analytics-training yammer
 title:  "The Best A/B Test Ever"
 date:   2014-07-01 00:00:56
 seo-title: 

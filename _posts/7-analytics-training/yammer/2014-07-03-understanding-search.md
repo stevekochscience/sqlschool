@@ -1,6 +1,6 @@
 ---
 layout: sqlschool-lesson
-categories: cases yammer
+categories: analytics-training yammer
 title:  "Understanding Search"
 date:   2014-07-01 00:00:57
 seo-title: 

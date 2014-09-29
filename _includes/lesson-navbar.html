@@ -35,24 +35,25 @@
       </div>
     {% endfor %}
       
-<!-- SQL Quiz
+<!-- SQL Quiz 
     <a href="/quiz/quiz-intro.html" class="list-group-item list-group-item-success heading">SQL Quiz</a>
+    -->
     
-<!-- Cases   -->   
-    <a href="#cases" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#cases">
+<!-- Analytics Training   -->   
+    <a href="#analytics-training" class="list-group-item list-group-item-success heading" data-toggle="collapse" data-parent="#analytics-training">
       Analytics Training<i class="fa fa-chevron-down"></i>
     </a>
     
-    {% if page.categories contains "cases" %}
-      <div class="collapse in" id="cases">
+    {% if page.categories contains "analytics-training" %}
+      <div class="collapse in" id="analytics-training">
     {% else %}
-      <div class="collapse" id="cases">
+      <div class="collapse" id="analytics-training">
     {% endif %}
       
-      {% if page.url == '/cases/about-analytics-training.html' %}
+      {% if page.url == '/analytics-training/about-analytics-training.html' %}
         <p class="list-group-item current">About This Section</p>
       {% else %}
-        <a href="/cases/about-analytics-training.html" class="list-group-item">About This Section</a>
+        <a href="/analytics-training/about-analytics-training.html" class="list-group-item">About This Section</a>
       {% endif %}
     
       {% for case in site.case-list %}
@@ -65,7 +66,7 @@
           <div class="collapse list-group-submenu" id="{{ case }}">
         {% endif %}
           {% for post in site.posts %}
-            {% if post.categories contains case and post.categories contains "cases" %}
+            {% if post.categories contains case and post.categories contains "analytics-training" %}
     
               {% assign answer = false %}
               {% if post.categories contains "answers" %}
