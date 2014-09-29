@@ -83,18 +83,27 @@ a.list-group-item.heading {
   letter-spacing:1px;
 }
 
-a.list-group-item.heading:hover {
+a.list-group-item.heading:hover, a.list-group-item.case-name:hover {
   background-color:#dce7eb;
+  text-decoration:none;
+}
+
+.collapse > a.list-group-item.case-name:hover {
+  color:#555 !important;
 }
 
 a.list-group-item.heading i {
-  display:none;
-  float:right;
   margin-right:15px;
 }
 
-a.list-group-item.heading:hover i {
+a.list-group-item.heading i, a.list-group-item.case-name i {
+  display:none;
+  float:right;
+}
+
+a.list-group-item.heading:hover i, a.list-group-item.case-name:hover i {
   display:inline;
+  color:#3c763d;
 }
 
 .collapse > a.list-group-item, .collapsing > a.list-group-item {
