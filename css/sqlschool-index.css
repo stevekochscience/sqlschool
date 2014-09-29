@@ -1,7 +1,3 @@
-.index-card:hover {
-  background-color:#CCC;
-}
-
 #index-main {
   background-color:#e9eeee;
 }
@@ -33,12 +29,17 @@
 .index-card {
   margin-top: 20px;
   color:#555;
+  height:190px;
+  border-radius:5px;
+  box-shadow: 0 2px 0 0 #cccccb;
 }
 
+.index-card:hover {
+  box-shadow: 4px 4px 0 0 #515556;
+}
 
 .index-card-left, .index-card-right {
-  height:190px;
-  box-shadow: 0 2px 0 0 #cccccb;
+  height:100%;
 }
 
 .index-card-left {
@@ -97,6 +98,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .index-card {
+    height:185px;
+  }
+  
   .index-card-left {
     width:100%;
     border-radius:5px 5px 0px 0px;
@@ -116,6 +121,10 @@
 }
 
 @media screen and (max-width: 550px) {
+  .index-card {
+    height:255px;
+  }
+  
   .index-card-right {
     height:220px;
   }
