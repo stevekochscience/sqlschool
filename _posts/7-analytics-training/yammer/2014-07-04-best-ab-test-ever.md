@@ -40,7 +40,7 @@ Once you're comfortable with A/B testing, your job is to determine whether this 
 
 ###Getting Oriented
 
-Before doing anything with the data, develop some hypotheses about why the result might look the way it does, as well as methods for testing those hypotheses. As a point of reference, such dramatic changes in user behavior&mash;like the 50% increase in posting&mdash;are extremely uncommon.
+Before doing anything with the data, develop some hypotheses about why the result might look the way it does, as well as methods for testing those hypotheses. As a point of reference, such dramatic changes in user behavior&mdash;like the 50% increase in posting&mdash;are extremely uncommon.
 
 If you want to check your list of possible causes against ours, read the [first part of the answer key](answers/best-ab-test-ever-answers.html).
 
