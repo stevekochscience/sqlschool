@@ -1,5 +1,5 @@
 ---
-layout: lesson-new
+layout: sqlschool-lesson
 categories: quiz
 title:  "THE SQL QUIZ"
 date:   2014-06-01 00:00:57
