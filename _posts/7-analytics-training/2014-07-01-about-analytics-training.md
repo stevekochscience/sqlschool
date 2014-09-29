@@ -3,8 +3,8 @@ layout: sqlschool-lesson
 categories: analytics-training
 title: "About Analytics Training"
 date: 2014-07-02 00:00:59
-seo-title: 
-description: 
+seo-title:
+description: "Hone your analytical skills by solving real-world cases from Analytics teams at data-driven companies."
 ---
 
 This section is meant to help those with solid SQL knowledge sharpen their analytical thinking ability. We've interviewed Analytics managers and re-created some of the problems they shared with us using fake data. These problems will force you to think critically about not just SQL syntax, but about the meaning behind what you're measuring.
