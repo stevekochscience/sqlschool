@@ -46,6 +46,8 @@ There are two tables that are relevant to this problem. Most critically, there a
 * search\_run: This is logged when a user runs a search and sees the search results page.
 * search\_click\_X: This is logged when a user clicks on a search result. X, which ranges from 1 to 10, describes which search result was clicked.
 
+The tables names and column definitions are listed below&mdash;click a table name to view information about that table.
+
 <div class="accordion">
   <ul>
     {% include case-data/yammer-users.html %}

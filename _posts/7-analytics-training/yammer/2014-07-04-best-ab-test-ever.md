@@ -46,7 +46,7 @@ If you want to check your list of possible causes against ours, read the [first 
 
 ###The Data
 
-For this problem, you will need to use four tables. *Note: This data is fake and was generated for the purpose of this case study. It is similar in structure to Yammer's actual data, but for privacy and security reasons, it is not real.*
+For this problem, you will need to use four tables. The tables names and column definitions are listed below&mdash;click a table name to view information about that table. *Note: This data is fake and was generated for the purpose of this case study. It is similar in structure to Yammer's actual data, but for privacy and security reasons, it is not real.*
 
 <div class="accordion">
   <ul>
