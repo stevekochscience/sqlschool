@@ -7,13 +7,15 @@ seo-title:
 description: 
 ---
 
+*Before starting, be sure to read [the overview](/analytics-training/yammer/yammer.html) to learn a bit about Yammer as a company.*
+
 Yammer's Analysts are responsible for triaging product and business problems as they come up. In many cases, these problems surface through key metric dashboards that execs and managers check daily.
 
 ###The Problem
 
 You show up to work Tuesday morning, September 2, 2014. The head of the Product team walks over to your desk and asks you what you think about the latest activity on the user engagement dashboards. You fire them up, and something immediately jumps out:
 
-<a href="https://staging.modeanalytics.com/tutorial/reports/f7aeca4599b7/embed" class="mode-embed">Mode Analysis</a><script src="https://staging.modeanalytics.com/embed/embed.js"></script>
+<a href="https://modeanalytics.com/tutorial/reports/f7aeca4599b7/embed" class="mode-embed">Mode Analysis</a><script src="https://modeanalytics.com/embed/embed.js"></script>
 
 The above chart shows engagement on a rolling 7-day basis. Yammer defines engagement as having made some type of server call by interacting with the product (shown in the data as events of type "engagement"). Any point in this chart can be interpreted as "the number of users who logged at least one engagement event over the 7 days prior."
 

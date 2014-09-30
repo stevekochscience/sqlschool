@@ -7,6 +7,8 @@ seo-title:
 description: 
 ---
 
+*Before starting, be sure to read [the overview](/analytics-training/yammer/yammer.html) to learn a bit about Yammer as a company.*
+
 Yammer not only develops new features, but is continuously looking for ways to improving existing ones. Like many software companies, Yammer frequently tests these features before releasing them to all of thier customers. These [A/B tests](http://en.wikipedia.org/wiki/A/B_testing) help analysts and product managers better understand a feature's effect on user behavior and the overall user experience.
 
 This case focuses on an improvement to Yammer's core “publisher”&mdash;the module at the top of a Yammer feed where users type their messages. To test this feature, the product team ran an A/B test from June 1 through June 30. During this period, some users who logged into Yammer were shown the old version of the publisher (the “control group”), while other other users were shown the new version (the “treatment group”). 

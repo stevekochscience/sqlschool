@@ -7,6 +7,8 @@ seo-title:
 description: 
 ---
 
+*Before starting, be sure to read [the overview](/analytics-training/yammer/yammer.html) to learn a bit about Yammer as a company.*
+
 The product team is determining priorities for the next development cycle and they are considering improving the site's search functionality. It currently works as follows:
 
 * There is a search box in the header the persists on every page of the website. It prompts users to search for people, groups, and conversations.
