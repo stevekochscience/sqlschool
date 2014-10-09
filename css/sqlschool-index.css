@@ -122,10 +122,10 @@
 
 @media screen and (max-width: 550px) {
   .index-card {
-    height:255px;
+    height:275px;
   }
   
   .index-card-right {
-    height:220px;
+    height:240px;
   }
 }
