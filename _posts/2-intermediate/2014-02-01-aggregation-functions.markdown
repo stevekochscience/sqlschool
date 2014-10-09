@@ -135,7 +135,7 @@ Nulls are treated as lower than 0 or "a" so `MIN` will return a null value if th
 
     SELECT AVG(high)
       FROM tutorial.aapl_historical_stock_price
-     WHERE volume IS NOT NULL
+     WHERE high IS NOT NULL
 
 Produces the same result as:
 
