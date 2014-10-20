@@ -44,7 +44,7 @@ Let's start by running an `INNER JOIN` and taking a look at the results. We'll j
       JOIN tutorial.crunchbase_acquisitions acquisitions
         ON companies.permalink = acquisitions.company_permalink
 
-You may notice that "280 North" appears twice in this list. That is because is has two entried in the `tutorial.crunchbase_acquisitions` table, both of which are being joined onto the `tutorial.crunchbase_companies` table.
+You may notice that "280 North" appears twice in this list. That is because is has two entries in the `tutorial.crunchbase_acquisitions` table, both of which are being joined onto the `tutorial.crunchbase_companies` table.
 
 <a href="/images/intermediate/inner-join-results.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="Query results when using an inner join">
   <img src="/images/intermediate/inner-join-results.png" />  

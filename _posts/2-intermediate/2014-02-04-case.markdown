@@ -164,7 +164,7 @@ Combining `CASE` statements with aggregations can be tricky at first. It's often
                 *
       FROM benn.college_football_players
 
-The above query will show all columns in the `benn.college_football_players` table, as well as a column showing the reasults of the `CASE` statement. From there, you can replace the `*` with an aggregation and add a `GROUP BY` clause. Try this process if you struggle with either of the following practice problems.
+The above query will show all columns in the `benn.college_football_players` table, as well as a column showing the results of the `CASE` statement. From there, you can replace the `*` with an aggregation and add a `GROUP BY` clause. Try this process if you struggle with either of the following practice problems.
 
 <div class="practice-prob">
   Write a query that counts the number of 300lb+ players for each of the following regions: West Coast (CA, OR, WA), Texas, and Other (Everywhere else). 

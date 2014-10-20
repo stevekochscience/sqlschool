@@ -87,7 +87,7 @@ We'll start with Inner joins, which can be written as either `JOIN benn.college_
 
 <img src="http://www.w3schools.com/sql/img_innerjoin.gif" alt="{{ page.seo-title }}" title="{{ page.seo-title }}">
 
-Therefore, if a player goes to a school that isn't in the `teams` table, that player won't be included in the result from an Inner Join. Similarly, if there are schools in the `teams` table that don't match to any schools in the `players` table, those rows won't be inlcuded in the results either.
+Therefore, if a player goes to a school that isn't in the `teams` table, that player won't be included in the result from an Inner Join. Similarly, if there are schools in the `teams` table that don't match to any schools in the `players` table, those rows won't be included in the results either.
 
 ###Tricky Stuff
 When you join two tables, it might be the case that both tables have columns with identical names. In the below example, both tables have columns called `school_name`:
