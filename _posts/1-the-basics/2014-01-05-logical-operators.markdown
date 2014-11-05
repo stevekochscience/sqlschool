@@ -210,7 +210,7 @@ You can add `NOT` before any conditional statement if you'd like to select the r
      WHERE year = 2013 
        AND year_rank NOT BETWEEN 2 AND 3
 
-In the above case, you can see that results for which `year_rank` is equal to 1 or 3 are not included.
+In the above case, you can see that results for which `year_rank` is equal to 2 or 3 are not included.
 
 Using `NOT` with `<` and `>` usually doesn't make sense because you can simply use the opposite comparative operator instead. For example, this query will return an error:
 

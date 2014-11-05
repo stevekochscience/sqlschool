@@ -71,7 +71,7 @@ Now try this practice problem for yourself:
 
 *Note: Practice problems will appear in white boxes as above throughout this tutorial.*
 
-When you've completed the above practice problem, check your answer by following the link below. You'll land on Mode's Report View&mdash;a cleaned-up view of a query meant for sharing queries and results. You can learn more about the report view on [Mode's help site](LINK), but for now, here's what you need to know:
+When you've completed the above practice problem, check your answer by following the link below. You'll land on Mode's Report View&mdash;a cleaned-up view of a query meant for sharing queries and results. You can learn more about the report view on [Mode's help site](http://help.modeanalytics.com), but for now, here's what you need to know:
 
 1. Following the link will bring you to the Results page of the Report View. The results should look like the results your query produced.
 2. If your results don't match (or even if they do), you can check out the answer query by clicking the "Query" tab in the Report View.
