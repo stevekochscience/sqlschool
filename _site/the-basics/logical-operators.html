@@ -1386,7 +1386,7 @@
  WHERE year = 2013 
    AND year_rank NOT BETWEEN 2 AND 3
 </code></pre></div>
-<p>In the above case, you can see that results for which <code>year_rank</code> is equal to 1 or 3 are not included.</p>
+<p>In the above case, you can see that results for which <code>year_rank</code> is equal to 2 or 3 are not included.</p>
 
 <p>Using <code>NOT</code> with <code>&lt;</code> and <code>&gt;</code> usually doesn&#39;t make sense because you can simply use the opposite comparative operator instead. For example, this query will return an error:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">SELECT *

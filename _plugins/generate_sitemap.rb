@@ -55,7 +55,7 @@ module Jekyll
       end
 
       # Write the contents of sitemap.xml.
-      File.open(File.join(site_folder, 'sitemap.xml'), 'w') do |f|
+      File.open(File.join(site_folder, 'thesitemap.xml'), 'w') do |f|
         f.write(generate_header())
         f.write(generate_content(site))
         f.write(generate_footer())
