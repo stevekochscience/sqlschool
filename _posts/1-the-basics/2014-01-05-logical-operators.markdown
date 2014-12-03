@@ -9,7 +9,7 @@ description: "Learn to use SQL operators for pattern matching and filtering data
 
 The data in this lesson is from [Billboard Music Charts](http://www.billboard.com/charts). It was collected in January 2014 and contains data from 1956 through 2013. The results in this table are the *year-end* results &mdash; the top 100 songs at the end of each year. Some of the data has been intentionally removed for the sake of this lesson. You can see the full dataset at:
 
-    SELECT * FROM benn.billboard_top_100_year_end
+    SELECT * FROM tutorial.billboard_top_100_year_end
 
 For the lesson, you will use this table. It's very similar:
 
