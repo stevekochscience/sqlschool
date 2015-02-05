@@ -83,10 +83,16 @@ When you've completed the above practice problem, check your answer by following
 
 *Copy the URL in the share menu and send to all your friends!*
 
-You can share your work via URL at any state, but if you want to polish your work up a little by adding a title and description, click the "Publish" button, complete the fields, and click "Publish Report." This will also make your report searchable by other Mode users.
+You can share your work via URL any time. You can also publish your work publicly from the same menu:
 
 <a href="/images/the-basics/publishing-work.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="How to publish your work">
   <img src="/images/the-basics/publishing-work.png" />  
+</a>
+
+Before you publish, you might want to add a title and description to let people know what you've made:
+
+<a href="/images/the-basics/title-description.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="How to publish your work">
+  <img src="/images/the-basics/title-description.png" />  
 </a>
 
 ###What actually happens when you run a query?
