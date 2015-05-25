@@ -79,7 +79,7 @@ Sometimes it can be useful to join a table to itself. Let's say you wanted to un
     SELECT investments.company_name,
            investments.company_permalink,
            investments.investor_name,
-           COUNT(investments_repeat.investor_name) AS repeat_investments
+           COUNT(DISTINCT investments_repeat.id) AS repeat_investments
       FROM tutorial.crunchbase_investments_part1 investments
       JOIN tutorial.crunchbase_investments_part1 investments_repeat
         ON investments.company_permalink = investments_repeat.company_permalink
