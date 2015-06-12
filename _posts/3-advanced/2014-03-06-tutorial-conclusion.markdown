@@ -9,7 +9,7 @@ Congratulations on finishing SQL School! You're more than ready to apply your sk
 
 You might get frustrated when you've got an idea of how to solve a problem or how you'd like to manipulate data but just can't think through how you might code it up &mdash; that's pretty normal. At Mode, we've found that the best way to deal with these types of problems is to see what others have done and try to understand by looking at their code. To help with this, we've assembled a library of solutions to common problems like "I want to pivot my data from being stored as rows to being stored as columns."
 
-You can [learn more about the library here](/solutions-to-common-problems/solutions-intro.html), or you can dive straight into some examples in the [SQL School Main Index](/).
+You can [learn more about the library here](/common-problems/solutions-intro.html), or you can dive straight into some examples in the [SQL School Main Index](/).
 
 ###Applying Your Skills
 Along the lines of the library of common problems, we recommend unleashing your newfound analytical prowess on some work that someone else has already done. You can find some great examples in Mode's [Explore section](https://modeanalytics.com/explore).

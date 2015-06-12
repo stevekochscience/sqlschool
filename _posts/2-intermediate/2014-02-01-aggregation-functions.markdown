@@ -108,13 +108,6 @@ You don't need to worry as much about the presence of nulls with `SUM` as you wo
            MAX(volume) AS max_volume
       FROM tutorial.aapl_historical_stock_price
 
-Nulls are treated as lower than 0 or "a" so `MIN` will return a null value if the column contains one. If you want the lowest real number or value, you can filter out nulls using a `WHERE` clause:
-
-    SELECT MIN(volume) AS min_volume,
-           MAX(volume) AS max_volume
-      FROM tutorial.aapl_historical_stock_price
-     WHERE volume IS NOT NULL
-
 <div class="practice-prob">
   What was Apple's lowest stock price (at the time of this data collection)?
 </div>
