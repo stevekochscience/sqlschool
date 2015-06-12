@@ -28,5 +28,4 @@ If you got here looking for help on how to use Mode, try our [help site](http://
 
 * [Write a query](http://help.modeanalytics.com/getting-started/write-a-query.html "Write a query")
 * [Get data](http://help.modeanalytics.com/getting-started/get-data.html "Get data")
-* [SQL syntax guide](http://help.modeanalytics.com/technical-documentation/sql-syntax-guide.html "SQL syntax guide")
 -->

@@ -285,7 +285,7 @@ The `WINDOW` clause, if included, should always come after the `WHERE` clause.
 
 
 ###Advanced Windowing Techniques
-You can check out a complete list of window functions in Postgres (the syntax Mode uses) in the [Postgres documentation](http://www.postgresql.org/docs/8.4/static/functions-window.html). If you're using window functions on a [connected database](http://help.modeanalytics.com), you should look at the appropriate [syntax guide](/other-resources/sql-syntax-guide.html) for your system.
+You can check out a complete list of window functions in Postgres (the syntax Mode uses) in the [Postgres documentation](http://www.postgresql.org/docs/8.4/static/functions-window.html). If you're using window functions on a [connected database](http://help.modeanalytics.com/connecting-to-databases/), you should look at the appropriate [syntax guide](/other-resources/sql-syntax-guide.html) for your system.
 
 <!--CURRENT ROW
 GROUP

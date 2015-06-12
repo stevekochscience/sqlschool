@@ -16,7 +16,7 @@ You can find the complete PostgreSQL syntax guide [here](http://www.postgresql.o
 If you are very new to SQL, you should check out [the beginner tutorial](/the-basics/basic-concepts.html "Learning SQL").
 
 ###Connected database SQL reference
-You can [connect Mode to many types of databases](https://modeanalytics.zendesk.com/hc/en-us/sections/200631034-Connecting-Mode-to-a-Private-Database "Connecting to a Database"), all of which have slightly different syntax rules. When you run a query on Mode, it gets executed on the connected database, not Mode's Postgres database, so you should determine what type of database you're querying and find the appropriate documentation.
+You can [connect Mode to many types of databases](http://help.modeanalytics.com/connecting-to-databases/ "Connecting to a Database"), all of which have slightly different syntax rules. When you run a query on Mode, it gets executed on the connected database, not Mode's Postgres database, so you should determine what type of database you're querying and find the appropriate documentation.
 
 To make that a bit easier, we've collected documentation for some popular database types. *Note: database connections are also read-only, so many of the commands listed in these reference guides will not work:*
 
