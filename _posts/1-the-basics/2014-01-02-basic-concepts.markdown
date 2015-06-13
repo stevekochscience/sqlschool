@@ -12,7 +12,7 @@ SQL (Structured Query Language) is a programming language designed for managing 
 
  * It's semantically easy to understand and learn.
  * Because it can be used to access large amounts of data directly where it's stored, analysts don't have to copy data into other applications.
- * Compared to spreadsheet tools, analysis done in SQL is easy audit and replicate. For analysts, this means no more looking for the [cell with the typo in the formula](http://www.washingtonpost.com/blogs/wonkblog/wp/2013/04/16/is-the-best-evidence-for-austerity-based-on-an-excel-spreadsheet-error/).
+ * Compared to spreadsheet tools, analysis done in SQL is easy to audit and replicate. For analysts, this means no more looking for the [cell with the typo in the formula](http://www.washingtonpost.com/blogs/wonkblog/wp/2013/04/16/is-the-best-evidence-for-austerity-based-on-an-excel-spreadsheet-error/).
 
 SQL is great for performing the types of aggregations that you might normally do in an Excel pivot table&mdash;sums, counts, minimums and maximums, etc.&mdash;but over much larger datasets and on multiple tables at the same time.
 
