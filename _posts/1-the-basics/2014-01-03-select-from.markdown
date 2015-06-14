@@ -19,7 +19,7 @@ This will take you to the Query Editor. This is the bread and butter of Mode&mda
 For this tutorial, SQL queries will be shown in grey boxes like the one below. To run a query, simply copy the text from the box into the Query Editor and click the orange "Run Query" button. Alternatively, you can run a query by pressing <code>&#8984;</code> + `return` on a Mac or `ctrl` + `return` on a PC.
 
     SELECT * 
-      FROM tutorial.us_housing_units
+      FROM tutorial.us_housing_units_completed
 
 Give this a shot, then keep reading to learn what the query is doing.
 
@@ -37,7 +37,7 @@ There are two required ingredients in any SQL query: a `SELECT` statement and a 
     SELECT year, 
            month, 
            west 
-      FROM tutorial.us_housing_units
+      FROM tutorial.us_housing_units_completed
 
 To see the results yourself, copy and paste this query into a Query Editor and click run! If you ran the previous query, or if you already have text in Mode's query window, you'll need to paste over or delete the query that was there previously. If you simply copy and paste this query below the previous one, you'll get an error &mdash; you can only run one `SELECT` statement at a time.
 
@@ -54,7 +54,7 @@ Note that the three column names were separated by a comma in the query. Wheneve
 If you want to select every column in a table, you can use `*` instead of the column names:
 
     SELECT * 
-      FROM tutorial.us_housing_units
+      FROM tutorial.us_housing_units_completed
 
 <a href="/images/the-basics/results.png" class="with-caption image-link" alt="{{ page.seo-title }}" title="The results of a query using SELECT *">
   <img src="/images/the-basics/results.png" />  
@@ -66,7 +66,7 @@ Now try this practice problem for yourself:
   Write a query to select all of the columns in the <code>tutorial.us_housing_units_completed</code> table without using <code>*</code>.
 </div>
 <div class="practice-prob-answer">
-  <a href="https://modeanalytics.com/tutorial/reports/cc50612804ae" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/stevekochscience/reports/c6590917a7ce" target="_blank">See the Answer &raquo;</a>
 </div>
 
 *Note: Practice problems will appear in white boxes as above throughout this tutorial.*
@@ -101,12 +101,12 @@ When you run a query, what do you get back? As you can see from running the quer
 ###Formatting convention
 You might have noticed that the `SELECT` and `FROM' commands are capitalized. This isn't actually necessary&mdash;SQL will understand these commands if you type them in lowercase. Capitalizing commands is simply a convention that makes queries easier to read. Similarly, SQL treats one space, multiple spaces, or a line break as being the same thing. For example, SQL treats this the same way it does the previous query:
 
-    SELECT *        FROM tutorial.us_housing_units
+    SELECT *        FROM tutorial.us_housing_units_completed
 
 It also treats this the same way:
 
     SELECT *
-      FROM tutorial.us_housing_units
+      FROM tutorial.us_housing_units_completed
 
 While most capitalization conventions are the same, there are several conventions for formatting line breaks. You'll pick up on several of these in this tutorial and in other people's work on Mode. It's up to you to determine what formatting method is easiest for you to read and understand.
 
@@ -116,20 +116,20 @@ While we're on the topic of formatting, it's worth noting the format of column n
 If you'd like your results to look a bit more presentable, you can rename columns to include spaces. For example, if you want the `west` column to appear as `West Region` in the results, you would have to type:
 
     SELECT west AS "West Region" 
-      FROM tutorial.us_housing_units
+      FROM tutorial.us_housing_units_completed
 
 Without the double quotes, that query would read 'West' and 'Region' as separate objects and would return an error. Note that the results will only return capital letters if you put column names in double quotes. The following query, for example, will return results with lower-case column names.
 
     SELECT west AS West_Region,
            south AS South_Region
-      FROM tutorial.us_housing_units
+      FROM tutorial.us_housing_units_completed
 
 <div id="limit"></div>
 <div class="practice-prob">
   Write a query to select all of the columns in <code>tutorial.us_housing_units_completed</code> and rename them so that their first letters are capitalized
 </div>
 <div class="practice-prob-answer">
-  <a href="https://modeanalytics.com/tutorial/reports/740ad94d2ef9" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/stevekochscience/reports/a47c7ffde301" target="_blank">See the Answer &raquo;</a>
 </div>
 
 
@@ -143,7 +143,7 @@ You may have noticed that checkbox next in the upper-right portion of the editor
 As you might expect, the limit restricts how many rows the SQL query returns. The default value is 100; when this box is checked, it's telling the database to only return the first 100 rows of the query. Because `tutorial.us_housing_units_completed` has more than 100 rows, the queries thus far haven't been returning the full result sets. Try turning the `LIMIT` off (by clicking the check mark next to it) and running this query. 
 
     SELECT * 
-      FROM tutorial.us_housing_units
+      FROM tutorial.us_housing_units_completed
 
 You'll notice many more rows get returned. You can tell by checking the header of the results table:
 
@@ -156,14 +156,14 @@ Many analysts use limits as a simple way to keep their queries from taking too l
 The limiting functionality is built into Mode to prevent you from accidentally returning millions of rows without meaning to (we've all done it). If you're ever using SQL in another context, however, you can add a limit with a SQL command. The following syntax does the same thing as having the box checked with a value of 100:
 
     SELECT * 
-      FROM tutorial.us_housing_units
+      FROM tutorial.us_housing_units_completed
      LIMIT 100
 
 <div class="practice-prob">
   Write a query that uses <code>LIMIT</code> manually (written into the query) to restrict the result set to only 15 rows
 </div>
 <div class="practice-prob-answer">
-  <a href="https://modeanalytics.com/tutorial/reports/62f423b84e97" target="_blank">See the Answer &raquo;</a>
+  <a href="https://modeanalytics.com/stevekochscience/reports/935f8433ac08" target="_blank">See the Answer &raquo;</a>
 </div>
 
 ###Congrats on learning the basics!
